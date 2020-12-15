@@ -11,6 +11,7 @@
     <Summary>Classes with functionality I missed.</Summary>
     <Title>AHBSD Library</Title>
     <Description>Some classes with functionality I missed.</Description>
+    <PackageProjectUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
