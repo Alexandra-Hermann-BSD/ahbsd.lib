@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageVersion>1.0</PackageVersion>
+    <Authors>Heinrich Alexandra Hermann</Authors>
+    <Copyright>GNU General Public License v3.0</Copyright>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Owners>Alexandra Hermann – Beratung, Software, Design</Owners>
+    <Summary>Classes with functionality I missed.</Summary>
+    <Title>AHBSD Library</Title>
+    <Description>Some classes with functionality I missed.</Description>
+  </PropertyGroup>
+
+</Project>
