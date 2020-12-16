@@ -7,7 +7,8 @@ namespace Test
     /// A class to demonstrate <see cref="ChangeEventArgs{T}"/> and <see cref="ChangeEventHandler{T}"/>.
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
-    public class TestClass<T> : ITestClass<T>
+    /// <typeparam name="A">Type of API-Key.</typeparam>
+    public class TestClass<T, A> : ApiKeyHolder<A>, ITestClass<T, A>
     {
         /// <summary>
         /// The variable to change.
@@ -52,8 +53,10 @@ namespace Test
         /// Constructor without parameters.
         /// </summary>
         public TestClass()
+            : base()
         {
             _variable = default;
+            OnApiKeyAdded += TestClass_OnApiKeyAdded;
         }
 
         /// <summary>
@@ -61,8 +64,39 @@ namespace Test
         /// </summary>
         /// <param name="v">The given variable.</param>
         public TestClass(T v)
+            : base()
         {
             _variable = v;
+            OnApiKeyAdded += TestClass_OnApiKeyAdded;
+        }
+
+        /// <summary>
+        /// Constructor with a given API-Key.
+        /// </summary>
+        /// <param name="apiKey">The given API-Key.</param>
+        public TestClass(A apiKey)
+            : base(apiKey)
+        {
+            _variable = default;
+            OnApiKeyAdded += TestClass_OnApiKeyAdded;
+        }
+
+        /// <summary>
+        /// Constructor with a given value and a given API-Key.
+        /// </summary>
+        /// <param name="v">The given variable.</param>
+        /// <param name="apiKey">The given API-Key.</param>
+        public TestClass(T v, A apiKey)
+            : base(apiKey)
+        {
+            _variable = v;
+            OnApiKeyAdded += TestClass_OnApiKeyAdded;
+        }
+
+
+        private void TestClass_OnApiKeyAdded(object sender, ApiKeyEventArgs<A> e)
+        {
+            Console.WriteLine("An API-Key ('{0}') was added at Index {1}", e.Value, e.Index);
         }
     }
 }

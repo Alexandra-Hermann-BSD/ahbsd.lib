@@ -6,7 +6,8 @@ namespace Test
     /// An interface for a class to demonstrate <see cref="ChangeEventArgs{T}"/> and <see cref="ChangeEventHandler{T}"/>.
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
-    public interface ITestClass<T>
+    /// <typeparam name="A">Type of API-Key.</typeparam>
+    public interface ITestClass<T, A>
     {
         /// <summary>
         /// Gets or sets a variable.
