@@ -3,8 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
+    <PackageId>ahbsd.lib</PackageId>
     <PackageVersion>1.0.1</PackageVersion>
     <Authors>Heinrich Alexandra Hermann</Authors>
+    <Company>Alexandra Hermann – Beratung, Software, Design</Company>
     <Copyright>GNU General Public License v3.0</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
     <Owners>Alexandra Hermann – Beratung, Software, Design</Owners>
@@ -12,6 +14,7 @@
     <Title>AHBSD Library</Title>
     <Description>Some classes with functionality I missed.</Description>
     <PackageProjectUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
