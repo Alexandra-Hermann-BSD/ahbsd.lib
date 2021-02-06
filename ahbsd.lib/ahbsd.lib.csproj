@@ -4,10 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>ahbsd.lib</PackageId>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.2.0</PackageVersion>
     <Authors>Heinrich Alexandra Hermann</Authors>
     <Company>Alexandra Hermann – Beratung, Software, Design</Company>
-    <Copyright>GNU General Public License v3.0</Copyright>
+    <Copyright>Apache 2.0</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
     <Owners>Alexandra Hermann – Beratung, Software, Design</Owners>
     <Summary>Classes with functionality I missed.</Summary>
@@ -15,6 +15,13 @@
     <Description>Some classes with functionality I missed.</Description>
     <PackageProjectUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</RepositoryUrl>
+    <ReleaseVersion>1.2.0</ReleaseVersion>
+    <PackageIconUrl>https://www.hermann-bsd.de/favicon.ico</PackageIconUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageReleaseNotes>Version 1.2.0 has some new classes and a movement of the classes by their logical content. So if you worked already with 1.0 or 1.0.1, you have to change the namespace…</PackageReleaseNotes>
+    <PackageTags>Library; Core; Core3.1; GeneriC</PackageTags>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -27,4 +34,7 @@
     <DocumentationFile>bin\Release\netcoreapp3.1\ahbsd.lib.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="ApiKey\" />
+  </ItemGroup>
 </Project>

@@ -13,39 +13,35 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 using System;
+
 namespace ahbsd.lib
 {
     /// <summary>
-    /// Generic EventArgs.
+    /// Interface for generic EventArgs for changing values.
     /// </summary>
-    /// <typeparam name="T">Type of <see cref="Value"/>.</typeparam>
-    public class EventArgs<T> : EventArgs, IEventArgs<T>
+    /// <typeparam name="T">The type of the changing Values.</typeparam>
+    public interface IChangeEventArgs<T>
     {
         /// <summary>
-        /// Constructor without parameters.
+        /// Gets the old value.
         /// </summary>
-        public EventArgs()
-            : base()
-        {
-            Value = default;
-        }
-
+        /// <value>The old value.</value>
+        T OldValue { get; }
         /// <summary>
-        /// Constructor with a value.
+        /// Gets the new value.
         /// </summary>
-        /// <param name="val">A value.</param>
-        public EventArgs(T val)
-            : base()
-        {
-            Value = val;
-        }
-
-        #region implementation of IEventArgs<T>
+        /// <value>The new value.</value>
+        T NewValue { get; }
         /// <summary>
-        /// Gets a value.
+        /// Sets the new value.
         /// </summary>
-        /// <value>A value.</value>
-        public T Value { get; private set; }
-        #endregion
+        /// <param name="newValue">The new value.</param>
+        /// <exception cref="Exception">If the <see cref="NewValue"/> was already set.</exception>
+        void SetNewValue(T newValue);
+        /// <summary>
+        /// Gets a string representation of the changed value.
+        /// </summary>
+        /// <returns>A string representation of the changed value.</returns>
+        string ToString();
     }
 }
