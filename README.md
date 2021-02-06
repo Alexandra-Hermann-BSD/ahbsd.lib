@@ -11,4 +11,4 @@ The generic EventArgs have a generic Value that could be set with the constructo
 The generic ChangeEventArgs have two generic values. One for the old value and one for the new value.
 
 
-
+[![ahbsd.lib on fuget.org](https://www.fuget.org/packages/ahbsd.lib/badge.svg)](https://www.fuget.org/packages/ahbsd.lib)
