@@ -1,5 +1,6 @@
 ﻿using System;
 using ahbsd.lib;
+using ahbsd.lib.Exceptions;
 
 namespace Test
 {
@@ -16,6 +17,8 @@ namespace Test
         {
             ITestClass<string, object> t1 = new TestClass<string, object>("Hello", null);
             ITestClass<object, string> t2, t3;
+            IGenericException<ITestClass<object, string>> exT3;
+            double d;
             t2 = new TestClass<object, string>("Hello", "A100002");
             t3 = new TestClass<object, string>(0xAFFE, "0xAFFE");
             t1.OnChange += T1_OnChange;
@@ -32,6 +35,17 @@ namespace Test
             t2.Variable = 25.9f;
             t2.Variable = 25.9;
             t3.Variable = "0xAFFE";
+
+            try
+            {
+                d = (double)t3.Variable;
+                d *= (double)t2.Variable;
+            }
+            catch (Exception ex)
+            {
+                exT3 = new Exception<ITestClass<object, string>>(ex.Message, t3);
+
+            }
 
             Console.WriteLine("Press any key to exit.");
             Console.Read();
