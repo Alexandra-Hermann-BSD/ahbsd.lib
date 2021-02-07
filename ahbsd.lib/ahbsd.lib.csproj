@@ -36,5 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="ApiKey\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>
