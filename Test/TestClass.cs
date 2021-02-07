@@ -1,5 +1,6 @@
 ﻿using System;
 using ahbsd.lib;
+using ahbsd.lib.ApiKey;
 
 namespace Test
 {
