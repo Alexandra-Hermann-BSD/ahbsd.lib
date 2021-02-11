@@ -1,0 +1,132 @@
+\indexentry{ahbsd@{ahbsd}|hyperpage}{15}
+\indexentry{ahbsd.lib@{ahbsd.lib}|hyperpage}{15}
+\indexentry{ahbsd.lib@{ahbsd.lib}!ChangeEventHandler$<$ T $>$@{ChangeEventHandler$<$ T $>$}|hyperpage}{16}
+\indexentry{ChangeEventHandler$<$ T $>$@{ChangeEventHandler$<$ T $>$}!ahbsd.lib@{ahbsd.lib}|hyperpage}{16}
+\indexentry{ahbsd.lib.ApiKey@{ahbsd.lib.ApiKey}|hyperpage}{16}
+\indexentry{ahbsd.lib.ApiKey@{ahbsd.lib.ApiKey}!ApiKeyEventHandler$<$ T $>$@{ApiKeyEventHandler$<$ T $>$}|hyperpage}{16}
+\indexentry{ApiKeyEventHandler$<$ T $>$@{ApiKeyEventHandler$<$ T $>$}!ahbsd.lib.ApiKey@{ahbsd.lib.ApiKey}|hyperpage}{16}
+\indexentry{ahbsd.lib.Exceptions@{ahbsd.lib.Exceptions}|hyperpage}{17}
+\indexentry{ahbsd.lib.Tools@{ahbsd.lib.Tools}|hyperpage}{17}
+\indexentry{Test@{Test}|hyperpage}{17}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}|hyperpage}{19}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}!ApiKeyEventArgs@{ApiKeyEventArgs}|hyperpage}{20}
+\indexentry{ApiKeyEventArgs@{ApiKeyEventArgs}!ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}|hyperpage}{20}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}!ApiKeyEventArgs@{ApiKeyEventArgs}|hyperpage}{20}
+\indexentry{ApiKeyEventArgs@{ApiKeyEventArgs}!ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}|hyperpage}{20}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}!Index@{Index}|hyperpage}{20}
+\indexentry{Index@{Index}!ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}|hyperpage}{20}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{21}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!ApiKeyHolder@{ApiKeyHolder}|hyperpage}{22}
+\indexentry{ApiKeyHolder@{ApiKeyHolder}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{22}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!ApiKeyHolder@{ApiKeyHolder}|hyperpage}{22}
+\indexentry{ApiKeyHolder@{ApiKeyHolder}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{22}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!Equals@{Equals}|hyperpage}{22}
+\indexentry{Equals@{Equals}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{22}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!Equals@{Equals}|hyperpage}{23}
+\indexentry{Equals@{Equals}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{23}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!FindApiKey@{FindApiKey}|hyperpage}{23}
+\indexentry{FindApiKey@{FindApiKey}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{23}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!GetApiKey@{GetApiKey}|hyperpage}{23}
+\indexentry{GetApiKey@{GetApiKey}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{23}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!GetHashCode@{GetHashCode}|hyperpage}{25}
+\indexentry{GetHashCode@{GetHashCode}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{25}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{25}
+\indexentry{operator"!=@{operator"!=}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{25}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!operator==@{operator==}|hyperpage}{25}
+\indexentry{operator==@{operator==}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{25}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!knownApiKeys@{knownApiKeys}|hyperpage}{26}
+\indexentry{knownApiKeys@{knownApiKeys}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{26}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!ApiKey@{ApiKey}|hyperpage}{26}
+\indexentry{ApiKey@{ApiKey}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{26}
+\indexentry{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}!OnApiKeyAdded@{OnApiKeyAdded}|hyperpage}{26}
+\indexentry{OnApiKeyAdded@{OnApiKeyAdded}!ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$@{ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}|hyperpage}{26}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{27}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!ChangeEventArgs@{ChangeEventArgs}|hyperpage}{28}
+\indexentry{ChangeEventArgs@{ChangeEventArgs}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{28}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!ChangeEventArgs@{ChangeEventArgs}|hyperpage}{28}
+\indexentry{ChangeEventArgs@{ChangeEventArgs}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{28}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!ChangeEventArgs@{ChangeEventArgs}|hyperpage}{28}
+\indexentry{ChangeEventArgs@{ChangeEventArgs}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{28}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!Equals@{Equals}|hyperpage}{28}
+\indexentry{Equals@{Equals}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{28}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!Equals@{Equals}|hyperpage}{29}
+\indexentry{Equals@{Equals}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{29}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!GetHashCode@{GetHashCode}|hyperpage}{29}
+\indexentry{GetHashCode@{GetHashCode}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{29}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{29}
+\indexentry{operator"!=@{operator"!=}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{29}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!operator==@{operator==}|hyperpage}{30}
+\indexentry{operator==@{operator==}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{30}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!SetNewValue@{SetNewValue}|hyperpage}{30}
+\indexentry{SetNewValue@{SetNewValue}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{30}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!ToString@{ToString}|hyperpage}{30}
+\indexentry{ToString@{ToString}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{30}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!NewValue@{NewValue}|hyperpage}{31}
+\indexentry{NewValue@{NewValue}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{31}
+\indexentry{ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}!OldValue@{OldValue}|hyperpage}{31}
+\indexentry{OldValue@{OldValue}!ahbsd.lib.ChangeEventArgs$<$ T $>$@{ahbsd.lib.ChangeEventArgs$<$ T $>$}|hyperpage}{31}
+\indexentry{ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}|hyperpage}{31}
+\indexentry{ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}!EventArgs@{EventArgs}|hyperpage}{32}
+\indexentry{EventArgs@{EventArgs}!ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}|hyperpage}{32}
+\indexentry{ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}!EventArgs@{EventArgs}|hyperpage}{32}
+\indexentry{EventArgs@{EventArgs}!ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}|hyperpage}{32}
+\indexentry{ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}!Value@{Value}|hyperpage}{33}
+\indexentry{Value@{Value}!ahbsd.lib.EventArgs$<$ T $>$@{ahbsd.lib.EventArgs$<$ T $>$}|hyperpage}{33}
+\indexentry{ahbsd.lib.Exceptions.Exception$<$ T $>$@{ahbsd.lib.Exceptions.Exception$<$ T $>$}|hyperpage}{33}
+\indexentry{ahbsd.lib.Exceptions.Exception$<$ T $>$@{ahbsd.lib.Exceptions.Exception$<$ T $>$}!Exception@{Exception}|hyperpage}{34}
+\indexentry{Exception@{Exception}!ahbsd.lib.Exceptions.Exception$<$ T $>$@{ahbsd.lib.Exceptions.Exception$<$ T $>$}|hyperpage}{34}
+\indexentry{ahbsd.lib.Exceptions.Exception$<$ T $>$@{ahbsd.lib.Exceptions.Exception$<$ T $>$}!Value@{Value}|hyperpage}{35}
+\indexentry{Value@{Value}!ahbsd.lib.Exceptions.Exception$<$ T $>$@{ahbsd.lib.Exceptions.Exception$<$ T $>$}|hyperpage}{35}
+\indexentry{ahbsd.lib.ApiKey.IApiKeyEventArgs@{ahbsd.lib.ApiKey.IApiKeyEventArgs}|hyperpage}{35}
+\indexentry{ahbsd.lib.ApiKey.IApiKeyEventArgs@{ahbsd.lib.ApiKey.IApiKeyEventArgs}!Index@{Index}|hyperpage}{36}
+\indexentry{Index@{Index}!ahbsd.lib.ApiKey.IApiKeyEventArgs@{ahbsd.lib.ApiKey.IApiKeyEventArgs}|hyperpage}{36}
+\indexentry{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}|hyperpage}{36}
+\indexentry{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!SetNewValue@{SetNewValue}|hyperpage}{37}
+\indexentry{SetNewValue@{SetNewValue}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}|hyperpage}{37}
+\indexentry{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!ToString@{ToString}|hyperpage}{37}
+\indexentry{ToString@{ToString}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}|hyperpage}{37}
+\indexentry{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!NewValue@{NewValue}|hyperpage}{37}
+\indexentry{NewValue@{NewValue}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}|hyperpage}{37}
+\indexentry{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!OldValue@{OldValue}|hyperpage}{38}
+\indexentry{OldValue@{OldValue}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}|hyperpage}{38}
+\indexentry{ahbsd.lib.IEventArgs$<$ T $>$@{ahbsd.lib.IEventArgs$<$ T $>$}|hyperpage}{38}
+\indexentry{ahbsd.lib.IEventArgs$<$ T $>$@{ahbsd.lib.IEventArgs$<$ T $>$}!Value@{Value}|hyperpage}{39}
+\indexentry{Value@{Value}!ahbsd.lib.IEventArgs$<$ T $>$@{ahbsd.lib.IEventArgs$<$ T $>$}|hyperpage}{39}
+\indexentry{ahbsd.lib.Exceptions.IGenericException$<$ T $>$@{ahbsd.lib.Exceptions.IGenericException$<$ T $>$}|hyperpage}{39}
+\indexentry{ahbsd.lib.Exceptions.IGenericException$<$ T $>$@{ahbsd.lib.Exceptions.IGenericException$<$ T $>$}!Value@{Value}|hyperpage}{40}
+\indexentry{Value@{Value}!ahbsd.lib.Exceptions.IGenericException$<$ T $>$@{ahbsd.lib.Exceptions.IGenericException$<$ T $>$}|hyperpage}{40}
+\indexentry{Test.ITestClass$<$ T, A $>$@{Test.ITestClass$<$ T, A $>$}|hyperpage}{40}
+\indexentry{Test.ITestClass$<$ T, A $>$@{Test.ITestClass$<$ T, A $>$}!Variable@{Variable}|hyperpage}{41}
+\indexentry{Variable@{Variable}!Test.ITestClass$<$ T, A $>$@{Test.ITestClass$<$ T, A $>$}|hyperpage}{41}
+\indexentry{Test.ITestClass$<$ T, A $>$@{Test.ITestClass$<$ T, A $>$}!OnChange@{OnChange}|hyperpage}{41}
+\indexentry{OnChange@{OnChange}!Test.ITestClass$<$ T, A $>$@{Test.ITestClass$<$ T, A $>$}|hyperpage}{41}
+\indexentry{Test.Program@{Test.Program}|hyperpage}{41}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{41}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}!TestClass@{TestClass}|hyperpage}{42}
+\indexentry{TestClass@{TestClass}!Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{42}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}!TestClass@{TestClass}|hyperpage}{42}
+\indexentry{TestClass@{TestClass}!Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{42}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}!TestClass@{TestClass}|hyperpage}{43}
+\indexentry{TestClass@{TestClass}!Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{43}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}!TestClass@{TestClass}|hyperpage}{43}
+\indexentry{TestClass@{TestClass}!Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{43}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}!Variable@{Variable}|hyperpage}{43}
+\indexentry{Variable@{Variable}!Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{43}
+\indexentry{Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}!OnChange@{OnChange}|hyperpage}{44}
+\indexentry{OnChange@{OnChange}!Test.TestClass$<$ T, A $>$@{Test.TestClass$<$ T, A $>$}|hyperpage}{44}
+\indexentry{ahbsd.lib/ApiKey/ApiKeyEventArgs.cs@{ahbsd.lib/ApiKey/ApiKeyEventArgs.cs}|hyperpage}{45}
+\indexentry{ahbsd.lib/ApiKey/ApiKeyEventHandler.cs@{ahbsd.lib/ApiKey/ApiKeyEventHandler.cs}|hyperpage}{45}
+\indexentry{ahbsd.lib/ApiKey/ApiKeyHolder.cs@{ahbsd.lib/ApiKey/ApiKeyHolder.cs}|hyperpage}{45}
+\indexentry{ahbsd.lib/ApiKey/IApiKeyEventArgs.cs@{ahbsd.lib/ApiKey/IApiKeyEventArgs.cs}|hyperpage}{46}
+\indexentry{ahbsd.lib/ChangeEventArgs.cs@{ahbsd.lib/ChangeEventArgs.cs}|hyperpage}{46}
+\indexentry{ahbsd.lib/EventArgs.cs@{ahbsd.lib/EventArgs.cs}|hyperpage}{46}
+\indexentry{ahbsd.lib/Exceptions/Exception.cs@{ahbsd.lib/Exceptions/Exception.cs}|hyperpage}{47}
+\indexentry{ahbsd.lib/Exceptions/IGenericException.cs@{ahbsd.lib/Exceptions/IGenericException.cs}|hyperpage}{47}
+\indexentry{ahbsd.lib/IChangeEventArgs.cs@{ahbsd.lib/IChangeEventArgs.cs}|hyperpage}{47}
+\indexentry{ahbsd.lib/IEventArgs.cs@{ahbsd.lib/IEventArgs.cs}|hyperpage}{48}
+\indexentry{ahbsd.lib/Tools/ConsolePrintTable.cs@{ahbsd.lib/Tools/ConsolePrintTable.cs}|hyperpage}{48}
+\indexentry{LICENSE.md@{LICENSE.md}|hyperpage}{48}
+\indexentry{README.md@{README.md}|hyperpage}{48}
+\indexentry{Test/ITestClass.cs@{Test/ITestClass.cs}|hyperpage}{48}
+\indexentry{Test/Program.cs@{Test/Program.cs}|hyperpage}{49}
+\indexentry{Test/TestClass.cs@{Test/TestClass.cs}|hyperpage}{49}
