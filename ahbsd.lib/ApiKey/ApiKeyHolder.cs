@@ -38,18 +38,18 @@ namespace ahbsd.lib.ApiKey
         /// A list of all known API-Keys.
         /// </summary>
         /// <remarks>Of current instances. Is eg needed for construction without api-key etc.</remarks>
-        protected static List<T> knownApiKeys;
+        protected internal static List<T> KnownApiKeys;
         /// <summary>
-        /// Happens if a new API-Key was added to the static list <see cref="knownApiKeys"/>.
+        /// Happens if a new API-Key was added to the static list <see cref="KnownApiKeys"/>.
         /// </summary>
-        protected static event ApiKeyEventHandler<T> OnApiKeyAdded;
+        protected internal static event ApiKeyEventHandler<T> OnApiKeyAdded;
 
         /// <summary>
         /// Static constructor.
         /// </summary>
         static ApiKeyHolder()
         {
-            knownApiKeys = new List<T>();
+            KnownApiKeys = new List<T>();
         }
 
         /// <summary>
@@ -66,13 +66,13 @@ namespace ahbsd.lib.ApiKey
         /// Constructor without parameters.
         /// </summary>
         /// <remarks>If before an object was created, the last API-Key will be used. Otherwise the <c>default of T will be used.</c></remarks>
-        /// <exception cref="ArgumentNullException">If <see cref="knownApiKeys"/> is <c>null</c> or something similar.</exception>
-        /// <exception cref="InvalidOperationException">If anything regarding <see cref="knownApiKeys"/> is an invalid operation.</exception>
+        /// <exception cref="ArgumentNullException">If <see cref="KnownApiKeys"/> is <c>null</c> or something similar.</exception>
+        /// <exception cref="InvalidOperationException">If anything regarding <see cref="KnownApiKeys"/> is an invalid operation.</exception>
         public ApiKeyHolder()
         {
-            if (knownApiKeys.Count > 0)
+            if (KnownApiKeys.Count > 0)
             {
-                _apiKey = knownApiKeys.Last();
+                _apiKey = KnownApiKeys.Last();
             }
             else
             {
@@ -91,10 +91,10 @@ namespace ahbsd.lib.ApiKey
             ApiKeyEventArgs<T> e;
             int idx;
 
-            if (!knownApiKeys.Contains(apiKey))
+            if (!KnownApiKeys.Contains(apiKey))
             {
-                knownApiKeys.Add(apiKey);
-                idx = knownApiKeys.IndexOf(apiKey);
+                KnownApiKeys.Add(apiKey);
+                idx = KnownApiKeys.IndexOf(apiKey);
                 e = new ApiKeyEventArgs<T>(apiKey, idx);
                 OnApiKeyAdded?.Invoke(sender, e);
             }
@@ -109,9 +109,9 @@ namespace ahbsd.lib.ApiKey
         {
             int? result = null;
 
-            if (knownApiKeys.Contains(apiKey))
+            if (KnownApiKeys.Contains(apiKey))
             {
-                result = knownApiKeys.IndexOf(apiKey);
+                result = KnownApiKeys.IndexOf(apiKey);
             }
 
             return result;
@@ -124,7 +124,7 @@ namespace ahbsd.lib.ApiKey
         /// <returns>An API-Key.</returns>
         public static T GetApiKey(int idx)
         {
-            return knownApiKeys[idx];
+            return KnownApiKeys[idx];
         }
 
         /// <summary>
