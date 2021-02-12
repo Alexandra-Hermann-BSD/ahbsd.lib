@@ -28,9 +28,7 @@ namespace ahbsd.lib.ApiKey
         /// <param name="idx">The index of the API-Key.</param>
         public ApiKeyEventArgs(T apiKey, int idx)
             : base(apiKey)
-        {
-            Index = idx;
-        }
+        {  }
 
         /// <summary>
         /// Constructor with the API-Key.
@@ -38,17 +36,14 @@ namespace ahbsd.lib.ApiKey
         /// <param name="apiKey">The API-Key.</param>
         public ApiKeyEventArgs(T apiKey)
             : base(apiKey)
-        {
-            Index = null;
-        }
+        { }
 
         #region implementation of IApiKeyEventArgs
         /// <summary>
-        /// Gets the index of the API-Key. 
+        /// Gets the index of the API-Key from the <see cref="ApiKeyHolder{T}"/>. 
         /// </summary>
         /// <value>The index.</value>
-        public int? Index { get; private set; }
+        public int? Index => ApiKeyHolder<T>.FindApiKey(Value);
         #endregion
-
     }
 }
