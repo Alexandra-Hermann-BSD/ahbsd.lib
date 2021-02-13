@@ -2,24 +2,27 @@ var annotated_dup =
 [
     [ "ahbsd", "d8/d21/namespaceahbsd.html", [
       [ "lib", "d3/dcb/namespaceahbsd_1_1lib.html", [
-        [ "ApiKey", "d0/d0a/namespaceahbsd_1_1lib_1_1_api_key.html", [
-          [ "ApiKeyEventArgs", "db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html", "db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args" ],
-          [ "ApiKeyHolder", "d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html", "d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder" ],
-          [ "IApiKeyEventArgs", "d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html", "d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args" ]
+        [ "ApiKey", "d4/d50/namespaceahbsd_1_1lib_1_1ApiKey.html", [
+          [ "ApiKeyEventArgs", "d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html", "d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs" ],
+          [ "ApiKeyHolder", "df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html", "df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder" ],
+          [ "IApiKeyEventArgs", "db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html", "db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs" ]
         ] ],
-        [ "Exceptions", "de/d5b/namespaceahbsd_1_1lib_1_1_exceptions.html", [
-          [ "Exception", "d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html", "d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception" ],
-          [ "IGenericException", "dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html", "dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception" ]
+        [ "Exceptions", "d6/d61/namespaceahbsd_1_1lib_1_1Exceptions.html", [
+          [ "Exception", "dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html", "dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception" ],
+          [ "IGenericException", "de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html", "de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException" ]
         ] ],
-        [ "ChangeEventArgs", "d6/d95/classahbsd_1_1lib_1_1_change_event_args.html", "d6/d95/classahbsd_1_1lib_1_1_change_event_args" ],
-        [ "EventArgs", "d5/dd4/classahbsd_1_1lib_1_1_event_args.html", "d5/dd4/classahbsd_1_1lib_1_1_event_args" ],
-        [ "IChangeEventArgs", "d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html", "d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args" ],
-        [ "IEventArgs", "d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html", "d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args" ]
+        [ "Tools", "da/ddf/namespaceahbsd_1_1lib_1_1Tools.html", [
+          [ "ConsolePrintTable", "dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html", "dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable" ]
+        ] ],
+        [ "ChangeEventArgs", "d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html", "d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs" ],
+        [ "EventArgs", "d0/d7d/classahbsd_1_1lib_1_1EventArgs.html", "d0/d7d/classahbsd_1_1lib_1_1EventArgs" ],
+        [ "IChangeEventArgs", "d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html", "d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs" ],
+        [ "IEventArgs", "d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html", "d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs" ]
       ] ]
     ] ],
-    [ "Test", "dc/d96/namespace_test.html", [
-      [ "ITestClass", "dd/dbe/interface_test_1_1_i_test_class.html", "dd/dbe/interface_test_1_1_i_test_class" ],
-      [ "Program", "df/deb/class_test_1_1_program.html", null ],
-      [ "TestClass", "d5/d79/class_test_1_1_test_class.html", "d5/d79/class_test_1_1_test_class" ]
+    [ "Test", "dd/db3/namespaceTest.html", [
+      [ "ITestClass", "d8/df6/interfaceTest_1_1ITestClass.html", "d8/df6/interfaceTest_1_1ITestClass" ],
+      [ "Program", "db/d0e/classTest_1_1Program.html", null ],
+      [ "TestClass", "d4/db8/classTest_1_1TestClass.html", "d4/db8/classTest_1_1TestClass" ]
     ] ]
 ];

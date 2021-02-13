@@ -1,0 +1,117 @@
+\hypertarget{interfaceahbsd_1_1lib_1_1IChangeEventArgs}{}\doxysection{ahbsd.\+lib.\+IChange\+Event\+Args$<$ T $>$ Interface Template Reference}
+\label{interfaceahbsd_1_1lib_1_1IChangeEventArgs}\index{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}}
+
+
+Interface for generic \mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}} for changing values.  
+
+
+Inheritance diagram for ahbsd.\+lib.\+IChange\+Event\+Args$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a031963ccfffa6ee5e29f7c7a271513df}{Set\+New\+Value}} (T new\+Value)
+\begin{DoxyCompactList}\small\item\em Sets the new value. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs_aaf22405239d6968f252e0a23025f47f8}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Gets a string representation of the changed value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a426e1d0a4ab70c216fd2ff89f5abee75}{Old\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the old value. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a7bddbfe831dc3867628c3cb6f03b03ad}{New\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the new value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for generic \mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}} for changing values. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the changing Values.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a031963ccfffa6ee5e29f7c7a271513df}\label{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a031963ccfffa6ee5e29f7c7a271513df}} 
+\index{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!SetNewValue@{SetNewValue}}
+\index{SetNewValue@{SetNewValue}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SetNewValue()}{SetNewValue()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs}{ahbsd.\+lib.\+IChange\+Event\+Args}}$<$ T $>$.Set\+New\+Value (\begin{DoxyParamCaption}\item[{T}]{new\+Value }\end{DoxyParamCaption})}
+
+
+
+Sets the new value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & The new value.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If the \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a7bddbfe831dc3867628c3cb6f03b03ad}{New\+Value}} was already set.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classahbsd_1_1lib_1_1ChangeEventArgs_a4cae6e90b61a945d73f98a2c05584aa1}{ahbsd.\+lib.\+Change\+Event\+Args$<$ T $>$}}.
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1IChangeEventArgs_aaf22405239d6968f252e0a23025f47f8}\label{interfaceahbsd_1_1lib_1_1IChangeEventArgs_aaf22405239d6968f252e0a23025f47f8}} 
+\index{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!ToString@{ToString}}
+\index{ToString@{ToString}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily string \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs}{ahbsd.\+lib.\+IChange\+Event\+Args}}$<$ T $>$.To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a string representation of the changed value. 
+
+\begin{DoxyReturn}{Returns}
+A string representation of the changed value.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classahbsd_1_1lib_1_1ChangeEventArgs_a4f0b09e4dc6d03fdf89a3ca2ecd7b924}{ahbsd.\+lib.\+Change\+Event\+Args$<$ T $>$}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a7bddbfe831dc3867628c3cb6f03b03ad}\label{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a7bddbfe831dc3867628c3cb6f03b03ad}} 
+\index{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!NewValue@{NewValue}}
+\index{NewValue@{NewValue}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{NewValue}{NewValue}}
+{\footnotesize\ttfamily T \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs}{ahbsd.\+lib.\+IChange\+Event\+Args}}$<$ T $>$.New\+Value\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the new value. 
+
+The new value.
+
+Referenced by \mbox{\hyperlink{l00139}{ahbsd.\+lib.\+Change\+Event\+Args$<$ T $>$.\+Equals()}}.
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a426e1d0a4ab70c216fd2ff89f5abee75}\label{interfaceahbsd_1_1lib_1_1IChangeEventArgs_a426e1d0a4ab70c216fd2ff89f5abee75}} 
+\index{ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}!OldValue@{OldValue}}
+\index{OldValue@{OldValue}!ahbsd.lib.IChangeEventArgs$<$ T $>$@{ahbsd.lib.IChangeEventArgs$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{OldValue}{OldValue}}
+{\footnotesize\ttfamily T \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1IChangeEventArgs}{ahbsd.\+lib.\+IChange\+Event\+Args}}$<$ T $>$.Old\+Value\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the old value. 
+
+The old value.
+
+Referenced by \mbox{\hyperlink{l00139}{ahbsd.\+lib.\+Change\+Event\+Args$<$ T $>$.\+Equals()}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ahbsd.\+lib/IChange\+Event\+Args.\+cs\end{DoxyCompactItemize}

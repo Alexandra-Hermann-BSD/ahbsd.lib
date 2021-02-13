@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['test_49',['Test',['../dc/d96/namespace_test.html',1,'']]],
-  ['testclass_50',['TestClass',['../d5/d79/class_test_1_1_test_class.html',1,'Test.TestClass&lt; T, A &gt;'],['../d5/d79/class_test_1_1_test_class.html#a85f04f74ac29521176e0c1ef76ec5392',1,'Test.TestClass.TestClass()'],['../d5/d79/class_test_1_1_test_class.html#a7ce48a10989a8899d1908a5cd8f783e5',1,'Test.TestClass.TestClass(T v)'],['../d5/d79/class_test_1_1_test_class.html#addf123b8f4e768c4cc151b6956a266f1',1,'Test.TestClass.TestClass(A apiKey)'],['../d5/d79/class_test_1_1_test_class.html#a90722da4939199d3b9cf926df3c94570',1,'Test.TestClass.TestClass(T v, A apiKey)']]],
-  ['testclass_2ecs_51',['TestClass.cs',['../da/dbe/_test_class_8cs.html',1,'']]],
-  ['tostring_52',['ToString',['../d6/d95/classahbsd_1_1lib_1_1_change_event_args.html#a4f0b09e4dc6d03fdf89a3ca2ecd7b924',1,'ahbsd.lib.ChangeEventArgs.ToString()'],['../d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html#aaf22405239d6968f252e0a23025f47f8',1,'ahbsd.lib.IChangeEventArgs.ToString()']]]
+  ['value_39',['Value',['../d0/d7d/classahbsd_1_1lib_1_1EventArgs.html#a23271ab9d57f57af2108604c4b0cc804',1,'ahbsd.lib.EventArgs.Value()'],['../dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html#ae8b9de03b0665f0deff0039c281fea73',1,'ahbsd.lib.Exceptions.Exception.Value()'],['../de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html#aea3d30183c17a54c6df1bec7de304674',1,'ahbsd.lib.Exceptions.IGenericException.Value()'],['../d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html#acf38be5f6fb7cd8d2104351e58a002d1',1,'ahbsd.lib.IEventArgs.Value()']]],
+  ['variable_40',['Variable',['../d8/df6/interfaceTest_1_1ITestClass.html#a36d25b47a75c00513a29389277cd0471',1,'Test.ITestClass.Variable()'],['../d4/db8/classTest_1_1TestClass.html#a8b5aa727933d519e13734ad83c714271',1,'Test.TestClass.Variable()']]]
 ];

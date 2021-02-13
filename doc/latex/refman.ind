@@ -1,0 +1,170 @@
+\begin{theindex}
+
+  \item {ahbsd}, \hyperpage{13}
+  \item {ahbsd.lib}, \hyperpage{13}
+    \subitem {ChangeEventHandler$<$ T $>$}, \hyperpage{13}
+  \item {ahbsd.lib.ApiKey}, \hyperpage{14}
+    \subitem {ApiKeyEventHandler$<$ T $>$}, \hyperpage{14}
+  \item {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, \hyperpage{17}
+    \subitem {ApiKeyEventArgs}, \hyperpage{18}
+    \subitem {Index}, \hyperpage{18}
+  \item {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{19}
+    \subitem {ApiKey}, \hyperpage{24}
+    \subitem {ApiKeyHolder}, \hyperpage{21}
+    \subitem {Equals}, \hyperpage{21, 22}
+    \subitem {FindApiKey}, \hyperpage{22}
+    \subitem {GetApiKey}, \hyperpage{22}
+    \subitem {GetHashCode}, \hyperpage{23}
+    \subitem {KnownApiKeys}, \hyperpage{24}
+    \subitem {OnApiKeyAdded}, \hyperpage{25}
+    \subitem {operator!=}, \hyperpage{23}
+    \subitem {operator==}, \hyperpage{24}
+  \item {ahbsd.lib.ApiKey.IApiKeyEventArgs}, \hyperpage{35}
+    \subitem {Index}, \hyperpage{36}
+  \item {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{25}
+    \subitem {ChangeEventArgs}, \hyperpage{26, 27}
+    \subitem {Equals}, \hyperpage{27}
+    \subitem {GetHashCode}, \hyperpage{28}
+    \subitem {NewValue}, \hyperpage{30}
+    \subitem {OldValue}, \hyperpage{30}
+    \subitem {operator!=}, \hyperpage{28}
+    \subitem {operator==}, \hyperpage{29}
+    \subitem {SetNewValue}, \hyperpage{29}
+    \subitem {ToString}, \hyperpage{29}
+  \item {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{31}
+    \subitem {EventArgs}, \hyperpage{32}
+    \subitem {Value}, \hyperpage{32}
+  \item {ahbsd.lib.Exceptions}, \hyperpage{15}
+  \item {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{33}
+    \subitem {Exception}, \hyperpage{34}
+    \subitem {Value}, \hyperpage{35}
+  \item {ahbsd.lib.Exceptions.IGenericException$<$ T $>$}, 
+		\hyperpage{39}
+    \subitem {Value}, \hyperpage{40}
+  \item {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{36}
+    \subitem {NewValue}, \hyperpage{37}
+    \subitem {OldValue}, \hyperpage{38}
+    \subitem {SetNewValue}, \hyperpage{37}
+    \subitem {ToString}, \hyperpage{37}
+  \item {ahbsd.lib.IEventArgs$<$ T $>$}, \hyperpage{38}
+    \subitem {Value}, \hyperpage{39}
+  \item {ahbsd.lib.Tools}, \hyperpage{15}
+  \item {ahbsd.lib.Tools.ConsolePrintTable}, \hyperpage{30}
+    \subitem {Print}, \hyperpage{31}
+  \item {ApiKey}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
+  \item {ApiKeyEventArgs}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, 
+		\hyperpage{18}
+  \item {ApiKeyEventHandler$<$ T $>$}
+    \subitem {ahbsd.lib.ApiKey}, \hyperpage{14}
+  \item {ApiKeyHolder}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{21}
+
+  \indexspace
+
+  \item {ChangeEventArgs}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{26, 27}
+  \item {ChangeEventHandler$<$ T $>$}
+    \subitem {ahbsd.lib}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Equals}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, 
+		\hyperpage{21, 22}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{27}
+  \item {EventArgs}
+    \subitem {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{32}
+  \item {Exception}
+    \subitem {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{34}
+
+  \indexspace
+
+  \item {FindApiKey}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{22}
+
+  \indexspace
+
+  \item {GetApiKey}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{22}
+  \item {GetHashCode}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{23}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{28}
+
+  \indexspace
+
+  \item {Index}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, 
+		\hyperpage{18}
+    \subitem {ahbsd.lib.ApiKey.IApiKeyEventArgs}, \hyperpage{36}
+
+  \indexspace
+
+  \item {KnownApiKeys}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
+
+  \indexspace
+
+  \item {NewValue}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{30}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{37}
+
+  \indexspace
+
+  \item {OldValue}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{30}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{38}
+  \item {OnApiKeyAdded}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{25}
+  \item {OnChange}
+    \subitem {Test.ITestClass$<$ T, A $>$}, \hyperpage{41}
+    \subitem {Test.TestClass$<$ T, A $>$}, \hyperpage{44}
+  \item {operator!=}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{23}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{28}
+  \item {operator==}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
+
+  \indexspace
+
+  \item {Print}
+    \subitem {ahbsd.lib.Tools.ConsolePrintTable}, \hyperpage{31}
+
+  \indexspace
+
+  \item {SetNewValue}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{37}
+
+  \indexspace
+
+  \item {Test}, \hyperpage{15}
+  \item {Test.ITestClass$<$ T, A $>$}, \hyperpage{40}
+    \subitem {OnChange}, \hyperpage{41}
+    \subitem {Variable}, \hyperpage{41}
+  \item {Test.Program}, \hyperpage{41}
+  \item {Test.TestClass$<$ T, A $>$}, \hyperpage{42}
+    \subitem {OnChange}, \hyperpage{44}
+    \subitem {TestClass}, \hyperpage{43}
+    \subitem {Variable}, \hyperpage{44}
+  \item {TestClass}
+    \subitem {Test.TestClass$<$ T, A $>$}, \hyperpage{43}
+  \item {ToString}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{37}
+
+  \indexspace
+
+  \item {Value}
+    \subitem {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{32}
+    \subitem {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{35}
+    \subitem {ahbsd.lib.Exceptions.IGenericException$<$ T $>$}, 
+		\hyperpage{40}
+    \subitem {ahbsd.lib.IEventArgs$<$ T $>$}, \hyperpage{39}
+  \item {Variable}
+    \subitem {Test.ITestClass$<$ T, A $>$}, \hyperpage{41}
+    \subitem {Test.TestClass$<$ T, A $>$}, \hyperpage{44}
+
+\end{theindex}

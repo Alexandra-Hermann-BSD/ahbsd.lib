@@ -9,129 +9,115 @@
 \contentsline {section}{\numberline {4.1}Class Hierarchy}{9}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Class Index}{11}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Class List}{11}{section.5.1}%
-\contentsline {chapter}{\numberline {6}File Index}{13}{chapter.6}%
-\contentsline {section}{\numberline {6.1}File List}{13}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Namespace Documentation}{15}{chapter.7}%
-\contentsline {section}{\numberline {7.1}ahbsd Namespace Reference}{15}{section.7.1}%
-\contentsline {section}{\numberline {7.2}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib Namespace Reference}{15}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Function Documentation}{16}{subsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.1.1}ChangeEventHandler$<$ T $>$()}{16}{subsubsection.7.2.1.1}%
-\contentsline {section}{\numberline {7.3}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key Namespace Reference}{16}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Function Documentation}{16}{subsection.7.3.1}%
-\contentsline {subsubsection}{\numberline {7.3.1.1}ApiKeyEventHandler$<$ T $>$()}{16}{subsubsection.7.3.1.1}%
-\contentsline {section}{\numberline {7.4}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions Namespace Reference}{17}{section.7.4}%
-\contentsline {section}{\numberline {7.5}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tools Namespace Reference}{17}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Test Namespace Reference}{17}{section.7.6}%
-\contentsline {chapter}{\numberline {8}Class Documentation}{19}{chapter.8}%
-\contentsline {section}{\numberline {8.1}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Class Template Reference}{19}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{19}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Constructor \& Destructor Documentation}{20}{subsection.8.1.2}%
-\contentsline {subsubsection}{\numberline {8.1.2.1}ApiKeyEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{20}{subsubsection.8.1.2.1}%
-\contentsline {subsubsection}{\numberline {8.1.2.2}ApiKeyEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{20}{subsubsection.8.1.2.2}%
-\contentsline {subsection}{\numberline {8.1.3}Property Documentation}{20}{subsection.8.1.3}%
-\contentsline {subsubsection}{\numberline {8.1.3.1}Index}{20}{subsubsection.8.1.3.1}%
-\contentsline {section}{\numberline {8.2}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Holder$<$ T $>$ Class Template Reference}{21}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{21}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Constructor \& Destructor Documentation}{22}{subsection.8.2.2}%
-\contentsline {subsubsection}{\numberline {8.2.2.1}ApiKeyHolder()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{22}{subsubsection.8.2.2.1}%
-\contentsline {subsubsection}{\numberline {8.2.2.2}ApiKeyHolder()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.8.2.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Member Function Documentation}{22}{subsection.8.2.3}%
-\contentsline {subsubsection}{\numberline {8.2.3.1}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{22}{subsubsection.8.2.3.1}%
-\contentsline {subsubsection}{\numberline {8.2.3.2}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{23}{subsubsection.8.2.3.2}%
-\contentsline {subsubsection}{\numberline {8.2.3.3}FindApiKey()}{23}{subsubsection.8.2.3.3}%
-\contentsline {subsubsection}{\numberline {8.2.3.4}GetApiKey()}{23}{subsubsection.8.2.3.4}%
-\contentsline {subsubsection}{\numberline {8.2.3.5}GetHashCode()}{25}{subsubsection.8.2.3.5}%
-\contentsline {subsubsection}{\numberline {8.2.3.6}operator"!=()}{25}{subsubsection.8.2.3.6}%
-\contentsline {subsubsection}{\numberline {8.2.3.7}operator==()}{25}{subsubsection.8.2.3.7}%
-\contentsline {subsection}{\numberline {8.2.4}Member Data Documentation}{26}{subsection.8.2.4}%
-\contentsline {subsubsection}{\numberline {8.2.4.1}knownApiKeys}{26}{subsubsection.8.2.4.1}%
-\contentsline {subsection}{\numberline {8.2.5}Property Documentation}{26}{subsection.8.2.5}%
-\contentsline {subsubsection}{\numberline {8.2.5.1}ApiKey}{26}{subsubsection.8.2.5.1}%
-\contentsline {subsection}{\numberline {8.2.6}Event Documentation}{26}{subsection.8.2.6}%
-\contentsline {subsubsection}{\numberline {8.2.6.1}OnApiKeyAdded}{26}{subsubsection.8.2.6.1}%
-\contentsline {section}{\numberline {8.3}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Change\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Class Template Reference}{27}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{27}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Constructor \& Destructor Documentation}{28}{subsection.8.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.2.1}ChangeEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{28}{subsubsection.8.3.2.1}%
-\contentsline {subsubsection}{\numberline {8.3.2.2}ChangeEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{28}{subsubsection.8.3.2.2}%
-\contentsline {subsubsection}{\numberline {8.3.2.3}ChangeEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{28}{subsubsection.8.3.2.3}%
-\contentsline {subsection}{\numberline {8.3.3}Member Function Documentation}{28}{subsection.8.3.3}%
-\contentsline {subsubsection}{\numberline {8.3.3.1}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{29}{subsubsection.8.3.3.1}%
-\contentsline {subsubsection}{\numberline {8.3.3.2}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{29}{subsubsection.8.3.3.2}%
-\contentsline {subsubsection}{\numberline {8.3.3.3}GetHashCode()}{29}{subsubsection.8.3.3.3}%
-\contentsline {subsubsection}{\numberline {8.3.3.4}operator"!=()}{29}{subsubsection.8.3.3.4}%
-\contentsline {subsubsection}{\numberline {8.3.3.5}operator==()}{30}{subsubsection.8.3.3.5}%
-\contentsline {subsubsection}{\numberline {8.3.3.6}SetNewValue()}{30}{subsubsection.8.3.3.6}%
-\contentsline {subsubsection}{\numberline {8.3.3.7}ToString()}{31}{subsubsection.8.3.3.7}%
-\contentsline {subsection}{\numberline {8.3.4}Property Documentation}{31}{subsection.8.3.4}%
-\contentsline {subsubsection}{\numberline {8.3.4.1}NewValue}{31}{subsubsection.8.3.4.1}%
-\contentsline {subsubsection}{\numberline {8.3.4.2}OldValue}{31}{subsubsection.8.3.4.2}%
-\contentsline {section}{\numberline {8.4}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Class Template Reference}{31}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{32}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Constructor \& Destructor Documentation}{32}{subsection.8.4.2}%
-\contentsline {subsubsection}{\numberline {8.4.2.1}EventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{32}{subsubsection.8.4.2.1}%
-\contentsline {subsubsection}{\numberline {8.4.2.2}EventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{32}{subsubsection.8.4.2.2}%
-\contentsline {subsection}{\numberline {8.4.3}Property Documentation}{33}{subsection.8.4.3}%
-\contentsline {subsubsection}{\numberline {8.4.3.1}Value}{33}{subsubsection.8.4.3.1}%
-\contentsline {section}{\numberline {8.5}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception$<$ T $>$ Class Template Reference}{33}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{33}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Constructor \& Destructor Documentation}{34}{subsection.8.5.2}%
-\contentsline {subsubsection}{\numberline {8.5.2.1}Exception()}{34}{subsubsection.8.5.2.1}%
-\contentsline {subsection}{\numberline {8.5.3}Property Documentation}{35}{subsection.8.5.3}%
-\contentsline {subsubsection}{\numberline {8.5.3.1}Value}{35}{subsubsection.8.5.3.1}%
-\contentsline {section}{\numberline {8.6}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IApi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args Interface Reference}{35}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{35}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Property Documentation}{36}{subsection.8.6.2}%
-\contentsline {subsubsection}{\numberline {8.6.2.1}Index}{36}{subsubsection.8.6.2.1}%
-\contentsline {section}{\numberline {8.7}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IChange\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Interface Template Reference}{36}{section.8.7}%
-\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{36}{subsection.8.7.1}%
-\contentsline {subsection}{\numberline {8.7.2}Member Function Documentation}{37}{subsection.8.7.2}%
-\contentsline {subsubsection}{\numberline {8.7.2.1}SetNewValue()}{37}{subsubsection.8.7.2.1}%
-\contentsline {subsubsection}{\numberline {8.7.2.2}ToString()}{37}{subsubsection.8.7.2.2}%
-\contentsline {subsection}{\numberline {8.7.3}Property Documentation}{37}{subsection.8.7.3}%
-\contentsline {subsubsection}{\numberline {8.7.3.1}NewValue}{38}{subsubsection.8.7.3.1}%
-\contentsline {subsubsection}{\numberline {8.7.3.2}OldValue}{38}{subsubsection.8.7.3.2}%
-\contentsline {section}{\numberline {8.8}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IEvent\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Interface Template Reference}{38}{section.8.8}%
-\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{38}{subsection.8.8.1}%
-\contentsline {subsection}{\numberline {8.8.2}Property Documentation}{39}{subsection.8.8.2}%
-\contentsline {subsubsection}{\numberline {8.8.2.1}Value}{39}{subsubsection.8.8.2.1}%
-\contentsline {section}{\numberline {8.9}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IGeneric\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception$<$ T $>$ Interface Template Reference}{39}{section.8.9}%
-\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{39}{subsection.8.9.1}%
-\contentsline {subsection}{\numberline {8.9.2}Property Documentation}{40}{subsection.8.9.2}%
-\contentsline {subsubsection}{\numberline {8.9.2.1}Value}{40}{subsubsection.8.9.2.1}%
-\contentsline {section}{\numberline {8.10}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ITest\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class$<$ T, A $>$ Interface Template Reference}{40}{section.8.10}%
-\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{40}{subsection.8.10.1}%
-\contentsline {subsection}{\numberline {8.10.2}Property Documentation}{41}{subsection.8.10.2}%
-\contentsline {subsubsection}{\numberline {8.10.2.1}Variable}{41}{subsubsection.8.10.2.1}%
-\contentsline {subsection}{\numberline {8.10.3}Event Documentation}{41}{subsection.8.10.3}%
-\contentsline {subsubsection}{\numberline {8.10.3.1}OnChange}{41}{subsubsection.8.10.3.1}%
-\contentsline {section}{\numberline {8.11}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program Class Reference}{41}{section.8.11}%
-\contentsline {subsection}{\numberline {8.11.1}Detailed Description}{41}{subsection.8.11.1}%
-\contentsline {section}{\numberline {8.12}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class$<$ T, A $>$ Class Template Reference}{41}{section.8.12}%
-\contentsline {subsection}{\numberline {8.12.1}Detailed Description}{42}{subsection.8.12.1}%
-\contentsline {subsection}{\numberline {8.12.2}Constructor \& Destructor Documentation}{42}{subsection.8.12.2}%
-\contentsline {subsubsection}{\numberline {8.12.2.1}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{42}{subsubsection.8.12.2.1}%
-\contentsline {subsubsection}{\numberline {8.12.2.2}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{43}{subsubsection.8.12.2.2}%
-\contentsline {subsubsection}{\numberline {8.12.2.3}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{43}{subsubsection.8.12.2.3}%
-\contentsline {subsubsection}{\numberline {8.12.2.4}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{43}{subsubsection.8.12.2.4}%
-\contentsline {subsection}{\numberline {8.12.3}Property Documentation}{43}{subsection.8.12.3}%
-\contentsline {subsubsection}{\numberline {8.12.3.1}Variable}{43}{subsubsection.8.12.3.1}%
-\contentsline {subsection}{\numberline {8.12.4}Event Documentation}{44}{subsection.8.12.4}%
-\contentsline {subsubsection}{\numberline {8.12.4.1}OnChange}{44}{subsubsection.8.12.4.1}%
-\contentsline {chapter}{\numberline {9}File Documentation}{45}{chapter.9}%
-\contentsline {section}{\numberline {9.1}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args.cs File Reference}{45}{section.9.1}%
-\contentsline {section}{\numberline {9.2}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler.cs File Reference}{45}{section.9.2}%
-\contentsline {section}{\numberline {9.3}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Holder.cs File Reference}{45}{section.9.3}%
-\contentsline {section}{\numberline {9.4}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IApi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args.cs File Reference}{46}{section.9.4}%
-\contentsline {section}{\numberline {9.5}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Change\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args.cs File Reference}{46}{section.9.5}%
-\contentsline {section}{\numberline {9.6}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args.cs File Reference}{46}{section.9.6}%
-\contentsline {section}{\numberline {9.7}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception.cs File Reference}{47}{section.9.7}%
-\contentsline {section}{\numberline {9.8}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IGeneric\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception.cs File Reference}{47}{section.9.8}%
-\contentsline {section}{\numberline {9.9}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IChange\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args.cs File Reference}{47}{section.9.9}%
-\contentsline {section}{\numberline {9.10}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IEvent\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args.cs File Reference}{48}{section.9.10}%
-\contentsline {section}{\numberline {9.11}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tools/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Console\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Print\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Table.cs File Reference}{48}{section.9.11}%
-\contentsline {section}{\numberline {9.12}LICENSE.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{48}{section.9.12}%
-\contentsline {section}{\numberline {9.13}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{48}{section.9.13}%
-\contentsline {section}{\numberline {9.14}Test/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ITest\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class.cs File Reference}{48}{section.9.14}%
-\contentsline {section}{\numberline {9.15}Test/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program.cs File Reference}{49}{section.9.15}%
-\contentsline {section}{\numberline {9.16}Test/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class.cs File Reference}{49}{section.9.16}%
+\contentsline {chapter}{\numberline {6}Namespace Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}ahbsd Namespace Reference}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib Namespace Reference}{13}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Function Documentation}{13}{subsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.1}ChangeEventHandler$<$ T $>$()}{13}{subsubsection.6.2.1.1}%
+\contentsline {section}{\numberline {6.3}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key Namespace Reference}{14}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Function Documentation}{14}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}ApiKeyEventHandler$<$ T $>$()}{14}{subsubsection.6.3.1.1}%
+\contentsline {section}{\numberline {6.4}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions Namespace Reference}{15}{section.6.4}%
+\contentsline {section}{\numberline {6.5}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tools Namespace Reference}{15}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Test Namespace Reference}{15}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Class Documentation}{17}{chapter.7}%
+\contentsline {section}{\numberline {7.1}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Class Template Reference}{17}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{17}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Constructor \& Destructor Documentation}{18}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}ApiKeyEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}ApiKeyEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.7.1.2.2}%
+\contentsline {subsection}{\numberline {7.1.3}Property Documentation}{18}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}Index}{18}{subsubsection.7.1.3.1}%
+\contentsline {section}{\numberline {7.2}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Holder$<$ T $>$ Class Template Reference}{19}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{20}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Constructor \& Destructor Documentation}{21}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}ApiKeyHolder()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.7.2.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2.2}ApiKeyHolder()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{21}{subsubsection.7.2.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Member Function Documentation}{21}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.7.2.3.1}%
+\contentsline {subsubsection}{\numberline {7.2.3.2}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.7.2.3.2}%
+\contentsline {subsubsection}{\numberline {7.2.3.3}FindApiKey()}{22}{subsubsection.7.2.3.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.4}GetApiKey()}{23}{subsubsection.7.2.3.4}%
+\contentsline {subsubsection}{\numberline {7.2.3.5}GetHashCode()}{23}{subsubsection.7.2.3.5}%
+\contentsline {subsubsection}{\numberline {7.2.3.6}operator"!=()}{23}{subsubsection.7.2.3.6}%
+\contentsline {subsubsection}{\numberline {7.2.3.7}operator==()}{24}{subsubsection.7.2.3.7}%
+\contentsline {subsection}{\numberline {7.2.4}Member Data Documentation}{24}{subsection.7.2.4}%
+\contentsline {subsubsection}{\numberline {7.2.4.1}KnownApiKeys}{24}{subsubsection.7.2.4.1}%
+\contentsline {subsection}{\numberline {7.2.5}Property Documentation}{24}{subsection.7.2.5}%
+\contentsline {subsubsection}{\numberline {7.2.5.1}ApiKey}{24}{subsubsection.7.2.5.1}%
+\contentsline {subsection}{\numberline {7.2.6}Event Documentation}{25}{subsection.7.2.6}%
+\contentsline {subsubsection}{\numberline {7.2.6.1}OnApiKeyAdded}{25}{subsubsection.7.2.6.1}%
+\contentsline {section}{\numberline {7.3}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Change\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Class Template Reference}{25}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{26}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Constructor \& Destructor Documentation}{26}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}ChangeEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{26}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}ChangeEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{26}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}ChangeEventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{27}{subsubsection.7.3.2.3}%
+\contentsline {subsection}{\numberline {7.3.3}Member Function Documentation}{27}{subsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.1}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{27}{subsubsection.7.3.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.3.2}Equals()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{28}{subsubsection.7.3.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3.3}GetHashCode()}{28}{subsubsection.7.3.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.3.4}operator"!=()}{28}{subsubsection.7.3.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.3.5}operator==()}{29}{subsubsection.7.3.3.5}%
+\contentsline {subsubsection}{\numberline {7.3.3.6}SetNewValue()}{29}{subsubsection.7.3.3.6}%
+\contentsline {subsubsection}{\numberline {7.3.3.7}ToString()}{29}{subsubsection.7.3.3.7}%
+\contentsline {subsection}{\numberline {7.3.4}Property Documentation}{30}{subsection.7.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.4.1}NewValue}{30}{subsubsection.7.3.4.1}%
+\contentsline {subsubsection}{\numberline {7.3.4.2}OldValue}{30}{subsubsection.7.3.4.2}%
+\contentsline {section}{\numberline {7.4}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tools.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Console\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Print\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Table Class Reference}{30}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{31}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Member Function Documentation}{31}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}Print()}{31}{subsubsection.7.4.2.1}%
+\contentsline {section}{\numberline {7.5}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Class Template Reference}{31}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{32}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Constructor \& Destructor Documentation}{32}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}EventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{32}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}EventArgs()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{32}{subsubsection.7.5.2.2}%
+\contentsline {subsection}{\numberline {7.5.3}Property Documentation}{32}{subsection.7.5.3}%
+\contentsline {subsubsection}{\numberline {7.5.3.1}Value}{33}{subsubsection.7.5.3.1}%
+\contentsline {section}{\numberline {7.6}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception$<$ T $>$ Class Template Reference}{33}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{33}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Constructor \& Destructor Documentation}{34}{subsection.7.6.2}%
+\contentsline {subsubsection}{\numberline {7.6.2.1}Exception()}{34}{subsubsection.7.6.2.1}%
+\contentsline {subsection}{\numberline {7.6.3}Property Documentation}{35}{subsection.7.6.3}%
+\contentsline {subsubsection}{\numberline {7.6.3.1}Value}{35}{subsubsection.7.6.3.1}%
+\contentsline {section}{\numberline {7.7}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Api\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IApi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Key\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args Interface Reference}{35}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{35}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Property Documentation}{36}{subsection.7.7.2}%
+\contentsline {subsubsection}{\numberline {7.7.2.1}Index}{36}{subsubsection.7.7.2.1}%
+\contentsline {section}{\numberline {7.8}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IChange\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Interface Template Reference}{36}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{36}{subsection.7.8.1}%
+\contentsline {subsection}{\numberline {7.8.2}Member Function Documentation}{37}{subsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.1}SetNewValue()}{37}{subsubsection.7.8.2.1}%
+\contentsline {subsubsection}{\numberline {7.8.2.2}ToString()}{37}{subsubsection.7.8.2.2}%
+\contentsline {subsection}{\numberline {7.8.3}Property Documentation}{37}{subsection.7.8.3}%
+\contentsline {subsubsection}{\numberline {7.8.3.1}NewValue}{38}{subsubsection.7.8.3.1}%
+\contentsline {subsubsection}{\numberline {7.8.3.2}OldValue}{38}{subsubsection.7.8.3.2}%
+\contentsline {section}{\numberline {7.9}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IEvent\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Args$<$ T $>$ Interface Template Reference}{38}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{38}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Property Documentation}{39}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}Value}{39}{subsubsection.7.9.2.1}%
+\contentsline {section}{\numberline {7.10}ahbsd.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}lib.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exceptions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IGeneric\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Exception$<$ T $>$ Interface Template Reference}{39}{section.7.10}%
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{39}{subsection.7.10.1}%
+\contentsline {subsection}{\numberline {7.10.2}Property Documentation}{40}{subsection.7.10.2}%
+\contentsline {subsubsection}{\numberline {7.10.2.1}Value}{40}{subsubsection.7.10.2.1}%
+\contentsline {section}{\numberline {7.11}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ITest\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class$<$ T, A $>$ Interface Template Reference}{40}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{40}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Property Documentation}{41}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}Variable}{41}{subsubsection.7.11.2.1}%
+\contentsline {subsection}{\numberline {7.11.3}Event Documentation}{41}{subsection.7.11.3}%
+\contentsline {subsubsection}{\numberline {7.11.3.1}OnChange}{41}{subsubsection.7.11.3.1}%
+\contentsline {section}{\numberline {7.12}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Program Class Reference}{41}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{41}{subsection.7.12.1}%
+\contentsline {section}{\numberline {7.13}Test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Class$<$ T, A $>$ Class Template Reference}{42}{section.7.13}%
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{42}{subsection.7.13.1}%
+\contentsline {subsection}{\numberline {7.13.2}Constructor \& Destructor Documentation}{43}{subsection.7.13.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.1}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{43}{subsubsection.7.13.2.1}%
+\contentsline {subsubsection}{\numberline {7.13.2.2}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{43}{subsubsection.7.13.2.2}%
+\contentsline {subsubsection}{\numberline {7.13.2.3}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{43}{subsubsection.7.13.2.3}%
+\contentsline {subsubsection}{\numberline {7.13.2.4}TestClass()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{43}{subsubsection.7.13.2.4}%
+\contentsline {subsection}{\numberline {7.13.3}Property Documentation}{44}{subsection.7.13.3}%
+\contentsline {subsubsection}{\numberline {7.13.3.1}Variable}{44}{subsubsection.7.13.3.1}%
+\contentsline {subsection}{\numberline {7.13.4}Event Documentation}{44}{subsection.7.13.4}%
+\contentsline {subsubsection}{\numberline {7.13.4.1}OnChange}{44}{subsubsection.7.13.4.1}%
+\contentsline {chapter}{Index}{45}{section*.44}%

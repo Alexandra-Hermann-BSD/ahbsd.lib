@@ -1,0 +1,8 @@
+digraph "ahbsd.lib.Tools.ConsolePrintTable"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ahbsd.lib.Tools.ConsolePrint\lTable\n||+ static void Print(DataTable\l table)\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Static class to print a DataTable to console."];
+}

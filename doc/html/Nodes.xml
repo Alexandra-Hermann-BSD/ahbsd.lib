@@ -7,20 +7,20 @@
       <Subnodes>
        <Node>
         <Name>LICENSE</Name>
-        <Path>d2/d35/md__l_i_c_e_n_s_e.html</Path>
+        <Path>da/d19/md_LICENSE.html</Path>
        </Node>
        <Node>
         <Name>ahbsd.lib</Name>
-        <Path>d3/dcc/md__r_e_a_d_m_e.html</Path>
+        <Path>d0/d30/md_README.html</Path>
         <Subnodes>
          <Node>
           <Name>About generic EventArgs</Name>
-          <Path>d3/dcc/md__r_e_a_d_m_e.html</Path>
+          <Path>d0/d30/md_README.html</Path>
           <Anchor>autotoc_md1</Anchor>
          </Node>
          <Node>
           <Name>About generic ChangeEventArgs</Name>
-          <Path>d3/dcc/md__r_e_a_d_m_e.html</Path>
+          <Path>d0/d30/md_README.html</Path>
           <Anchor>autotoc_md2</Anchor>
          </Node>
         </Subnodes>
@@ -43,110 +43,140 @@
               <Subnodes>
                <Node>
                 <Name>ApiKey</Name>
-                <Path>d0/d0a/namespaceahbsd_1_1lib_1_1_api_key.html</Path>
+                <Path>d4/d50/namespaceahbsd_1_1lib_1_1ApiKey.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>ApiKeyEventArgs</Name>
-                  <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                  <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>ApiKeyEventArgs</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                    <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                     <Anchor>a1b61fd674609f68be1c7d86f7c39e878</Anchor>
                    </Node>
                    <Node>
                     <Name>ApiKeyEventArgs</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                    <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                     <Anchor>aaf7406bf316e5d4268dcdf45d2590ccb</Anchor>
                    </Node>
                    <Node>
                     <Name>Index</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                    <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                     <Anchor>a226c6e377f34e204ce8e5a19f29aeae0</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>ApiKeyHolder</Name>
-                  <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                  <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>ApiKeyHolder</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>a8d83cd7189a49e1bb310c8f5c7081c39</Anchor>
                    </Node>
                    <Node>
                     <Name>ApiKeyHolder</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>a07cb7e55eceaa0827fc0a785189a3c79</Anchor>
                    </Node>
                    <Node>
                     <Name>Equals</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>ae5206908ff50a12c95ee81060f5062a9</Anchor>
                    </Node>
                    <Node>
                     <Name>Equals</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>ad3644f8af6f466a6eab67d1aaf29ff7b</Anchor>
                    </Node>
                    <Node>
+                    <Name>FindApiKey</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a165dc90963f849610955cb61ebed1e53</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>GetApiKey</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>aa89713b92ee3f0727e48320b6a13f7de</Anchor>
+                   </Node>
+                   <Node>
                     <Name>GetHashCode</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>a0c556a4aac7fa4d7cfc3d8cd3bb3c34f</Anchor>
                    </Node>
                    <Node>
+                    <Name>operator!=</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>aa32677e66c74c3ef537c54d2771a0ede</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator==</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a4ba4aee31e0b6ce784dfa5b3fa0a914f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>KnownApiKeys</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a3854042eb7d1011032e39f2fb0cc5988</Anchor>
+                   </Node>
+                   <Node>
                     <Name>ApiKey</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>ae947d21252c82d5b22827b50053c20dc</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>OnApiKeyAdded</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a55e1c3586a20cd82a8dff6e58e1c656c</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>IApiKeyEventArgs</Name>
-                  <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
+                  <Path>db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>Index</Name>
-                    <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
+                    <Path>db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html</Path>
                     <Anchor>a895e4d434e885309e1846cf68ce7eb4e</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>ApiKeyEventHandler&lt; T &gt;</Name>
-                  <Path>d0/d0a/namespaceahbsd_1_1lib_1_1_api_key.html</Path>
+                  <Path>d4/d50/namespaceahbsd_1_1lib_1_1ApiKey.html</Path>
                   <Anchor>a4492da154cec79754104564adf3d43d9</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>Exceptions</Name>
-                <Path>de/d5b/namespaceahbsd_1_1lib_1_1_exceptions.html</Path>
+                <Path>d6/d61/namespaceahbsd_1_1lib_1_1Exceptions.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Exception</Name>
-                  <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+                  <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>Exception</Name>
-                    <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+                    <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
                     <Anchor>a55d133a7daf5c18af7d223c535ac9bca</Anchor>
                    </Node>
                    <Node>
                     <Name>Value</Name>
-                    <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+                    <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
                     <Anchor>ae8b9de03b0665f0deff0039c281fea73</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>IGenericException</Name>
-                  <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
+                  <Path>de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>Value</Name>
-                    <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
+                    <Path>de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html</Path>
                     <Anchor>aea3d30183c17a54c6df1bec7de304674</Anchor>
                    </Node>
                   </Subnodes>
@@ -155,118 +185,141 @@
                </Node>
                <Node>
                 <Name>Tools</Name>
-                <Path>d9/dee/namespaceahbsd_1_1lib_1_1_tools.html</Path>
+                <Path>da/ddf/namespaceahbsd_1_1lib_1_1Tools.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>ConsolePrintTable</Name>
+                  <Path>dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Print</Name>
+                    <Path>dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html</Path>
+                    <Anchor>a1ed81948b8bec488cd2f27c757659969</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
                </Node>
                <Node>
                 <Name>ChangeEventArgs</Name>
-                <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a9fcb134eaf8f9c620a67555569f9b9b1</Anchor>
                  </Node>
                  <Node>
                   <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>af1ddc99456999c555b75dbacecd6f9b2</Anchor>
                  </Node>
                  <Node>
                   <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>aea598c93cc6f9d6ddd36518c9b68998d</Anchor>
                  </Node>
                  <Node>
                   <Name>Equals</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>abf5a2b12637277320b33d9b86471ecec</Anchor>
                  </Node>
                  <Node>
                   <Name>Equals</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>ad2ae30802b7371559512a8d06e362b8c</Anchor>
                  </Node>
                  <Node>
                   <Name>GetHashCode</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>af516f1165d8ccc9ecdef6aaf09792afa</Anchor>
                  </Node>
                  <Node>
+                  <Name>operator!=</Name>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
+                  <Anchor>a2e6d154407065cbfc04d1565db32a685</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>operator==</Name>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
+                  <Anchor>ab2e0580566cdcd9a05c8f4b38bdb4515</Anchor>
+                 </Node>
+                 <Node>
                   <Name>SetNewValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a4cae6e90b61a945d73f98a2c05584aa1</Anchor>
                  </Node>
                  <Node>
                   <Name>ToString</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a4f0b09e4dc6d03fdf89a3ca2ecd7b924</Anchor>
                  </Node>
                  <Node>
                   <Name>NewValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a33cab8e1233fa83ee04499a34f52aeb7</Anchor>
                  </Node>
                  <Node>
                   <Name>OldValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a6d7f17fbf8fc0223d9d9aba37be6e8a2</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>EventArgs</Name>
-                <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>EventArgs</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                  <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                   <Anchor>ac9445e997cfca537da066053c7fdc602</Anchor>
                  </Node>
                  <Node>
                   <Name>EventArgs</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                  <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                   <Anchor>a94058fe6bcb28418605cceee3c0fc739</Anchor>
                  </Node>
                  <Node>
                   <Name>Value</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                  <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                   <Anchor>a23271ab9d57f57af2108604c4b0cc804</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>IChangeEventArgs</Name>
-                <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>SetNewValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>a031963ccfffa6ee5e29f7c7a271513df</Anchor>
                  </Node>
                  <Node>
                   <Name>ToString</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>aaf22405239d6968f252e0a23025f47f8</Anchor>
                  </Node>
                  <Node>
                   <Name>NewValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>a7bddbfe831dc3867628c3cb6f03b03ad</Anchor>
                  </Node>
                  <Node>
                   <Name>OldValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>a426e1d0a4ab70c216fd2ff89f5abee75</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>IEventArgs</Name>
-                <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
+                <Path>d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Value</Name>
-                  <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
+                  <Path>d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html</Path>
                   <Anchor>acf38be5f6fb7cd8d2104351e58a002d1</Anchor>
                  </Node>
                 </Subnodes>
@@ -282,62 +335,62 @@
            </Node>
            <Node>
             <Name>Test</Name>
-            <Path>dc/d96/namespace_test.html</Path>
+            <Path>dd/db3/namespaceTest.html</Path>
             <Subnodes>
              <Node>
               <Name>ITestClass</Name>
-              <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+              <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
               <Subnodes>
                <Node>
                 <Name>Variable</Name>
-                <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+                <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
                 <Anchor>a36d25b47a75c00513a29389277cd0471</Anchor>
                </Node>
                <Node>
                 <Name>OnChange</Name>
-                <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+                <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
                 <Anchor>aeebdefde7175de2c614b5f2be4adabb9</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
               <Name>Program</Name>
-              <Path>df/deb/class_test_1_1_program.html</Path>
+              <Path>db/d0e/classTest_1_1Program.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>
              <Node>
               <Name>TestClass</Name>
-              <Path>d5/d79/class_test_1_1_test_class.html</Path>
+              <Path>d4/db8/classTest_1_1TestClass.html</Path>
               <Subnodes>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a85f04f74ac29521176e0c1ef76ec5392</Anchor>
                </Node>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a7ce48a10989a8899d1908a5cd8f783e5</Anchor>
                </Node>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>addf123b8f4e768c4cc151b6956a266f1</Anchor>
                </Node>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a90722da4939199d3b9cf926df3c94570</Anchor>
                </Node>
                <Node>
                 <Name>Variable</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a8b5aa727933d519e13734ad83c714271</Anchor>
                </Node>
                <Node>
                 <Name>OnChange</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>affa833aa46b1853302e269d6ccbc3377</Anchor>
                </Node>
               </Subnodes>
@@ -380,72 +433,102 @@
               <Subnodes>
                <Node>
                 <Name>ApiKey</Name>
-                <Path>d0/d0a/namespaceahbsd_1_1lib_1_1_api_key.html</Path>
+                <Path>d4/d50/namespaceahbsd_1_1lib_1_1ApiKey.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>ApiKeyEventArgs</Name>
-                  <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                  <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>ApiKeyEventArgs</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                    <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                     <Anchor>a1b61fd674609f68be1c7d86f7c39e878</Anchor>
                    </Node>
                    <Node>
                     <Name>ApiKeyEventArgs</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                    <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                     <Anchor>aaf7406bf316e5d4268dcdf45d2590ccb</Anchor>
                    </Node>
                    <Node>
                     <Name>Index</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                    <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                     <Anchor>a226c6e377f34e204ce8e5a19f29aeae0</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>ApiKeyHolder</Name>
-                  <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                  <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>ApiKeyHolder</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>a8d83cd7189a49e1bb310c8f5c7081c39</Anchor>
                    </Node>
                    <Node>
                     <Name>ApiKeyHolder</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>a07cb7e55eceaa0827fc0a785189a3c79</Anchor>
                    </Node>
                    <Node>
                     <Name>Equals</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>ae5206908ff50a12c95ee81060f5062a9</Anchor>
                    </Node>
                    <Node>
                     <Name>Equals</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>ad3644f8af6f466a6eab67d1aaf29ff7b</Anchor>
                    </Node>
                    <Node>
+                    <Name>FindApiKey</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a165dc90963f849610955cb61ebed1e53</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>GetApiKey</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>aa89713b92ee3f0727e48320b6a13f7de</Anchor>
+                   </Node>
+                   <Node>
                     <Name>GetHashCode</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>a0c556a4aac7fa4d7cfc3d8cd3bb3c34f</Anchor>
                    </Node>
                    <Node>
+                    <Name>operator!=</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>aa32677e66c74c3ef537c54d2771a0ede</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>operator==</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a4ba4aee31e0b6ce784dfa5b3fa0a914f</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>KnownApiKeys</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a3854042eb7d1011032e39f2fb0cc5988</Anchor>
+                   </Node>
+                   <Node>
                     <Name>ApiKey</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
                     <Anchor>ae947d21252c82d5b22827b50053c20dc</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>OnApiKeyAdded</Name>
+                    <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+                    <Anchor>a55e1c3586a20cd82a8dff6e58e1c656c</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>IApiKeyEventArgs</Name>
-                  <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
+                  <Path>db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>Index</Name>
-                    <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
+                    <Path>db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html</Path>
                     <Anchor>a895e4d434e885309e1846cf68ce7eb4e</Anchor>
                    </Node>
                   </Subnodes>
@@ -454,31 +537,31 @@
                </Node>
                <Node>
                 <Name>Exceptions</Name>
-                <Path>de/d5b/namespaceahbsd_1_1lib_1_1_exceptions.html</Path>
+                <Path>d6/d61/namespaceahbsd_1_1lib_1_1Exceptions.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Exception</Name>
-                  <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+                  <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>Exception</Name>
-                    <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+                    <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
                     <Anchor>a55d133a7daf5c18af7d223c535ac9bca</Anchor>
                    </Node>
                    <Node>
                     <Name>Value</Name>
-                    <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+                    <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
                     <Anchor>ae8b9de03b0665f0deff0039c281fea73</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
                   <Name>IGenericException</Name>
-                  <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
+                  <Path>de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html</Path>
                   <Subnodes>
                    <Node>
                     <Name>Value</Name>
-                    <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
+                    <Path>de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html</Path>
                     <Anchor>aea3d30183c17a54c6df1bec7de304674</Anchor>
                    </Node>
                   </Subnodes>
@@ -486,115 +569,142 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Tools</Name>
+                <Path>da/ddf/namespaceahbsd_1_1lib_1_1Tools.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>ConsolePrintTable</Name>
+                  <Path>dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Print</Name>
+                    <Path>dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html</Path>
+                    <Anchor>a1ed81948b8bec488cd2f27c757659969</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>ChangeEventArgs</Name>
-                <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a9fcb134eaf8f9c620a67555569f9b9b1</Anchor>
                  </Node>
                  <Node>
                   <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>af1ddc99456999c555b75dbacecd6f9b2</Anchor>
                  </Node>
                  <Node>
                   <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>aea598c93cc6f9d6ddd36518c9b68998d</Anchor>
                  </Node>
                  <Node>
                   <Name>Equals</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>abf5a2b12637277320b33d9b86471ecec</Anchor>
                  </Node>
                  <Node>
                   <Name>Equals</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>ad2ae30802b7371559512a8d06e362b8c</Anchor>
                  </Node>
                  <Node>
                   <Name>GetHashCode</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>af516f1165d8ccc9ecdef6aaf09792afa</Anchor>
                  </Node>
                  <Node>
+                  <Name>operator!=</Name>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
+                  <Anchor>a2e6d154407065cbfc04d1565db32a685</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>operator==</Name>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
+                  <Anchor>ab2e0580566cdcd9a05c8f4b38bdb4515</Anchor>
+                 </Node>
+                 <Node>
                   <Name>SetNewValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a4cae6e90b61a945d73f98a2c05584aa1</Anchor>
                  </Node>
                  <Node>
                   <Name>ToString</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a4f0b09e4dc6d03fdf89a3ca2ecd7b924</Anchor>
                  </Node>
                  <Node>
                   <Name>NewValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a33cab8e1233fa83ee04499a34f52aeb7</Anchor>
                  </Node>
                  <Node>
                   <Name>OldValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                  <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                   <Anchor>a6d7f17fbf8fc0223d9d9aba37be6e8a2</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>EventArgs</Name>
-                <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>EventArgs</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                  <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                   <Anchor>ac9445e997cfca537da066053c7fdc602</Anchor>
                  </Node>
                  <Node>
                   <Name>EventArgs</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                  <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                   <Anchor>a94058fe6bcb28418605cceee3c0fc739</Anchor>
                  </Node>
                  <Node>
                   <Name>Value</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+                  <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
                   <Anchor>a23271ab9d57f57af2108604c4b0cc804</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>IChangeEventArgs</Name>
-                <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>SetNewValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>a031963ccfffa6ee5e29f7c7a271513df</Anchor>
                  </Node>
                  <Node>
                   <Name>ToString</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>aaf22405239d6968f252e0a23025f47f8</Anchor>
                  </Node>
                  <Node>
                   <Name>NewValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>a7bddbfe831dc3867628c3cb6f03b03ad</Anchor>
                  </Node>
                  <Node>
                   <Name>OldValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
+                  <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
                   <Anchor>a426e1d0a4ab70c216fd2ff89f5abee75</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
                <Node>
                 <Name>IEventArgs</Name>
-                <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
+                <Path>d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Value</Name>
-                  <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
+                  <Path>d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html</Path>
                   <Anchor>acf38be5f6fb7cd8d2104351e58a002d1</Anchor>
                  </Node>
                 </Subnodes>
@@ -605,62 +715,62 @@
            </Node>
            <Node>
             <Name>Test</Name>
-            <Path>dc/d96/namespace_test.html</Path>
+            <Path>dd/db3/namespaceTest.html</Path>
             <Subnodes>
              <Node>
               <Name>ITestClass</Name>
-              <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+              <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
               <Subnodes>
                <Node>
                 <Name>Variable</Name>
-                <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+                <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
                 <Anchor>a36d25b47a75c00513a29389277cd0471</Anchor>
                </Node>
                <Node>
                 <Name>OnChange</Name>
-                <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+                <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
                 <Anchor>aeebdefde7175de2c614b5f2be4adabb9</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
               <Name>Program</Name>
-              <Path>df/deb/class_test_1_1_program.html</Path>
+              <Path>db/d0e/classTest_1_1Program.html</Path>
               <Subnodes>
               </Subnodes>
              </Node>
              <Node>
               <Name>TestClass</Name>
-              <Path>d5/d79/class_test_1_1_test_class.html</Path>
+              <Path>d4/db8/classTest_1_1TestClass.html</Path>
               <Subnodes>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a85f04f74ac29521176e0c1ef76ec5392</Anchor>
                </Node>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a7ce48a10989a8899d1908a5cd8f783e5</Anchor>
                </Node>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>addf123b8f4e768c4cc151b6956a266f1</Anchor>
                </Node>
                <Node>
                 <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a90722da4939199d3b9cf926df3c94570</Anchor>
                </Node>
                <Node>
                 <Name>Variable</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>a8b5aa727933d519e13734ad83c714271</Anchor>
                </Node>
                <Node>
                 <Name>OnChange</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
+                <Path>d4/db8/classTest_1_1TestClass.html</Path>
                 <Anchor>affa833aa46b1853302e269d6ccbc3377</Anchor>
                </Node>
               </Subnodes>
@@ -678,118 +788,86 @@
           <Path>hierarchy.html</Path>
           <Subnodes>
            <Node>
+            <Name>ahbsd.lib.ApiKey.ApiKeyHolder&lt; T &gt;</Name>
+            <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
+           </Node>
+           <Node>
             <Name>ahbsd.lib.ApiKey.ApiKeyHolder&lt; A &gt;</Name>
-            <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
+            <Path>df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html</Path>
             <Subnodes>
              <Node>
               <Name>Test.TestClass&lt; T, A &gt;</Name>
-              <Path>d5/d79/class_test_1_1_test_class.html</Path>
+              <Path>d4/db8/classTest_1_1TestClass.html</Path>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>EventArgs</Name>
-            <Path></Path>
+            <Name>ahbsd.lib.Tools.ConsolePrintTable</Name>
+            <Path>dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html</Path>
+           </Node>
+           <Node>
+            <Name>ahbsd.lib.ApiKey.IApiKeyEventArgs</Name>
+            <Path>db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>ahbsd.lib.ApiKey.ApiKeyEventArgs&lt; T &gt;</Name>
+              <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>ahbsd.lib.IChangeEventArgs&lt; T &gt;</Name>
+            <Path>d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>ahbsd.lib.ChangeEventArgs&lt; T &gt;</Name>
+              <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>ahbsd.lib.IEventArgs&lt; T &gt;</Name>
+            <Path>d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html</Path>
             <Subnodes>
              <Node>
               <Name>ahbsd.lib.EventArgs&lt; T &gt;</Name>
-              <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
+              <Path>d0/d7d/classahbsd_1_1lib_1_1EventArgs.html</Path>
               <Subnodes>
                <Node>
                 <Name>ahbsd.lib.ApiKey.ApiKeyEventArgs&lt; T &gt;</Name>
-                <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
+                <Path>d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html</Path>
                </Node>
                <Node>
                 <Name>ahbsd.lib.ChangeEventArgs&lt; T &gt;</Name>
-                <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
+                <Path>d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html</Path>
                </Node>
               </Subnodes>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>Exception</Name>
-            <Path></Path>
-            <Subnodes>
-             <Node>
-              <Name>ahbsd.lib.Exceptions.Exception&lt; T &gt;</Name>
-              <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>ahbsd.lib.ApiKey.IApiKeyEventArgs</Name>
-            <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>ahbsd.lib.ApiKey.ApiKeyEventArgs&lt; T &gt;</Name>
-              <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>ahbsd.lib.IChangeEventArgs&lt; T &gt;</Name>
-            <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>ahbsd.lib.ChangeEventArgs&lt; T &gt;</Name>
-              <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>IEquatable&lt; ApiKeyHolder&lt; T &gt;&gt;</Name>
-            <Path></Path>
-            <Subnodes>
-             <Node>
-              <Name>ahbsd.lib.ApiKey.ApiKeyHolder&lt; T &gt;</Name>
-              <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>IEquatable&lt; IChangeEventArgs&lt; T &gt;&gt;</Name>
-            <Path></Path>
-            <Subnodes>
-             <Node>
-              <Name>ahbsd.lib.ChangeEventArgs&lt; T &gt;</Name>
-              <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>ahbsd.lib.IEventArgs&lt; T &gt;</Name>
-            <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>ahbsd.lib.EventArgs&lt; T &gt;</Name>
-              <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>ahbsd.lib.Exceptions.IGenericException&lt; T &gt;</Name>
-            <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
+            <Path>de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html</Path>
             <Subnodes>
              <Node>
               <Name>ahbsd.lib.Exceptions.Exception&lt; T &gt;</Name>
-              <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
+              <Path>dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html</Path>
              </Node>
             </Subnodes>
            </Node>
            <Node>
             <Name>Test.ITestClass&lt; T, A &gt;</Name>
-            <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
+            <Path>d8/df6/interfaceTest_1_1ITestClass.html</Path>
             <Subnodes>
              <Node>
               <Name>Test.TestClass&lt; T, A &gt;</Name>
-              <Path>d5/d79/class_test_1_1_test_class.html</Path>
+              <Path>d4/db8/classTest_1_1TestClass.html</Path>
              </Node>
             </Subnodes>
            </Node>
            <Node>
             <Name>Test.Program</Name>
-            <Path>df/deb/class_test_1_1_program.html</Path>
+            <Path>db/d0e/classTest_1_1Program.html</Path>
            </Node>
           </Subnodes>
          </Node>
@@ -839,100 +917,19 @@
               <Subnodes>
                <Node>
                 <Name>ApiKeyEventArgs.cs</Name>
-                <Path>d2/dd5/_api_key_event_args_8cs.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ApiKeyEventArgs</Name>
-                  <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>ApiKeyEventArgs</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
-                    <Anchor>a1b61fd674609f68be1c7d86f7c39e878</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ApiKeyEventArgs</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
-                    <Anchor>aaf7406bf316e5d4268dcdf45d2590ccb</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Index</Name>
-                    <Path>db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html</Path>
-                    <Anchor>a226c6e377f34e204ce8e5a19f29aeae0</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
+                <Path></Path>
                </Node>
                <Node>
                 <Name>ApiKeyEventHandler.cs</Name>
-                <Path>da/d8d/_api_key_event_handler_8cs.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ApiKeyEventHandler&lt; T &gt;</Name>
-                  <Path>da/d8d/_api_key_event_handler_8cs.html</Path>
-                  <Anchor>a4492da154cec79754104564adf3d43d9</Anchor>
-                 </Node>
-                </Subnodes>
+                <Path></Path>
                </Node>
                <Node>
                 <Name>ApiKeyHolder.cs</Name>
-                <Path>db/d9a/_api_key_holder_8cs.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ApiKeyHolder</Name>
-                  <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>ApiKeyHolder</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                    <Anchor>a8d83cd7189a49e1bb310c8f5c7081c39</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ApiKeyHolder</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                    <Anchor>a07cb7e55eceaa0827fc0a785189a3c79</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Equals</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                    <Anchor>ae5206908ff50a12c95ee81060f5062a9</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Equals</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                    <Anchor>ad3644f8af6f466a6eab67d1aaf29ff7b</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>GetHashCode</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                    <Anchor>a0c556a4aac7fa4d7cfc3d8cd3bb3c34f</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>ApiKey</Name>
-                    <Path>d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html</Path>
-                    <Anchor>ae947d21252c82d5b22827b50053c20dc</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
+                <Path></Path>
                </Node>
                <Node>
                 <Name>IApiKeyEventArgs.cs</Name>
-                <Path>d5/db6/_i_api_key_event_args_8cs.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>IApiKeyEventArgs</Name>
-                  <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Index</Name>
-                    <Path>d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html</Path>
-                    <Anchor>a895e4d434e885309e1846cf68ce7eb4e</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
+                <Path></Path>
                </Node>
               </Subnodes>
              </Node>
@@ -942,42 +939,11 @@
               <Subnodes>
                <Node>
                 <Name>Exception.cs</Name>
-                <Path>d2/dcf/_exception_8cs.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Exception</Name>
-                  <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Exception</Name>
-                    <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
-                    <Anchor>a55d133a7daf5c18af7d223c535ac9bca</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>Value</Name>
-                    <Path>d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html</Path>
-                    <Anchor>ae8b9de03b0665f0deff0039c281fea73</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
+                <Path></Path>
                </Node>
                <Node>
                 <Name>IGenericException.cs</Name>
-                <Path>d7/dcb/_i_generic_exception_8cs.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>IGenericException</Name>
-                  <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Value</Name>
-                    <Path>dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html</Path>
-                    <Anchor>aea3d30183c17a54c6df1bec7de304674</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                </Subnodes>
+                <Path></Path>
                </Node>
               </Subnodes>
              </Node>
@@ -987,152 +953,25 @@
               <Subnodes>
                <Node>
                 <Name>ConsolePrintTable.cs</Name>
-                <Path>dd/dc9/_console_print_table_8cs.html</Path>
+                <Path></Path>
                </Node>
               </Subnodes>
              </Node>
              <Node>
               <Name>ChangeEventArgs.cs</Name>
-              <Path>d4/df7/_change_event_args_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>ChangeEventArgs</Name>
-                <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>a9fcb134eaf8f9c620a67555569f9b9b1</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>af1ddc99456999c555b75dbacecd6f9b2</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ChangeEventArgs</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>aea598c93cc6f9d6ddd36518c9b68998d</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>Equals</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>abf5a2b12637277320b33d9b86471ecec</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>Equals</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>ad2ae30802b7371559512a8d06e362b8c</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>GetHashCode</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>af516f1165d8ccc9ecdef6aaf09792afa</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>SetNewValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>a4cae6e90b61a945d73f98a2c05584aa1</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ToString</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>a4f0b09e4dc6d03fdf89a3ca2ecd7b924</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>NewValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>a33cab8e1233fa83ee04499a34f52aeb7</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>OldValue</Name>
-                  <Path>d6/d95/classahbsd_1_1lib_1_1_change_event_args.html</Path>
-                  <Anchor>a6d7f17fbf8fc0223d9d9aba37be6e8a2</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>ChangeEventHandler&lt; T &gt;</Name>
-                <Path>d4/df7/_change_event_args_8cs.html</Path>
-                <Anchor>ac29c6701383fd9f1651c35fab479a327</Anchor>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
              <Node>
               <Name>EventArgs.cs</Name>
-              <Path>da/d0a/_event_args_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>EventArgs</Name>
-                <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>EventArgs</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
-                  <Anchor>ac9445e997cfca537da066053c7fdc602</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>EventArgs</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
-                  <Anchor>a94058fe6bcb28418605cceee3c0fc739</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>Value</Name>
-                  <Path>d5/dd4/classahbsd_1_1lib_1_1_event_args.html</Path>
-                  <Anchor>a23271ab9d57f57af2108604c4b0cc804</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
              <Node>
               <Name>IChangeEventArgs.cs</Name>
-              <Path>d7/df7/_i_change_event_args_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>IChangeEventArgs</Name>
-                <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>SetNewValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
-                  <Anchor>a031963ccfffa6ee5e29f7c7a271513df</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>ToString</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
-                  <Anchor>aaf22405239d6968f252e0a23025f47f8</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>NewValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
-                  <Anchor>a7bddbfe831dc3867628c3cb6f03b03ad</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>OldValue</Name>
-                  <Path>d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html</Path>
-                  <Anchor>a426e1d0a4ab70c216fd2ff89f5abee75</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
              <Node>
               <Name>IEventArgs.cs</Name>
-              <Path>d5/d14/_i_event_args_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>IEventArgs</Name>
-                <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Value</Name>
-                  <Path>d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html</Path>
-                  <Anchor>acf38be5f6fb7cd8d2104351e58a002d1</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
             </Subnodes>
            </Node>
@@ -1142,79 +981,15 @@
             <Subnodes>
              <Node>
               <Name>ITestClass.cs</Name>
-              <Path>db/d88/_i_test_class_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>ITestClass</Name>
-                <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>Variable</Name>
-                  <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
-                  <Anchor>a36d25b47a75c00513a29389277cd0471</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>OnChange</Name>
-                  <Path>dd/dbe/interface_test_1_1_i_test_class.html</Path>
-                  <Anchor>aeebdefde7175de2c614b5f2be4adabb9</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
              <Node>
               <Name>Program.cs</Name>
-              <Path>dd/d5c/_program_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>Program</Name>
-                <Path>df/deb/class_test_1_1_program.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
              <Node>
               <Name>TestClass.cs</Name>
-              <Path>da/dbe/_test_class_8cs.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>TestClass</Name>
-                <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>TestClass</Name>
-                  <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                  <Anchor>a85f04f74ac29521176e0c1ef76ec5392</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>TestClass</Name>
-                  <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                  <Anchor>a7ce48a10989a8899d1908a5cd8f783e5</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>TestClass</Name>
-                  <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                  <Anchor>addf123b8f4e768c4cc151b6956a266f1</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>TestClass</Name>
-                  <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                  <Anchor>a90722da4939199d3b9cf926df3c94570</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>Variable</Name>
-                  <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                  <Anchor>a8b5aa727933d519e13734ad83c714271</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>OnChange</Name>
-                  <Path>d5/d79/class_test_1_1_test_class.html</Path>
-                  <Anchor>affa833aa46b1853302e269d6ccbc3377</Anchor>
-                 </Node>
-                </Subnodes>
-               </Node>
-              </Subnodes>
+              <Path></Path>
              </Node>
             </Subnodes>
            </Node>

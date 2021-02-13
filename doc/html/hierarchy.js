@@ -1,37 +1,27 @@
 var hierarchy =
 [
-    [ "ahbsd.lib.ApiKey.ApiKeyHolder< A >", "d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html", [
-      [ "Test.TestClass< T, A >", "d5/d79/class_test_1_1_test_class.html", null ]
+    [ "ahbsd.lib.ApiKey.ApiKeyHolder< T >", "df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html", null ],
+    [ "ahbsd.lib.ApiKey.ApiKeyHolder< A >", "df/dbe/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyHolder.html", [
+      [ "Test.TestClass< T, A >", "d4/db8/classTest_1_1TestClass.html", null ]
     ] ],
-    [ "EventArgs", null, [
-      [ "ahbsd.lib.EventArgs< T >", "d5/dd4/classahbsd_1_1lib_1_1_event_args.html", [
-        [ "ahbsd.lib.ApiKey.ApiKeyEventArgs< T >", "db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html", null ],
-        [ "ahbsd.lib.ChangeEventArgs< T >", "d6/d95/classahbsd_1_1lib_1_1_change_event_args.html", null ]
+    [ "ahbsd.lib.Tools.ConsolePrintTable", "dc/d3d/classahbsd_1_1lib_1_1Tools_1_1ConsolePrintTable.html", null ],
+    [ "ahbsd.lib.ApiKey.IApiKeyEventArgs", "db/d34/interfaceahbsd_1_1lib_1_1ApiKey_1_1IApiKeyEventArgs.html", [
+      [ "ahbsd.lib.ApiKey.ApiKeyEventArgs< T >", "d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html", null ]
+    ] ],
+    [ "ahbsd.lib.IChangeEventArgs< T >", "d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html", [
+      [ "ahbsd.lib.ChangeEventArgs< T >", "d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html", null ]
+    ] ],
+    [ "ahbsd.lib.IEventArgs< T >", "d1/d80/interfaceahbsd_1_1lib_1_1IEventArgs.html", [
+      [ "ahbsd.lib.EventArgs< T >", "d0/d7d/classahbsd_1_1lib_1_1EventArgs.html", [
+        [ "ahbsd.lib.ApiKey.ApiKeyEventArgs< T >", "d3/d73/classahbsd_1_1lib_1_1ApiKey_1_1ApiKeyEventArgs.html", null ],
+        [ "ahbsd.lib.ChangeEventArgs< T >", "d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html", null ]
       ] ]
     ] ],
-    [ "Exception", null, [
-      [ "ahbsd.lib.Exceptions.Exception< T >", "d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html", null ]
+    [ "ahbsd.lib.Exceptions.IGenericException< T >", "de/d1b/interfaceahbsd_1_1lib_1_1Exceptions_1_1IGenericException.html", [
+      [ "ahbsd.lib.Exceptions.Exception< T >", "dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html", null ]
     ] ],
-    [ "ahbsd.lib.ApiKey.IApiKeyEventArgs", "d0/d4e/interfaceahbsd_1_1lib_1_1_api_key_1_1_i_api_key_event_args.html", [
-      [ "ahbsd.lib.ApiKey.ApiKeyEventArgs< T >", "db/d79/classahbsd_1_1lib_1_1_api_key_1_1_api_key_event_args.html", null ]
+    [ "Test.ITestClass< T, A >", "d8/df6/interfaceTest_1_1ITestClass.html", [
+      [ "Test.TestClass< T, A >", "d4/db8/classTest_1_1TestClass.html", null ]
     ] ],
-    [ "ahbsd.lib.IChangeEventArgs< T >", "d6/d79/interfaceahbsd_1_1lib_1_1_i_change_event_args.html", [
-      [ "ahbsd.lib.ChangeEventArgs< T >", "d6/d95/classahbsd_1_1lib_1_1_change_event_args.html", null ]
-    ] ],
-    [ "IEquatable< ApiKeyHolder< T >>", null, [
-      [ "ahbsd.lib.ApiKey.ApiKeyHolder< T >", "d3/d97/classahbsd_1_1lib_1_1_api_key_1_1_api_key_holder.html", null ]
-    ] ],
-    [ "IEquatable< IChangeEventArgs< T >>", null, [
-      [ "ahbsd.lib.ChangeEventArgs< T >", "d6/d95/classahbsd_1_1lib_1_1_change_event_args.html", null ]
-    ] ],
-    [ "ahbsd.lib.IEventArgs< T >", "d4/d97/interfaceahbsd_1_1lib_1_1_i_event_args.html", [
-      [ "ahbsd.lib.EventArgs< T >", "d5/dd4/classahbsd_1_1lib_1_1_event_args.html", null ]
-    ] ],
-    [ "ahbsd.lib.Exceptions.IGenericException< T >", "dd/d4a/interfaceahbsd_1_1lib_1_1_exceptions_1_1_i_generic_exception.html", [
-      [ "ahbsd.lib.Exceptions.Exception< T >", "d9/dd0/classahbsd_1_1lib_1_1_exceptions_1_1_exception.html", null ]
-    ] ],
-    [ "Test.ITestClass< T, A >", "dd/dbe/interface_test_1_1_i_test_class.html", [
-      [ "Test.TestClass< T, A >", "d5/d79/class_test_1_1_test_class.html", null ]
-    ] ],
-    [ "Test.Program", "df/deb/class_test_1_1_program.html", null ]
+    [ "Test.Program", "db/d0e/classTest_1_1Program.html", null ]
 ];

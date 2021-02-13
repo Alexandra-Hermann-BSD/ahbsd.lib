@@ -25,10 +25,10 @@
 var NAVTREE =
 [
   [ "library ahbsd.lib", "index.html", [
-    [ "LICENSE", "d2/d35/md__l_i_c_e_n_s_e.html", null ],
-    [ "ahbsd.lib", "d3/dcc/md__r_e_a_d_m_e.html", [
-      [ "About generic EventArgs", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "About generic ChangeEventArgs", "d3/dcc/md__r_e_a_d_m_e.html#autotoc_md2", null ]
+    [ "LICENSE", "da/d19/md_LICENSE.html", null ],
+    [ "ahbsd.lib", "d0/d30/md_README.html", [
+      [ "About generic EventArgs", "d0/d30/md_README.html#autotoc_md1", null ],
+      [ "About generic ChangeEventArgs", "d0/d30/md_README.html#autotoc_md2", null ]
     ] ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ],
@@ -57,7 +57,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-""
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
