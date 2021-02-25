@@ -92,6 +92,66 @@ namespace Test_xUnit
 
         }
 
+        [Fact]
+        public void TestCheckSum()
+        {
+            long tmpL1, tmpL2, tmpL3, resultL;
+            ulong tmpUL1, tmpUL2, tmpUL3, resultUL;
+            long? tmpLn1, tmpLn2, tmpLn3, resultLn;
+            ulong? tmpULn1, tmpULn2, tmpULn3, resultULn;
+
+            short resultS;
+            ushort resultUS;
+            short? resultSn;
+            ushort? resultUSn;
+
+            tmpL1 = long.MinValue;
+            tmpL2 = long.MaxValue;
+            tmpL3 = (long)DateTime.Now.Year;
+
+            tmpUL1 = ulong.MinValue;
+            tmpUL2 = ulong.MaxValue;
+            tmpUL3 = (ulong)DateTime.Now.Year;
+
+            tmpLn1 = long.MinValue;
+            tmpLn2 = long.MaxValue;
+            tmpLn3 = null;
+
+            tmpULn1 = ulong.MinValue;
+            tmpULn2 = ulong.MaxValue;
+            tmpULn3 = null;
+
+
+            resultL = Checksum.GetChecksum(tmpL1);
+            resultL = Checksum.GetChecksum(tmpL2);
+            resultL = Checksum.GetChecksum(tmpL3);
+            resultS = Checksum.GetFinalChecksum(tmpL1);
+            resultS = Checksum.GetFinalChecksum(tmpL2);
+            resultS = Checksum.GetFinalChecksum(tmpL3);
+
+            resultUL = Checksum.GetChecksum(tmpUL1);
+            resultUL = Checksum.GetChecksum(tmpUL2);
+            resultUL = Checksum.GetChecksum(tmpUL3);
+            resultUS = Checksum.GetFinalChecksum(tmpUL1);
+            resultUS = Checksum.GetFinalChecksum(tmpUL2);
+            resultUS = Checksum.GetFinalChecksum(tmpUL3);
+
+
+            resultLn = Checksum.GetChecksum(tmpLn1);
+            resultLn = Checksum.GetChecksum(tmpLn2);
+            resultLn = Checksum.GetChecksum(tmpLn3);
+            resultSn = Checksum.GetFinalChecksum(tmpLn1);
+            resultSn = Checksum.GetFinalChecksum(tmpLn2);
+            resultSn = Checksum.GetFinalChecksum(tmpLn3);
+
+            resultULn = Checksum.GetChecksum(tmpULn1);
+            resultULn = Checksum.GetChecksum(tmpULn2);
+            resultULn = Checksum.GetChecksum(tmpULn3);
+            resultUSn = Checksum.GetFinalChecksum(tmpULn1);
+            resultUSn = Checksum.GetFinalChecksum(tmpULn2);
+            resultUSn = Checksum.GetFinalChecksum(tmpULn3);
+        }
+
         private void T3_OnChange(object sender, ChangeEventArgs<object> e)
         {
             Console.WriteLine("The variable from 't3' has changed:");
