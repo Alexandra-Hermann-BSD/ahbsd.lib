@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ahbsd.lib.Tools.Checksum">
+    <Position X="6.75" Y="2.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAQAAAACAAAAgAAAA=</HashCode>
+      <FileName>Tools\Checksum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ahbsd.lib.Tools.ConsolePrintTable">
+    <Position X="2.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAACAAAAAAAAAEAAA=</HashCode>
+      <FileName>Tools\ConsolePrintTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ahbsd.lib.Tools.PrimeCheck">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Tools\PrimeCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
