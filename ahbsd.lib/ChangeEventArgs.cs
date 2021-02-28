@@ -72,7 +72,7 @@ namespace ahbsd.lib
         /// Sets the new value.
         /// </summary>
         /// <param name="newValue">The new value.</param>
-        /// <exception cref="Exception">If the <see cref="NewValue"/> was already set.</exception>
+        /// <exception cref="Exception">If the <see cref="NewValue" /> was already set.</exception>
         public void SetNewValue(T newValue)
         {
             Exception e;
