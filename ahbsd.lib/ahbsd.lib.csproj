@@ -38,5 +38,7 @@
     <Folder Include="ApiKey\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Tools\" />
+    <Folder Include="Password\" />
+    <Folder Include="Password\Check\" />
   </ItemGroup>
 </Project>

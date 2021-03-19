@@ -4,6 +4,8 @@ using ahbsd.lib;
 using ahbsd.lib.Exceptions;
 using System.Collections.Generic;
 using ahbsd.lib.Tools;
+using ahbsd.lib.Password;
+using ahbsd.lib.Password.Check;
 
 namespace Test_xUnit
 {
@@ -184,6 +186,21 @@ namespace Test_xUnit
             Console.WriteLine("The sending object was: {0}", sender);
             Console.WriteLine(e.ToString());
             Console.WriteLine();
+        }
+
+        [Fact]
+        public void TestPasswd()
+        {
+            IPassword p1 = new Password("Unsicher");
+            p1.OnChange += P1_OnChange;
+
+            p1.Value = "B<eSs3r üBe9R ©6&/|\\\"";
+        }
+
+        private void P1_OnChange(object sender, ChangeEventArgs<IPassword> e)
+        {
+            Console.WriteLine("The variable p1 has changed:");
+            
         }
     }
 }
