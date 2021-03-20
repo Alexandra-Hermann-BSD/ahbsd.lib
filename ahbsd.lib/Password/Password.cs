@@ -95,12 +95,47 @@ namespace ahbsd.lib.Password
         /// </summary>
         private void Initialize()
         {
+            CharacteristicDictionary tmp;
+
             _length = _value.Length;
-            _lower = GetLowerCases(_value);
-            _upper = GetUpperCases(_value);
-            _spaces = GetSpaces(_value);
-            _specials = GetSpecials(_value);
-            Characteristics = GetCharasteristics(_value);
+            _lower = 0;
+            _upper = 0;
+            _spaces = 0;
+            _specials = 0;
+
+            foreach (char c in _value)
+            {
+                switch (GetCharasteristic(c))
+                {
+                    case Charasteristic.LowercaseLetter:
+                        _lower++;
+                        break;
+                    case Charasteristic.CapitalLetter:
+                        _upper++;
+                        break;
+                    case Charasteristic.Space:
+                        _spaces++;
+                        break;
+                    case Charasteristic.Numeric:
+                        _numbers++;
+                        break;
+                    case Charasteristic.SpecialCharacter:
+                        _specials++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (Container != null)
+            {
+                tmp = new CharacteristicDictionary(this, Container);
+            }
+            else
+            {
+                tmp = new CharacteristicDictionary(this);
+            }
+            Characteristics = tmp;
         }
 
         /// <summary>
@@ -110,6 +145,7 @@ namespace ahbsd.lib.Password
         /// <param name="e">The ChangeEventArg.</param>
         private void Password_OnChange(object sender, ChangeEventArgs<IPassword> e)
         {
+            CharacteristicDictionary tmp;
             if (e.NewValue != null)
             {
                 _value = e.NewValue.Value;
@@ -128,7 +164,16 @@ namespace ahbsd.lib.Password
                 _spaces = 0;
                 _specials = 0;
                 _numbers = 0;
-                Characteristics = GetCharasteristics(null);
+
+                if (Container != null)
+                {
+                    tmp = new CharacteristicDictionary(this, Container);
+                }
+                else
+                {
+                    tmp = new CharacteristicDictionary(this);
+                }
+                Characteristics = tmp;
             }
         }
 
@@ -435,7 +480,16 @@ namespace ahbsd.lib.Password
                 finished = true;
             }
 
-            if (!finished)
+            foreach (char item in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+            {
+                if (tmp.ToUpper().Equals(item.ToString()))
+                {
+                    isLetter = true;
+                    break;
+                }
+            }
+
+            if (!finished && isLetter)
             {
                 finished = tmp.ToUpper().Equals(tmp);
                 if (finished)
@@ -444,7 +498,7 @@ namespace ahbsd.lib.Password
                 }
             }
 
-            if (!finished)
+            if (!finished && isLetter)
             {
                 finished = tmp.ToLower().Equals(tmp);
                 if (finished)
@@ -453,7 +507,7 @@ namespace ahbsd.lib.Password
                 }
             }
 
-            if (!finished)
+            if (!finished && !isLetter)
             {
                 try
                 {
@@ -465,21 +519,9 @@ namespace ahbsd.lib.Password
                 { }
             }
 
-            if (result != Charasteristic.Numeric)
+            if (!finished && !isLetter)
             {
-                foreach (char item in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-                {
-                    if (tmp.ToUpper().Equals(item.ToString()))
-                    {
-                        isLetter = true;
-                        break;
-                    }
-                }
-
-                if (!isLetter)
-                {
-                    result = Charasteristic.SpecialCharacter;
-                }
+                result = Charasteristic.SpecialCharacter;
             }
 
             return result;

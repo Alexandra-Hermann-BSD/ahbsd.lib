@@ -21,5 +21,16 @@ namespace ahbsd.lib.Password
     /// An interface for a characteristic dictionary.
     /// </summary>
     public interface ICharacteristicDictionary : IComponent, IDictionary<Charasteristic, bool>
-    { }
+    {
+        /// <summary>
+        /// Gets a short info of the characteristic.
+        /// </summary>
+        /// <returns>A short info of the characteristic.</returns>
+        string ToString();
+        /// <summary>
+        /// Gets the name of this component.
+        /// </summary>
+        /// <value>The name of this component.</value>
+        string Name { get; }
+    }
 }
