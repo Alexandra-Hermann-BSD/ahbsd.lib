@@ -65,5 +65,10 @@ namespace ahbsd.lib.Password
         /// Happenes, when the <see cref="Value"/> changes.
         /// </summary>
         event ChangeEventHandler<IPassword> OnChange;
+        /// <summary>
+        /// Gets the SecurityValue.
+        /// </summary>
+        /// <value>The SecurityValue.</value>
+        Check.ISecurityValue SecurityValue { get; }
     }
 }

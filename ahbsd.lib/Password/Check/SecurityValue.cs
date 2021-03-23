@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text;
 
 namespace ahbsd.lib.Password.Check
 {
@@ -109,19 +110,27 @@ namespace ahbsd.lib.Password.Check
         /// </summary>
         private void Initialize()
         {
+            uint tmp = 0;
             if (Password != null)
             {
-                _security = (ushort)(Password.Length % ushort.MaxValue);
-                _security += (ushort)Password.LowerCases;
-                _security += (ushort)Password.UpperCases;
-                _security += (ushort)Password.Spaces;
-                _security += (ushort)Password.Numbers;
-                _security += (ushort)Password.Specials;
+                tmp = (uint)(Password.Length);
+                tmp += (uint)Password.LowerCases;
+                tmp += (uint)Password.UpperCases;
+                tmp += (uint)(Password.Spaces * 4);
+                tmp += (uint)Password.Numbers;
+                tmp += (uint)(Password.Specials * 2);
             }
-            else
-            {
-                _security = 0;
-            }
+
+            _security = (ushort)(tmp % ushort.MaxValue);
+        }
+
+        /// <summary>
+        /// Gets the Security Value.
+        /// </summary>
+        /// <returns>The Security Value.</returns>
+        public override string ToString()
+        {
+            return $"SecurityValue: {_security}";
         }
 
         #region implementation of ISecurityValue
@@ -167,6 +176,7 @@ namespace ahbsd.lib.Password.Check
         /// <returns>The hash code.</returns>
         public override int GetHashCode() => HashCode.Combine(Password, Security);
         #endregion
+
         /// <summary>
         /// Checks wheather two objects of type <see cref="SecurityValue"/>
         /// do eaquals each other.

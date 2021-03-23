@@ -30,6 +30,8 @@ namespace ahbsd.lib.Password
 
         private int _length, _lower, _upper, _spaces, _specials, _numbers;
 
+        private Check.ISecurityValue _securityValue;
+
         /// <summary>
         /// Constructor without any parameter.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ahbsd.lib.Password
         {
             _value = string.Empty;
             Initialize();
-
+            _securityValue = new Check.SecurityValue(this);
             OnChange += Password_OnChange;
         }
 
@@ -51,6 +53,7 @@ namespace ahbsd.lib.Password
         {
             _value = passwd;
             Initialize();
+            _securityValue = new Check.SecurityValue(this);
             OnChange += Password_OnChange;
         }
 
@@ -67,6 +70,11 @@ namespace ahbsd.lib.Password
             if (container != null)
             {
                 container.Add(this, $"Password_{GetHashCode()}");
+                _securityValue = new Check.SecurityValue(this, container);
+            }
+            else
+            {
+                _securityValue = new Check.SecurityValue(this);
             }
             OnChange += Password_OnChange;
         }
@@ -85,6 +93,11 @@ namespace ahbsd.lib.Password
             if (container != null)
             {
                 container.Add(this, $"Password_{GetHashCode()}");
+                _securityValue = new Check.SecurityValue(this, container);
+            }
+            else
+            {
+                _securityValue = new Check.SecurityValue(this);
             }
 
             OnChange += Password_OnChange;
@@ -194,10 +207,18 @@ namespace ahbsd.lib.Password
                     if (Container != null)
                     {
                         tmp = GetPassword(value, Container);
+                        if (OnChange != null)
+                        {
+                            tmp.OnChange += OnChange;
+                        }
                     }
                     else
                     {
                         tmp = GetPassword(value);
+                        if (OnChange != null)
+                        {
+                            tmp.OnChange += OnChange;
+                        }
                     }
                     ChangeEventArgs<IPassword> cea = new ChangeEventArgs<IPassword>(this, tmp);
 
@@ -245,6 +266,12 @@ namespace ahbsd.lib.Password
         /// Happenes, when the <see cref="Value"/> changes.
         /// </summary>
         public event ChangeEventHandler<IPassword> OnChange;
+
+        /// <summary>
+        /// Gets the SecurityValue.
+        /// </summary>
+        /// <value>The SecurityValue.</value>
+        public Check.ISecurityValue SecurityValue => _securityValue;
 
         /// <summary>
         /// Compares an other object with this object.
