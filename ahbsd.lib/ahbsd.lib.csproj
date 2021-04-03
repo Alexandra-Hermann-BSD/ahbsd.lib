@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>ahbsd.lib</PackageId>
-    <PackageVersion>1.3</PackageVersion>
+    <PackageVersion>1.4</PackageVersion>
     <Authors>Heinrich Alexandra Hermann</Authors>
     <Company>Alexandra Hermann – Beratung, Software, Design</Company>
     <Copyright>Apache 2.0</Copyright>
@@ -15,10 +15,11 @@
     <Description>Some classes with functionality I missed.</Description>
     <PackageProjectUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</RepositoryUrl>
-    <ReleaseVersion>1.3</ReleaseVersion>
+    <ReleaseVersion>1.4</ReleaseVersion>
     <PackageIconUrl>https://www.hermann-bsd.de/favicon.ico</PackageIconUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageReleaseNotes>Version 1.3 has a Class to check wheather a given password is safe or not.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.4 has a new namespace: NamedCollections, which is mainley for
+collections to be named.</PackageReleaseNotes>
     <PackageTags>Library; Core; Core3.1; Generic</PackageTags>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
