@@ -40,5 +40,6 @@
     <Folder Include="Tools\" />
     <Folder Include="Password\" />
     <Folder Include="Password\Check\" />
+    <Folder Include="NamedCollections\" />
   </ItemGroup>
 </Project>
