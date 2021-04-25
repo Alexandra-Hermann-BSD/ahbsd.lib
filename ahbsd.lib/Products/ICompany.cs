@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace ahbsd.lib
+namespace ahbsd.lib.Products
 {
     /// <summary>
     /// An interface, describing a company / manufacturer.

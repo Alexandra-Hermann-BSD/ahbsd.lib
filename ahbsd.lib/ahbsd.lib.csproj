@@ -42,5 +42,6 @@ collections to be named.</PackageReleaseNotes>
     <Folder Include="Password\" />
     <Folder Include="Password\Check\" />
     <Folder Include="NamedCollections\" />
+    <Folder Include="Products\" />
   </ItemGroup>
 </Project>

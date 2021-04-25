@@ -15,7 +15,7 @@
 using System;
 using System.ComponentModel;
 
-namespace ahbsd.lib
+namespace ahbsd.lib.Products
 {
     /// <summary>
     /// Interface of an Product.

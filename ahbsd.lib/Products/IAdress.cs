@@ -13,7 +13,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 using System.Globalization;
-namespace ahbsd.lib
+
+namespace ahbsd.lib.Products
 {
     /// <summary>
     /// An interface describing an adress in general.
