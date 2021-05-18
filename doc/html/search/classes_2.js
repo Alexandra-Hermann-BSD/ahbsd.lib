@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['eventargs_46',['EventArgs',['../d0/d7d/classahbsd_1_1lib_1_1EventArgs.html',1,'ahbsd::lib']]],
-  ['exception_47',['Exception',['../dc/d90/classahbsd_1_1lib_1_1Exceptions_1_1Exception.html',1,'ahbsd::lib::Exceptions']]]
+  ['dictionaryofnamedcollection_145',['DictionaryOfNamedCollection',['../d8/dec/classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection.html',1,'ahbsd::lib::NamedCollections']]],
+  ['dictionaryofnamedlist_146',['DictionaryOfNamedList',['../d4/d5f/classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedList.html',1,'ahbsd::lib::NamedCollections']]]
 ];

@@ -1,0 +1,339 @@
+\hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts}{}\doxysection{ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products Class Reference}
+\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts}\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+
+
+Class for a combination of difined products of a company.  
+
+
+
+
+Inherits Container, and IDictionary$<$ ICompany, IDictionary\+Of\+Named\+List$<$ IModel, IProduct\+Item $>$$>$.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab2894f6681f1e19a367dd504326a0182}{Company\+Model\+Products}} ()
+\begin{DoxyCompactList}\small\item\em Constructor without any parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a56f3a65cad47eb01c3b1a69ead6e44bc}{Add}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} key, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$ value)
+\begin{DoxyCompactList}\small\item\em Adds a given ICompany key and its IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$ value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab046c772fad1fff82d891723841f1e2e}{Add}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} company)
+\begin{DoxyCompactList}\small\item\em Adds a Company key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a1449424052d81cabb815ac57736a0436}{Add}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$ item)
+\begin{DoxyCompactList}\small\item\em Adds a defined Key\+Value\+Pair. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a35aa48dd8694468e52279c5806e12af3}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears this Dictionary. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a37d309d51adf0c0723822e6c75bcdafa}{Contains}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$ item)
+\begin{DoxyCompactList}\small\item\em Checks wheather a given Key\+Value\+Pair is contained or not. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_af88ebae6152ad4d1764163343642cd6a}{Contains\+Key}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} key)
+\begin{DoxyCompactList}\small\item\em Checks wheather a given ICompany-\/KEY exists or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab0bcd278f2686b6614bdb46a468a91eb}{Copy\+To}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$\mbox{[}$\,$\mbox{]} array, int array\+Index)
+\begin{DoxyCompactList}\small\item\em Copies the elements of this IDictionary$<$\+ICompany, IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$$>$ to an Array, starting at an particular Array index. \end{DoxyCompactList}\item 
+IEnumerator$<$ Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$ $>$ $>$ \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a68660428495e7518f7d48fe8837c7e61}{Get\+Enumerator}} ()
+\begin{DoxyCompactList}\small\item\em Returns an enumerator, that iterates through this collection. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a5a78a79240c2b649da62089475673c9d}{Remove}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} key)
+\begin{DoxyCompactList}\small\item\em Removes the given KEY and its value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a9c0c042fb1704bf2088f2c79b5291e5c}{Remove}} (Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$ item)
+\begin{DoxyCompactList}\small\item\em Removes the given Key\+Value\+Pair$<$\+ICompany, IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$$>$. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a41331ebe6b57baa8da507aacb33d2937}{Try\+Get\+Value}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} key, \mbox{[}Maybe\+Null\+When(false)\mbox{]} out \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$ value)
+\begin{DoxyCompactList}\small\item\em Gets the Value associated with the given Key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$ \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a3833ddc627135a1079da93556cf47832}{this\mbox{[}\+ICompany key\mbox{]}}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a Dictionary of IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$ for a given ICompany. \end{DoxyCompactList}\item 
+ICollection$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} $>$ \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a7ede27a0e33f5bd729ba90d6effcecbc}{Keys}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the Company Keys. \end{DoxyCompactList}\item 
+ICollection$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$ $>$ \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a4631f770bce83651b9cbb3173c330997}{Values}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the Values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a0c97fab19cb0aa0385eab90bf7774248}{Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the amaunt of Companies. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab322ae51397002b1578b4ed4cffb4faa}{Is\+Read\+Only}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the information, if this Dictionary is readonly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for a combination of difined products of a company. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab2894f6681f1e19a367dd504326a0182}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab2894f6681f1e19a367dd504326a0182}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!CompanyModelProducts@{CompanyModelProducts}}
+\index{CompanyModelProducts@{CompanyModelProducts}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{CompanyModelProducts()}{CompanyModelProducts()}}
+{\footnotesize\ttfamily ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Company\+Model\+Products (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor without any parameters. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab046c772fad1fff82d891723841f1e2e}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab046c772fad1fff82d891723841f1e2e}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}}]{company }\end{DoxyParamCaption})}
+
+
+
+Adds a Company key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em company} & The Company.\\
+\hline
+\end{DoxyParams}
+
+
+References \mbox{\hyperlink{l00042}{ahbsd.\+lib.\+Products.\+ICompany.\+Name}}, and \mbox{\hyperlink{l00030}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+List$<$ K, V $>$.\+On\+Named\+List\+Added}}.
+
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a56f3a65cad47eb01c3b1a69ead6e44bc}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a56f3a65cad47eb01c3b1a69ead6e44bc}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}}]{key,  }\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$}]{value }\end{DoxyParamCaption})}
+
+
+
+Adds a given ICompany key and its IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$ value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The Company key.\\
+\hline
+{\em value} & The Dictionary of Model and Product\+Item.\\
+\hline
+\end{DoxyParams}
+
+
+References \mbox{\hyperlink{l00042}{ahbsd.\+lib.\+Products.\+ICompany.\+Name}}, and \mbox{\hyperlink{l00030}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+List$<$ K, V $>$.\+On\+Named\+List\+Added}}.
+
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a1449424052d81cabb815ac57736a0436}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a1449424052d81cabb815ac57736a0436}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Add (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$}]{item }\end{DoxyParamCaption})}
+
+
+
+Adds a defined Key\+Value\+Pair. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The defined Key\+Value\+Pair.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a35aa48dd8694468e52279c5806e12af3}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a35aa48dd8694468e52279c5806e12af3}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Clear@{Clear}}
+\index{Clear@{Clear}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears this Dictionary. 
+
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a37d309d51adf0c0723822e6c75bcdafa}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a37d309d51adf0c0723822e6c75bcdafa}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Contains@{Contains}}
+\index{Contains@{Contains}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Contains (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$}]{item }\end{DoxyParamCaption})}
+
+
+
+Checks wheather a given Key\+Value\+Pair is contained or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The given Key\+Value\+Pair.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true}, if contained, otherwise {\ttfamily false}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_af88ebae6152ad4d1764163343642cd6a}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_af88ebae6152ad4d1764163343642cd6a}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!ContainsKey@{ContainsKey}}
+\index{ContainsKey@{ContainsKey}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{ContainsKey()}{ContainsKey()}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Contains\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Checks wheather a given ICompany-\/KEY exists or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The ICompany-\/KEY to search for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the ICompany-\/KEY exists, otherwise {\ttfamily false} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab0bcd278f2686b6614bdb46a468a91eb}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab0bcd278f2686b6614bdb46a468a91eb}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!CopyTo@{CopyTo}}
+\index{CopyTo@{CopyTo}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{CopyTo()}{CopyTo()}}
+{\footnotesize\ttfamily void ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Copy\+To (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$\mbox{[}$\,$\mbox{]}}]{array,  }\item[{int}]{array\+Index }\end{DoxyParamCaption})}
+
+
+
+Copies the elements of this IDictionary$<$\+ICompany, IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$$>$ to an Array, starting at an particular Array index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The given Array to copy to.\\
+\hline
+{\em array\+Index} & The particular Array index to start.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If the Array is {\ttfamily null}.\\
+\hline
+{\em Argument\+Out\+Of\+Range\+Exception} & If the given index is out of range of the array.\\
+\hline
+{\em Argument\+Exception} & If anything with the given arguments is wrong.\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a68660428495e7518f7d48fe8837c7e61}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a68660428495e7518f7d48fe8837c7e61}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!GetEnumerator@{GetEnumerator}}
+\index{GetEnumerator@{GetEnumerator}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{GetEnumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily IEnumerator$<$Key\+Value\+Pair$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}}$>$ $>$ $>$ ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an enumerator, that iterates through this collection. 
+
+\begin{DoxyReturn}{Returns}
+An enumerator that can be used to iterate through this collection.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a5a78a79240c2b649da62089475673c9d}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a5a78a79240c2b649da62089475673c9d}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Remove@{Remove}}
+\index{Remove@{Remove}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Removes the given KEY and its value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The given KEY to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the given KEY was found and removed, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a9c0c042fb1704bf2088f2c79b5291e5c}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a9c0c042fb1704bf2088f2c79b5291e5c}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Remove@{Remove}}
+\index{Remove@{Remove}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Remove (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$$>$}]{item }\end{DoxyParamCaption})}
+
+
+
+Removes the given Key\+Value\+Pair$<$\+ICompany, IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The given Key\+Value\+Pair to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the given Key\+Value\+Pair was found and removed, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a41331ebe6b57baa8da507aacb33d2937}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a41331ebe6b57baa8da507aacb33d2937}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!TryGetValue@{TryGetValue}}
+\index{TryGetValue@{TryGetValue}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{TryGetValue()}{TryGetValue()}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Try\+Get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}}]{key,  }\item[{\mbox{[}\+Maybe\+Null\+When(false)\mbox{]} out \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}} $>$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the Value associated with the given Key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The given Key.\\
+\hline
+{\em value} & The Value associated with the given Key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the Key was found, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & If any of the Arguments is {\ttfamily null}.\\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a0c97fab19cb0aa0385eab90bf7774248}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a0c97fab19cb0aa0385eab90bf7774248}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Count@{Count}}
+\index{Count@{Count}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily int ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the amaunt of Companies. 
+
+The amaunt of Companies.\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab322ae51397002b1578b4ed4cffb4faa}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_ab322ae51397002b1578b4ed4cffb4faa}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!IsReadOnly@{IsReadOnly}}
+\index{IsReadOnly@{IsReadOnly}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{IsReadOnly}{IsReadOnly}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Is\+Read\+Only\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the information, if this Dictionary is readonly. 
+
+{\ttfamily true}, if readonly, otherwise {\ttfamily false}.\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a7ede27a0e33f5bd729ba90d6effcecbc}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a7ede27a0e33f5bd729ba90d6effcecbc}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Keys@{Keys}}
+\index{Keys@{Keys}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Keys}{Keys}}
+{\footnotesize\ttfamily ICollection$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}}$>$ ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Keys\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the Company Keys. 
+
+The Company Keys.\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a3833ddc627135a1079da93556cf47832}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a3833ddc627135a1079da93556cf47832}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!this\mbox{[}ICompany key\mbox{]}@{this[ICompany key]}}
+\index{this\mbox{[}ICompany key\mbox{]}@{this[ICompany key]}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{this[ICompany key]}{this[ICompany key]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}}$>$ ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+this\mbox{[}\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{ICompany}} key\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a Dictionary of IDictionary\+Of\+Named\+List$<$\+IModel, IProduct\+Item$>$ for a given ICompany. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The given ICompany.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Dictionary for the given Company.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a4631f770bce83651b9cbb3173c330997}\label{classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts_a4631f770bce83651b9cbb3173c330997}} 
+\index{ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}!Values@{Values}}
+\index{Values@{Values}!ahbsd.lib.NamedCollections.CompanyModelProducts@{ahbsd.lib.NamedCollections.CompanyModelProducts}}
+\doxysubsubsection{\texorpdfstring{Values}{Values}}
+{\footnotesize\ttfamily ICollection$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedList}{IDictionary\+Of\+Named\+List}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IModel}{IModel}}, \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IProductItem}{IProduct\+Item}}$>$ $>$ ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Values\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the Values. 
+
+The Values.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ahbsd.\+lib/\+Named\+Collections/Company\+Model\+Products.\+cs\end{DoxyCompactItemize}

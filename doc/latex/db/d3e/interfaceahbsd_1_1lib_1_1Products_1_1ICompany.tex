@@ -1,0 +1,175 @@
+\hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}{}\doxysection{ahbsd.\+lib.\+Products.\+ICompany Interface Reference}
+\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany}\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+
+
+An interface, describing a company / manufacturer.  
+
+
+
+
+Inherits IComponent.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_af916589a4dbe4dfda25b852e38791489}{Add\+Adress}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}} adress)
+\begin{DoxyCompactList}\small\item\em Adds an Adress. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_ac951f7113dcde389e9b9a2eccff48841}{Remove\+Adress}} (\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}} adress)
+\begin{DoxyCompactList}\small\item\em Removes an adress. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a2689325296a94f8efb65fe72a591d372}{Remove\+Adresses}} (\mbox{\hyperlink{namespaceahbsd_1_1lib_1_1Products_a39dd85db8925117127510dc7ca9f874a}{Adress\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Removes all adresses of the given type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a127e05310e4ce59f400f7c9685bbf49d}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the company name. \end{DoxyCompactList}\item 
+IList$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}} $>$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_ad027895f38458048e974e4f7706b6099}{Adresses}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the list of adresses. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a28e1e1002d781ca311c5d0e527b91302}{Note}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the notes to the company. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler$<$ \mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}} $>$ $>$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_af8127b7f0286b163970a6ec1c2f1540f}{On\+Adress\+Added}}
+\begin{DoxyCompactList}\small\item\em Happenes, if an adress was added. \end{DoxyCompactList}\item 
+Event\+Handler$<$ \mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}} $>$ $>$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a31f50bca575ac0d2ac623d78e1a3335a}{On\+Adress\+Removed}}
+\begin{DoxyCompactList}\small\item\em Happenes, if an adress was removed. \end{DoxyCompactList}\item 
+Change\+Event\+Handler$<$ string $>$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_acfaa680f566c3a491fb7d866ea64606a}{On\+Note\+Changed}}
+\begin{DoxyCompactList}\small\item\em Happenes, if the note has changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface, describing a company / manufacturer. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_af916589a4dbe4dfda25b852e38791489}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_af916589a4dbe4dfda25b852e38791489}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!AddAdress@{AddAdress}}
+\index{AddAdress@{AddAdress}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{AddAdress()}{AddAdress()}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Products.\+ICompany.\+Add\+Adress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}}}]{adress }\end{DoxyParamCaption})}
+
+
+
+Adds an Adress. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adress} & The adress to be added.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the adress was sucessfully added; otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_ac951f7113dcde389e9b9a2eccff48841}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_ac951f7113dcde389e9b9a2eccff48841}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!RemoveAdress@{RemoveAdress}}
+\index{RemoveAdress@{RemoveAdress}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{RemoveAdress()}{RemoveAdress()}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Products.\+ICompany.\+Remove\+Adress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}}}]{adress }\end{DoxyParamCaption})}
+
+
+
+Removes an adress. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adress} & The Adress to be removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the adress was successfully removed; otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a2689325296a94f8efb65fe72a591d372}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a2689325296a94f8efb65fe72a591d372}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!RemoveAdresses@{RemoveAdresses}}
+\index{RemoveAdresses@{RemoveAdresses}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{RemoveAdresses()}{RemoveAdresses()}}
+{\footnotesize\ttfamily bool ahbsd.\+lib.\+Products.\+ICompany.\+Remove\+Adresses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceahbsd_1_1lib_1_1Products_a39dd85db8925117127510dc7ca9f874a}{Adress\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Removes all adresses of the given type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The given type of adresses to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the Adresses of the given type were found and removed, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_ad027895f38458048e974e4f7706b6099}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_ad027895f38458048e974e4f7706b6099}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!Adresses@{Adresses}}
+\index{Adresses@{Adresses}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{Adresses}{Adresses}}
+{\footnotesize\ttfamily IList$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}}$>$ ahbsd.\+lib.\+Products.\+ICompany.\+Adresses\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the list of adresses. 
+
+The list of adresses.\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a127e05310e4ce59f400f7c9685bbf49d}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a127e05310e4ce59f400f7c9685bbf49d}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!Name@{Name}}
+\index{Name@{Name}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily string ahbsd.\+lib.\+Products.\+ICompany.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the company name. 
+
+The company name.
+
+Referenced by \mbox{\hyperlink{l00080}{ahbsd.\+lib.\+Named\+Collections.\+Company\+Model\+Products.\+Add()}}.
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a28e1e1002d781ca311c5d0e527b91302}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a28e1e1002d781ca311c5d0e527b91302}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!Note@{Note}}
+\index{Note@{Note}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{Note}{Note}}
+{\footnotesize\ttfamily string ahbsd.\+lib.\+Products.\+ICompany.\+Note\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the notes to the company. 
+
+The notes to the company.
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_af8127b7f0286b163970a6ec1c2f1540f}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_af8127b7f0286b163970a6ec1c2f1540f}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!OnAdressAdded@{OnAdressAdded}}
+\index{OnAdressAdded@{OnAdressAdded}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{OnAdressAdded}{OnAdressAdded}}
+{\footnotesize\ttfamily Event\+Handler$<$\mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}}$>$ $>$ ahbsd.\+lib.\+Products.\+ICompany.\+On\+Adress\+Added}
+
+
+
+Happenes, if an adress was added. 
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a31f50bca575ac0d2ac623d78e1a3335a}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_a31f50bca575ac0d2ac623d78e1a3335a}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!OnAdressRemoved@{OnAdressRemoved}}
+\index{OnAdressRemoved@{OnAdressRemoved}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{OnAdressRemoved}{OnAdressRemoved}}
+{\footnotesize\ttfamily Event\+Handler$<$\mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1Products_1_1IAdress}{IAdress}}$>$ $>$ ahbsd.\+lib.\+Products.\+ICompany.\+On\+Adress\+Removed}
+
+
+
+Happenes, if an adress was removed. 
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_acfaa680f566c3a491fb7d866ea64606a}\label{interfaceahbsd_1_1lib_1_1Products_1_1ICompany_acfaa680f566c3a491fb7d866ea64606a}} 
+\index{ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}!OnNoteChanged@{OnNoteChanged}}
+\index{OnNoteChanged@{OnNoteChanged}!ahbsd.lib.Products.ICompany@{ahbsd.lib.Products.ICompany}}
+\doxysubsubsection{\texorpdfstring{OnNoteChanged}{OnNoteChanged}}
+{\footnotesize\ttfamily Change\+Event\+Handler$<$string$>$ ahbsd.\+lib.\+Products.\+ICompany.\+On\+Note\+Changed}
+
+
+
+Happenes, if the note has changed. 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ahbsd.\+lib/\+Products/ICompany.\+cs\end{DoxyCompactItemize}
