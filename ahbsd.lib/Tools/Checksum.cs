@@ -12,7 +12,6 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
 namespace ahbsd.lib.Tools
 {
     /// <summary>
@@ -20,6 +19,7 @@ namespace ahbsd.lib.Tools
     /// </summary>
     public static class Checksum
     {
+        #region Checksum
         /// <summary>
         /// Gets the checksum of the given value.
         /// </summary>
@@ -28,24 +28,19 @@ namespace ahbsd.lib.Tools
         public static long GetChecksum(long value)
         {
             long result = 0;
-            char[] parts = value.ToString().ToCharArray();
-            bool positive = IsPositiv(value);
+            long positiveValue = value;
 
-            if (positive)
+            if (!IsPositive(value))
             {
-                for (int i = 0; i < parts.Length; i++)
-                {
-                    result += short.Parse(parts[i].ToString());
-                }
+                positiveValue = value * -1;
             }
-            else
+
+            char[] parts = positiveValue.ToString().ToCharArray();
+            
+            for (int i = 0; i < parts.Length; i++)
             {
-                for (int i = 1; i < parts.Length; i++)
-                {
-                    result += short.Parse(parts[i].ToString());
-                }
-                result *= -1;
-            }
+                result += short.Parse(parts[i].ToString());
+            }            
 
             return result;
         }
@@ -57,23 +52,16 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static short GetFinalChecksum(long value)
         {
-            short result;
             long tmp = value;
             int length;
-            bool positive = IsPositiv(value);
 
             do
             {
                 tmp = GetChecksum(tmp);
                 length = tmp.ToString().Length;
-                if (!positive)
-                {
-                    length--;
-                }
             } while (length > 1);
 
-            result = (short)tmp;
-            return result;
+            return (short)tmp;
         }
 
         /// <summary>
@@ -88,7 +76,7 @@ namespace ahbsd.lib.Tools
         {
             long? result = null;
 
-            if (value != null)
+            if (value.HasValue)
             {
                 result = GetChecksum((long)value);
             }
@@ -103,37 +91,20 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static short? GetFinalChecksum(long? value)
         {
-            short? result;
             long? tmp = value;
             int length;
-            bool positive = false;
 
-            if (value != null)
+            if (value.HasValue)
             {
-                positive = IsPositiv((long)value);
-            }
-
-            do
-            {
-                tmp = GetChecksum(tmp);
-                if (tmp != null)
+                do
                 {
+                    tmp = GetChecksum(tmp);
                     length = tmp.ToString().Length;
-                    if (!positive)
-                    {
-                        length--;
-                    }
-                }
-                else
-                {
-                    length = 0;
-                }
-            } while (length > 1);
+                } while (length > 1);
 
-            result = (short?)tmp;
-            return result;
+            }
+            return (short?)tmp;
         }
-
 
         /// <summary>
         /// Gets the checksum of the given value.
@@ -160,7 +131,6 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static ushort GetFinalChecksum(ulong value)
         {
-            ushort result;
             ulong tmp = value;
             int length;
 
@@ -170,8 +140,7 @@ namespace ahbsd.lib.Tools
                 length = tmp.ToString().Length;
             } while (length > 1);
 
-            result = (ushort)tmp;
-            return result;
+            return (ushort)tmp;
         }
 
         /// <summary>
@@ -186,7 +155,7 @@ namespace ahbsd.lib.Tools
         {
             ulong? result = null;
 
-            if (value != null)
+            if (value.HasValue)
             {
                 result = GetChecksum((ulong)value);
             }
@@ -201,62 +170,31 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static ushort? GetFinalChecksum(ulong? value)
         {
-            ushort? result;
             ulong? tmp = value;
             int length;
 
-            do
+            if (value.HasValue)
             {
-                tmp = GetChecksum(tmp);
-                if (tmp != null)
+                do
                 {
+                    tmp = GetChecksum(tmp);
                     length = tmp.ToString().Length;
-                }
-                else
-                {
-                    length = 0;
-                }
-            } while (length > 1);
+             
+                } while (length > 1);
 
-            result = (ushort?)tmp;
-            return result;
-        }
-
-        /// <summary>
-        /// Checks wheather value is positive or negative.
-        /// </summary>
-        /// <param name="value">The value to check.</param>
-        /// <returns>
-        /// <c>true</c> if value is positive, otherwise <c>false</c>.
-        /// </returns>
-        public static bool IsPositiv(long value)
-        {
-            bool result;
-
-            char[] tmp = value.ToString().ToCharArray();
-            result = !tmp[0].Equals('-');
-
-            return result;
-        }
-
-        /// <summary>
-        /// Checks wheather value is positive or negative.
-        /// </summary>
-        /// <param name="value">The value to check.</param>
-        /// <returns>
-        /// <c>true</c> if value is positive, otherwise <c>false</c>.
-        /// </returns>
-        public static bool IsPositive(long? value)
-        {
-            bool result = false;
-
-            if (value != null)
-            {
-                result = IsPositiv((long)value);
             }
-
-            return result;
+            return (ushort?)tmp;
         }
+        #endregion
+        #region IsPositive
+        /// <summary>
+        /// Checks wheather value is positive or negative.
+        /// </summary>
+        /// <param name="value">The value to check.</param>
+        /// <returns>
+        /// <c>true</c> if value is positive, otherwise <c>false</c>.
+        /// </returns>
+        public static bool IsPositive(long value) => !value.ToString().Substring(0, 1).Equals("-");
 
         /// <summary>
         /// Checks wheather value is positive or negative.
@@ -265,10 +203,7 @@ namespace ahbsd.lib.Tools
         /// <returns>
         /// <c>true</c> if value is positive, otherwise <c>false</c>.
         /// </returns>
-        public static bool IsPositiv(ulong value)
-        {
-            return true;
-        }
+        public static bool IsPositive(long? value) => value.HasValue && IsPositive((long)value);
 
         /// <summary>
         /// Checks wheather value is positive or negative.
@@ -277,17 +212,7 @@ namespace ahbsd.lib.Tools
         /// <returns>
         /// <c>true</c> if value is positive, otherwise <c>false</c>.
         /// </returns>
-        public static bool IsPositive(ulong? value)
-        {
-            bool result = false;
-
-            if (value != null)
-            {
-                result = true;
-            }
-
-            return result;
-        }
+        public static bool IsPositive(ulong value) => true;
 
         /// <summary>
         /// Checks wheather value is positive or negative.
@@ -296,15 +221,7 @@ namespace ahbsd.lib.Tools
         /// <returns>
         /// <c>true</c> if value is positive, otherwise <c>false</c>.
         /// </returns>
-        public static bool IsPositiv(short value)
-        {
-            bool result;
-
-            char[] tmp = value.ToString().ToCharArray();
-            result = !tmp[0].Equals('-');
-
-            return result;
-        }
+        public static bool IsPositive(ulong? value) => value.HasValue;
 
         /// <summary>
         /// Checks wheather value is positive or negative.
@@ -313,19 +230,16 @@ namespace ahbsd.lib.Tools
         /// <returns>
         /// <c>true</c> if value is positive, otherwise <c>false</c>.
         /// </returns>
-        public static bool IsPositive(short? value)
-        {
-            bool result = false;
+        public static bool IsPositive(short value) => !value.ToString().Substring(0, 1).Equals("-");
 
-            if (value != null)
-            {
-                result = IsPositiv((long)value);
-            }
-
-            return result;
-        }
-
-
-
+        /// <summary>
+        /// Checks wheather value is positive or negative.
+        /// </summary>
+        /// <param name="value">The value to check.</param>
+        /// <returns>
+        /// <c>true</c> if value is positive, otherwise <c>false</c>.
+        /// </returns>
+        public static bool IsPositive(short? value) => value.HasValue && IsPositive((short)value);
+        #endregion
     }
 }
