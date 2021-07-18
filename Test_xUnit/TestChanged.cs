@@ -1,13 +1,60 @@
 using System;
 using ahbsd.lib;
 using ahbsd.lib.Exceptions;
+using ahbsd.lib.ApiKey;
 using ahbsd.lib.Password;
 using Xunit;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Test_xUnit
 {
     public class TestChanged
     {
+        static int nr = 0;
+        IDictionary<int, int?> apiKeys = new Dictionary<int, int?>();
+
+
+        [Theory]
+        [InlineData(null, 1.0)]
+        [InlineData(0, 1.0)]
+        [InlineData(3.14, 3.1415)]
+        [InlineData(Math.PI, 3.14)]
+        public void OnChangedTest(double? oldValue, double? newValue)
+        {
+            ITestClass<double?, string> testClass = new TestClass<double?, string>(oldValue, $"TC{nr}");
+            apiKeys.Add(nr, TestClass<double?, string>.FindApiKey($"TC{nr}"));
+            testClass.OnChange += TestClass_OnChange;
+            testClass.Variable = newValue;
+            nr++;
+        }
+
+        private void TestClass_OnChange(object sender, ChangeEventArgs<double?> e)
+        {
+            TestClass<double?, string> castetSender = (TestClass<double?, string>)sender;
+            string apiKey = null;
+
+            if (apiKeys[nr].HasValue)
+            {
+                apiKey = TestClass<double?, string>.GetApiKey(apiKeys[nr].Value);
+            }
+
+            try
+            {
+                Assert.NotEqual(e.OldValue, e.NewValue);
+                Assert.Equal(e.NewValue, castetSender.Variable);
+                if (apiKeys[nr].HasValue)
+                {
+                    Assert.Equal(apiKey, $"TC{nr}");
+                }
+            }
+            catch (Exception ex2)
+            {
+                Console.WriteLine($"A {ex2.GetType()} happened:");
+                Console.WriteLine($"Message: {ex2.Message}");
+            }
+        }
+
         [Fact]
         public void TestChange()
         {
