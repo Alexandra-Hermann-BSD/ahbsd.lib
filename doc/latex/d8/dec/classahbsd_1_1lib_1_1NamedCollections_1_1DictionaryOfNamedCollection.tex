@@ -1,0 +1,168 @@
+\hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}{}\doxysection{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$ Class Template Reference}
+\label{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}\index{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}}
+
+
+Default implementation of IDictionary\+Of\+Named\+Collections$<$\+K, V$>$.  
+
+
+Inheritance diagram for ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/dec/classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a6353bdb27235f634c5f9e259d1aea42c}{Add}} (K key, string name)
+\begin{DoxyCompactList}\small\item\em Adds a new key with the name of the new INamed\+Collection$<$\+T$>$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_ae22b2d2b3079c46dcbf7fe83d91e8d55}{Add}} (K key, V value, string name=null)
+\begin{DoxyCompactList}\small\item\em Adds a value to the INamed\+Collection$<$\+T$>$ of key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a530ae03eec670ec53dd7cabad94541ac}{Add}} (Key\+Value\+Pair$<$ K, V $>$ key\+Value\+Pair, string name=null)
+\begin{DoxyCompactList}\small\item\em Adds a Key\+Value\+Pair$<$\+TKey, TValue$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler$<$ \mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1INamedCollection}{INamed\+Collection}}$<$ V $>$ $>$ $>$ \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_aa32ca3834df14dd074f148815a4b46d3}{On\+Named\+Collection\+Added}}
+\begin{DoxyCompactList}\small\item\em Happenes if a new INamed\+Collection$<$\+T$>$ was added. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Default implementation of IDictionary\+Of\+Named\+Collections$<$\+K, V$>$. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em K} & Key Type.\\
+\hline
+{\em V} & Value Type of the INamed\+Collection$<$\+T$>$.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a6353bdb27235f634c5f9e259d1aea42c}\label{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a6353bdb27235f634c5f9e259d1aea42c}} 
+\index{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection}}$<$ K, V $>$.Add (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Adds a new key with the name of the new INamed\+Collection$<$\+T$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The new key.\\
+\hline
+{\em name} & The name of the new INamed\+Collection$<$\+T$>$.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & If key already exists.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a09d6d57bf9df9f0d5869d34bb188804d}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections$<$ K, V $>$}}.
+
+
+
+References \mbox{\hyperlink{l00032}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$.\+On\+Named\+Collection\+Added}}.
+
+
+
+Referenced by \mbox{\hyperlink{l00083}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$.\+Add()}}.
+
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_ae22b2d2b3079c46dcbf7fe83d91e8d55}\label{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_ae22b2d2b3079c46dcbf7fe83d91e8d55}} 
+\index{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection}}$<$ K, V $>$.Add (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{V}]{value,  }\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Adds a value to the INamed\+Collection$<$\+T$>$ of key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The Key.\\
+\hline
+{\em value} & The Value.\\
+\hline
+{\em name} & The name of the new INamed\+Collection$<$\+T$>$. \\
+\hline
+\end{DoxyParams}
+
+
+If the key already exists the name isn\textquotesingle{}t needed; if the key doesn\textquotesingle{}t exists a name is needed, otherwise a Key\+Not\+Found\+Exception will be thrown. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Key\+Not\+Found\+Exception} & If the key isn\textquotesingle{}t there AND a name for the new INamed\+Collection$<$\+T$>$ was missing. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a25f77afc69067db8387308b47fab5e95}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections$<$ K, V $>$}}.
+
+
+
+References \mbox{\hyperlink{l00039}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$.\+Add()}}, and \mbox{\hyperlink{l00032}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$.\+On\+Named\+Collection\+Added}}.
+
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a530ae03eec670ec53dd7cabad94541ac}\label{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a530ae03eec670ec53dd7cabad94541ac}} 
+\index{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection}}$<$ K, V $>$.Add (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ K, V $>$}]{key\+Value\+Pair,  }\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Adds a Key\+Value\+Pair$<$\+TKey, TValue$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Value\+Pair} & The Key\+Value\+Pair$<$\+TKey, TValue$>$.\\
+\hline
+{\em name} & The name of the new INamed\+Collection$<$\+T$>$. \\
+\hline
+\end{DoxyParams}
+
+
+If the key already exists the name isn\textquotesingle{}t needed; if the key doesn\textquotesingle{}t exists a name is needed, otherwise a Key\+Not\+Found\+Exception will be thrown. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Key\+Not\+Found\+Exception} & If the key isn\textquotesingle{}t there AND a name for the new INamed\+Collection$<$\+T$>$ was missing. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a6c2fbae9ce8ce3b8f72b5989b3d03faa}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections$<$ K, V $>$}}.
+
+
+
+References \mbox{\hyperlink{l00039}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$.\+Add()}}.
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_aa32ca3834df14dd074f148815a4b46d3}\label{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_aa32ca3834df14dd074f148815a4b46d3}} 
+\index{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}!OnNamedCollectionAdded@{OnNamedCollectionAdded}}
+\index{OnNamedCollectionAdded@{OnNamedCollectionAdded}!ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$@{ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{OnNamedCollectionAdded}{OnNamedCollectionAdded}}
+{\footnotesize\ttfamily Event\+Handler$<$\mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1INamedCollection}{INamed\+Collection}}$<$V$>$ $>$ $>$ \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection}}$<$ K, V $>$.On\+Named\+Collection\+Added}
+
+
+
+Happenes if a new INamed\+Collection$<$\+T$>$ was added. 
+
+
+
+Referenced by \mbox{\hyperlink{l00039}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$.\+Add()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ahbsd.\+lib/\+Named\+Collections/Dictionary\+Of\+Named\+Collection.\+cs\end{DoxyCompactItemize}

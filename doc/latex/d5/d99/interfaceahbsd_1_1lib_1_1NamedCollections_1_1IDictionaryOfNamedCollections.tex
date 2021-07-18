@@ -1,0 +1,148 @@
+\hypertarget{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}{}\doxysection{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections$<$ K, V $>$ Interface Template Reference}
+\label{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}\index{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}}
+
+
+Interface for a dictionary of named collections as value.  
+
+
+Inheritance diagram for ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections$<$ K, V $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d99/interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a09d6d57bf9df9f0d5869d34bb188804d}{Add}} (K key, string name)
+\begin{DoxyCompactList}\small\item\em Adds a new key with the name of the new INamed\+Collection$<$\+T$>$. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a25f77afc69067db8387308b47fab5e95}{Add}} (K key, V value, string name=null)
+\begin{DoxyCompactList}\small\item\em Adds a value to the INamed\+Collection$<$\+T$>$ of key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a6c2fbae9ce8ce3b8f72b5989b3d03faa}{Add}} (Key\+Value\+Pair$<$ K, V $>$ key\+Value\+Pair, string name=null)
+\begin{DoxyCompactList}\small\item\em Adds a Key\+Value\+Pair$<$\+TKey, TValue$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler$<$ \mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1INamedCollection}{INamed\+Collection}}$<$ V $>$ $>$ $>$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a8d69c42431f5c8a7eb71a73dbda2ccbb}{On\+Named\+Collection\+Added}}
+\begin{DoxyCompactList}\small\item\em Happenes if a new INamed\+Collection$<$\+T$>$ was added. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for a dictionary of named collections as value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em K} & Key Type.\\
+\hline
+{\em V} & Value Type of the INamed\+Collection$<$\+T$>$.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a09d6d57bf9df9f0d5869d34bb188804d}\label{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a09d6d57bf9df9f0d5869d34bb188804d}} 
+\index{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections}}$<$ K, V $>$.Add (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Adds a new key with the name of the new INamed\+Collection$<$\+T$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The new key.\\
+\hline
+{\em name} & The name of the new INamed\+Collection$<$\+T$>$.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & If key already exists.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a6353bdb27235f634c5f9e259d1aea42c}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$}}.
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a25f77afc69067db8387308b47fab5e95}\label{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a25f77afc69067db8387308b47fab5e95}} 
+\index{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections}}$<$ K, V $>$.Add (\begin{DoxyParamCaption}\item[{K}]{key,  }\item[{V}]{value,  }\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Adds a value to the INamed\+Collection$<$\+T$>$ of key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The Key.\\
+\hline
+{\em value} & The Value.\\
+\hline
+{\em name} & The name of the new INamed\+Collection$<$\+T$>$. \\
+\hline
+\end{DoxyParams}
+
+
+If the key already exists the name isn\textquotesingle{}t needed; if the key doesn\textquotesingle{}t exists a name is needed, otherwise a Key\+Not\+Found\+Exception will be thrown. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Key\+Not\+Found\+Exception} & If the key isn\textquotesingle{}t there AND a name for the new INamed\+Collection$<$\+T$>$ was missing. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_ae22b2d2b3079c46dcbf7fe83d91e8d55}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$}}.
+
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a6c2fbae9ce8ce3b8f72b5989b3d03faa}\label{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a6c2fbae9ce8ce3b8f72b5989b3d03faa}} 
+\index{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}!Add@{Add}}
+\index{Add@{Add}!ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections}}$<$ K, V $>$.Add (\begin{DoxyParamCaption}\item[{Key\+Value\+Pair$<$ K, V $>$}]{key\+Value\+Pair,  }\item[{string}]{name = {\ttfamily null} }\end{DoxyParamCaption})}
+
+
+
+Adds a Key\+Value\+Pair$<$\+TKey, TValue$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+Value\+Pair} & The Key\+Value\+Pair$<$\+TKey, TValue$>$.\\
+\hline
+{\em name} & The name of the new INamed\+Collection$<$\+T$>$. \\
+\hline
+\end{DoxyParams}
+
+
+If the key already exists the name isn\textquotesingle{}t needed; if the key doesn\textquotesingle{}t exists a name is needed, otherwise a Key\+Not\+Found\+Exception will be thrown. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Key\+Not\+Found\+Exception} & If the key isn\textquotesingle{}t there AND a name for the new INamed\+Collection$<$\+T$>$ was missing. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classahbsd_1_1lib_1_1NamedCollections_1_1DictionaryOfNamedCollection_a530ae03eec670ec53dd7cabad94541ac}{ahbsd.\+lib.\+Named\+Collections.\+Dictionary\+Of\+Named\+Collection$<$ K, V $>$}}.
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a8d69c42431f5c8a7eb71a73dbda2ccbb}\label{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections_a8d69c42431f5c8a7eb71a73dbda2ccbb}} 
+\index{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}!OnNamedCollectionAdded@{OnNamedCollectionAdded}}
+\index{OnNamedCollectionAdded@{OnNamedCollectionAdded}!ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$@{ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}}
+\doxysubsubsection{\texorpdfstring{OnNamedCollectionAdded}{OnNamedCollectionAdded}}
+{\footnotesize\ttfamily Event\+Handler$<$\mbox{\hyperlink{classahbsd_1_1lib_1_1EventArgs}{Event\+Args}}$<$\mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1INamedCollection}{INamed\+Collection}}$<$V$>$ $>$ $>$ \mbox{\hyperlink{interfaceahbsd_1_1lib_1_1NamedCollections_1_1IDictionaryOfNamedCollections}{ahbsd.\+lib.\+Named\+Collections.\+IDictionary\+Of\+Named\+Collections}}$<$ K, V $>$.On\+Named\+Collection\+Added}
+
+
+
+Happenes if a new INamed\+Collection$<$\+T$>$ was added. 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ahbsd.\+lib/\+Named\+Collections/IDictionary\+Of\+Named\+Collections.\+cs\end{DoxyCompactItemize}

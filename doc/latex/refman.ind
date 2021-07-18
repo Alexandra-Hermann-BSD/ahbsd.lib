@@ -1,170 +1,631 @@
 \begin{theindex}
 
+  \item {Add}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{48, 49}
+    \subitem {ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}, 
+		\hyperpage{55, 56}
+    \subitem {ahbsd.lib.NamedCollections.DictionaryOfNamedList$<$ K, V $>$}, 
+		\hyperpage{58, 59}
+    \subitem {ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}, 
+		\hyperpage{74, 75}
+    \subitem {ahbsd.lib.NamedCollections.IDictionaryOfNamedList$<$ K, V $>$}, 
+		\hyperpage{76, 77}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{35, 36}
+  \item {AddAdress}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{70}
+  \item {Adress}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{64}
+  \item {Adresses}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{71}
+  \item {AdressType}
+    \subitem {ahbsd.lib.Products}, \hyperpage{17}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{64}
   \item {ahbsd}, \hyperpage{13}
   \item {ahbsd.lib}, \hyperpage{13}
     \subitem {ChangeEventHandler$<$ T $>$}, \hyperpage{13}
   \item {ahbsd.lib.ApiKey}, \hyperpage{14}
     \subitem {ApiKeyEventHandler$<$ T $>$}, \hyperpage{14}
-  \item {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, \hyperpage{17}
-    \subitem {ApiKeyEventArgs}, \hyperpage{18}
-    \subitem {Index}, \hyperpage{18}
-  \item {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{19}
-    \subitem {ApiKey}, \hyperpage{24}
-    \subitem {ApiKeyHolder}, \hyperpage{21}
-    \subitem {Equals}, \hyperpage{21, 22}
-    \subitem {FindApiKey}, \hyperpage{22}
-    \subitem {GetApiKey}, \hyperpage{22}
-    \subitem {GetHashCode}, \hyperpage{23}
-    \subitem {KnownApiKeys}, \hyperpage{24}
-    \subitem {OnApiKeyAdded}, \hyperpage{25}
-    \subitem {operator!=}, \hyperpage{23}
-    \subitem {operator==}, \hyperpage{24}
-  \item {ahbsd.lib.ApiKey.IApiKeyEventArgs}, \hyperpage{35}
-    \subitem {Index}, \hyperpage{36}
-  \item {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{25}
-    \subitem {ChangeEventArgs}, \hyperpage{26, 27}
-    \subitem {Equals}, \hyperpage{27}
-    \subitem {GetHashCode}, \hyperpage{28}
-    \subitem {NewValue}, \hyperpage{30}
-    \subitem {OldValue}, \hyperpage{30}
-    \subitem {operator!=}, \hyperpage{28}
-    \subitem {operator==}, \hyperpage{29}
-    \subitem {SetNewValue}, \hyperpage{29}
-    \subitem {ToString}, \hyperpage{29}
-  \item {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{31}
-    \subitem {EventArgs}, \hyperpage{32}
-    \subitem {Value}, \hyperpage{32}
+  \item {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, \hyperpage{19}
+    \subitem {ApiKeyEventArgs}, \hyperpage{20}
+    \subitem {Index}, \hyperpage{20}
+  \item {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{21}
+    \subitem {ApiKey}, \hyperpage{26}
+    \subitem {ApiKeyHolder}, \hyperpage{23}
+    \subitem {Equals}, \hyperpage{23, 24}
+    \subitem {FindApiKey}, \hyperpage{24}
+    \subitem {GetApiKey}, \hyperpage{24}
+    \subitem {GetHashCode}, \hyperpage{25}
+    \subitem {KnownApiKeys}, \hyperpage{26}
+    \subitem {OnApiKeyAdded}, \hyperpage{27}
+    \subitem {operator!=}, \hyperpage{25}
+    \subitem {operator==}, \hyperpage{26}
+  \item {ahbsd.lib.ApiKey.IApiKeyEventArgs}, \hyperpage{66}
+    \subitem {Index}, \hyperpage{66}
+  \item {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{27}
+    \subitem {ChangeEventArgs}, \hyperpage{28, 29}
+    \subitem {Equals}, \hyperpage{29}
+    \subitem {GetHashCode}, \hyperpage{30}
+    \subitem {NewValue}, \hyperpage{32}
+    \subitem {OldValue}, \hyperpage{32}
+    \subitem {operator!=}, \hyperpage{30}
+    \subitem {operator==}, \hyperpage{31}
+    \subitem {SetNewValue}, \hyperpage{31}
+    \subitem {ToString}, \hyperpage{31}
+  \item {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{60}
+    \subitem {EventArgs}, \hyperpage{60}
+    \subitem {Value}, \hyperpage{61}
   \item {ahbsd.lib.Exceptions}, \hyperpage{15}
-  \item {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{33}
-    \subitem {Exception}, \hyperpage{34}
-    \subitem {Value}, \hyperpage{35}
+  \item {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{61}
+    \subitem {Exception}, \hyperpage{62}
+    \subitem {Value}, \hyperpage{63}
   \item {ahbsd.lib.Exceptions.IGenericException$<$ T $>$}, 
-		\hyperpage{39}
-    \subitem {Value}, \hyperpage{40}
-  \item {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{36}
-    \subitem {NewValue}, \hyperpage{37}
-    \subitem {OldValue}, \hyperpage{38}
-    \subitem {SetNewValue}, \hyperpage{37}
-    \subitem {ToString}, \hyperpage{37}
-  \item {ahbsd.lib.IEventArgs$<$ T $>$}, \hyperpage{38}
-    \subitem {Value}, \hyperpage{39}
-  \item {ahbsd.lib.Tools}, \hyperpage{15}
-  \item {ahbsd.lib.Tools.ConsolePrintTable}, \hyperpage{30}
-    \subitem {Print}, \hyperpage{31}
+		\hyperpage{79}
+    \subitem {Value}, \hyperpage{80}
+  \item {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{66}
+    \subitem {NewValue}, \hyperpage{68}
+    \subitem {OldValue}, \hyperpage{68}
+    \subitem {SetNewValue}, \hyperpage{67}
+    \subitem {ToString}, \hyperpage{67}
+  \item {ahbsd.lib.IEventArgs$<$ T $>$}, \hyperpage{78}
+    \subitem {Value}, \hyperpage{79}
+  \item {ahbsd.lib.NamedCollections}, \hyperpage{15}
+  \item {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{46}
+    \subitem {Add}, \hyperpage{48, 49}
+    \subitem {Clear}, \hyperpage{49}
+    \subitem {CompanyModelProducts}, \hyperpage{47}
+    \subitem {Contains}, \hyperpage{49}
+    \subitem {ContainsKey}, \hyperpage{50}
+    \subitem {CopyTo}, \hyperpage{50}
+    \subitem {Count}, \hyperpage{52}
+    \subitem {GetEnumerator}, \hyperpage{51}
+    \subitem {IsReadOnly}, \hyperpage{52}
+    \subitem {Keys}, \hyperpage{52}
+    \subitem {Remove}, \hyperpage{51}
+    \subitem {this[ICompany key]}, \hyperpage{53}
+    \subitem {TryGetValue}, \hyperpage{52}
+    \subitem {Values}, \hyperpage{53}
+  \item {ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}, 
+		\hyperpage{54}
+    \subitem {Add}, \hyperpage{55, 56}
+    \subitem {OnNamedCollectionAdded}, \hyperpage{56}
+  \item {ahbsd.lib.NamedCollections.DictionaryOfNamedList$<$ K, V $>$}, 
+		\hyperpage{57}
+    \subitem {Add}, \hyperpage{58, 59}
+    \subitem {OnNamedListAdded}, \hyperpage{59}
+  \item {ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}, 
+		\hyperpage{73}
+    \subitem {Add}, \hyperpage{74, 75}
+    \subitem {OnNamedCollectionAdded}, \hyperpage{75}
+  \item {ahbsd.lib.NamedCollections.IDictionaryOfNamedList$<$ K, V $>$}, 
+		\hyperpage{75}
+    \subitem {Add}, \hyperpage{76, 77}
+    \subitem {OnNamedListAdded}, \hyperpage{78}
+  \item {ahbsd.lib.NamedCollections.INamedCollection$<$ T $>$}, 
+		\hyperpage{81}
+    \subitem {Name}, \hyperpage{82}
+    \subitem {OnNameChanged}, \hyperpage{83}
+    \subitem {ToString}, \hyperpage{82}
+  \item {ahbsd.lib.NamedCollections.INamedList$<$ T $>$}, 
+		\hyperpage{83}
+    \subitem {Name}, \hyperpage{84}
+    \subitem {OnNameChanged}, \hyperpage{84}
+    \subitem {ToString}, \hyperpage{84}
+  \item {ahbsd.lib.NamedCollections.NamedCollection$<$ T $>$}, 
+		\hyperpage{91}
+    \subitem {Name}, \hyperpage{93}
+    \subitem {NamedCollection}, \hyperpage{92}
+    \subitem {OnNameChanged}, \hyperpage{93}
+    \subitem {ToString}, \hyperpage{93}
+  \item {ahbsd.lib.NamedCollections.NamedList$<$ T $>$}, \hyperpage{94}
+    \subitem {Name}, \hyperpage{97}
+    \subitem {NamedList}, \hyperpage{95, 96}
+    \subitem {OnNameChanged}, \hyperpage{97}
+    \subitem {ToString}, \hyperpage{97}
+  \item {ahbsd.lib.Password}, \hyperpage{15}
+    \subitem {CapitalLetter}, \hyperpage{16}
+    \subitem {Charasteristic}, \hyperpage{16}
+    \subitem {LowercaseLetter}, \hyperpage{16}
+    \subitem {Numeric}, \hyperpage{16}
+    \subitem {Space}, \hyperpage{16}
+    \subitem {SpecialCharacter}, \hyperpage{16}
+  \item {ahbsd.lib.Password.CharacteristicDictionary}, \hyperpage{32}
+    \subitem {Add}, \hyperpage{35, 36}
+    \subitem {CharacteristicDictionary}, \hyperpage{34, 35}
+    \subitem {Clear}, \hyperpage{36}
+    \subitem {Contains}, \hyperpage{36}
+    \subitem {ContainsKey}, \hyperpage{36}
+    \subitem {CopyTo}, \hyperpage{37}
+    \subitem {Count}, \hyperpage{39}
+    \subitem {GetEnumerator}, \hyperpage{37}
+    \subitem {IsReadOnly}, \hyperpage{39}
+    \subitem {Keys}, \hyperpage{39}
+    \subitem {Name}, \hyperpage{39}
+    \subitem {Remove}, \hyperpage{37, 38}
+    \subitem {this[Charasteristic key]}, \hyperpage{39}
+    \subitem {ToString}, \hyperpage{38}
+    \subitem {TryGetValue}, \hyperpage{38}
+    \subitem {Values}, \hyperpage{40}
+  \item {ahbsd.lib.Password.Check}, \hyperpage{16}
+  \item {ahbsd.lib.Password.Check.ISecurityValue}, \hyperpage{89}
+    \subitem {Password}, \hyperpage{89}
+    \subitem {Security}, \hyperpage{89}
+  \item {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{109}
+    \subitem {Equals}, \hyperpage{112}
+    \subitem {GetHashCode}, \hyperpage{112}
+    \subitem {operator!=}, \hyperpage{113}
+    \subitem {operator==}, \hyperpage{113}
+    \subitem {Password}, \hyperpage{114}
+    \subitem {Security}, \hyperpage{114}
+    \subitem {SecurityValue}, \hyperpage{110, 111}
+    \subitem {ToString}, \hyperpage{113}
+  \item {ahbsd.lib.Password.ICharacteristicDictionary}, \hyperpage{68}
+    \subitem {Name}, \hyperpage{69}
+    \subitem {ToString}, \hyperpage{69}
+  \item {ahbsd.lib.Password.IPassword}, \hyperpage{85}
+    \subitem {Characteristics}, \hyperpage{85}
+    \subitem {Length}, \hyperpage{86}
+    \subitem {LowerCases}, \hyperpage{86}
+    \subitem {Numbers}, \hyperpage{86}
+    \subitem {OnChange}, \hyperpage{87}
+    \subitem {SecurityValue}, \hyperpage{86}
+    \subitem {Spaces}, \hyperpage{86}
+    \subitem {Specials}, \hyperpage{86}
+    \subitem {UpperCases}, \hyperpage{87}
+    \subitem {Value}, \hyperpage{87}
+  \item {ahbsd.lib.Password.Password}, \hyperpage{98}
+    \subitem {Characteristics}, \hyperpage{106}
+    \subitem {Equals}, \hyperpage{100, 101}
+    \subitem {GetCharasteristic}, \hyperpage{101}
+    \subitem {GetCharasteristics}, \hyperpage{101}
+    \subitem {GetHashCode}, \hyperpage{102}
+    \subitem {GetLowerCases}, \hyperpage{102}
+    \subitem {GetNumbers}, \hyperpage{102}
+    \subitem {GetPassword}, \hyperpage{103}
+    \subitem {GetSpaces}, \hyperpage{104}
+    \subitem {GetSpecials}, \hyperpage{104}
+    \subitem {GetUpperCases}, \hyperpage{104}
+    \subitem {Length}, \hyperpage{106}
+    \subitem {LowerCases}, \hyperpage{106}
+    \subitem {Numbers}, \hyperpage{106}
+    \subitem {OnChange}, \hyperpage{107}
+    \subitem {operator!=}, \hyperpage{105}
+    \subitem {operator==}, \hyperpage{105}
+    \subitem {Password}, \hyperpage{99, 100}
+    \subitem {SecurityValue}, \hyperpage{106}
+    \subitem {Spaces}, \hyperpage{106}
+    \subitem {Specials}, \hyperpage{107}
+    \subitem {UpperCases}, \hyperpage{107}
+    \subitem {Value}, \hyperpage{107}
+  \item {ahbsd.lib.Products}, \hyperpage{16}
+    \subitem {AdressType}, \hyperpage{17}
+    \subitem {Delivery}, \hyperpage{17}
+    \subitem {Other}, \hyperpage{17}
+    \subitem {Postal}, \hyperpage{17}
+    \subitem {Private}, \hyperpage{17}
+    \subitem {Store}, \hyperpage{17}
+  \item {ahbsd.lib.Products.IAdress}, \hyperpage{63}
+    \subitem {Adress}, \hyperpage{64}
+    \subitem {AdressType}, \hyperpage{64}
+    \subitem {City}, \hyperpage{64}
+    \subitem {Country}, \hyperpage{65}
+    \subitem {OnAdressChanged}, \hyperpage{65}
+    \subitem {OnTypeChanged}, \hyperpage{65}
+    \subitem {ZIP}, \hyperpage{65}
+  \item {ahbsd.lib.Products.ICompany}, \hyperpage{70}
+    \subitem {AddAdress}, \hyperpage{70}
+    \subitem {Adresses}, \hyperpage{71}
+    \subitem {Name}, \hyperpage{72}
+    \subitem {Note}, \hyperpage{72}
+    \subitem {OnAdressAdded}, \hyperpage{72}
+    \subitem {OnAdressRemoved}, \hyperpage{72}
+    \subitem {OnNoteChanged}, \hyperpage{72}
+    \subitem {RemoveAdress}, \hyperpage{71}
+    \subitem {RemoveAdresses}, \hyperpage{71}
+  \item {ahbsd.lib.Products.IModel}, \hyperpage{80}
+    \subitem {Name}, \hyperpage{80}
+    \subitem {Notes}, \hyperpage{81}
+    \subitem {OnNotesChanged}, \hyperpage{81}
+    \subitem {Producer}, \hyperpage{81}
+  \item {ahbsd.lib.Products.IProductItem}, \hyperpage{87}
+    \subitem {Model}, \hyperpage{88}
+    \subitem {Name}, \hyperpage{88}
+    \subitem {SerialNumber}, \hyperpage{88}
+  \item {ahbsd.lib.Tools}, \hyperpage{17}
+  \item {ahbsd.lib.Tools.Checksum}, \hyperpage{40}
+    \subitem {GetChecksum}, \hyperpage{41, 42}
+    \subitem {GetFinalChecksum}, \hyperpage{42, 43}
+    \subitem {IsPositiv}, \hyperpage{44}
+    \subitem {IsPositive}, \hyperpage{45, 46}
+  \item {ahbsd.lib.Tools.ConsolePrintTable}, \hyperpage{53}
+    \subitem {Print}, \hyperpage{54}
+  \item {ahbsd.lib.Tools.PrimeCheck}, \hyperpage{108}
+    \subitem {Amount}, \hyperpage{108}
+    \subitem {Check}, \hyperpage{108}
+    \subitem {Time}, \hyperpage{109}
+  \item {Amount}
+    \subitem {ahbsd.lib.Tools.PrimeCheck}, \hyperpage{108}
   \item {ApiKey}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{26}
   \item {ApiKeyEventArgs}
     \subitem {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, 
-		\hyperpage{18}
+		\hyperpage{20}
   \item {ApiKeyEventHandler$<$ T $>$}
     \subitem {ahbsd.lib.ApiKey}, \hyperpage{14}
   \item {ApiKeyHolder}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{21}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{23}
 
   \indexspace
 
+  \item {CapitalLetter}
+    \subitem {ahbsd.lib.Password}, \hyperpage{16}
   \item {ChangeEventArgs}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{26, 27}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{28, 29}
   \item {ChangeEventHandler$<$ T $>$}
     \subitem {ahbsd.lib}, \hyperpage{13}
+  \item {CharacteristicDictionary}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{34, 35}
+  \item {Characteristics}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{85}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{106}
+  \item {Charasteristic}
+    \subitem {ahbsd.lib.Password}, \hyperpage{16}
+  \item {Check}
+    \subitem {ahbsd.lib.Tools.PrimeCheck}, \hyperpage{108}
+  \item {City}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{64}
+  \item {Clear}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{49}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{36}
+  \item {CompanyModelProducts}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{47}
+  \item {Contains}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{49}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{36}
+  \item {ContainsKey}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{50}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{36}
+  \item {CopyTo}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{50}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{37}
+  \item {Count}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{52}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{39}
+  \item {Country}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{65}
+
+  \indexspace
+
+  \item {Delivery}
+    \subitem {ahbsd.lib.Products}, \hyperpage{17}
 
   \indexspace
 
   \item {Equals}
     \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, 
-		\hyperpage{21, 22}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{27}
+		\hyperpage{23, 24}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{112}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{100, 101}
   \item {EventArgs}
-    \subitem {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{32}
+    \subitem {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{60}
   \item {Exception}
-    \subitem {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{34}
+    \subitem {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{62}
 
   \indexspace
 
   \item {FindApiKey}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{22}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
 
   \indexspace
 
   \item {GetApiKey}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{22}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
+  \item {GetCharasteristic}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{101}
+  \item {GetCharasteristics}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{101}
+  \item {GetChecksum}
+    \subitem {ahbsd.lib.Tools.Checksum}, \hyperpage{41, 42}
+  \item {GetEnumerator}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{51}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{37}
+  \item {GetFinalChecksum}
+    \subitem {ahbsd.lib.Tools.Checksum}, \hyperpage{42, 43}
   \item {GetHashCode}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{23}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{28}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{25}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{30}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{112}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{102}
+  \item {GetLowerCases}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{102}
+  \item {GetNumbers}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{102}
+  \item {GetPassword}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{103}
+  \item {GetSpaces}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{104}
+  \item {GetSpecials}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{104}
+  \item {GetUpperCases}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{104}
 
   \indexspace
 
   \item {Index}
     \subitem {ahbsd.lib.ApiKey.ApiKeyEventArgs$<$ T $>$}, 
-		\hyperpage{18}
-    \subitem {ahbsd.lib.ApiKey.IApiKeyEventArgs}, \hyperpage{36}
+		\hyperpage{20}
+    \subitem {ahbsd.lib.ApiKey.IApiKeyEventArgs}, \hyperpage{66}
+  \item {IsPositiv}
+    \subitem {ahbsd.lib.Tools.Checksum}, \hyperpage{44}
+  \item {IsPositive}
+    \subitem {ahbsd.lib.Tools.Checksum}, \hyperpage{45, 46}
+  \item {IsReadOnly}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{52}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{39}
 
   \indexspace
 
+  \item {Keys}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{52}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{39}
   \item {KnownApiKeys}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{26}
 
   \indexspace
 
+  \item {Length}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{86}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{106}
+  \item {LowercaseLetter}
+    \subitem {ahbsd.lib.Password}, \hyperpage{16}
+  \item {LowerCases}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{86}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{106}
+
+  \indexspace
+
+  \item {Model}
+    \subitem {ahbsd.lib.Products.IProductItem}, \hyperpage{88}
+
+  \indexspace
+
+  \item {Name}
+    \subitem {ahbsd.lib.NamedCollections.INamedCollection$<$ T $>$}, 
+		\hyperpage{82}
+    \subitem {ahbsd.lib.NamedCollections.INamedList$<$ T $>$}, 
+		\hyperpage{84}
+    \subitem {ahbsd.lib.NamedCollections.NamedCollection$<$ T $>$}, 
+		\hyperpage{93}
+    \subitem {ahbsd.lib.NamedCollections.NamedList$<$ T $>$}, 
+		\hyperpage{97}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{39}
+    \subitem {ahbsd.lib.Password.ICharacteristicDictionary}, 
+		\hyperpage{69}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{72}
+    \subitem {ahbsd.lib.Products.IModel}, \hyperpage{80}
+    \subitem {ahbsd.lib.Products.IProductItem}, \hyperpage{88}
+  \item {NamedCollection}
+    \subitem {ahbsd.lib.NamedCollections.NamedCollection$<$ T $>$}, 
+		\hyperpage{92}
+  \item {NamedList}
+    \subitem {ahbsd.lib.NamedCollections.NamedList$<$ T $>$}, 
+		\hyperpage{95, 96}
   \item {NewValue}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{30}
-    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{37}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{32}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{68}
+  \item {Note}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{72}
+  \item {Notes}
+    \subitem {ahbsd.lib.Products.IModel}, \hyperpage{81}
+  \item {Numbers}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{86}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{106}
+  \item {Numeric}
+    \subitem {ahbsd.lib.Password}, \hyperpage{16}
 
   \indexspace
 
   \item {OldValue}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{30}
-    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{38}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{32}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{68}
+  \item {OnAdressAdded}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{72}
+  \item {OnAdressChanged}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{65}
+  \item {OnAdressRemoved}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{72}
   \item {OnApiKeyAdded}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{25}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{27}
   \item {OnChange}
-    \subitem {Test.ITestClass$<$ T, A $>$}, \hyperpage{41}
-    \subitem {Test.TestClass$<$ T, A $>$}, \hyperpage{44}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{87}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{107}
+    \subitem {Test\_xUnit.ITestClass$<$ T, A $>$}, \hyperpage{90}
+    \subitem {Test\_xUnit.TestClass$<$ T, A $>$}, \hyperpage{116}
+  \item {OnNameChanged}
+    \subitem {ahbsd.lib.NamedCollections.INamedCollection$<$ T $>$}, 
+		\hyperpage{83}
+    \subitem {ahbsd.lib.NamedCollections.INamedList$<$ T $>$}, 
+		\hyperpage{84}
+    \subitem {ahbsd.lib.NamedCollections.NamedCollection$<$ T $>$}, 
+		\hyperpage{93}
+    \subitem {ahbsd.lib.NamedCollections.NamedList$<$ T $>$}, 
+		\hyperpage{97}
+  \item {OnNamedCollectionAdded}
+    \subitem {ahbsd.lib.NamedCollections.DictionaryOfNamedCollection$<$ K, V $>$}, 
+		\hyperpage{56}
+    \subitem {ahbsd.lib.NamedCollections.IDictionaryOfNamedCollections$<$ K, V $>$}, 
+		\hyperpage{75}
+  \item {OnNamedListAdded}
+    \subitem {ahbsd.lib.NamedCollections.DictionaryOfNamedList$<$ K, V $>$}, 
+		\hyperpage{59}
+    \subitem {ahbsd.lib.NamedCollections.IDictionaryOfNamedList$<$ K, V $>$}, 
+		\hyperpage{78}
+  \item {OnNoteChanged}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{72}
+  \item {OnNotesChanged}
+    \subitem {ahbsd.lib.Products.IModel}, \hyperpage{81}
+  \item {OnTypeChanged}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{65}
   \item {operator!=}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{23}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{28}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{25}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{30}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{113}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{105}
   \item {operator==}
-    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{24}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
+    \subitem {ahbsd.lib.ApiKey.ApiKeyHolder$<$ T $>$}, \hyperpage{26}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{31}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{113}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{105}
+  \item {Other}
+    \subitem {ahbsd.lib.Products}, \hyperpage{17}
 
   \indexspace
 
+  \item {Password}
+    \subitem {ahbsd.lib.Password.Check.ISecurityValue}, \hyperpage{89}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{114}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{99, 100}
+  \item {Postal}
+    \subitem {ahbsd.lib.Products}, \hyperpage{17}
   \item {Print}
-    \subitem {ahbsd.lib.Tools.ConsolePrintTable}, \hyperpage{31}
+    \subitem {ahbsd.lib.Tools.ConsolePrintTable}, \hyperpage{54}
+  \item {Private}
+    \subitem {ahbsd.lib.Products}, \hyperpage{17}
+  \item {Producer}
+    \subitem {ahbsd.lib.Products.IModel}, \hyperpage{81}
 
   \indexspace
 
+  \item {Remove}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{51}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{37, 38}
+  \item {RemoveAdress}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{71}
+  \item {RemoveAdresses}
+    \subitem {ahbsd.lib.Products.ICompany}, \hyperpage{71}
+
+  \indexspace
+
+  \item {Security}
+    \subitem {ahbsd.lib.Password.Check.ISecurityValue}, \hyperpage{89}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{114}
+  \item {SecurityValue}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, 
+		\hyperpage{110, 111}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{86}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{106}
+  \item {SerialNumber}
+    \subitem {ahbsd.lib.Products.IProductItem}, \hyperpage{88}
   \item {SetNewValue}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
-    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{37}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{31}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{67}
+  \item {Space}
+    \subitem {ahbsd.lib.Password}, \hyperpage{16}
+  \item {Spaces}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{86}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{106}
+  \item {SpecialCharacter}
+    \subitem {ahbsd.lib.Password}, \hyperpage{16}
+  \item {Specials}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{86}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{107}
+  \item {Store}
+    \subitem {ahbsd.lib.Products}, \hyperpage{17}
 
   \indexspace
 
-  \item {Test}, \hyperpage{15}
-  \item {Test.ITestClass$<$ T, A $>$}, \hyperpage{40}
-    \subitem {OnChange}, \hyperpage{41}
-    \subitem {Variable}, \hyperpage{41}
-  \item {Test.Program}, \hyperpage{41}
-  \item {Test.TestClass$<$ T, A $>$}, \hyperpage{42}
-    \subitem {OnChange}, \hyperpage{44}
-    \subitem {TestClass}, \hyperpage{43}
-    \subitem {Variable}, \hyperpage{44}
+  \item {Test\_xUnit}, \hyperpage{17}
+  \item {Test\_xUnit.ITestClass$<$ T, A $>$}, \hyperpage{90}
+    \subitem {OnChange}, \hyperpage{90}
+    \subitem {Variable}, \hyperpage{90}
+  \item {Test\_xUnit.TestClass$<$ T, A $>$}, \hyperpage{114}
+    \subitem {OnChange}, \hyperpage{116}
+    \subitem {TestClass}, \hyperpage{115, 116}
+    \subitem {Variable}, \hyperpage{116}
   \item {TestClass}
-    \subitem {Test.TestClass$<$ T, A $>$}, \hyperpage{43}
+    \subitem {Test\_xUnit.TestClass$<$ T, A $>$}, \hyperpage{115, 116}
+  \item {this[Charasteristic key]}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{39}
+  \item {this[ICompany key]}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{53}
+  \item {Time}
+    \subitem {ahbsd.lib.Tools.PrimeCheck}, \hyperpage{109}
   \item {ToString}
-    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{29}
-    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{37}
+    \subitem {ahbsd.lib.ChangeEventArgs$<$ T $>$}, \hyperpage{31}
+    \subitem {ahbsd.lib.IChangeEventArgs$<$ T $>$}, \hyperpage{67}
+    \subitem {ahbsd.lib.NamedCollections.INamedCollection$<$ T $>$}, 
+		\hyperpage{82}
+    \subitem {ahbsd.lib.NamedCollections.INamedList$<$ T $>$}, 
+		\hyperpage{84}
+    \subitem {ahbsd.lib.NamedCollections.NamedCollection$<$ T $>$}, 
+		\hyperpage{93}
+    \subitem {ahbsd.lib.NamedCollections.NamedList$<$ T $>$}, 
+		\hyperpage{97}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{38}
+    \subitem {ahbsd.lib.Password.Check.SecurityValue}, \hyperpage{113}
+    \subitem {ahbsd.lib.Password.ICharacteristicDictionary}, 
+		\hyperpage{69}
+  \item {TryGetValue}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{52}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
+		\hyperpage{38}
+
+  \indexspace
+
+  \item {UpperCases}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{87}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{107}
 
   \indexspace
 
   \item {Value}
-    \subitem {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{32}
-    \subitem {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{35}
+    \subitem {ahbsd.lib.EventArgs$<$ T $>$}, \hyperpage{61}
+    \subitem {ahbsd.lib.Exceptions.Exception$<$ T $>$}, \hyperpage{63}
     \subitem {ahbsd.lib.Exceptions.IGenericException$<$ T $>$}, 
+		\hyperpage{80}
+    \subitem {ahbsd.lib.IEventArgs$<$ T $>$}, \hyperpage{79}
+    \subitem {ahbsd.lib.Password.IPassword}, \hyperpage{87}
+    \subitem {ahbsd.lib.Password.Password}, \hyperpage{107}
+  \item {Values}
+    \subitem {ahbsd.lib.NamedCollections.CompanyModelProducts}, 
+		\hyperpage{53}
+    \subitem {ahbsd.lib.Password.CharacteristicDictionary}, 
 		\hyperpage{40}
-    \subitem {ahbsd.lib.IEventArgs$<$ T $>$}, \hyperpage{39}
   \item {Variable}
-    \subitem {Test.ITestClass$<$ T, A $>$}, \hyperpage{41}
-    \subitem {Test.TestClass$<$ T, A $>$}, \hyperpage{44}
+    \subitem {Test\_xUnit.ITestClass$<$ T, A $>$}, \hyperpage{90}
+    \subitem {Test\_xUnit.TestClass$<$ T, A $>$}, \hyperpage{116}
+
+  \indexspace
+
+  \item {ZIP}
+    \subitem {ahbsd.lib.Products.IAdress}, \hyperpage{65}
 
 \end{theindex}

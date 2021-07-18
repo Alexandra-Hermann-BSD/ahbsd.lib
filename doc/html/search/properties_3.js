@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oldvalue_82',['OldValue',['../d3/d13/classahbsd_1_1lib_1_1ChangeEventArgs.html#a6d7f17fbf8fc0223d9d9aba37be6e8a2',1,'ahbsd.lib.ChangeEventArgs.OldValue()'],['../d6/d8f/interfaceahbsd_1_1lib_1_1IChangeEventArgs.html#a426e1d0a4ab70c216fd2ff89f5abee75',1,'ahbsd.lib.IChangeEventArgs.OldValue()']]]
+  ['keys_252',['Keys',['../de/d41/classahbsd_1_1lib_1_1NamedCollections_1_1CompanyModelProducts.html#a7ede27a0e33f5bd729ba90d6effcecbc',1,'ahbsd.lib.NamedCollections.CompanyModelProducts.Keys()'],['../dd/d8f/classahbsd_1_1lib_1_1Password_1_1CharacteristicDictionary.html#a7aff358492e52da8963c5b73e8520c5d',1,'ahbsd.lib.Password.CharacteristicDictionary.Keys()']]]
 ];
