@@ -23,6 +23,7 @@ collections to be named.</PackageReleaseNotes>
     <PackageTags>Library; Core; Core3.1; Generic</PackageTags>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
+    <CodePage>65001</CodePage>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
