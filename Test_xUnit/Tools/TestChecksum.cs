@@ -15,7 +15,7 @@
 using ahbsd.lib.Tools;
 using Xunit;
 
-namespace Test_xUnit
+namespace Test_xUnit.Tools
 {
     /// <summary>
     /// Tests for <see cref="Checksum"/>.
