@@ -23,8 +23,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Tools\" />
+    <None Remove="NamedCollections\" />
+    <None Remove="Password\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tools\" />
+    <Folder Include="NamedCollections\" />
+    <Folder Include="Password\" />
   </ItemGroup>
 </Project>
