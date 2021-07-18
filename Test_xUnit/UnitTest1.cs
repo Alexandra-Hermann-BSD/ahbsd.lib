@@ -46,53 +46,6 @@ namespace Test_xUnit
             }
         }
 
-        [Fact]
-        public void TestPrime()
-        {
-            IList<ulong> numbers = new List<ulong>();
-            bool isPrime;
-            TimeSpan time;
-            uint amount;
-            string isPrimeString;
-
-            for (ulong i = 0; i < 20; i++)
-            {
-                numbers.Add(i);
-            }
-
-            for (ulong i = 1990; i < 2170; i++)
-            {
-                numbers.Add(i);
-            }
-
-            numbers.Add(ulong.MaxValue);
-
-            foreach (var nr in numbers)
-            {
-                isPrime = PrimeCheck.Check(nr);
-                time = PrimeCheck.Time;
-                amount = PrimeCheck.Amount;
-
-                if (isPrime)
-                {
-                    isPrimeString = "is a prime number";
-                }
-                else
-                {
-                    isPrimeString = "is not a prime number";
-                }
-
-                Console.WriteLine(
-                    "{0} {1}. It took {2} times in {3} m, {4} s, {5} ms to check.",
-                    nr,
-                    isPrimeString,
-                    amount,
-                    time.Minutes,
-                    time.Seconds,
-                    time.Milliseconds);
-            }
-
-        }
 
         [Fact]
         public void TestNamedCollection()
