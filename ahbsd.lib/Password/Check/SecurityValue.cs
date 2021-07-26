@@ -15,7 +15,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace ahbsd.lib.Password.Check
 {
@@ -111,9 +110,9 @@ namespace ahbsd.lib.Password.Check
         private void Initialize()
         {
             uint tmp = 0;
-            if (Password != null)
+            if (Password != null && !string.IsNullOrEmpty(Password.Value))
             {
-                tmp = (uint)(Password.Length);
+                tmp = (uint)Password.Length;
                 tmp += (uint)Password.LowerCases;
                 tmp += (uint)Password.UpperCases;
                 tmp += (uint)(Password.Spaces * 4);

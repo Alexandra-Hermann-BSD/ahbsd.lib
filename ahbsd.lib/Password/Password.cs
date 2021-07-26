@@ -223,6 +223,7 @@ namespace ahbsd.lib.Password
                     ChangeEventArgs<IPassword> cea = new ChangeEventArgs<IPassword>(this, tmp);
 
                     _value = value;
+                    _securityValue = tmp.SecurityValue;
 
                     OnChange?.Invoke(this, cea);
                 }
@@ -536,14 +537,12 @@ namespace ahbsd.lib.Password
 
             if (!finished && !isLetter)
             {
-                try
+                finished = ushort.TryParse(tmp, out usTmp);
+
+                if (finished)
                 {
-                    usTmp = ushort.Parse(tmp);
                     result = Charasteristic.Numeric;
-                    finished = true;
                 }
-                catch (Exception)
-                { }
             }
 
             if (!finished && !isLetter)
@@ -552,6 +551,11 @@ namespace ahbsd.lib.Password
             }
 
             return result;
+        }
+
+        public override string ToString()
+        {
+            return $"'{_value}' ({_securityValue.Security})";
         }
 
         /// <summary>

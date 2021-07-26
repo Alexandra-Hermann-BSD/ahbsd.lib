@@ -31,7 +31,27 @@ namespace Test_xUnit.Password
 
         private void P1_OnChange(object sender, ChangeEventArgs<IPassword> e)
         {
-            Console.WriteLine("The variable p1 has changed:");
+            Console.WriteLine($"The variable p1 has changed: from '{e.OldValue}' to '{e.NewValue}'.");
+        }
+
+        [Theory]
+        [InlineData("Unsicher", 10u)]
+        [InlineData("B<eSs3r üBe9R ©6&/|\\\"", 50u)]
+        [InlineData("Hallo Welt", 20u)]
+        [InlineData("Das-Haus-grün-ist", 30u)]
+        [InlineData("Garten-Haus-Blume-schön", 50u)]
+        public void TestPasswdVars(string passwd, ushort security)
+        {
+            IPassword password = new ahbsd.lib.Password.Password();
+            password.OnChange += Password_OnChange;
+            password.Value = passwd;
+            Console.WriteLine($"Security: {password.SecurityValue}: Value = {password.SecurityValue.Security} [{password.SecurityValue.Security} >= {security} = {password.SecurityValue.Security >= security}]");
+            Assert.True(password.SecurityValue.Security >= security);
+        }
+
+        private void Password_OnChange(object sender, ChangeEventArgs<IPassword> e)
+        {
+            Console.WriteLine($"The password was set to '{e.NewValue}'; Security: {e.NewValue.SecurityValue}");
         }
     }
 }
