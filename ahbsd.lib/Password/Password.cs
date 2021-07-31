@@ -139,15 +139,8 @@ namespace ahbsd.lib.Password
                         break;
                 }
             }
-
-            if (Container != null)
-            {
-                tmp = new CharacteristicDictionary(this, Container);
-            }
-            else
-            {
-                tmp = new CharacteristicDictionary(this);
-            }
+            tmp = new CharacteristicDictionary(this, Container);
+            
             Characteristics = tmp;
         }
 
@@ -159,7 +152,7 @@ namespace ahbsd.lib.Password
         private void Password_OnChange(object sender, ChangeEventArgs<IPassword> e)
         {
             CharacteristicDictionary tmp;
-            if (e.NewValue != null)
+            if (e?.NewValue != null)
             {
                 _value = e.NewValue.Value;
                 _length = e.NewValue.Length;
@@ -178,14 +171,7 @@ namespace ahbsd.lib.Password
                 _specials = 0;
                 _numbers = 0;
 
-                if (Container != null)
-                {
-                    tmp = new CharacteristicDictionary(this, Container);
-                }
-                else
-                {
-                    tmp = new CharacteristicDictionary(this);
-                }
+                tmp = new CharacteristicDictionary(this, Container);
                 Characteristics = tmp;
             }
         }
@@ -282,10 +268,7 @@ namespace ahbsd.lib.Password
         /// <c>true</c> if the other object eaquals this password, otherwise
         /// <c>false</c>.
         /// </returns>
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as IPassword);
-        }
+        public override bool Equals(object obj) => Equals(obj as IPassword);
 
         /// <summary>
         /// Compares an other <see cref="IPassword"/> with this object.
@@ -295,20 +278,14 @@ namespace ahbsd.lib.Password
         /// <c>true</c> if the other IPassword eaquals this password, otherwise
         /// <c>false</c>.
         /// </returns>
-        public bool Equals(IPassword other)
-        {
-            return other != null &&
+        public bool Equals(IPassword other) => other != null &&
                    Value == other.Value;
-        }
 
         /// <summary>
         /// Gets the HashCode.
         /// </summary>
         /// <returns>The HashCode.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Value);
-        }
+        public override int GetHashCode() => HashCode.Combine(Value);
         #endregion
 
         /// <summary>
@@ -317,22 +294,14 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <returns>The password charasteristics.</returns>
         public static ICharacteristicDictionary GetCharasteristics(string value)
-        {
-            ICharacteristicDictionary result = new CharacteristicDictionary(value);
-
-            return result;
-        }
+            => new CharacteristicDictionary(value);
 
         /// <summary>
         /// Gets a Password from a given string.
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <returns>The Password.</returns>
-        public static IPassword GetPassword(string value)
-        {
-            IPassword result = new Password(value);
-            return result;
-        }
+        public static IPassword GetPassword(string value) => new Password(value);
 
         /// <summary>
         /// Gets a Password from a given string.
@@ -341,10 +310,7 @@ namespace ahbsd.lib.Password
         /// <param name="container">An owning container.</param>
         /// <returns>The Password.</returns>
         public static IPassword GetPassword(string value, IContainer container)
-        {
-            IPassword result = new Password(value, container);
-            return result;
-        }
+            => new Password(value, container);
 
         /// <summary>
         /// Gets the amount of lower cases in the given string.
@@ -501,7 +467,6 @@ namespace ahbsd.lib.Password
             bool finished = false;
             bool isLetter = false;
             string tmp = c.ToString();
-            ushort usTmp;
 
             if (c.Equals(' '))
             {
@@ -537,7 +502,7 @@ namespace ahbsd.lib.Password
 
             if (!finished && !isLetter)
             {
-                finished = ushort.TryParse(tmp, out usTmp);
+                finished = ushort.TryParse(tmp, out _);
 
                 if (finished)
                 {
@@ -554,9 +519,7 @@ namespace ahbsd.lib.Password
         }
 
         public override string ToString()
-        {
-            return $"'{_value}' ({_securityValue.Security})";
-        }
+            => $"'{_value}' ({_securityValue.Security})";
 
         /// <summary>
         /// Compares two <see cref="Password"/>s.
@@ -567,9 +530,7 @@ namespace ahbsd.lib.Password
         /// <c>true</c> if both passwords eaquals, otherwise <c>false</c>.
         /// </returns>
         public static bool operator ==(Password left, Password right)
-        {
-            return EqualityComparer<Password>.Default.Equals(left, right);
-        }
+            => EqualityComparer<Password>.Default.Equals(left, right);
 
         /// <summary>
         /// Compares two <see cref="Password"/>s.
@@ -580,8 +541,6 @@ namespace ahbsd.lib.Password
         /// <c>true</c> if both passwords do not eaquals, otherwise <c>false</c>.
         /// </returns>
         public static bool operator !=(Password left, Password right)
-        {
-            return !(left == right);
-        }
+            => !(left == right);
     }
 }

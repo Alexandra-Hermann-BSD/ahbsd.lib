@@ -67,10 +67,7 @@ namespace ahbsd.lib.Password.Check
             Password = null;
             Initialize();
 
-            if (container != null)
-            {
-                container.Add(this);
-            }
+            container?.Add(this);
         }
         /// <summary>
         /// Constructor with a given password and a given owning container.
@@ -83,10 +80,7 @@ namespace ahbsd.lib.Password.Check
             Password = lib.Password.Password.GetPassword(password, container);
             Initialize();
 
-            if (container != null)
-            {
-                container.Add(this, $"Password Security ({Security}) [{Password.Site}]");
-            }
+            container?.Add(this, $"Password Security ({Security}) [{Password.Site}]");
         }
         /// <summary>
         /// Constructor with a given password and a given owning container.
@@ -99,10 +93,7 @@ namespace ahbsd.lib.Password.Check
             Password = password;
             Initialize();
 
-            if (container != null)
-            {
-                container.Add(this, $"Password Security ({Security}) [{Password.Site}]");
-            }
+            container?.Add(this, $"Password Security ({Security}) [{Password.Site}]");
         }
         /// <summary>
         /// Initializes the <see cref="_security"/> value.
@@ -127,10 +118,7 @@ namespace ahbsd.lib.Password.Check
         /// Gets the Security Value.
         /// </summary>
         /// <returns>The Security Value.</returns>
-        public override string ToString()
-        {
-            return $"SecurityValue: {_security}";
-        }
+        public override string ToString() => $"SecurityValue: {_security}";
 
         #region implementation of ISecurityValue
         /// <summary>

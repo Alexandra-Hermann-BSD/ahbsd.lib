@@ -77,10 +77,7 @@ namespace ahbsd.lib.Password
             Initialize();
             _name = $"CharacteristicDictionary_[{GetHashCode()}]";
 
-            if (container != null)
-            {
-                container.Add(this, $"Characteristic [{GetHashCode()}]");
-            }
+            container?.Add(this, $"Characteristic [{GetHashCode()}]");
         }
 
         /// <summary>
@@ -94,10 +91,7 @@ namespace ahbsd.lib.Password
             Initialize(value);
             _name = ToString();
 
-            if (container != null)
-            {
-                container.Add(this, $"Characteristic [{GetHashCode()}]");
-            }
+            container?.Add(this, $"Characteristic [{GetHashCode()}]");
         }
 
         /// <summary>
@@ -111,10 +105,7 @@ namespace ahbsd.lib.Password
             Initialize(value);
             _name = ToString();
 
-            if (container != null)
-            {
-                container.Add(this, $"Characteristic [{GetHashCode()}]");
-            }
+            container?.Add(this, $"Characteristic [{GetHashCode()}]");
         }
 
         /// <summary>
