@@ -24,7 +24,7 @@ namespace Test_xUnit.Password
         [InlineData("Test 1", true, true, true, false, true)]
         [InlineData("Test %ü", false, true, true, true, true)]
         [InlineData("Test%", false, true, true, true, false)]
-        [InlineData("Testü", false, true, true, true, false)]
+        [InlineData("Testü", false, true, true, false, false)]
         [InlineData("test", false, true, false, false, false)]
         [InlineData("123", true, false, false, false, false)]
         [InlineData("123 456", true, false, false, false, true)]

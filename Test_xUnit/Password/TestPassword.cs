@@ -39,7 +39,7 @@ namespace Test_xUnit.Password
         [InlineData("B<eSs3r üBe9R ©6&/|\\\"", 50u)]
         [InlineData("Hallo Welt", 20u)]
         [InlineData("Das-Haus-grün-ist", 30u)]
-        [InlineData("Garten-Haus-Blume-schön", 50u)]
+        [InlineData("Garten-Haus-Blume-schön", 48u)]
         public void TestPasswdVars(string passwd, ushort security)
         {
             IPassword password = new ahbsd.lib.Password.Password();

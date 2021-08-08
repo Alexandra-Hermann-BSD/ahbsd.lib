@@ -76,7 +76,7 @@ namespace ahbsd.lib
         /// <exception cref="AlreadySetException{T}">If the <see cref="NewValue" /> was already set.</exception>
         public void SetNewValue(T newValue)
         {
-            AlreadySetException<T> e;
+            IAlreadySetException<T> e;
             bool isset = false;
 
             try
@@ -98,7 +98,7 @@ namespace ahbsd.lib
             if (isset)
             {
                 e = new AlreadySetException<T>(this, newValue);
-                throw e;
+                throw (AlreadySetException<T>)e;
             }
             else
             {

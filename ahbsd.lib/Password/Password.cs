@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace ahbsd.lib.Password
 {
@@ -151,7 +152,6 @@ namespace ahbsd.lib.Password
         /// <param name="e">The ChangeEventArg.</param>
         private void Password_OnChange(object sender, ChangeEventArgs<IPassword> e)
         {
-            CharacteristicDictionary tmp;
             if (e?.NewValue != null)
             {
                 _value = e.NewValue.Value;
@@ -170,9 +170,7 @@ namespace ahbsd.lib.Password
                 _spaces = 0;
                 _specials = 0;
                 _numbers = 0;
-
-                tmp = new CharacteristicDictionary(this, Container);
-                Characteristics = tmp;
+                Characteristics = new CharacteristicDictionary(this, Container);
             }
         }
 
@@ -320,20 +318,12 @@ namespace ahbsd.lib.Password
         public static int GetLowerCases(string value)
         {
             int result = 0;
-            string stmp;
-            char ctmp;
 
             if (!string.IsNullOrEmpty(value))
             {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    ctmp = value[i];
-                    stmp = ctmp.ToString();
-                    if (stmp.ToLower().Equals(stmp))
-                    {
-                        result++;
-                    }
-                }
+                result = (from char c in value
+                           where char.IsLower(c)
+                           select c).Count();
             }
 
             return result;
@@ -347,20 +337,12 @@ namespace ahbsd.lib.Password
         public static int GetUpperCases(string value)
         {
             int result = 0;
-            string stmp;
-            char ctmp;
 
             if (!string.IsNullOrEmpty(value))
             {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    ctmp = value[i];
-                    stmp = ctmp.ToString();
-                    if (stmp.ToUpper().Equals(stmp))
-                    {
-                        result++;
-                    }
-                }
+                result = (from char c in value
+                          where char.IsUpper(c)
+                          select c).Count();
             }
 
             return result;
@@ -374,19 +356,12 @@ namespace ahbsd.lib.Password
         public static int GetSpaces(string value)
         {
             int result = 0;
-            char ctmp;
 
             if (!string.IsNullOrEmpty(value))
             {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    ctmp = value[i];
-
-                    if (ctmp.Equals(' '))
-                    {
-                        result++;
-                    }
-                }
+                result = (from char c in value
+                          where char.IsWhiteSpace(c)
+                          select c).Count();
             }
 
             return result;
@@ -400,29 +375,12 @@ namespace ahbsd.lib.Password
         public static int GetNumbers(string value)
         {
             int result = 0;
-            char ctmp;
-            ushort? ustmp;
 
             if (!string.IsNullOrEmpty(value))
             {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    ctmp = value[i];
-
-                    try
-                    {
-                        ustmp = ushort.Parse(ctmp.ToString());
-                    }
-                    catch (Exception)
-                    {
-                        ustmp = null;
-                    }
-
-                    if (ustmp != null)
-                    {
-                        result++;
-                    }
-                }
+                result = (from char c in value
+                          where char.IsNumber(c)
+                          select c).Count();
             }
 
             return result;
@@ -436,15 +394,11 @@ namespace ahbsd.lib.Password
         public static int GetSpecials(string value)
         {
             int result = 0;
-            char ctmp;
-            string stmp;
-
             if (!string.IsNullOrEmpty(value))
             {
                 for (int i = 0; i < value.Length; i++)
                 {
-                    ctmp = value[i];
-                    stmp = ctmp.ToString();
+                    char ctmp = value[i];
 
                     if (GetCharasteristic(ctmp) == Charasteristic.SpecialCharacter)
                     {
@@ -463,51 +417,27 @@ namespace ahbsd.lib.Password
         /// <returns>The <see cref="Charasteristic"/>.</returns>
         public static Charasteristic GetCharasteristic(char c)
         {
-            Charasteristic result = Charasteristic.Space;
-            bool finished = false;
-            bool isLetter = false;
-            string tmp = c.ToString();
+            bool finished = char.IsWhiteSpace(c);
+            bool isLetter = char.IsLetter(c);
 
-            if (c.Equals(' '))
+            Charasteristic result = Charasteristic.Space;
+
+            if (!finished && isLetter && char.IsUpper(c))
             {
+                result = Charasteristic.CapitalLetter;
                 finished = true;
             }
 
-            foreach (char item in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+            if (!finished && isLetter && char.IsLower(c))
             {
-                if (tmp.ToUpper().Equals(item.ToString()))
-                {
-                    isLetter = true;
-                    break;
-                }
+                result = Charasteristic.LowercaseLetter;
+                finished = true;
             }
 
-            if (!finished && isLetter)
+            if (!finished && !isLetter && char.IsNumber(c))
             {
-                finished = tmp.ToUpper().Equals(tmp);
-                if (finished)
-                {
-                    result = Charasteristic.CapitalLetter;
-                }
-            }
-
-            if (!finished && isLetter)
-            {
-                finished = tmp.ToLower().Equals(tmp);
-                if (finished)
-                {
-                    result = Charasteristic.LowercaseLetter;
-                }
-            }
-
-            if (!finished && !isLetter)
-            {
-                finished = ushort.TryParse(tmp, out _);
-
-                if (finished)
-                {
-                    result = Charasteristic.Numeric;
-                }
+                result = Charasteristic.Numeric;
+                finished = true;
             }
 
             if (!finished && !isLetter)

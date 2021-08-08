@@ -12,34 +12,26 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
-namespace ahbsd.lib
+namespace ahbsd.lib.Exceptions
 {
     /// <summary>
-    /// Generic EventArgs.
+    /// Am interface for a specialized Exception for the case, that
+    /// by trying to use <see cref="ChangeEventArgs{T}.SetNewValue(T)"/> the
+    /// new value was already set.
     /// </summary>
-    /// <typeparam name="T">Type of <see cref="Value"/>.</typeparam>
-    public class EventArgs<T> : EventArgs, IEventArgs<T>
+    /// <typeparam name="T">The type of the <see cref="ChangeEventArgs{T}"/></typeparam>
+    public interface IAlreadySetException<T> : IGenericException<T>
     {
         /// <summary>
-        /// Constructor without parameters.
+        /// Returns the given <see cref="ChangeEventArgs{T}"/>.
         /// </summary>
-        public EventArgs()
-            : base() => Value = default;
+        /// <value>The given <see cref="ChangeEventArgs{T}"/>.</value>
+        ChangeEventArgs<T> ChangeEventArgs { get; }
 
         /// <summary>
-        /// Constructor with a value.
+        /// Gets a string representating this Exception.
         /// </summary>
-        /// <param name="val">A value.</param>
-        public EventArgs(T val)
-            : base() => Value = val;
-
-        #region implementation of IEventArgs<T>
-        /// <summary>
-        /// Gets a value.
-        /// </summary>
-        /// <value>A value.</value>
-        public T Value { get; private set; }
-        #endregion
+        /// <returns>A string representating this Exception</returns>
+        string ToString();
     }
 }
