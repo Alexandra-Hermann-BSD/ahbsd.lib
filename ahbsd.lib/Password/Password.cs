@@ -448,6 +448,10 @@ namespace ahbsd.lib.Password
             return result;
         }
 
+        /// <summary>
+        /// Gets a simple description on the current password including the <see cref="SecurityValue"/>.
+        /// </summary>
+        /// <returns>A simple description on the current password</returns>
         public override string ToString()
             => $"'{_value}' ({_securityValue.Security})";
 

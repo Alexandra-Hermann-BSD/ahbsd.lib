@@ -16,6 +16,7 @@ using System;
 using System.Data;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ahbsd.lib.Tools
 {
@@ -32,13 +33,11 @@ namespace ahbsd.lib.Tools
         {
             int maxCols, currentCol, maxlines;
             IDictionary<string, int> lengthPerCol = GetSize(table);
-            string tmpData;
-
             maxCols = table.Columns.Count;
             currentCol = 0;
 
             maxlines = 0;
-            foreach (var item in lengthPerCol)
+            foreach (KeyValuePair<string, int> item in lengthPerCol)
             {
                 maxlines += item.Value + 1;
             }
@@ -70,15 +69,9 @@ namespace ahbsd.lib.Tools
                 currentCol = 0;
                 foreach (KeyValuePair<string, int> item in lengthPerCol)
                 {
-                    if (currentCol < maxCols - 1)
-                    {
-                        tmpData = GetPart(row[item.Key].ToString(), false, item.Value);
-                    }
-                    else
-                    {
-                        tmpData = GetPart(row[item.Key].ToString(), true, item.Value);
-                    }
-
+                    string tmpData = currentCol < maxCols - 1
+                        ? GetPart(row[item.Key].ToString(), false, item.Value)
+                        : GetPart(row[item.Key].ToString(), true, item.Value);
                     Console.Write(tmpData);
                     currentCol++;
                 }
@@ -104,24 +97,10 @@ namespace ahbsd.lib.Tools
 
             if (length > val.Length)
             {
-                if (left)
-                {
-                    result = val.PadRight(length);
-                }
-                else
-                {
-                    result = val.PadLeft(length);
-                }
+                result = left ? val.PadRight(length) : val.PadLeft(length);
             }
 
-            if (!last)
-            {
-                result = $"|{result}";
-            }
-            else
-            {
-                result = $"|{result}|";
-            }
+            result = !last ? $"|{result}" : $"|{result}|";
 
             return result;
         }
@@ -138,48 +117,41 @@ namespace ahbsd.lib.Tools
         private static IDictionary<string, int> GetSize(DataTable table)
         {
             IDictionary<string, int> result = new Dictionary<string, int>(table.Columns.Count);
-            ICollection<string> keys;
             IDictionary<string, int> minLength = new Dictionary<string, int>(table.Columns.Count);
-            int length;
-            bool maxSet;
-
             foreach (DataColumn column in table.Columns)
             {
                 result.Add(column.ColumnName, column.MaxLength);
                 minLength.Add(column.ColumnName, column.Caption.Length);
             }
 
-            keys = new Collection<string>();
+            ICollection<string> keys = new Collection<string>();
 
             foreach (string key in result.Keys)
             {
                 keys.Add(key);
             }
 
-            foreach (DataRow row in table.Rows)
+            foreach (var (row, key) in from DataRow row in table.Rows
+                                       from string key in keys
+                                       select (row, key))
             {
-                foreach (string key in keys)
+                int length;
+                if (result[key] != -1)
                 {
-                    length = 0;
-                    maxSet = result[key] != -1;
+                    length = minLength[key];
 
-                    if (maxSet)
+                    if (row[key].ToString().Length > length)
                     {
-                        length = minLength[key];
-
-                        if (row[key].ToString().Length > length)
-                        {
-                            minLength[key] = row[key].ToString().Length;
-                        }
+                        minLength[key] = row[key].ToString().Length;
                     }
-                    else // the first time to set over -1
-                    {
-                        length = result[key];
+                }
+                else // the first time to set over -1
+                {
+                    length = result[key];
 
-                        if (row[key].ToString().Length > length)
-                        {
-                            result[key] = row[key].ToString().Length;
-                        }
+                    if (row[key].ToString().Length > length)
+                    {
+                        result[key] = row[key].ToString().Length;
                     }
                 }
             }

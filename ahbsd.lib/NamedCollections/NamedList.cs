@@ -32,10 +32,7 @@ namespace ahbsd.lib.NamedCollections
         /// Constructor without any parameters.
         /// </summary>
         public NamedList()
-            : base()
-        {
-            _name = null;
-        }
+            : base() => _name = null;
 
         /// <summary>
         /// Constructor with a base capacity of the list.
@@ -45,37 +42,21 @@ namespace ahbsd.lib.NamedCollections
         /// If the capacity is out of range.
         /// </exception>
         public NamedList(int capacity)
-            : base(capacity)
-        {
-            _name = null;
-        }
+            : base(capacity) => _name = null;
 
         /// <summary>
         /// Constructor with a given collection.
         /// </summary>
         /// <param name="collection">The given collection.</param>
         public NamedList(IEnumerable<T> collection)
-            : base(collection)
-        {
-            _name = null;
-        }
+            : base(collection) => _name = null;
 
         /// <summary>
         /// Constructor with a given name.
         /// </summary>
         /// <param name="name">The given name.</param>
         public NamedList(string name)
-            : base()
-        {
-            if (name != null)
-            {
-                _name = name.Trim();
-            }
-            else
-            {
-                _name = name;
-            }
-        }
+            : base() => _name = name != null ? name.Trim() : name;
 
         /// <summary>
         /// Constructor with a given name and a base capacity of the list.
@@ -86,17 +67,7 @@ namespace ahbsd.lib.NamedCollections
         /// If the capacity is out of range.
         /// </exception>
         public NamedList(string name, int capacity)
-            : base(capacity)
-        {
-            if (name != null)
-            {
-                _name = name.Trim();
-            }
-            else
-            {
-                _name = name;
-            }
-        }
+            : base(capacity) => _name = name != null ? name.Trim() : name;
 
         /// <summary>
         /// Constructor with a given name and  a given collection.
@@ -104,17 +75,7 @@ namespace ahbsd.lib.NamedCollections
         /// <param name="name">The given name.</param>
         /// <param name="collection">The given collection.</param>
         public NamedList(string name, IEnumerable<T> collection)
-            : base(collection)
-        {
-            if (name != null)
-            {
-                _name = name.Trim();
-            }
-            else
-            {
-                _name = name;
-            }
-        }
+            : base(collection) => _name = name != null ? name.Trim() : name;
 
 
         #region implementation of INamedList<T>
@@ -152,10 +113,7 @@ namespace ahbsd.lib.NamedCollections
         /// Gets a string representation of this object.
         /// </summary>
         /// <returns>The string representation of this object.</returns>
-        public override string ToString()
-        {
-            return $"{_name}: Count = {Count}";
-        }
+        public override string ToString() => $"{_name}: Count = {Count}";
         #endregion
     }
 }

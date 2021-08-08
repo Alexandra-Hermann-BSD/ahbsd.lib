@@ -45,7 +45,6 @@ namespace ahbsd.lib.Tools
         public static bool Check(ulong nr)
         {
             ulong half, modHalf, loops;
-            bool result = true;
             DateTime start, end;
 
             loops = 0;
@@ -53,6 +52,7 @@ namespace ahbsd.lib.Tools
 
             modHalf = nr % 2;
 
+            bool result = true;
             if (modHalf != 0)
             {
                 half = nr / 2;

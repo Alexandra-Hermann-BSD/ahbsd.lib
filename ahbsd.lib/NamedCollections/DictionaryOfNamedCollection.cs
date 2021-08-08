@@ -24,7 +24,6 @@ namespace ahbsd.lib.NamedCollections
     /// <typeparam name="V">Value Type of the <see cref="INamedCollection{T}"/>.</typeparam>
     public class DictionaryOfNamedCollection<K, V> : Dictionary<K, INamedCollection<V>>, IDictionaryOfNamedCollections<K, V>
     {
-
         #region implementation of IDictionaryOfNamedCollections<K, V>
         /// <summary>
         /// Happenes if a new <see cref="INamedCollection{T}"/> was added.
@@ -38,21 +37,19 @@ namespace ahbsd.lib.NamedCollections
         /// <exception cref="ArgumentException">If key already exists.</exception>
         public void Add(K key, string name)
         {
-            V tmpV;
-            Type t = (typeof(V));
+            Type t = typeof(V);
             if (t.Equals(typeof(string)))
             {
-                tmpV = (V)Convert.ChangeType(name, t);
+                V tmpV = (V)Convert.ChangeType(name, t);
                 Add(key, tmpV, null);
             }
             else
             {
                 if (!ContainsKey(key))
                 {
-                    EventArgs<INamedCollection<V>> eventArgs;
-                    INamedCollection<V> tmp = new NamedCollection<V>(name);
-                    eventArgs = new EventArgs<INamedCollection<V>>(tmp);
-                    Add(key, tmp);
+                    Add(key, new NamedCollection<V>(name));
+                    EventArgs<INamedCollection<V>> eventArgs =
+                        new EventArgs<INamedCollection<V>>(new NamedCollection<V>(name));
                     OnNamedCollectionAdded?.Invoke(this, eventArgs);
                 }
                 else
@@ -68,7 +65,7 @@ namespace ahbsd.lib.NamedCollections
         /// </summary>
         /// <param name="key">The Key.</param>
         /// <param name="value">The Value.</param>
-        /// <param name="name">
+        /// <param name="name">[optional] 
         /// The name of the new <see cref="INamedCollection{T}"/>.
         /// </param>
         /// <remarks>
@@ -87,8 +84,9 @@ namespace ahbsd.lib.NamedCollections
                 if (string.IsNullOrEmpty(name))
                 {
                     KeyNotFoundException k =
-                    new KeyNotFoundException($"Key '{key}' is missing AND name" +
-                    $"for creating a new INamedCollection<{typeof(V)}> is null or empty as well");
+                        new KeyNotFoundException($"Key '{key}' is missing AND name" +
+                            $"for creating a new INamedCollection<{typeof(V)}> " +
+                            "is null or empty as well");
                     throw k;
                 }
                 else
@@ -107,7 +105,7 @@ namespace ahbsd.lib.NamedCollections
         /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
         /// </summary>
         /// <param name="keyValuePair">The <see cref="KeyValuePair{TKey, TValue}"/>.</param>
-        /// <param name="name">
+        /// <param name="name">[optional] 
         /// The name of the new <see cref="INamedCollection{T}"/>.
         /// </param>
         /// <remarks>
@@ -120,9 +118,7 @@ namespace ahbsd.lib.NamedCollections
         /// <see cref="INamedCollection{T}"/> was missing.
         /// </exception>
         public void Add(KeyValuePair<K, V> keyValuePair, string name = null)
-        {
-            Add(keyValuePair.Key, keyValuePair.Value, name);
-        }
+            => Add(keyValuePair.Key, keyValuePair.Value, name);
         #endregion
     }
 }

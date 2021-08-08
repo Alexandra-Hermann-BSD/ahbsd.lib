@@ -37,21 +37,17 @@ namespace ahbsd.lib.NamedCollections
         /// <exception cref="ArgumentException">If key already exists.</exception>
         public void Add(K key, string name)
         {
-            V tmpV;
-            Type t = (typeof(V));
-            if (t.Equals(typeof(string)))
+            if (typeof(V).Equals(typeof(string)))
             {
-                tmpV = (V)Convert.ChangeType(name, t);
+                V tmpV = (V)Convert.ChangeType(name, typeof(V));
                 Add(key, tmpV, null);
             }
             else
             {
                 if (!ContainsKey(key))
                 {
-                    EventArgs<INamedList<V>> eventArgs;
-                    INamedList<V> tmp = new NamedList<V>(name);
-                    eventArgs = new EventArgs<INamedList<V>>(tmp);
-                    Add(key, tmp);
+                    Add(key, new NamedList<V>(name));
+                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(new NamedList<V>(name));
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
                 else
@@ -67,7 +63,7 @@ namespace ahbsd.lib.NamedCollections
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="value">The value.</param>
-        /// <param name="name">
+        /// <param name="name">[optional] 
         /// The name of the new <see cref="INamedList{T}"/>.
         /// </param>
         /// <remarks>
@@ -86,16 +82,14 @@ namespace ahbsd.lib.NamedCollections
                 if (string.IsNullOrEmpty(name))
                 {
                     KeyNotFoundException k =
-                    new KeyNotFoundException($"Key '{key}' is missing AND name" +
-                    $"for creating a new INamedList<{typeof(V)}> is null or empty as well");
+                        new KeyNotFoundException($"Key '{key}' is missing AND name" +
+                            $"for creating a new INamedList<{typeof(V)}> is null or empty as well");
                     throw k;
                 }
                 else
                 {
-                    EventArgs<INamedList<V>> eventArgs;
-                    INamedList<V> tmp = new NamedList<V>(name);
-                    eventArgs = new EventArgs<INamedList<V>>(tmp);
-                    Add(key, tmp);
+                    Add(key, new NamedList<V>(name));
+                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(new NamedList<V>(name));
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
             }
@@ -106,7 +100,7 @@ namespace ahbsd.lib.NamedCollections
         /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
         /// </summary>
         /// <param name="keyValuePair">The <see cref="KeyValuePair{TKey, TValue}"/>.</param>
-        /// <param name="name">
+        /// <param name="name">[optional] 
         /// The name of the new <see cref="INamedList{T}"/>.
         /// </param>
         /// <remarks>
@@ -119,9 +113,7 @@ namespace ahbsd.lib.NamedCollections
         /// <see cref="INamedList{T}"/> was missing.
         /// </exception>
         public void Add(KeyValuePair<K, V> keyValuePair, string name = null)
-        {
-            Add(keyValuePair.Key, keyValuePair.Value, name);
-        }
+            => Add(keyValuePair.Key, keyValuePair.Value, name);
         #endregion
     }
 }

@@ -32,30 +32,21 @@ namespace ahbsd.lib.NamedCollections
         /// Constructor without any parameters.
         /// </summary>
         public NamedCollection()
-            : base()
-        {
-            _name = null;
-        }
+            : base() => _name = null;
 
         /// <summary>
         /// Constructor with a given <see cref="IList{T}"/> to wrap.
         /// </summary>
         /// <param name="list">The list to wrap.</param>
         public NamedCollection(IList<T> list)
-            : base(list)
-        {
-            _name = null;
-        }
+            : base(list) => _name = null;
 
         /// <summary>
         /// Constructor with a given name for the collection.
         /// </summary>
         /// <param name="name">The given name for the collection.</param>
         public NamedCollection(string name)
-            : base()
-        {
-            _name = name.Trim();
-        }
+            : base() => _name = name.Trim();
 
         /// <summary>
         /// Constructor with a given name for the collection and a
@@ -64,10 +55,7 @@ namespace ahbsd.lib.NamedCollections
         /// <param name="name">The given name for the collection.</param>
         /// <param name="list">The list to wrap.</param>
         public NamedCollection(string name, IList<T> list)
-            : base(list)
-        {
-            _name = name.Trim();
-        }
+            : base(list) => _name = name.Trim();
 
         #region implementation of INamedCollection<T>
         /// <summary>
@@ -104,10 +92,7 @@ namespace ahbsd.lib.NamedCollections
         /// Gets a string representation of this object.
         /// </summary>
         /// <returns>The string representation of this object.</returns>
-        public override string ToString()
-        {
-            return $"{_name}: Count = {Count}";
-        }
+        public override string ToString() => $"{_name}: Count = {Count}";
         #endregion
     }
 }

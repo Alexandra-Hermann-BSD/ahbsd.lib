@@ -27,7 +27,6 @@ namespace ahbsd.lib.Tools
         /// <returns>The checksum of the given value.</returns>
         public static long GetChecksum(long value)
         {
-            long result = 0;
             long positiveValue = value;
 
             if (!IsPositive(value))
@@ -36,11 +35,12 @@ namespace ahbsd.lib.Tools
             }
 
             char[] parts = positiveValue.ToString().ToCharArray();
-            
-            for (int i = 0; i < parts.Length; i++)
+
+            long result = 0;
+            foreach (char v in parts)
             {
-                result += short.Parse(parts[i].ToString());
-            }            
+                result += short.Parse(v.ToString());
+            }
 
             return result;
         }

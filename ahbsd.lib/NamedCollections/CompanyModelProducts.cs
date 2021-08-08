@@ -17,7 +17,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using ahbsd.lib.Products;
 
 namespace ahbsd.lib.NamedCollections
@@ -30,16 +29,13 @@ namespace ahbsd.lib.NamedCollections
         /// <summary>
         /// A Dictionary holding companies and their model products.
         /// </summary>
-        private IDictionary<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> dict;
+        private readonly IDictionary<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> dict;
 
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
         public CompanyModelProducts()
-            : base()
-        {
-            dict = new Dictionary<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>();
-        }
+            : base() => dict = new Dictionary<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>();
 
         /// <summary>
         /// Gets or sets a Dictionary of <see cref="IDictionaryOfNamedList{IModel, IProductItem}"/> for a given <see cref="ICompany"/>.
@@ -127,28 +123,19 @@ namespace ahbsd.lib.NamedCollections
         /// Adds a defined KeyValuePair.
         /// </summary>
         /// <param name="item">The defined KeyValuePair.</param>
-        public void Add(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> item)
-        {
-            dict.Add(item);
-        }
+        public void Add(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> item) => dict.Add(item);
 
         /// <summary>
         /// Clears this Dictionary.
         /// </summary>
-        public void Clear()
-        {
-            dict.Clear();
-        }
+        public void Clear() => dict.Clear();
 
         /// <summary>
         /// Checks wheather a given KeyValuePair is contained or not.
         /// </summary>
         /// <param name="item">The given KeyValuePair.</param>
         /// <returns><c>true</c>, if contained, otherwise <c>false</c>.</returns>
-        public bool Contains(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> item)
-        {
-            return dict.Contains(item);
-        }
+        public bool Contains(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> item) => dict.Contains(item);
 
         /// <summary>
         /// Checks wheather a given <see cref="ICompany"/>-KEY exists or not.
@@ -157,13 +144,10 @@ namespace ahbsd.lib.NamedCollections
         /// <returns>
         /// <c>true</c> if the <see cref="ICompany"/>-KEY exists, otherwise <c>false</c>
         /// </returns>
-        public bool ContainsKey(ICompany key)
-        {
-            return dict.ContainsKey(key);
-        }
+        public bool ContainsKey(ICompany key) => dict.ContainsKey(key);
 
         /// <summary>
-        /// Copies the elements of this <see cref="IDictionary{ICompany, IDictionaryOfNamedList{IModel, IProductItem}}"/>
+        /// Copies the elements of this <see cref="IDictionary{TKey, TValue}"/>
         /// to an <see cref="Array"/>, starting at an particular <see cref="Array"/> index.
         /// </summary>
         /// <param name="array">The given <see cref="Array"/> to copy to.</param>
@@ -171,19 +155,13 @@ namespace ahbsd.lib.NamedCollections
         /// <exception cref="ArgumentNullException">If the <see cref="Array"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentOutOfRangeException">If the given index is out of range of the array.</exception>
         /// <exception cref="ArgumentException">If anything with the given arguments is wrong.</exception>
-        public void CopyTo(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>[] array, int arrayIndex)
-        {
-            dict.CopyTo(array, arrayIndex);
-        }
+        public void CopyTo(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>[] array, int arrayIndex) => dict.CopyTo(array, arrayIndex);
 
         /// <summary>
         /// Returns an enumerator, that iterates through this collection. 
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through this collection.</returns>
-        public IEnumerator<KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>> GetEnumerator()
-        {
-            return dict.GetEnumerator();
-        }
+        public IEnumerator<KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>> GetEnumerator() => dict.GetEnumerator();
 
         /// <summary>
         /// Removes the given KEY and its value.
@@ -192,22 +170,16 @@ namespace ahbsd.lib.NamedCollections
         /// <returns>
         /// <c>true</c> if the given KEY was found and removed, otherwise <c>false</c>.
         /// </returns>
-        public bool Remove(ICompany key)
-        {
-            return dict.Remove(key);
-        }
+        public bool Remove(ICompany key) => dict.Remove(key);
 
         /// <summary>
-        /// Removes the given <see cref="KeyValuePair{ICompany, IDictionaryOfNamedList{IModel, IProductItem}}"/>.
+        /// Removes the given <see cref="KeyValuePair{TKey, TValue}"/>.
         /// </summary>
         /// <param name="item">The given KeyValuePair to remove.</param>
         /// <returns>
         /// <c>true</c> if the given KeyValuePair was found and removed, otherwise <c>false</c>.
         /// </returns>
-        public bool Remove(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> item)
-        {
-            return dict.Remove(item);
-        }
+        public bool Remove(KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>> item) => dict.Remove(item);
 
         /// <summary>
         /// Gets the Value associated with the given Key.
@@ -218,18 +190,12 @@ namespace ahbsd.lib.NamedCollections
         /// <c>true</c> if the Key was found, otherwise <c>false</c>.
         /// </returns>
         /// <exception cref="ArgumentNullException">If any of the Arguments is <c>null</c>.</exception>
-        public bool TryGetValue(ICompany key, [MaybeNullWhen(false)] out IDictionaryOfNamedList<IModel, IProductItem> value)
-        {
-            return dict.TryGetValue(key, out value);
-        }
+        public bool TryGetValue(ICompany key, [MaybeNullWhen(false)] out IDictionaryOfNamedList<IModel, IProductItem> value) => dict.TryGetValue(key, out value);
 
         /// <summary>
         /// Returns an enumerator, that iterates through this collection. 
         /// </summary>
         /// <returns>An <see cref="IEnumerator"/> that can be used to iterate through this collection.</returns>
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return ((IEnumerable)dict).GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable)dict).GetEnumerator();
     }
 }

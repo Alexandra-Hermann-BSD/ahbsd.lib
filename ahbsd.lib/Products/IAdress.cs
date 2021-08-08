@@ -58,34 +58,4 @@ namespace ahbsd.lib.Products
         /// <remarks>Is only settable by the constructor.</remarks>
         CultureInfo Country { get; }
     }
-
-    /// <summary>
-    /// An enum for the type of an Adress.
-    /// </summary>
-    public enum AdressType
-    {
-        /// <summary>
-        /// The postal adress.
-        /// </summary>
-        Postal,
-        /// <summary>
-        /// The delivery adress.
-        /// </summary>
-        Delivery,
-        /// <summary>
-        /// The store adress.
-        /// </summary>
-        Store,
-        /// <summary>
-        /// The private adress.
-        /// </summary>
-        Private,
-        /// <summary>
-        /// An other adress.
-        /// </summary>
-        /// <remarks>
-        /// If no other type matches.
-        /// </remarks>
-        Other,
-    }
 }

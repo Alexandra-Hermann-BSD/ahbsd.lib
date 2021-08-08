@@ -40,7 +40,7 @@ namespace ahbsd.lib.NamedCollections
         /// </summary>
         /// <param name="key">The Key.</param>
         /// <param name="value">The Value.</param>
-        /// <param name="name">
+        /// <param name="name">[optional] 
         /// The name of the new <see cref="INamedCollection{T}"/>.
         /// </param>
         /// <remarks>
@@ -57,7 +57,7 @@ namespace ahbsd.lib.NamedCollections
         /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
         /// </summary>
         /// <param name="keyValuePair">The <see cref="KeyValuePair{TKey, TValue}"/>.</param>
-        /// <param name="name">
+        /// <param name="name">[optional] 
         /// The name of the new <see cref="INamedCollection{T}"/>.
         /// </param>
         /// <remarks>
