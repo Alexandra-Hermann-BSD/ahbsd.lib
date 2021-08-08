@@ -14,6 +14,7 @@
 //    limitations under the License.
 using System;
 using System.Collections.Generic;
+using ahbsd.lib.Exceptions;
 
 namespace ahbsd.lib
 {
@@ -72,10 +73,10 @@ namespace ahbsd.lib
         /// Sets the new value.
         /// </summary>
         /// <param name="newValue">The new value.</param>
-        /// <exception cref="Exception">If the <see cref="NewValue" /> was already set.</exception>
+        /// <exception cref="AlreadySetException{T}">If the <see cref="NewValue" /> was already set.</exception>
         public void SetNewValue(T newValue)
         {
-            Exception e;
+            AlreadySetException<T> e;
             bool isset = false;
 
             try
@@ -96,7 +97,7 @@ namespace ahbsd.lib
 
             if (isset)
             {
-                e = new Exception(string.Format("NewValue is already set: \n'{0}'", NewValue));
+                e = new AlreadySetException<T>(this, newValue);
                 throw e;
             }
             else
@@ -136,12 +137,9 @@ namespace ahbsd.lib
         /// </summary>
         /// <param name="other">The other object.</param>
         /// <returns><c>TRUE</c> if the other object equals this object, otherwise <c>FALSE</c>.</returns>
-        public bool Equals(IChangeEventArgs<T> other)
-        {
-            return other != null &&
+        public bool Equals(IChangeEventArgs<T> other) => other != null &&
                    EqualityComparer<T>.Default.Equals(OldValue, other.OldValue) &&
                    EqualityComparer<T>.Default.Equals(NewValue, other.NewValue);
-        }
         #endregion
 
         /// <summary>
@@ -149,19 +147,13 @@ namespace ahbsd.lib
         /// </summary>
         /// <param name="obj">The other object.</param>
         /// <returns><c>TRUE</c> if the other object equals this object, otherwise <c>FALSE</c>.</returns>
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as IChangeEventArgs<T>);
-        }
+        public override bool Equals(object obj) => Equals(obj as IChangeEventArgs<T>);
 
         /// <summary>
         /// Gets the HashCode of this object.
         /// </summary>
         /// <returns>The HashCode.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(OldValue, NewValue);
-        }
+        public override int GetHashCode() => HashCode.Combine(OldValue, NewValue);
 
         /// <summary>
         /// Finds out, if two objects of type <see cref="ChangeEventArgs{T}"/> eaquals each other.
@@ -170,9 +162,7 @@ namespace ahbsd.lib
         /// <param name="right">The object on the right side.</param>
         /// <returns><c>TRUE</c> if both objects are eaqual, otherwise <c>FALSE</c>.</returns>
         public static bool operator ==(ChangeEventArgs<T> left, ChangeEventArgs<T> right)
-        {
-            return EqualityComparer<ChangeEventArgs<T>>.Default.Equals(left, right);
-        }
+            => EqualityComparer<ChangeEventArgs<T>>.Default.Equals(left, right);
 
         /// <summary>
         /// Finds out, if two objects of type <see cref="ChangeEventArgs{T}"/> do not eaquals each other.
@@ -181,9 +171,7 @@ namespace ahbsd.lib
         /// <param name="right">The object on the right side.</param>
         /// <returns><c>TRUE</c> if both objects are not eaqual, otherwise <c>FALSE</c>.</returns>
         public static bool operator !=(ChangeEventArgs<T> left, ChangeEventArgs<T> right)
-        {
-            return !(left == right);
-        }
+            => !(left == right);
     }
 
     /// <summary>

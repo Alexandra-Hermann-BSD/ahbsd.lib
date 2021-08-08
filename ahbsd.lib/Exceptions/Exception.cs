@@ -34,7 +34,10 @@ namespace ahbsd.lib.Exceptions
         /// </summary>
         /// <param name="value">The value.</param>
         public Exception(T value)
-            : base() => Value = value;
+            : base()
+        {
+            Value = value;
+        }
 
         /// <summary>
         /// Constructor with a message.
