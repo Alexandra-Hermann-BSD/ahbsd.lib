@@ -188,7 +188,7 @@ namespace ahbsd.lib.Tools
         #endregion
         #region IsPositive
         /// <summary>
-        /// Checks wheather value is positive or negative.
+        /// Checks whether value is positive or negative.
         /// </summary>
         /// <param name="value">The value to check.</param>
         /// <returns>
@@ -197,7 +197,7 @@ namespace ahbsd.lib.Tools
         public static bool IsPositive(long value) => !value.ToString().Substring(0, 1).Equals("-");
 
         /// <summary>
-        /// Checks wheather value is positive or negative.
+        /// Checks whether value is positive or negative.
         /// </summary>
         /// <param name="value">The value to check.</param>
         /// <returns>
@@ -206,7 +206,7 @@ namespace ahbsd.lib.Tools
         public static bool IsPositive(long? value) => value.HasValue && IsPositive((long)value);
 
         /// <summary>
-        /// Checks wheather value is positive or negative.
+        /// Checks whether value is positive or negative.
         /// </summary>
         /// <param name="value">The value to check.</param>
         /// <returns>
@@ -215,7 +215,7 @@ namespace ahbsd.lib.Tools
         public static bool IsPositive(ulong value) => true;
 
         /// <summary>
-        /// Checks wheather value is positive or negative.
+        /// Checks whether value is positive or negative.
         /// </summary>
         /// <param name="value">The value to check.</param>
         /// <returns>
@@ -233,7 +233,7 @@ namespace ahbsd.lib.Tools
         public static bool IsPositive(short value) => !value.ToString().Substring(0, 1).Equals("-");
 
         /// <summary>
-        /// Checks wheather value is positive or negative.
+        /// Checks whether value is positive or negative.
         /// </summary>
         /// <param name="value">The value to check.</param>
         /// <returns>
@@ -241,5 +241,12 @@ namespace ahbsd.lib.Tools
         /// </returns>
         public static bool IsPositive(short? value) => value.HasValue && IsPositive((short)value);
         #endregion
+
+        /// <summary>
+        /// Checks whether value is positive.
+        /// </summary>
+        /// <param name="number">The number to check</param>
+        /// <returns>Always <c>true</c></returns>
+        public static bool IsPositive(ushort number) => true;
     }
 }

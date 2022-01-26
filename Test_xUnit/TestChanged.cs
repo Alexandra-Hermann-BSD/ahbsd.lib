@@ -1,18 +1,15 @@
 using System;
 using ahbsd.lib;
 using ahbsd.lib.Exceptions;
-using ahbsd.lib.ApiKey;
-using ahbsd.lib.Password;
 using Xunit;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Test_xUnit
 {
     public class TestChanged
     {
-        static int nr = 0;
-        IDictionary<int, int?> apiKeys = new Dictionary<int, int?>();
+        private static int nr = 0;
+        private readonly IDictionary<int, int?> apiKeys = new Dictionary<int, int?>();
 
 
         [Theory]
@@ -26,6 +23,7 @@ namespace Test_xUnit
             apiKeys.Add(nr, TestClass<double?, string>.FindApiKey($"TC{nr}"));
             testClass.OnChange += TestClass_OnChange;
             testClass.Variable = newValue;
+            Assert.NotEqual(oldValue, testClass.Variable);
             nr++;
         }
 
@@ -59,11 +57,9 @@ namespace Test_xUnit
         public void TestChange()
         {
             ITestClass<string, object> t1 = new TestClass<string, object>("Hello", null);
-            ITestClass<object, string> t2, t3;
-            IGenericException<ITestClass<object, string>> exT3;
             double d;
-            t2 = new TestClass<object, string>("Hello", "A100002");
-            t3 = new TestClass<object, string>(0xAFFE, "0xAFFE");
+            ITestClass<object, string> t2 = new TestClass<object, string>("Hello", "A100002");
+            ITestClass<object, string> t3 = new TestClass<object, string>(0xAFFE, "0xAFFE");
             t1.OnChange += T1_OnChange;
             t2.OnChange += T2_OnChange;
             t3.OnChange += T3_OnChange;
@@ -86,7 +82,8 @@ namespace Test_xUnit
             }
             catch (Exception ex)
             {
-                exT3 = new Exception<ITestClass<object, string>>(ex.Message, t3);
+                IGenericException<ITestClass<object, string>> exT3 = new Exception<ITestClass<object, string>>(ex.Message, t3, ex);
+                Assert.IsType<Exception<ITestClass<object, string>>>(exT3);
             }
         }
 
@@ -95,6 +92,7 @@ namespace Test_xUnit
             Console.WriteLine("The variable from 't3' has changed:");
             Console.WriteLine("The sending object was: {0}", sender);
             Console.WriteLine(e.ToString());
+            Assert.NotEqual(e.OldValue, e.NewValue);
             Console.WriteLine();
         }
 
@@ -108,6 +106,7 @@ namespace Test_xUnit
             Console.WriteLine("The variable from 't2' has changed:");
             Console.WriteLine("The sending object was: {0}", sender);
             Console.WriteLine(e.ToString());
+            Assert.NotEqual(e.OldValue, e.NewValue);
             Console.WriteLine();
         }
 
@@ -121,6 +120,7 @@ namespace Test_xUnit
             Console.WriteLine("The variable from 't1' has changed:");
             Console.WriteLine("The sending object was: {0}", sender);
             Console.WriteLine(e.ToString());
+            Assert.NotEqual(e.OldValue, e.NewValue);
             Console.WriteLine();
         }
     }

@@ -204,7 +204,7 @@ namespace ahbsd.lib.Password
                             tmp.OnChange += OnChange;
                         }
                     }
-                    ChangeEventArgs<IPassword> cea = new ChangeEventArgs<IPassword>(this, tmp);
+                    ChangeEventArgs<IPassword> cea = new(this, tmp);
 
                     _value = value;
                     _securityValue = tmp.SecurityValue;

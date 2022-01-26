@@ -12,6 +12,9 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
+using System;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace ahbsd.lib.Exceptions
@@ -22,8 +25,19 @@ namespace ahbsd.lib.Exceptions
     /// new value was already set.
     /// </summary>
     /// <typeparam name="T">The type of the <see cref="ChangeEventArgs{T}"/></typeparam>
+    [Serializable]
     public class AlreadySetException<T> : Exception<T>, IAlreadySetException<T>
     {
+        /// <summary>
+        /// Constructor with serialized data
+        /// </summary>
+        /// <param name="info">The serialization info</param>
+        /// <param name="context">The streaming context</param>
+        protected AlreadySetException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            // nothing so far
+        }
         /// <summary>
         /// Constructor with a given <see cref="ChangeEventArgs{T}"/> and a new value.
         /// </summary>
@@ -56,7 +70,7 @@ namespace ahbsd.lib.Exceptions
         /// <returns>A string representating this Exception</returns>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            StringBuilder builder = new();
             builder.AppendLine($"ChangeEventArgs<{typeof(T)}> with:");
             builder.AppendLine($"OldValue: '{ChangeEventArgs.OldValue}'");
             builder.AppendLine($"NewValue: '{ChangeEventArgs.NewValue}'");

@@ -21,6 +21,7 @@ namespace ahbsd.lib.Exceptions
     /// Class for a generic Exception, which additionally holds a value of T
     /// </summary>
     /// <typeparam name="T">The type.</typeparam>
+    [Serializable]
     public class Exception<T> : Exception, IGenericException<T>
     {
         /// <summary>
@@ -69,20 +70,21 @@ namespace ahbsd.lib.Exceptions
         protected Exception(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            IGenericException<T> tmpInterface;
-            Exception<T> tmpClass;
-
-            if (info.ObjectType.Equals(typeof(Exception<T>)))
+            if (info.ObjectType == typeof(Exception<T>))
             {
-                tmpClass = (Exception<T>)context.Context;
+                Exception<T> tmpClass = (Exception<T>)context.Context;
 
-                Value = tmpClass.Value;
+                Value = tmpClass != null
+                    ? tmpClass.Value
+                    : default;
             }
-            else if (info.ObjectType.IsInstanceOfType(typeof(IGenericException<T>)))
+            else if (info.ObjectType.IsAssignableFrom(typeof(IGenericException<T>)))
             {
-                tmpInterface = (IGenericException<T>)context.Context;
+                IGenericException<T> tmpInterface = (IGenericException<T>)context.Context;
 
-                Value = tmpInterface.Value;
+                Value = tmpInterface != default(IGenericException<T>)
+                    ? tmpInterface.Value
+                    : default;
             }
             else
             {

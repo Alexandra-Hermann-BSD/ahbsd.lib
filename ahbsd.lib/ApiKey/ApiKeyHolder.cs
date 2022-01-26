@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+// ReSharper disable All
 
 namespace ahbsd.lib.ApiKey
 {
@@ -38,7 +39,7 @@ namespace ahbsd.lib.ApiKey
         /// A list of all known API-Keys.
         /// </summary>
         /// <remarks>Of current instances. Is eg needed for construction without api-key etc.</remarks>
-        protected internal static List<T> KnownApiKeys;
+        protected internal readonly static List<T> KnownApiKeys;
         /// <summary>
         /// Happens if a new API-Key was added to the static list <see cref="KnownApiKeys"/>.
         /// </summary>
@@ -70,14 +71,7 @@ namespace ahbsd.lib.ApiKey
         /// <exception cref="InvalidOperationException">If anything regarding <see cref="KnownApiKeys"/> is an invalid operation.</exception>
         public ApiKeyHolder()
         {
-            if (KnownApiKeys.Count > 0)
-            {
-                _apiKey = KnownApiKeys.Last();
-            }
-            else
-            {
-                _apiKey = default;
-            }
+            _apiKey = KnownApiKeys.Count > 0 ? KnownApiKeys.Last() : default;
             AddApiKey(this, ApiKey);
         }
 
@@ -122,29 +116,20 @@ namespace ahbsd.lib.ApiKey
         /// </summary>
         /// <param name="idx">The defined index number.</param>
         /// <returns>An API-Key.</returns>
-        public static T GetApiKey(int idx)
-        {
-            return KnownApiKeys[idx];
-        }
+        public static T GetApiKey(int idx) => KnownApiKeys[idx];
 
         /// <summary>
         /// Find out, if this object equals another given object.
         /// </summary>
         /// <param name="obj">The other object.</param>
         /// <returns>If both objects equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
-        public override bool Equals(object obj)
-        {
-            return Equals(obj as ApiKeyHolder<T>);
-        }
+        public override bool Equals(object obj) => Equals(obj as ApiKeyHolder<T>);
 
         /// <summary>
         /// Gets the HashCode.
         /// </summary>
         /// <returns>The HashCode.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(ApiKey);
-        }
+        public override int GetHashCode() => HashCode.Combine(ApiKey);
 
         /// <summary>
         /// Find out if two objects equals.
@@ -152,10 +137,8 @@ namespace ahbsd.lib.ApiKey
         /// <param name="left">The object on the left side.</param>
         /// <param name="right">The object on the right side.</param>
         /// <returns>If both objects equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
-        public static bool operator ==(ApiKeyHolder<T> left, ApiKeyHolder<T> right)
-        {
-            return EqualityComparer<ApiKeyHolder<T>>.Default.Equals(left, right);
-        }
+        public static bool operator ==(ApiKeyHolder<T> left, ApiKeyHolder<T> right) 
+            => EqualityComparer<ApiKeyHolder<T>>.Default.Equals(left, right);
 
         /// <summary>
         /// Find out if two objects do not equals.
@@ -163,10 +146,8 @@ namespace ahbsd.lib.ApiKey
         /// <param name="left">The object on the left side.</param>
         /// <param name="right">The object on the right side.</param>
         /// <returns>If both objects do not equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
-        public static bool operator !=(ApiKeyHolder<T> left, ApiKeyHolder<T> right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(ApiKeyHolder<T> left, ApiKeyHolder<T> right) 
+            => !(left == right);
 
         #region implementation of IEquatable<ApiKeyHolder<T>>
         /// <summary>
@@ -174,11 +155,10 @@ namespace ahbsd.lib.ApiKey
         /// </summary>
         /// <param name="other">The other object.</param>
         /// <returns>If both objects equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
-        public bool Equals(ApiKeyHolder<T> other)
-        {
-            return other != null &&
-                   EqualityComparer<T>.Default.Equals(ApiKey, other.ApiKey);
-        }
+        public bool Equals(ApiKeyHolder<T> other) =>
+            other != null &&
+            EqualityComparer<T>.Default.Equals(ApiKey, other.ApiKey);
+
         #endregion
     }
 }

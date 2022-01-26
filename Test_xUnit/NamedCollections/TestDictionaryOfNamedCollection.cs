@@ -63,6 +63,7 @@ namespace Test_xUnit.NamedCollections
             l2.OnNamedListAdded += L2_OnNamedListAdded;
 
             l1.Add(1, "Double");
+            Assert.NotEmpty(l1.Keys);
             l1.Add(1, 1.1);
             l1.Add(1, 1.2);
             l1.Add(1, 1.3);
@@ -77,12 +78,14 @@ namespace Test_xUnit.NamedCollections
 
         private void L1_OnNamedListAdded(object sender, EventArgs<INamedList<double>> e)
         {
+            Assert.IsType<double>(e.Value);
             Console.WriteLine("To {0} a new INamedList<double> was added:", sender);
             Console.WriteLine(e.Value);
         }
 
         private void L2_OnNamedListAdded(object sender, EventArgs<INamedList<string>> e)
         {
+            Assert.IsType<string>(e.Value);
             Console.WriteLine("To {0} a new INamedList<string> was added:", sender);
             Console.WriteLine(e.Value);
         }
