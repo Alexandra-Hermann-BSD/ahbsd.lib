@@ -119,17 +119,13 @@ namespace ahbsd.lib.ApiKey
         public static T GetApiKey(int idx) => KnownApiKeys[idx];
 
         /// <summary>
-        /// Find out, if this object equals another given object.
-        /// </summary>
-        /// <param name="obj">The other object.</param>
-        /// <returns>If both objects equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
-        public override bool Equals(object obj) => Equals(obj as ApiKeyHolder<T>);
-
-        /// <summary>
         /// Gets the HashCode.
         /// </summary>
         /// <returns>The HashCode.</returns>
-        public override int GetHashCode() => HashCode.Combine(ApiKey);
+        public override int GetHashCode()
+        {
+            return EqualityComparer<T>.Default.GetHashCode(_apiKey);
+        }
 
         /// <summary>
         /// Find out if two objects equals.
@@ -155,10 +151,27 @@ namespace ahbsd.lib.ApiKey
         /// </summary>
         /// <param name="other">The other object.</param>
         /// <returns>If both objects equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
-        public bool Equals(ApiKeyHolder<T> other) =>
-            other != null &&
-            EqualityComparer<T>.Default.Equals(ApiKey, other.ApiKey);
+        public bool Equals(ApiKeyHolder<T> other) 
+            => !ReferenceEquals(null, other) 
+               && (ReferenceEquals(this, other) 
+                   || EqualityComparer<T>.Default.Equals(_apiKey, other._apiKey));
+
+        /// <summary>
+        /// Find out, if this object equals another given object.
+        /// </summary>
+        /// <param name="obj">The other object.</param>
+        /// <returns>If both objects equals <c>TRUE</c>, otherwise <c>FALSE</c>.</returns>
+        public override bool Equals(object obj) 
+            => ReferenceEquals(this, obj) 
+               || obj is ApiKeyHolder<T> other 
+               && Equals(other);
 
         #endregion
+
+        /// <summary>
+        /// Gets a string that describes the current ApiKey.
+        /// </summary>
+        /// <returns>A string that describes the current ApiKey</returns>
+        public override string ToString() => $"{nameof(ApiKey)} ({typeof(T).Name}): {ApiKey}";
     }
 }

@@ -13,6 +13,7 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 using System;
+using System.Linq;
 using ahbsd.lib;
 using ahbsd.lib.NamedCollections;
 using Xunit;
@@ -78,14 +79,28 @@ namespace Test_xUnit.NamedCollections
 
         private void L1_OnNamedListAdded(object sender, EventArgs<INamedList<double>> e)
         {
-            Assert.IsType<double>(e.Value);
+            Assert.IsType<double>(e.Value.LastOrDefault());
             Console.WriteLine("To {0} a new INamedList<double> was added:", sender);
             Console.WriteLine(e.Value);
         }
 
         private void L2_OnNamedListAdded(object sender, EventArgs<INamedList<string>> e)
         {
-            Assert.IsType<string>(e.Value);
+            if (e.Value.Count > 0)
+            {
+                Assert.IsType<string>(e.Value.LastOrDefault());
+            }
+            else
+            {
+                try
+                {
+                    Assert.IsType<string[]>(e.Value.ToArray());
+                }
+                catch (Exception)
+                {
+                    //
+                }
+            }
             Console.WriteLine("To {0} a new INamedList<string> was added:", sender);
             Console.WriteLine(e.Value);
         }
