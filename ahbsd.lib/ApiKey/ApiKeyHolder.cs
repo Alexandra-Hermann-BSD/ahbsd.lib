@@ -122,10 +122,7 @@ namespace ahbsd.lib.ApiKey
         /// Gets the HashCode.
         /// </summary>
         /// <returns>The HashCode.</returns>
-        public override int GetHashCode()
-        {
-            return EqualityComparer<T>.Default.GetHashCode(_apiKey);
-        }
+        public override int GetHashCode() => EqualityComparer<T>.Default.GetHashCode(_apiKey);
 
         /// <summary>
         /// Find out if two objects equals.
