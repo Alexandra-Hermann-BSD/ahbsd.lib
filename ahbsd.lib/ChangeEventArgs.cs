@@ -77,7 +77,7 @@ namespace ahbsd.lib
         public void SetNewValue(T newValue)
         {
             IAlreadySetException<T> e;
-            bool isset = false;
+            bool isSet = false;
 
             try
             {
@@ -87,15 +87,15 @@ namespace ahbsd.lib
                 }
                 else
                 {
-                    isset = true;
+                    isSet = true;
                 }
             }
             catch (Exception)
             {
-                isset = false;
+                isSet = false;
             }
 
-            if (isset)
+            if (isSet)
             {
                 e = new AlreadySetException<T>(this, newValue);
                 throw (AlreadySetException<T>)e;
@@ -133,7 +133,7 @@ namespace ahbsd.lib
         #endregion
         #region implementation of IEquatable<IChangeEventArgs<T>>
         /// <summary>
-        /// Finds out wheather an other object of type <see cref="IChangeEventArgs{T}"/> equals this object.
+        /// Finds out whether an other object of type <see cref="IChangeEventArgs{T}"/> equals this object.
         /// </summary>
         /// <param name="other">The other object.</param>
         /// <returns><c>TRUE</c> if the other object equals this object, otherwise <c>FALSE</c>.</returns>

@@ -199,7 +199,7 @@ namespace ahbsd.lib.Password
         /// </exception>
         public void Add(Charasteristic key, bool value)
         {
-            throw new Exception("Adding KeyValuePairs isn't possible here!");
+            throw new ArgumentException("Adding KeyValuePairs isn't possible here!");
         }
         /// <summary>
         /// Throws an Exception.
@@ -209,7 +209,7 @@ namespace ahbsd.lib.Password
         /// </exception>
         public void Add(KeyValuePair<Charasteristic, bool> item)
         {
-            throw new Exception("Adding KeyValuePairs isn't possible here!");
+            throw new ArgumentException("Adding KeyValuePairs isn't possible here!");
         }
         /// <summary>
         /// Re-Initialize the object.
@@ -268,7 +268,7 @@ namespace ahbsd.lib.Password
         /// <returns>A short info of the characteristic.</returns>
         public override string ToString()
         {
-            StringBuilder result = new StringBuilder("CharacteristicDictionary ");
+            StringBuilder result = new("CharacteristicDictionary ");
 
             if (this[Charasteristic.CapitalLetter])
             {

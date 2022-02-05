@@ -14,6 +14,8 @@
 //    limitations under the License.
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+// ReSharper disable All
 
 namespace ahbsd.lib.NamedCollections
 {
@@ -22,11 +24,32 @@ namespace ahbsd.lib.NamedCollections
     /// </summary>
     /// <typeparam name="K">The type of the key.</typeparam>
     /// <typeparam name="V">The type of the <see cref="INamedList{T}"/>-ValueType.</typeparam>
+    [Serializable]
     public class DictionaryOfNamedList<K, V> : Dictionary<K, INamedList<V>>, IDictionaryOfNamedList<K, V>
     {
+        /// <summary>
+        /// Constructor with serialized data
+        /// </summary>
+        /// <param name="info">The serialization info</param>
+        /// <param name="context">The streaming context</param>
+        protected DictionaryOfNamedList(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            //
+        }
+
+        /// <summary>
+        /// Simple constructor
+        /// </summary>
+        public DictionaryOfNamedList()
+            : base()
+        {
+            //
+        }
+        
         #region implementation of IDictionaryOfNamedList<K, V>
         /// <summary>
-        /// Happenes, if a new <see cref="INamedList{T}"/> was added.
+        /// Happens, if a new <see cref="INamedList{T}"/> was added.
         /// </summary>
         public event EventHandler<EventArgs<INamedList<V>>> OnNamedListAdded;
         /// <summary>
@@ -47,13 +70,14 @@ namespace ahbsd.lib.NamedCollections
                 if (!ContainsKey(key))
                 {
                     Add(key, new NamedList<V>(name));
-                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(new NamedList<V>(name));
+                    EventArgs<INamedList<V>> eventArgs = new(new NamedList<V>(name));
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
                 else
                 {
-                    ArgumentException ae = new ArgumentException(
-                        $"Key '{key}' already exists.", "key");
+                    ArgumentException ae = new(
+                        $"Key '{key}' already exists.",
+                        "key");
                     throw ae;
                 }
             }
@@ -82,14 +106,14 @@ namespace ahbsd.lib.NamedCollections
                 if (string.IsNullOrEmpty(name))
                 {
                     KeyNotFoundException k =
-                        new KeyNotFoundException($"Key '{key}' is missing AND name" +
+                        new($"Key '{key}' is missing AND name" +
                             $"for creating a new INamedList<{typeof(V)}> is null or empty as well");
                     throw k;
                 }
                 else
                 {
                     Add(key, new NamedList<V>(name));
-                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(new NamedList<V>(name));
+                    EventArgs<INamedList<V>> eventArgs = new(new NamedList<V>(name));
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
             }

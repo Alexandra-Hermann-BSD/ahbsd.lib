@@ -28,7 +28,10 @@ namespace ahbsd.lib.ApiKey
         /// <param name="idx">The index of the API-Key.</param>
         public ApiKeyEventArgs(T apiKey, int idx)
             : base(apiKey)
-        {  }
+        {
+            if (!CheckApiKeyIdx(idx))
+                SetIdx(idx);
+        }
 
         /// <summary>
         /// Constructor with the API-Key.
@@ -37,6 +40,23 @@ namespace ahbsd.lib.ApiKey
         public ApiKeyEventArgs(T apiKey)
             : base(apiKey)
         { }
+
+        /// <summary>
+        /// Checks the ApiKey index.
+        /// </summary>
+        /// <param name="idx">The index to check</param>
+        /// <returns>THe validity of the given index</returns>
+        protected bool CheckApiKeyIdx(int idx)
+        {
+            int? holderIndex = ApiKeyHolder<T>.FindApiKey(Value);
+
+            return holderIndex == idx;
+        }
+
+        private void SetIdx(int idx)
+        {
+            //
+        }
 
         #region implementation of IApiKeyEventArgs
         /// <summary>
