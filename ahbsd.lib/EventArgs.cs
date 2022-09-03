@@ -12,33 +12,32 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
+using ahbsd.lib.Attributes;
+
 namespace ahbsd.lib
 {
     /// <summary>
     /// Generic EventArgs.
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Value"/>.</typeparam>
+    [Api]
     public class EventArgs<T> : EventArgs, IEventArgs<T>
     {
         /// <summary>
         /// Constructor without parameters.
         /// </summary>
-        public EventArgs()
-            : base() => Value = default;
+        public EventArgs() => Value = default;
 
         /// <summary>
         /// Constructor with a value.
         /// </summary>
         /// <param name="val">A value.</param>
-        public EventArgs(T val)
-            : base() => Value = val;
+        public EventArgs(T val) => Value = val;
 
         #region implementation of IEventArgs<T>
-        /// <summary>
-        /// Gets a value.
-        /// </summary>
-        /// <value>A value.</value>
+        /// <inheritdoc/>
         public T Value { get; private set; }
         #endregion
     }

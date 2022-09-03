@@ -12,6 +12,9 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
+using ahbsd.lib.Attributes;
+
 namespace ahbsd.lib.ApiKey
 {
     /// <summary>
@@ -19,6 +22,7 @@ namespace ahbsd.lib.ApiKey
     /// </summary>
     /// <typeparam name="T">Type of API-Key.</typeparam>
     /// <seealso cref="ApiKeyHolder{T}"/>
+    [Api]
     public class ApiKeyEventArgs<T> : EventArgs<T>, IApiKeyEventArgs
     {
         /// <summary>
@@ -26,43 +30,40 @@ namespace ahbsd.lib.ApiKey
         /// </summary>
         /// <param name="apiKey">The API-Key.</param>
         /// <param name="idx">The index of the API-Key.</param>
-        public ApiKeyEventArgs(T apiKey, int idx)
-            : base(apiKey)
+        public ApiKeyEventArgs(T apiKey, int idx) : base(apiKey)
         {
-            if (!CheckApiKeyIdx(idx))
-                SetIdx(idx);
+            if (!CheckApiKeyIdx(idx)) SetIdx(idx);
         }
 
         /// <summary>
         /// Constructor with the API-Key.
         /// </summary>
         /// <param name="apiKey">The API-Key.</param>
-        public ApiKeyEventArgs(T apiKey)
-            : base(apiKey)
-        { }
+        public ApiKeyEventArgs(T apiKey) : base(apiKey) { }
 
         /// <summary>
         /// Checks the ApiKey index.
         /// </summary>
         /// <param name="idx">The index to check</param>
-        /// <returns>THe validity of the given index</returns>
+        /// <returns>The validity of the given index</returns>
         protected bool CheckApiKeyIdx(int idx)
         {
-            int? holderIndex = ApiKeyHolder<T>.FindApiKey(Value);
+            var holderIndex = ApiKeyHolder<T>.FindApiKey(Value);
 
             return holderIndex == idx;
         }
 
+        /// <summary>
+        /// Sets the index.
+        /// </summary>
+        /// <param name="idx">The index</param>
         private void SetIdx(int idx)
         {
-            //
+            ApiKeyHolder<T>.KnownApiKeys[idx] = Value;
         }
 
         #region implementation of IApiKeyEventArgs
-        /// <summary>
-        /// Gets the index of the API-Key from the <see cref="ApiKeyHolder{T}"/>. 
-        /// </summary>
-        /// <value>The index.</value>
+        /// <inheritdoc/>
         public int? Index => ApiKeyHolder<T>.FindApiKey(Value);
         #endregion
     }

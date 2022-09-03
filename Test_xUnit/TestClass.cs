@@ -22,8 +22,8 @@ namespace Test_xUnit
     /// A class to demonstrate <see cref="ChangeEventArgs{T}"/> and <see cref="ChangeEventHandler{T}"/>.
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
-    /// <typeparam name="A">Type of API-Key.</typeparam>
-    public class TestClass<T, A> : ApiKeyHolder<A>, ITestClass<T, A>
+    /// <typeparam name="TA">Type of API-Key.</typeparam>
+    public class TestClass<T, TA> : ApiKeyHolder<TA>, ITestClass<T, TA>
     {
         /// <summary>
         /// The variable to change.
@@ -89,7 +89,7 @@ namespace Test_xUnit
         /// Constructor with a given API-Key.
         /// </summary>
         /// <param name="apiKey">The given API-Key.</param>
-        public TestClass(A apiKey)
+        public TestClass(TA apiKey)
             : base(apiKey)
         {
             _variable = default;
@@ -101,7 +101,7 @@ namespace Test_xUnit
         /// </summary>
         /// <param name="v">The given variable.</param>
         /// <param name="apiKey">The given API-Key.</param>
-        public TestClass(T v, A apiKey)
+        public TestClass(T v, TA apiKey)
             : base(apiKey)
         {
             _variable = v;
@@ -109,7 +109,7 @@ namespace Test_xUnit
         }
 
 
-        private void TestClass_OnApiKeyAdded(object sender, ApiKeyEventArgs<A> e)
+        private void TestClass_OnApiKeyAdded(object sender, ApiKeyEventArgs<TA> e)
         {
             Console.WriteLine("An API-Key ('{0}') was added at Index {1}", e.Value, e.Index);
         }

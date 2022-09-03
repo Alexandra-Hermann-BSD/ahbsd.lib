@@ -13,6 +13,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 using System;
+using ahbsd.lib.Attributes;
+
 namespace ahbsd.lib
 {
     /// <summary>
@@ -20,7 +22,8 @@ namespace ahbsd.lib
     /// </summary>
     /// <typeparam name="T">Type of Value.</typeparam>
     /// <remarks>The difference to usual <see cref="EventArgs"/> is, that a generic value is added.</remarks>
-    public interface IEventArgs<T>
+    [Api]
+    public interface IEventArgs<out T>
     {
         /// <summary>
         /// Gets a value.
