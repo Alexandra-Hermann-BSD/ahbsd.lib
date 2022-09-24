@@ -15,6 +15,7 @@
 using System;
 using Xunit;
 using ahbsd.lib;
+using ahbsd.lib.Interfaces;
 
 namespace Test_xUnit
 {

@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using ahbsd.lib.Exceptions;
+using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib
 {
@@ -22,7 +23,7 @@ namespace ahbsd.lib
     /// Generic EventArgs for changing values.
     /// </summary>
     /// <typeparam name="T">The type of the changing Values.</typeparam>
-    public class ChangeEventArgs<T> : EventArgs, IChangeEventArgs<T>, IEquatable<IChangeEventArgs<T>>
+    public class ChangeEventArgs<T> : System.EventArgs, IChangeEventArgs<T>, IEquatable<IChangeEventArgs<T>>
     {
         /// <summary>
         /// Constructor without any parameters.

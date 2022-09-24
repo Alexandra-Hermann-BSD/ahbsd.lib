@@ -14,6 +14,7 @@
 //    limitations under the License.
 
 using ahbsd.lib.Attributes;
+using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib.ApiKey
 {

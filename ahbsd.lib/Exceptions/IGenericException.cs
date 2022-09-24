@@ -18,7 +18,7 @@ namespace ahbsd.lib.Exceptions
     /// Interface for generic exceptions.
     /// </summary>
     /// <typeparam name="T">Selectable type.</typeparam>
-    public interface IGenericException<T>
+    public interface IGenericException<out T>
     {
         /// <summary>
         /// Gets the value of type T.

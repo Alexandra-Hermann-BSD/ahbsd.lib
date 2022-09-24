@@ -2,7 +2,6 @@
 using System;
 using Xunit;
 using ahbsd.lib.ApiKey;
-using ahbsd.lib;
 
 namespace Test_xUnit.ApiKey;
 

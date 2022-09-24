@@ -15,7 +15,7 @@
 using System;
 using ahbsd.lib.Attributes;
 
-namespace ahbsd.lib
+namespace ahbsd.lib.Interfaces
 {
     /// <summary>
     /// Interface for generic EventArgs.

@@ -13,8 +13,8 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
 using ahbsd.lib.Attributes;
+using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib
 {
@@ -23,7 +23,7 @@ namespace ahbsd.lib
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Value"/>.</typeparam>
     [Api]
-    public class EventArgs<T> : EventArgs, IEventArgs<T>
+    public class EventArgs<T> : System.EventArgs, IEventArgs<T>
     {
         /// <summary>
         /// Constructor without parameters.
