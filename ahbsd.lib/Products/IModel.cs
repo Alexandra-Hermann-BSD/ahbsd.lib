@@ -12,7 +12,9 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System.ComponentModel;
+using ahbsd.lib.EventHandler;
 
 namespace ahbsd.lib.Products
 {
@@ -22,7 +24,7 @@ namespace ahbsd.lib.Products
     public interface IModel : IComponent
     {
         /// <summary>
-        /// Happenes, if the notes have changed.
+        /// Happens, if the notes have changed.
         /// </summary>
         event ChangeEventHandler<string> OnNotesChanged;
         /// <summary>

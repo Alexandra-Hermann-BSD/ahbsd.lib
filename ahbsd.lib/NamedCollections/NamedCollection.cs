@@ -12,8 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
 
 namespace ahbsd.lib.NamedCollections
 {
@@ -31,8 +34,7 @@ namespace ahbsd.lib.NamedCollections
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
-        public NamedCollection()
-            : base() => _name = null;
+        public NamedCollection() => _name = null;
 
         /// <summary>
         /// Constructor with a given <see cref="IList{T}"/> to wrap.
@@ -45,8 +47,7 @@ namespace ahbsd.lib.NamedCollections
         /// Constructor with a given name for the collection.
         /// </summary>
         /// <param name="name">The given name for the collection.</param>
-        public NamedCollection(string name)
-            : base() => _name = name.Trim();
+        public NamedCollection(string name) => _name = name.Trim();
 
         /// <summary>
         /// Constructor with a given name for the collection and a

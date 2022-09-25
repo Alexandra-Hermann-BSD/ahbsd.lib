@@ -12,8 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.ComponentModel;
+using ahbsd.lib.EventHandler;
+using ahbsd.lib.Password.Check;
 
 namespace ahbsd.lib.Password
 {
@@ -27,48 +30,57 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <value>The value.</value>
         string Value { get; set; }
+        
         /// <summary>
         /// Gets the length of the password.
         /// </summary>
         /// <value>The length of the password.</value>
         int Length { get; }
+        
         /// <summary>
         /// Gets the amount of lower cases.
         /// </summary>
         /// <value>The amount of lower cases.</value>
         int LowerCases { get; }
+        
         /// <summary>
         /// Gets the amount of upper cases.
         /// </summary>
         /// <value>The amount of upper cases.</value>
         int UpperCases { get; }
+        
         /// <summary>
         /// Gets the amount of numbers.
         /// </summary>
         /// <value>The amount of numbers.</value>
         int Numbers { get; }
+        
         /// <summary>
         /// Gets the amount of spaces.
         /// </summary>
         /// <value>The amount of spaces.</value>
         int Spaces { get; }
+        
         /// <summary>
         /// Gets the amount of special cases.
         /// </summary>
         /// <value>The amount of special cases.</value>
         int Specials { get; }
+        
         /// <summary>
         /// Gets the characteristics of a password.
         /// </summary>
         ICharacteristicDictionary Characteristics { get; }
+        
         /// <summary>
-        /// Happenes, when the <see cref="Value"/> changes.
+        /// Happens, when the <see cref="Value"/> changes.
         /// </summary>
         event ChangeEventHandler<IPassword> OnChange;
+        
         /// <summary>
         /// Gets the SecurityValue.
         /// </summary>
         /// <value>The SecurityValue.</value>
-        Check.ISecurityValue SecurityValue { get; }
+        ISecurityValue SecurityValue { get; }
     }
 }

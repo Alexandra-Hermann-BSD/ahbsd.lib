@@ -12,11 +12,12 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System;
 using System.Text;
 
 namespace ahbsd.lib.Password
@@ -29,20 +30,14 @@ namespace ahbsd.lib.Password
         /// <summary>
         /// The inner dictionary.
         /// </summary>
-        private IDictionary<Charasteristic, bool> _dictionary;
-        /// <summary>
-        /// The name of this component.
-        /// </summary>
-        private readonly string _name;
+        private IDictionary<Charasteristic, bool> dictionary;
 
         /// <summary>
         /// Constructor without parameter.
         /// </summary>
         public CharacteristicDictionary()
-            : base()
         {
             Initialize();
-            _name = $"CharacteristicDictionary_[{GetHashCode()}]";
         }
 
         /// <summary>
@@ -50,10 +45,8 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <param name="value">The given password.</param>
         internal CharacteristicDictionary(string value)
-            : base()
         {
             Initialize(value);
-            _name = ToString();
         }
 
         /// <summary>
@@ -61,10 +54,8 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <param name="value">The given password.</param>
         internal CharacteristicDictionary(IPassword value)
-            : base()
         {
             Initialize(value);
-            _name = ToString();
         }
 
         /// <summary>
@@ -72,12 +63,10 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <param name="container">The given owning container.</param>
         public CharacteristicDictionary(IContainer container)
-            : base()
         {
             Initialize();
-            _name = $"CharacteristicDictionary_[{GetHashCode()}]";
 
-            container?.Add(this, $"Characteristic [{GetHashCode()}]");
+            container?.Add(this, Name);
         }
 
         /// <summary>
@@ -86,12 +75,10 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given password.</param>
         /// <param name="container">The given owning container.</param>
         internal CharacteristicDictionary(string value, IContainer container)
-            : base()
         {
             Initialize(value);
-            _name = ToString();
 
-            container?.Add(this, $"Characteristic [{GetHashCode()}]");
+            container?.Add(this, Name);
         }
 
         /// <summary>
@@ -100,20 +87,18 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given password.</param>
         /// <param name="container">The given owning container.</param>
         internal CharacteristicDictionary(IPassword value, IContainer container)
-            : base()
         {
             Initialize(value);
-            _name = ToString();
 
-            container?.Add(this, $"Characteristic [{GetHashCode()}]");
+            container?.Add(this, Name);
         }
 
         /// <summary>
-        /// Initializes the <see cref="_dictionary"/>.
+        /// Initializes the <see cref="dictionary"/>.
         /// </summary>
         private void Initialize()
         {
-            _dictionary = new Dictionary<Charasteristic, bool>(5)
+            dictionary = new Dictionary<Charasteristic, bool>(5)
             {
                 { Charasteristic.CapitalLetter, false },
                 { Charasteristic.LowercaseLetter, false },
@@ -124,12 +109,12 @@ namespace ahbsd.lib.Password
         }
 
         /// <summary>
-        /// Initializes the <see cref="_dictionary"/> with a given password.
+        /// Initializes the <see cref="dictionary"/> with a given password.
         /// </summary>
         /// <param name="value">The given password.</param>
         private void Initialize(string value)
         {
-            _dictionary = new Dictionary<Charasteristic, bool>(5)
+            dictionary = new Dictionary<Charasteristic, bool>(5)
             {
                 { Charasteristic.CapitalLetter, Password.GetUpperCases(value) > 0 },
                 { Charasteristic.LowercaseLetter, Password.GetLowerCases(value) > 0 },
@@ -140,12 +125,12 @@ namespace ahbsd.lib.Password
         }
 
         /// <summary>
-        /// Initializes the <see cref="_dictionary"/> with a given password.
+        /// Initializes the <see cref="dictionary"/> with a given password.
         /// </summary>
         /// <param name="password">The given password.</param>
         private void Initialize(IPassword password)
         {
-            _dictionary = new Dictionary<Charasteristic, bool>(5)
+            dictionary = new Dictionary<Charasteristic, bool>(5)
             {
                 { Charasteristic.CapitalLetter, password.UpperCases > 0 },
                 { Charasteristic.LowercaseLetter, password.LowerCases > 0 },
@@ -157,151 +142,106 @@ namespace ahbsd.lib.Password
 
         #region implementation of ICharacteristicDictionary
 
-        /// <summary>
-        /// Gets or sets the value of the given key.
-        /// </summary>
-        /// <param name="key">The given key.</param>
-        /// <returns>The value of the given key.</returns>
+        /// <inheritdoc/>
         public bool this[Charasteristic key]
         {
-            get => _dictionary[key];
-            set => _dictionary[key] = value;
+            get => dictionary[key];
+            set => dictionary[key] = value;
         }
 
-        /// <summary>
-        /// Gets the Keys.
-        /// </summary>
-        /// <value>The Keys.</value>
-        /// <remarks>Each available <see cref="Charasteristic"/>.</remarks>
-        public ICollection<Charasteristic> Keys => _dictionary.Keys;
-        /// <summary>
-        /// Gets all values.
-        /// </summary>
-        /// <value>The values.</value>
-        public ICollection<bool> Values => _dictionary.Values;
-        /// <summary>
-        /// Gets the amount of <see cref="KeyValuePair{TKey, TValue}"/>s (5).
-        /// </summary>
-        /// <value>The amount of <see cref="KeyValuePair{TKey, TValue}"/>s.</value>
+        /// <inheritdoc/>
+        public ICollection<Charasteristic> Keys => dictionary.Keys;
+        
+        /// <inheritdoc/>
+        public ICollection<bool> Values => dictionary.Values;
+        
+        /// <inheritdoc/>
         public int Count => 5;
-        /// <summary>
-        /// Gets the readability.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if readonly, otherwise <c>false.</c>
-        /// </value>
-        public bool IsReadOnly => _dictionary.IsReadOnly;
-        /// <summary>
-        /// Throws an Exception.
-        /// </summary>
-        /// <exception cref="Exception">
-        /// Allways, since no add is possible here.
-        /// </exception>
-        public void Add(Charasteristic key, bool value)
-        {
-            throw new ArgumentException("Adding KeyValuePairs isn't possible here!");
-        }
-        /// <summary>
-        /// Throws an Exception.
-        /// </summary>
-        /// <exception cref="Exception">
-        /// Allways, since no add is possible here.
-        /// </exception>
-        public void Add(KeyValuePair<Charasteristic, bool> item)
-        {
-            throw new ArgumentException("Adding KeyValuePairs isn't possible here!");
-        }
-        /// <summary>
-        /// Re-Initialize the object.
-        /// </summary>
+        
+        /// <inheritdoc/>
+        public bool IsReadOnly => dictionary.IsReadOnly;
+        
+        /// <inheritdoc/>
+        public void Add(Charasteristic key, bool value) 
+            => throw new ArgumentException("Adding KeyValuePairs isn't possible here!");
+
+        /// <inheritdoc/>
+        public void Add(KeyValuePair<Charasteristic, bool> item) 
+            => throw new ArgumentException("Adding KeyValuePairs isn't possible here!");
+
+        /// <inheritdoc/>
         public void Clear() => Initialize();
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public bool Contains(KeyValuePair<Charasteristic, bool> item) => _dictionary.Contains(item);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public bool ContainsKey(Charasteristic key) => _dictionary.ContainsKey(key);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="array"></param>
-        /// <param name="arrayIndex"></param>
-        public void CopyTo(KeyValuePair<Charasteristic, bool>[] array, int arrayIndex) => _dictionary.CopyTo(array, arrayIndex);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerator<KeyValuePair<Charasteristic, bool>> GetEnumerator() => _dictionary.GetEnumerator();
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
+        
+        /// <inheritdoc/>
+        public bool Contains(KeyValuePair<Charasteristic, bool> item) => dictionary.Contains(item);
+        
+        /// <inheritdoc/>
+        public bool ContainsKey(Charasteristic key) => dictionary.ContainsKey(key);
+        
+        /// <inheritdoc/>
+        public void CopyTo(KeyValuePair<Charasteristic, bool>[] array, int arrayIndex) 
+            => dictionary.CopyTo(array, arrayIndex);
+        
+        /// <inheritdoc/>
+        public IEnumerator<KeyValuePair<Charasteristic, bool>> GetEnumerator() => dictionary.GetEnumerator();
+        
+        /// <inheritdoc/>
         public bool Remove(Charasteristic key) => false;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
+        
+        /// <inheritdoc/>
         public bool Remove(KeyValuePair<Charasteristic, bool> item) => false;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public bool TryGetValue(Charasteristic key, [MaybeNullWhen(false)] out bool value) => _dictionary.TryGetValue(key, out value);
-        /// <summary>
-        /// Returns an enumerator that iterates through the collection.
-        /// </summary>
-        /// <returns>An enumerator that iterates through the collection.</returns>
-        IEnumerator IEnumerable.GetEnumerator() => _dictionary.GetEnumerator();
-        /// <summary>
-        /// Gets a short info of the characteristic.
-        /// </summary>
-        /// <returns>A short info of the characteristic.</returns>
+        
+        /// <inheritdoc/>
+        public bool TryGetValue(Charasteristic key, [MaybeNullWhen(false)] out bool value) 
+            => dictionary.TryGetValue(key, out value);
+        
+        /// <inheritdoc/>
+        IEnumerator IEnumerable.GetEnumerator() => dictionary.GetEnumerator();
+        
+        /// <inheritdoc cref="ICharacteristicDictionary.ToString"/>
         public override string ToString()
         {
             StringBuilder result = new("CharacteristicDictionary ");
+            int added = 0;
 
             if (this[Charasteristic.CapitalLetter])
             {
                 result.Append($"[{Charasteristic.CapitalLetter}] ");
+                added++;
             }
 
             if (this[Charasteristic.LowercaseLetter])
             {
                 result.Append($"[{Charasteristic.LowercaseLetter}] ");
+                added++;
             }
 
             if (this[Charasteristic.Numeric])
             {
                 result.Append($"[{Charasteristic.Numeric}] ");
+                added++;
             }
 
             if (this[Charasteristic.Space])
             {
                 result.Append($"[{Charasteristic.Space}] ");
+                added++;
             }
 
             if (this[Charasteristic.SpecialCharacter])
             {
                 result.Append($"[{Charasteristic.SpecialCharacter}] ");
+                added++;
             }
 
-            return result.ToString().Trim();
+            return added > 0 
+                ? result.ToString().Trim() : 
+                $"CharacteristicDictionary_[{GetHashCode()}]";
         }
-        /// <summary>
-        /// Gets the name of this component.
-        /// </summary>
-        /// <value>The name of this component.</value>
-        public string Name => _name;
+
+        /// <inheritdoc/>
+        public string Name => ToString();
+
         #endregion
     }
 }

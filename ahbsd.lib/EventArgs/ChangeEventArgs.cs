@@ -12,23 +12,23 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
-using System.Collections.Generic;
-using ahbsd.lib.Exceptions;
 
-namespace ahbsd.lib
+using System;
+using ahbsd.lib.Exceptions;
+using ahbsd.lib.Interfaces;
+
+namespace ahbsd.lib.EventArgs
 {
     /// <summary>
     /// Generic EventArgs for changing values.
     /// </summary>
     /// <typeparam name="T">The type of the changing Values.</typeparam>
-    public class ChangeEventArgs<T> : EventArgs, IChangeEventArgs<T>, IEquatable<IChangeEventArgs<T>>
+    public class ChangeEventArgs<T> : System.EventArgs, IChangeEventArgs<T>
     {
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
         public ChangeEventArgs()
-            : base()
         {
             OldValue = default;
             NewValue = default;
@@ -40,7 +40,6 @@ namespace ahbsd.lib
         /// <param name="oldValue">The old value.</param>
         /// <param name="newValue">The new value.</param>
         public ChangeEventArgs(T oldValue, T newValue)
-            : base()
         {
             OldValue = oldValue;
             NewValue = newValue;
@@ -51,7 +50,6 @@ namespace ahbsd.lib
         /// </summary>
         /// <param name="oldValue">The old value.</param>
         public ChangeEventArgs(T oldValue)
-            : base()
         {
             OldValue = oldValue;
             NewValue = default;
@@ -100,10 +98,8 @@ namespace ahbsd.lib
                 e = new AlreadySetException<T>(this, newValue);
                 throw (AlreadySetException<T>)e;
             }
-            else
-            {
-                NewValue = newValue;
-            }
+
+            NewValue = newValue;
         }
 
         /// <summary>
@@ -131,54 +127,6 @@ namespace ahbsd.lib
             return result;
         }
         #endregion
-        #region implementation of IEquatable<IChangeEventArgs<T>>
-        /// <summary>
-        /// Finds out whether an other object of type <see cref="IChangeEventArgs{T}"/> equals this object.
-        /// </summary>
-        /// <param name="other">The other object.</param>
-        /// <returns><c>TRUE</c> if the other object equals this object, otherwise <c>FALSE</c>.</returns>
-        public bool Equals(IChangeEventArgs<T> other) => other != null &&
-                   EqualityComparer<T>.Default.Equals(OldValue, other.OldValue) &&
-                   EqualityComparer<T>.Default.Equals(NewValue, other.NewValue);
-        #endregion
-
-        /// <summary>
-        /// Finds out wheather an other object equals this object.
-        /// </summary>
-        /// <param name="obj">The other object.</param>
-        /// <returns><c>TRUE</c> if the other object equals this object, otherwise <c>FALSE</c>.</returns>
-        public override bool Equals(object obj) => Equals(obj as IChangeEventArgs<T>);
-
-        /// <summary>
-        /// Gets the HashCode of this object.
-        /// </summary>
-        /// <returns>The HashCode.</returns>
-        public override int GetHashCode() => HashCode.Combine(OldValue, NewValue);
-
-        /// <summary>
-        /// Finds out, if two objects of type <see cref="ChangeEventArgs{T}"/> eaquals each other.
-        /// </summary>
-        /// <param name="left">The object on the left side.</param>
-        /// <param name="right">The object on the right side.</param>
-        /// <returns><c>TRUE</c> if both objects are eaqual, otherwise <c>FALSE</c>.</returns>
-        public static bool operator ==(ChangeEventArgs<T> left, ChangeEventArgs<T> right)
-            => EqualityComparer<ChangeEventArgs<T>>.Default.Equals(left, right);
-
-        /// <summary>
-        /// Finds out, if two objects of type <see cref="ChangeEventArgs{T}"/> do not eaquals each other.
-        /// </summary>
-        /// <param name="left">The object on the left side.</param>
-        /// <param name="right">The object on the right side.</param>
-        /// <returns><c>TRUE</c> if both objects are not eaqual, otherwise <c>FALSE</c>.</returns>
-        public static bool operator !=(ChangeEventArgs<T> left, ChangeEventArgs<T> right)
-            => !(left == right);
+        
     }
-
-    /// <summary>
-    /// A delegate for change events.
-    /// </summary>
-    /// <typeparam name="T">The type of changing values.</typeparam>
-    /// <param name="sender">Sending object.</param>
-    /// <param name="e">The changing EventArgs.</param>
-    public delegate void ChangeEventHandler<T>(object sender, ChangeEventArgs<T> e);
 }

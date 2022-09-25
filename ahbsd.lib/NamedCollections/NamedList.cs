@@ -12,8 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Collections.Generic;
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
 
 namespace ahbsd.lib.NamedCollections
 {
@@ -26,13 +29,12 @@ namespace ahbsd.lib.NamedCollections
         /// <summary>
         /// The name of the list.
         /// </summary>
-        private string _name;
+        private string name;
 
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
-        public NamedList()
-            : base() => _name = null;
+        public NamedList() => name = null;
 
         /// <summary>
         /// Constructor with a base capacity of the list.
@@ -41,22 +43,19 @@ namespace ahbsd.lib.NamedCollections
         /// <exception cref="ArgumentOutOfRangeException">
         /// If the capacity is out of range.
         /// </exception>
-        public NamedList(int capacity)
-            : base(capacity) => _name = null;
+        public NamedList(int capacity) : base(capacity) => name = null;
 
         /// <summary>
         /// Constructor with a given collection.
         /// </summary>
         /// <param name="collection">The given collection.</param>
-        public NamedList(IEnumerable<T> collection)
-            : base(collection) => _name = null;
+        public NamedList(IEnumerable<T> collection) : base(collection) => name = null;
 
         /// <summary>
         /// Constructor with a given name.
         /// </summary>
         /// <param name="name">The given name.</param>
-        public NamedList(string name)
-            : base() => _name = name != null ? name.Trim() : name;
+        public NamedList(string name) => this.name = name?.Trim();
 
         /// <summary>
         /// Constructor with a given name and a base capacity of the list.
@@ -66,54 +65,48 @@ namespace ahbsd.lib.NamedCollections
         /// <exception cref="ArgumentOutOfRangeException">
         /// If the capacity is out of range.
         /// </exception>
-        public NamedList(string name, int capacity)
-            : base(capacity) => _name = name != null ? name.Trim() : name;
+        public NamedList(string name, int capacity) : base(capacity) => this.name = name?.Trim();
 
         /// <summary>
         /// Constructor with a given name and  a given collection.
         /// </summary>
         /// <param name="name">The given name.</param>
         /// <param name="collection">The given collection.</param>
-        public NamedList(string name, IEnumerable<T> collection)
-            : base(collection) => _name = name != null ? name.Trim() : name;
+        public NamedList(string name, IEnumerable<T> collection) : base(collection) => this.name = name?.Trim();
 
 
         #region implementation of INamedList<T>
-        /// <summary>
-        /// Gets or sets the name of the list.
-        /// </summary>
-        /// <value>The name of the list.</value>
+        /// <inheritdoc/>
         public string Name
         {
-            get => _name;
+            get => name;
             set
             {
                 ChangeEventArgs<string> cea;
 
-                if (value != null && !value.Trim().Equals(_name))
+                if (value != null && !value.Trim().Equals(name))
                 {
-                    cea = new ChangeEventArgs<string>(_name, value.Trim());
-                    _name = value;
+                    cea = new ChangeEventArgs<string>(name, value.Trim());
+                    name = value;
                     OnNameChanged?.Invoke(this, cea);
                 }
-                else if (value == null && _name != null)
+                else if (value == null && name != null)
                 {
-                    cea = new ChangeEventArgs<string>(_name, value);
-                    _name = value;
+                    cea = new ChangeEventArgs<string>(name, null);
+                    name = null;
                     OnNameChanged?.Invoke(this, cea);
                 }
             }
         }
-        /// <summary>
-        /// Happenes, if the name of the list has changed.
-        /// </summary>
+        
+        /// <inheritdoc/>
         public event ChangeEventHandler<string> OnNameChanged;
 
         /// <summary>
         /// Gets a string representation of this object.
         /// </summary>
         /// <returns>The string representation of this object.</returns>
-        public override string ToString() => $"{_name}: Count = {Count}";
+        public override string ToString() => $"{name}: Count = {Count}";
         #endregion
     }
 }

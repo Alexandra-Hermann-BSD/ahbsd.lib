@@ -12,17 +12,24 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-namespace ahbsd.lib.ApiKey
+
+using System;
+using ahbsd.lib.Attributes;
+
+namespace ahbsd.lib.Interfaces
 {
     /// <summary>
-    /// Interface for <see cref="ApiKeyEventArgs{T}"/>.
+    /// Interface for generic EventArgs.
     /// </summary>
-    public interface IApiKeyEventArgs
+    /// <typeparam name="T">Type of Value.</typeparam>
+    /// <remarks>The difference to usual <see cref="EventArgs"/> is, that a generic value is added.</remarks>
+    [Api]
+    public interface IEventArgs<out T>
     {
         /// <summary>
-        /// Gets the index of the API-Key. 
+        /// Gets a value.
         /// </summary>
-        /// <value>The index.</value>
-        int? Index { get; }
+        /// <value>A value.</value>
+        T Value { get; }
     }
 }

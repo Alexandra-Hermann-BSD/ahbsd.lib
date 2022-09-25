@@ -13,35 +13,36 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-namespace ahbsd.lib.Products
+using System;
+
+namespace ahbsd.lib.Interfaces
 {
     /// <summary>
-    /// An enum for the type of an Adress.
+    /// Interface for generic EventArgs for changing values.
     /// </summary>
-    public enum AdressType
+    /// <typeparam name="T">The type of the changing Values.</typeparam>
+    public interface IChangeEventArgs<T>
     {
         /// <summary>
-        /// The postal adress.
+        /// Gets the old value.
         /// </summary>
-        Postal,
+        /// <value>The old value.</value>
+        T OldValue { get; }
         /// <summary>
-        /// The delivery adress.
+        /// Gets the new value.
         /// </summary>
-        Delivery,
+        /// <value>The new value.</value>
+        T NewValue { get; }
         /// <summary>
-        /// The store adress.
+        /// Sets the new value.
         /// </summary>
-        Store,
+        /// <param name="newValue">The new value.</param>
+        /// <exception cref="Exception">If the <see cref="NewValue" /> was already set.</exception>
+        void SetNewValue(T newValue);
         /// <summary>
-        /// The private adress.
+        /// Gets a string representation of the changed value.
         /// </summary>
-        Private,
-        /// <summary>
-        /// An other adress.
-        /// </summary>
-        /// <remarks>
-        /// If no other type matches.
-        /// </remarks>
-        Other,
+        /// <returns>A string representation of the changed value.</returns>
+        string ToString();
     }
 }

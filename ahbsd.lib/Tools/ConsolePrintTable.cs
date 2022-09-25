@@ -12,10 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
-using System.Data;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 
 namespace ahbsd.lib.Tools
@@ -28,25 +29,20 @@ namespace ahbsd.lib.Tools
         /// <summary>
         /// Prints a table on console.
         /// </summary>
-        /// <param name="table">The tableto print.</param>
+        /// <param name="table">The table to print.</param>
         public static void Print(DataTable table)
         {
-            int maxCols, currentCol, maxlines;
             IDictionary<string, int> lengthPerCol = GetSize(table);
-            maxCols = table.Columns.Count;
-            currentCol = 0;
+            var maxCols = table.Columns.Count;
+            var currentCol = 0;
 
-            maxlines = 0;
-            foreach (KeyValuePair<string, int> item in lengthPerCol)
-            {
-                maxlines += item.Value + 1;
-            }
-            maxlines++;
+            var maxLines = lengthPerCol.Sum(item => item.Value + 1);
+            maxLines++;
 
             Console.WriteLine();
-            Console.WriteLine("".PadLeft(maxlines, '–'));
-            Console.WriteLine(GetPart(table.TableName, true, maxlines - 2, true));
-            Console.WriteLine("".PadLeft(maxlines, '–'));
+            Console.WriteLine("".PadLeft(maxLines, '–'));
+            Console.WriteLine(GetPart(table.TableName, true, maxLines - 2, true));
+            Console.WriteLine("".PadLeft(maxLines, '–'));
 
             foreach (DataColumn col in table.Columns)
             {
@@ -62,14 +58,14 @@ namespace ahbsd.lib.Tools
                 currentCol++;
             }
 
-            Console.WriteLine("".PadLeft(maxlines, '='));
+            Console.WriteLine("".PadLeft(maxLines, '='));
 
             foreach (DataRow row in table.Rows)
             {
                 currentCol = 0;
                 foreach (KeyValuePair<string, int> item in lengthPerCol)
                 {
-                    string tmpData = currentCol < maxCols - 1
+                    var tmpData = currentCol < maxCols - 1
                         ? GetPart(row[item.Key].ToString(), false, item.Value)
                         : GetPart(row[item.Key].ToString(), true, item.Value);
                     Console.Write(tmpData);
@@ -78,7 +74,7 @@ namespace ahbsd.lib.Tools
                 Console.WriteLine();
             }
 
-            Console.WriteLine("".PadLeft(maxlines, '–'));
+            Console.WriteLine("".PadLeft(maxLines, '–'));
             Console.WriteLine();
         }
 
@@ -93,7 +89,7 @@ namespace ahbsd.lib.Tools
         /// <returns>The calculated part.</returns>
         private static string GetPart(string val, bool last, int length, bool left = false)
         {
-            string result = $"{val}";
+            var result = $"{val}";
 
             if (length > val.Length)
             {
@@ -126,7 +122,7 @@ namespace ahbsd.lib.Tools
 
             ICollection<string> keys = new Collection<string>();
 
-            foreach (string key in result.Keys)
+            foreach (var key in result.Keys)
             {
                 keys.Add(key);
             }
@@ -140,25 +136,25 @@ namespace ahbsd.lib.Tools
                 {
                     length = minLength[key];
 
-                    if (row[key].ToString().Length > length)
+                    if (row[key].ToString()!.Length > length)
                     {
-                        minLength[key] = row[key].ToString().Length;
+                        minLength[key] = row[key].ToString()!.Length;
                     }
                 }
                 else // the first time to set over -1
                 {
                     length = result[key];
 
-                    if (row[key].ToString().Length > length)
+                    if (row[key].ToString()!.Length > length)
                     {
-                        result[key] = row[key].ToString().Length;
+                        result[key] = row[key].ToString()!.Length;
                     }
                 }
             }
 
-            foreach (KeyValuePair<string, int> item in minLength)
+            foreach (var key in minLength.Keys)
             {
-                result[item.Key] = minLength[item.Key];
+                result[key] = minLength[key];
             }
 
             return result;

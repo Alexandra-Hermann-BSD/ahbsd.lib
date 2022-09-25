@@ -12,7 +12,9 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using ahbsd.lib;
+
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
 
 namespace Test_xUnit
 {
@@ -21,8 +23,7 @@ namespace Test_xUnit
     /// and <see cref="ChangeEventHandler{T}"/>.
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
-    /// <typeparam name="A">Type of API-Key.</typeparam>
-    public interface ITestClass<T, A>
+    public interface ITestClass<T>
     {
         /// <summary>
         /// Gets or sets a variable.
@@ -30,7 +31,7 @@ namespace Test_xUnit
         T Variable { get; set; }
 
         /// <summary>
-        /// Happenes when <see cref="Variable"/> has changed.
+        /// Happens when <see cref="Variable"/> has changed.
         /// </summary>
         event ChangeEventHandler<T> OnChange;
     }

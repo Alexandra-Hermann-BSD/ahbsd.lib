@@ -12,9 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
-using ahbsd.lib;
 using ahbsd.lib.ApiKey;
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
 
 namespace Test_xUnit
 {
@@ -23,7 +25,7 @@ namespace Test_xUnit
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
     /// <typeparam name="TA">Type of API-Key.</typeparam>
-    public class TestClass<T, TA> : ApiKeyHolder<TA>, ITestClass<T, TA>
+    public class TestClass<T, TA> : ApiKeyHolder<TA>, ITestClass<T>
     {
         /// <summary>
         /// The variable to change.
@@ -68,7 +70,6 @@ namespace Test_xUnit
         /// Constructor without parameters.
         /// </summary>
         public TestClass()
-            : base()
         {
             _variable = default;
             OnApiKeyAdded += TestClass_OnApiKeyAdded;
@@ -79,7 +80,6 @@ namespace Test_xUnit
         /// </summary>
         /// <param name="v">The given variable.</param>
         public TestClass(T v)
-            : base()
         {
             _variable = v;
             OnApiKeyAdded += TestClass_OnApiKeyAdded;

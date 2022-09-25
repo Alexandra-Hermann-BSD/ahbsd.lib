@@ -1,14 +1,14 @@
 using System;
-using ahbsd.lib;
+using System.Collections.Generic;
+using ahbsd.lib.EventArgs;
 using ahbsd.lib.Exceptions;
 using Xunit;
-using System.Collections.Generic;
 
 namespace Test_xUnit
 {
     public class TestChanged
     {
-        private static int nr = 0;
+        private static int nr;
         private readonly IDictionary<int, int?> apiKeys = new Dictionary<int, int?>();
 
 
@@ -19,7 +19,7 @@ namespace Test_xUnit
         [InlineData(Math.PI, 3.14)]
         public void OnChangedTest(double? oldValue, double? newValue)
         {
-            ITestClass<double?, string> testClass = new TestClass<double?, string>(oldValue, $"TC{nr}");
+            ITestClass<double?> testClass = new TestClass<double?, string>(oldValue, $"TC{nr}");
             apiKeys.Add(nr, TestClass<double?, string>.FindApiKey($"TC{nr}"));
             testClass.OnChange += TestClass_OnChange;
             testClass.Variable = newValue;
@@ -29,7 +29,7 @@ namespace Test_xUnit
 
         private void TestClass_OnChange(object sender, ChangeEventArgs<double?> e)
         {
-            TestClass<double?, string> castetSender = (TestClass<double?, string>)sender;
+            TestClass<double?, string> castedSender = (TestClass<double?, string>)sender;
             string apiKey = null;
 
             if (apiKeys[nr].HasValue)
@@ -40,7 +40,7 @@ namespace Test_xUnit
             try
             {
                 Assert.NotEqual(e.OldValue, e.NewValue);
-                Assert.Equal(e.NewValue, castetSender.Variable);
+                Assert.Equal(e.NewValue, castedSender.Variable);
                 if (apiKeys[nr].HasValue)
                 {
                     Assert.Equal(apiKey, $"TC{nr}");
@@ -56,10 +56,10 @@ namespace Test_xUnit
         [Fact]
         public void TestChange()
         {
-            ITestClass<string, object> t1 = new TestClass<string, object>("Hello", null);
-            double d;
-            ITestClass<object, string> t2 = new TestClass<object, string>("Hello", "A100002");
-            ITestClass<object, string> t3 = new TestClass<object, string>(0xAFFE, "0xAFFE");
+            ITestClass<string> t1 = new TestClass<string, object>("Hello", null);
+            
+            ITestClass<object> t2 = new TestClass<object, string>("Hello", "A100002");
+            ITestClass<object> t3 = new TestClass<object, string>(0xAFFE, "0xAFFE");
             t1.OnChange += T1_OnChange;
             t2.OnChange += T2_OnChange;
             t3.OnChange += T3_OnChange;
@@ -77,13 +77,16 @@ namespace Test_xUnit
 
             try
             {
-                d = (double)t3.Variable;
+#pragma warning disable S1854
+                // here we need it explicitly due to generate an exception.
+                double d = (double)t3.Variable;
                 d *= (double)t2.Variable;
+#pragma warning restore S1854
             }
             catch (Exception ex)
             {
-                IGenericException<ITestClass<object, string>> exT3 = new Exception<ITestClass<object, string>>(ex.Message, t3, ex);
-                Assert.IsType<Exception<ITestClass<object, string>>>(exT3);
+                IGenericException<ITestClass<object>> exT3 = new Exception<ITestClass<object>>(ex.Message, t3, ex);
+                Assert.IsType<Exception<ITestClass<object>>>(exT3);
             }
         }
 

@@ -12,6 +12,7 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Runtime.Serialization;
 
@@ -27,15 +28,13 @@ namespace ahbsd.lib.Exceptions
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
-        public Exception()
-            : base() => Value = default;
+        public Exception() => Value = default;
 
         /// <summary>
         /// Constructor with a value.
         /// </summary>
         /// <param name="value">The value.</param>
         public Exception(T value)
-            : base()
         {
             Value = value;
         }

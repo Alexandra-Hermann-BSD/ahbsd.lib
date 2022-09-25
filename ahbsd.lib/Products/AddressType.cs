@@ -12,23 +12,36 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
-using ahbsd.lib.Attributes;
 
-namespace ahbsd.lib
+namespace ahbsd.lib.Products
 {
     /// <summary>
-    /// Interface for generic EventArgs.
+    /// An enum for the type of an Address.
     /// </summary>
-    /// <typeparam name="T">Type of Value.</typeparam>
-    /// <remarks>The difference to usual <see cref="EventArgs"/> is, that a generic value is added.</remarks>
-    [Api]
-    public interface IEventArgs<out T>
+    public enum AddressType
     {
         /// <summary>
-        /// Gets a value.
+        /// The postal address.
         /// </summary>
-        /// <value>A value.</value>
-        T Value { get; }
+        Postal,
+        /// <summary>
+        /// The delivery address.
+        /// </summary>
+        Delivery,
+        /// <summary>
+        /// The store address.
+        /// </summary>
+        Store,
+        /// <summary>
+        /// The private address.
+        /// </summary>
+        Private,
+        /// <summary>
+        /// An other address.
+        /// </summary>
+        /// <remarks>
+        /// If no other type matches.
+        /// </remarks>
+        Other,
     }
 }
