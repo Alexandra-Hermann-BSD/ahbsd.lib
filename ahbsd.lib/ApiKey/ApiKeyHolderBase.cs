@@ -31,14 +31,9 @@ namespace ahbsd.lib.ApiKey;
 public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
 {
     /// <summary>
-    /// The API-Key.
+    /// An equality comparer.
     /// </summary>
-    private readonly T _apiKey;
-
-    /// <summary>
-    /// 
-    /// </summary>
-    private readonly IEqualityComparer<T> _equalityComparerImplementation;
+    private readonly IEqualityComparer<T> equalityComparerImplementation;
 
     /// <summary>
     /// Constructor with a given API-Key.
@@ -46,8 +41,9 @@ public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
     /// <param name="apiKey">The API-Key.</param>
     protected ApiKeyHolderBase(T apiKey)
     {
-        _apiKey = apiKey;
-        _equalityComparerImplementation = new ApiKeyHolder<T>();
+        ApiKeyHolder<T>.OnApiKeyAdded += ApiKeyHolder_OnApiKeyAdded;
+        ApiKey = apiKey;
+        equalityComparerImplementation = new ApiKeyHolder<T>();
         ApiKeyHolder<T>.AddApiKey(this, apiKey);
     }
 
@@ -55,34 +51,49 @@ public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
     /// Constructor without parameters.
     /// </summary>
     /// <remarks>If before an object was created, the last API-Key will be used. Otherwise the <c>default of T will be used.</c></remarks>
-    /// <exception cref="ArgumentNullException">If <see cref="KnownApiKeys"/> is <c>null</c> or something similar.</exception>
-    /// <exception cref="InvalidOperationException">If anything regarding <see cref="KnownApiKeys"/> is an invalid operation.</exception>
+    /// <exception cref="ArgumentNullException">If <see cref="ApiKeyHolder{T}.KnownApiKeys"/> is <c>null</c> or something similar.</exception>
+    /// <exception cref="InvalidOperationException">If anything regarding <see cref="ApiKeyHolder{T}.KnownApiKeys"/> is an invalid operation.</exception>
     protected ApiKeyHolderBase()
     {
-        _apiKey = ApiKeyHolder<T>.KnownApiKeys.Count > 0 ? ApiKeyHolder<T>.KnownApiKeys.Last() : default;
+        ApiKeyHolder<T>.OnApiKeyAdded += ApiKeyHolder_OnApiKeyAdded;
+        ApiKey = ApiKeyHolder<T>.KnownApiKeys.Count > 0 ? ApiKeyHolder<T>.KnownApiKeys.Last() : default;
         ApiKeyHolder<T>.AddApiKey(this, ApiKey);
+    }
+
+    /// <summary>
+    /// If an <see cref="ApiKey"/> was added to <see cref="ApiKeyHolder{T}"/>
+    /// </summary>
+    /// <param name="sender">The sending object</param>
+    /// <param name="e">The event arguments</param>
+    private void ApiKeyHolder_OnApiKeyAdded(object sender, ApiKeyEventArgs<T> e)
+    {
+        OnApiKeyAdded?.Invoke(sender, e);
     }
 
     /// <summary>
     /// Gets the API-Key.
     /// </summary>
     /// <value>The API-Key.</value>
-    internal T ApiKey => _apiKey;
+    internal T ApiKey { get; }
 
     /// <inheritdoc/>
-    public override int GetHashCode() => EqualityComparer<T>.Default.GetHashCode(_apiKey);
+    public override int GetHashCode() => EqualityComparer<T>.Default.GetHashCode(ApiKey);
 
-    /// <inheritdoc/>
-    public bool Equals(ApiKeyHolder<T> other) 
+    /// <summary>
+    /// Determines whether the given other equals this object.
+    /// </summary>
+    /// <param name="other">The other object</param>
+    /// <returns>Is the other object equal to this?</returns>
+    private bool Equals(ApiKeyHolderBase<T> other) 
         => !ReferenceEquals(null, other) 
            && (ReferenceEquals(this, other) 
-               || EqualityComparer<T>.Default.Equals(_apiKey, other._apiKey));
+               || EqualityComparer<T>.Default.Equals(ApiKey, other.ApiKey));
 
     /// <inheritdoc/>
     public override bool Equals(object obj) 
         => ReferenceEquals(this, obj) 
            || obj is ApiKeyHolder<T> other 
-           && Equals((ApiKeyHolder<T>) (object) other);
+           && Equals(other);
 
     /// <summary>
     /// Gets a string that describes the current ApiKey.
@@ -90,17 +101,11 @@ public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
     /// <returns>A string that describes the current ApiKey</returns>
     public override string ToString() => $"{nameof(ApiKey)} ({typeof(T).Name}): {ApiKey}";
 
-    /// <inheritdoc cref="Equals(ahbsd.lib.ApiKey.ApiKeyHolder{T})"/>
-    public bool Equals(T x, T y)
-    {
-        return _equalityComparerImplementation.Equals(x, y);
-    }
+    /// <inheritdoc/>
+    public bool Equals(T x, T y) => equalityComparerImplementation.Equals(x, y);
 
     /// <inheritdoc cref="GetHashCode()"/>
-    public int GetHashCode(T obj)
-    {
-        return _equalityComparerImplementation.GetHashCode(obj);
-    }
+    public int GetHashCode(T obj) => equalityComparerImplementation.GetHashCode(obj);
 
     /// <summary>
     /// Happens if a new API-Key was added to the static list <see cref="ApiKeyHolder{T}.KnownApiKeys"/>.
@@ -131,11 +136,4 @@ public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
     /// <returns>An API-Key.</returns>
     public static T GetApiKey(int idx) => ApiKeyHolder<T>.KnownApiKeys[idx];
 
-    /// <inheritdoc cref="op_Equality" />
-    public static bool operator ==(ApiKeyHolderBase<T> left, ApiKeyHolder<T> right)
-        => object.Equals(left, right);
-
-    /// <inheritdoc cref="op_Inequality" />
-    public static bool operator !=(ApiKeyHolderBase<T> left, ApiKeyHolder<T> right)
-        => !(left == right);
 }

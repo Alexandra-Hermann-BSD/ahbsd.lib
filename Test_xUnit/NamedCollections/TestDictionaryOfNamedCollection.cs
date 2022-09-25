@@ -12,6 +12,7 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Linq;
 using ahbsd.lib;
@@ -22,6 +23,7 @@ namespace Test_xUnit.NamedCollections
 {
     public class TestDictionaryOfNamedCollection
     {
+#pragma warning disable S4143
         [Fact]
         public void TestDictionaryOfNamedCollections()
         {
@@ -35,6 +37,8 @@ namespace Test_xUnit.NamedCollections
 
             d1.Add(1, 1.0, "Double");
             d1.Add(1, 1.1);
+
+            Assert.Equal("Double", d1[1].Name);
 
             d2.Add("Apple", "iPhone X", "Apple Devices");
             d2.Add("Apple", "iPad");
@@ -104,5 +108,6 @@ namespace Test_xUnit.NamedCollections
             Console.WriteLine("To {0} a new INamedList<string> was added:", sender);
             Console.WriteLine(e.Value);
         }
+#pragma warning restore S4143
     }
 }

@@ -20,6 +20,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using ahbsd.lib.Attributes;
 using Xunit;
@@ -49,7 +50,7 @@ public class TestApiAttribute
         {
             Assert.Contains("Api", AttributeReader.GetFirstAttribute(fiveObject).ToString());
         }
-        
+
         try
         {
             foreach (var usingType in ApiAttribute.UsingTypes)
@@ -57,7 +58,10 @@ public class TestApiAttribute
                 Assert.Equal(typeof(TestClass), usingType);
             }
         }
-        catch (Exception) { }
+        catch (Exception)
+        {
+            // we don't care
+        }
         
     }
 }
@@ -68,19 +72,13 @@ internal static class AttributeReader
     public static CustomAttributeData GetFirstAttribute(object o)
     {
         CustomAttributeData result = null;
-        Type type;
-        
+
         if (o != null)
         {
-            type = o.GetType();
+            var type = o.GetType();
             try
             {
-                foreach (var typeCustomAttribute in type.CustomAttributes)
-                {
-                    result = typeCustomAttribute;
-                    break;
-                }
-
+                result = type.CustomAttributes.First();
             }
             catch (Exception e)
             {
@@ -104,17 +102,15 @@ public interface ITestClass
 [Api]
 public class TestClass : ITestClass
 {
-    private readonly string _content;
-
     /// <summary>
     /// Constructor with optional content.
     /// </summary>
     /// <param name="content">[optional] content</param>
     public TestClass(string content = null)
     {
-        _content = content;
+        Content = content;
     }
 
     /// <inheritdoc/>
-    public string Content => _content;
+    public string Content { get; }
 }

@@ -12,10 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
-using Xunit;
+using ahbsd.lib.EventArgs;
 using ahbsd.lib.NamedCollections;
-using ahbsd.lib;
+using Xunit;
 
 namespace Test_xUnit.NamedCollections
 {
@@ -47,6 +48,8 @@ namespace Test_xUnit.NamedCollections
 
             Console.WriteLine(nc1);
             Console.WriteLine(l1);
+            
+            Assert.True(true);
         }
 
 

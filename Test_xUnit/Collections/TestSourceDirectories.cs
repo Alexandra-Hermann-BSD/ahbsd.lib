@@ -19,18 +19,22 @@
 // 
 
 using System.Collections.Generic;
-using Xunit;
 using ahbsd.lib.Collections;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.Interfaces;
+using ahbsd.lib.Tools;
+using Xunit;
 
 namespace Test_xUnit.Collections;
 
 public class TestSourceDirectories
 {
+    private static readonly ILogger testLogger = new Logger("Test.log");
+    
     [Fact]
     public void SourceDirectoryTest()
     {
+        testLogger.Log($"Starting Fact {GetType().Name}.SourceDirectoryTest");
         ISourceDirectories directories = new SourceDirectories();
         
         directories.OnNewDirectoryAdded += DirectoriesOnOnNewDirectoryAdded;
@@ -40,10 +44,12 @@ public class TestSourceDirectories
         IReadOnlyCollection<string> readOnlyCollection = directories.AsReadonly;
         
         Assert.Equal(directories, readOnlyCollection);
+        testLogger.Log("Finished test");
     }
 
     private void DirectoriesOnOnNewDirectoryAdded(object sender, CollectionAddEventArgs<string> e)
     {
+        testLogger.Log($"Sender '{sender}': {e}");
         Assert.Equal(1, e.AffectedCollection.Count);
         Assert.Equal("Test", e.Value);
     }

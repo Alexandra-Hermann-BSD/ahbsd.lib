@@ -12,28 +12,30 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System.Globalization;
+using ahbsd.lib.EventHandler;
 
 namespace ahbsd.lib.Products
 {
     /// <summary>
     /// An interface describing an adress in general.
     /// </summary>
-    public interface IAdress
+    public interface IAddress
     {
         /// <summary>
-        /// Happenes, if the <see cref="AdressType"/> has changed.
+        /// Happenes, if the <see cref="AddressType"/> has changed.
         /// </summary>
-        event ChangeEventHandler<AdressType> OnTypeChanged;
+        event ChangeEventHandler<AddressType> OnTypeChanged;
         /// <summary>
         /// Happenes, if the Adress has changed.
         /// </summary>
         event ChangeEventHandler<string> OnAdressChanged;
         /// <summary>
-        /// Gets or sets the AdressType.
+        /// Gets or sets the AddressType.
         /// </summary>
-        /// <value>The AdressType.</value>
-        AdressType AdressType { get; set; }
+        /// <value>The AddressType.</value>
+        AddressType AddressType { get; set; }
         /// <summary>
         /// Gets or sets the Adress.
         /// </summary>

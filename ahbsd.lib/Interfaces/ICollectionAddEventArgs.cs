@@ -28,7 +28,7 @@ namespace ahbsd.lib.Interfaces;
 /// Interface for generic event Args handling additions to <see cref="ICollection{T}"/>s.
 /// </summary>
 /// <typeparam name="T">The <see cref="Type"/> to use</typeparam>
-public interface ICollectionAddEventArgs<T> : IEventArgs<T>
+public interface ICollectionAddEventArgs<out T> : IEventArgs<T>
 {
     /// <summary>
     /// Gets the affected collection as read only.

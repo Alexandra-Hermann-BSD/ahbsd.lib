@@ -26,20 +26,13 @@ namespace ahbsd.lib.Attributes;
 /// <summary>
 /// Attribute that tells, that this belongs to the API.
 /// </summary>
-partial class ApiAttribute
+partial class ApiAttribute : Attribute
 {
     /// <summary>
     /// A collection of types, that are using this <see cref="Attribute"/>.
     /// </summary>
-    private static readonly ICollection<Type> usingTypes;
+    private static readonly ICollection<Type> usingTypes = new List<Type>();
 
-    /// <summary>
-    /// Static constructor
-    /// </summary>
-    static ApiAttribute()
-    {
-        usingTypes = new List<Type>();
-    }
 
     /// <summary>
     /// Gets all <see cref="Type"/>s, that use this Attribute.

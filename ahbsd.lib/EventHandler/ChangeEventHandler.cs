@@ -1,7 +1,7 @@
 // 
 //     ahbsd.lib
 //     ahbsd.lib
-//     IAsReadonlyCollection.cs
+//     ChangeEventHandler.cs
 // 
 //     Copyright 2022 Alexandra Hermann – Beratung, Software, Design
 // 
@@ -18,19 +18,14 @@
 //     limitations under the License.
 // 
 
-using System.Collections.Generic;
+using ahbsd.lib.EventArgs;
 
-namespace ahbsd.lib.Interfaces;
+namespace ahbsd.lib.EventHandler;
 
 /// <summary>
-/// Interface for getting a <see cref="IReadOnlyCollection{T}"/>
+/// A delegate for change events.
 /// </summary>
-/// <typeparam name="T">The type of the read only collection</typeparam>
-public interface IAsReadonlyCollection<out T>
-{
-    /// <summary>
-    /// Gets the collection as readonly connection.
-    /// </summary>
-    /// <value>The collection as readonly connection</value>
-    IReadOnlyCollection<T> AsReadonly { get; }
-}
+/// <typeparam name="T">The type of changing values.</typeparam>
+/// <param name="sender">Sending object.</param>
+/// <param name="e">The changing EventArgs.</param>
+public delegate void ChangeEventHandler<T>(object sender, ChangeEventArgs<T> e);

@@ -21,21 +21,25 @@
 using System.Collections.Generic;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.Interfaces;
+using ahbsd.lib.Tools;
 using Xunit;
 
 namespace Test_xUnit.Collections;
 
 public class TestCollectionAddEventArgs
 {
+    private static readonly ILogger testLogger = new Logger("Test.log");
     [Fact]
     public void SimpleTest()
     {
         ICollection<string> col1 = new List<string>();
-        string item = "SimpleTest";
+        var item = "SimpleTest";
+        testLogger.Log($"Starting {GetType().Name}.{item}");
         col1.Add(item);
         ICollectionAddEventArgs<string> collectionAddEventArgs = new CollectionAddEventArgs<string>(col1, item);
             
         Assert.Equal(item, collectionAddEventArgs.Value);
         Assert.Equal(col1, collectionAddEventArgs.AffectedCollection);
+        testLogger.Log("Test finished");
     }
 }

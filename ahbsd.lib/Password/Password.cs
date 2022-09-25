@@ -12,36 +12,35 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
+using ahbsd.lib.Password.Check;
 
 namespace ahbsd.lib.Password
 {
     /// <summary>
     /// A Password class.
     /// </summary>
-    public class Password : Component, IPassword
+    public sealed class Password : Component, IPassword
     {
         /// <summary>
         /// The value.
         /// </summary>
-        private string _value;
-
-        private int _length, _lower, _upper, _spaces, _specials, _numbers;
-
-        private Check.ISecurityValue _securityValue;
+        private string value;
 
         /// <summary>
         /// Constructor without any parameter.
         /// </summary>
         public Password()
-            : base()
         {
-            _value = string.Empty;
+            value = string.Empty;
             Initialize();
-            _securityValue = new Check.SecurityValue(this);
+            SecurityValue = new SecurityValue(this);
             OnChange += Password_OnChange;
         }
 
@@ -50,11 +49,10 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <param name="passwd">The given password.</param>
         public Password(string passwd)
-            : base()
         {
-            _value = passwd;
+            value = passwd;
             Initialize();
-            _securityValue = new Check.SecurityValue(this);
+            SecurityValue = new SecurityValue(this);
             OnChange += Password_OnChange;
         }
 
@@ -63,19 +61,18 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <param name="container">The given owning container.</param>
         public Password(IContainer container)
-            : base()
         {
-            _value = string.Empty;
+            value = string.Empty;
             Initialize();
 
             if (container != null)
             {
                 container.Add(this, $"Password_{GetHashCode()}");
-                _securityValue = new Check.SecurityValue(this, container);
+                SecurityValue = new SecurityValue(this, container);
             }
             else
             {
-                _securityValue = new Check.SecurityValue(this);
+                SecurityValue = new SecurityValue(this);
             }
             OnChange += Password_OnChange;
         }
@@ -86,19 +83,18 @@ namespace ahbsd.lib.Password
         /// <param name="passwd">The given password.</param>
         /// <param name="container">The given owning container.</param>
         public Password(string passwd, IContainer container)
-            : base()
         {
-            _value = passwd;
+            value = passwd;
             Initialize();
 
             if (container != null)
             {
                 container.Add(this, $"Password_{GetHashCode()}");
-                _securityValue = new Check.SecurityValue(this, container);
+                SecurityValue = new SecurityValue(this, container);
             }
             else
             {
-                _securityValue = new Check.SecurityValue(this);
+                SecurityValue = new SecurityValue(this);
             }
 
             OnChange += Password_OnChange;
@@ -111,32 +107,30 @@ namespace ahbsd.lib.Password
         {
             CharacteristicDictionary tmp;
 
-            _length = _value.Length;
-            _lower = 0;
-            _upper = 0;
-            _spaces = 0;
-            _specials = 0;
+            Length = value.Length;
+            LowerCases = 0;
+            UpperCases = 0;
+            Spaces = 0;
+            Specials = 0;
 
-            foreach (char c in _value)
+            foreach (var c in value)
             {
                 switch (GetCharasteristic(c))
                 {
                     case Charasteristic.LowercaseLetter:
-                        _lower++;
+                        LowerCases++;
                         break;
                     case Charasteristic.CapitalLetter:
-                        _upper++;
+                        UpperCases++;
                         break;
                     case Charasteristic.Space:
-                        _spaces++;
+                        Spaces++;
                         break;
                     case Charasteristic.Numeric:
-                        _numbers++;
+                        Numbers++;
                         break;
                     case Charasteristic.SpecialCharacter:
-                        _specials++;
-                        break;
-                    default:
+                        Specials++;
                         break;
                 }
             }
@@ -154,135 +148,109 @@ namespace ahbsd.lib.Password
         {
             if (e?.NewValue != null)
             {
-                _value = e.NewValue.Value;
-                _length = e.NewValue.Length;
-                _lower = e.NewValue.LowerCases;
-                _upper = e.NewValue.UpperCases;
-                _spaces = e.NewValue.Spaces;
-                _specials = e.NewValue.Specials;
+                value = e.NewValue.Value;
+                Length = e.NewValue.Length;
+                LowerCases = e.NewValue.LowerCases;
+                UpperCases = e.NewValue.UpperCases;
+                Spaces = e.NewValue.Spaces;
+                Specials = e.NewValue.Specials;
                 Characteristics = e.NewValue.Characteristics;
             }
             else
             {
-                _length = 0;
-                _lower = 0;
-                _upper = 0;
-                _spaces = 0;
-                _specials = 0;
-                _numbers = 0;
+                Length = 0;
+                LowerCases = 0;
+                UpperCases = 0;
+                Spaces = 0;
+                Specials = 0;
+                Numbers = 0;
                 Characteristics = new CharacteristicDictionary(this, Container);
             }
         }
 
         #region implementation of IPassword
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        /// <value>The value.</value>
+        /// <inheritdoc/>
         public string Value
         {
-            get => _value;
+            get => value;
             set
             {
-                IPassword tmp;
-
-                if (!string.IsNullOrEmpty(value) && !value.Equals(_value))
+                if (!string.IsNullOrWhiteSpace(value) && !value.Equals(this.value))
                 {
-                    if (Container != null)
-                    {
-                        tmp = GetPassword(value, Container);
-                        if (OnChange != null)
-                        {
-                            tmp.OnChange += OnChange;
-                        }
-                    }
-                    else
-                    {
-                        tmp = GetPassword(value);
-                        if (OnChange != null)
-                        {
-                            tmp.OnChange += OnChange;
-                        }
-                    }
-                    ChangeEventArgs<IPassword> cea = new(this, tmp);
+                    var tmp = GetTemporaryPassword(value);
+                    
+                    ChangeEventArgs<IPassword> cea = new(MemberwiseClone() as IPassword, tmp);
 
-                    _value = value;
-                    _securityValue = tmp.SecurityValue;
+                    this.value = value;
+                    SecurityValue = tmp.SecurityValue;
 
                     OnChange?.Invoke(this, cea);
                 }
             }
         }
+
         /// <summary>
-        /// Gets the length of the password.
+        /// Gets the temporary password.
         /// </summary>
-        /// <value>The length of the password.</value>
-        public int Length => _length;
-        /// <summary>
-        /// Gets the amount of lower cases.
-        /// </summary>
-        /// <value>The amount of lower cases.</value>
-        public int LowerCases => _lower;
-        /// <summary>
-        /// Gets the amount of upper cases.
-        /// </summary>
-        /// <value>The amount of upper cases.</value>
-        public int UpperCases => _upper;
-        /// <summary>
-        /// Gets the amount of numbers.
-        /// </summary>
-        /// <value>The amount of numbers.</value>
-        public int Numbers => _numbers;
-        /// <summary>
-        /// Gets the amount of spaces.
-        /// </summary>
-        /// <value>The amount of spaces.</value>
-        public int Spaces => _spaces;
-        /// <summary>
-        /// Gets the amount of special cases.
-        /// </summary>
-        /// <value>The amount of special cases.</value>
-        public int Specials => _specials;
-        /// <summary>
-        /// Gets the characteristics of a password.
-        /// </summary>
+        /// <param name="newPassword">The new password</param>
+        /// <returns>The temporary password</returns>
+        private IPassword GetTemporaryPassword(string newPassword)
+        {
+            IPassword tmp;
+            if (Container != null)
+            {
+                tmp = GetPassword(newPassword, Container);
+                if (OnChange != null)
+                {
+                    tmp.OnChange += OnChange;
+                }
+            }
+            else
+            {
+                tmp = GetPassword(newPassword);
+                if (OnChange != null)
+                {
+                    tmp.OnChange += OnChange;
+                }
+            }
+
+            return tmp;
+        }
+
+        /// <inheritdoc/>
+        public int Length { get; private set; }
+
+        /// <inheritdoc/>
+        public int LowerCases { get; private set; }
+
+        /// <inheritdoc/>
+        public int UpperCases { get; private set; }
+
+        /// <inheritdoc/>
+        public int Numbers { get; private set; }
+
+        /// <inheritdoc/>
+        public int Spaces { get; private set; }
+
+        /// <inheritdoc/>
+        public int Specials { get; private set; }
+
+        /// <inheritdoc/>
         public ICharacteristicDictionary Characteristics { get; private set; }
-        /// <summary>
-        /// Happenes, when the <see cref="Value"/> changes.
-        /// </summary>
+        
+        /// <inheritdoc/>
         public event ChangeEventHandler<IPassword> OnChange;
 
-        /// <summary>
-        /// Gets the SecurityValue.
-        /// </summary>
-        /// <value>The SecurityValue.</value>
-        public Check.ISecurityValue SecurityValue => _securityValue;
+        /// <inheritdoc/>
+        public ISecurityValue SecurityValue { get; private set; }
 
-        /// <summary>
-        /// Compares an other object with this object.
-        /// </summary>
-        /// <param name="obj">The other object.</param>
-        /// <returns>
-        /// <c>true</c> if the other object eaquals this password, otherwise
-        /// <c>false</c>.
-        /// </returns>
+        /// <inheritdoc/>
         public override bool Equals(object obj) => Equals(obj as IPassword);
 
-        /// <summary>
-        /// Compares an other <see cref="IPassword"/> with this object.
-        /// </summary>
-        /// <param name="other">The other IPassword.</param>
-        /// <returns>
-        /// <c>true</c> if the other IPassword eaquals this password, otherwise
-        /// <c>false</c>.
-        /// </returns>
-        public bool Equals(IPassword other) => other != null &&
-                   Value == other.Value;
+        /// <inheritdoc/>
+        public bool Equals(IPassword other) => other != null && Value == other.Value;
 
-        /// <summary>
-        /// Gets the HashCode.
-        /// </summary>
-        /// <returns>The HashCode.</returns>
+        /// <inheritdoc/>
         public override int GetHashCode() => HashCode.Combine(Value);
         #endregion
 
@@ -307,108 +275,65 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <param name="container">An owning container.</param>
         /// <returns>The Password.</returns>
-        public static IPassword GetPassword(string value, IContainer container)
-            => new Password(value, container);
+        public static IPassword GetPassword(string value, IContainer container) => new Password(value, container);
 
         /// <summary>
         /// Gets the amount of lower cases in the given string.
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <returns>The amount of lower cases.</returns>
-        public static int GetLowerCases(string value)
-        {
-            int result = 0;
-
-            if (!string.IsNullOrEmpty(value))
-            {
-                result = (from char c in value
-                           where char.IsLower(c)
-                           select c).Count();
-            }
-
-            return result;
-        }
+        public static int GetLowerCases(string value) 
+            => !string.IsNullOrWhiteSpace(value)
+                ? (from char c in value
+                    where char.IsLower(c)
+                    select c).Count()
+                : 0;
 
         /// <summary>
         /// Gets the amount of upper cases in the given string.
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <returns>The amount of upper cases.</returns>
-        public static int GetUpperCases(string value)
-        {
-            int result = 0;
-
-            if (!string.IsNullOrEmpty(value))
-            {
-                result = (from char c in value
-                          where char.IsUpper(c)
-                          select c).Count();
-            }
-
-            return result;
-        }
+        public static int GetUpperCases(string value) 
+            => !string.IsNullOrWhiteSpace(value)
+                ? (from char c in value
+                    where char.IsUpper(c)
+                    select c).Count()
+                : 0;
 
         /// <summary>
         /// Gets the amount of spaces in the given string.
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <returns>The amount of spaces.</returns>
-        public static int GetSpaces(string value)
-        {
-            int result = 0;
-
-            if (!string.IsNullOrEmpty(value))
-            {
-                result = (from char c in value
-                          where char.IsWhiteSpace(c)
-                          select c).Count();
-            }
-
-            return result;
-        }
+        public static int GetSpaces(string value) 
+            => !string.IsNullOrEmpty(value)
+                ? (from char c in value
+                    where char.IsWhiteSpace(c)
+                    select c).Count()
+                : 0;
 
         /// <summary>
         /// Gets the amount of numbers in the given string.
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <returns>The amount of numbers.</returns>
-        public static int GetNumbers(string value)
-        {
-            int result = 0;
-
-            if (!string.IsNullOrEmpty(value))
-            {
-                result = (from char c in value
-                          where char.IsNumber(c)
-                          select c).Count();
-            }
-
-            return result;
-        }
+        public static int GetNumbers(string value) 
+            => !string.IsNullOrWhiteSpace(value)
+                ? (from char c in value
+                    where char.IsNumber(c)
+                    select c).Count()
+                : 0;
 
         /// <summary>
         /// Gets the amount of special chars in the given string.
         /// </summary>
         /// <param name="value">The given string.</param>
         /// <returns>The amount of special chars.</returns>
-        public static int GetSpecials(string value)
-        {
-            int result = 0;
-            if (!string.IsNullOrEmpty(value))
-            {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    char ctmp = value[i];
-
-                    if (GetCharasteristic(ctmp) == Charasteristic.SpecialCharacter)
-                    {
-                        result++;
-                    }
-                }
-            }
-
-            return result;
-        }
+        public static int GetSpecials(string value) 
+            => !string.IsNullOrWhiteSpace(value) 
+                ? value.Count(ctmp => GetCharasteristic(ctmp) == Charasteristic.SpecialCharacter) 
+                : 0;
 
         /// <summary>
         /// Gets the <see cref="Charasteristic"/> of a given <see cref="char"/>.
@@ -417,34 +342,30 @@ namespace ahbsd.lib.Password
         /// <returns>The <see cref="Charasteristic"/>.</returns>
         public static Charasteristic GetCharasteristic(char c)
         {
-            bool finished = char.IsWhiteSpace(c);
-            bool isLetter = char.IsLetter(c);
+            var finished = char.IsWhiteSpace(c);
+            var isLetter = char.IsLetter(c);
 
-            Charasteristic result = Charasteristic.Space;
+            var result = Charasteristic.Space;
 
-            if (!finished && isLetter && char.IsUpper(c))
+            if (!finished)
             {
-                result = Charasteristic.CapitalLetter;
-                finished = true;
+                if (isLetter)
+                {
+                    if (char.IsUpper(c))
+                    {
+                        result = Charasteristic.CapitalLetter;
+                    }
+                    else if (char.IsLower(c))
+                    {
+                        result = Charasteristic.LowercaseLetter;
+                    }
+                }
+                else
+                {
+                    result = char.IsNumber(c) ? Charasteristic.Numeric : Charasteristic.SpecialCharacter;
+                }
             }
-
-            if (!finished && isLetter && char.IsLower(c))
-            {
-                result = Charasteristic.LowercaseLetter;
-                finished = true;
-            }
-
-            if (!finished && !isLetter && char.IsNumber(c))
-            {
-                result = Charasteristic.Numeric;
-                finished = true;
-            }
-
-            if (!finished && !isLetter)
-            {
-                result = Charasteristic.SpecialCharacter;
-            }
-
+            
             return result;
         }
 
@@ -453,7 +374,7 @@ namespace ahbsd.lib.Password
         /// </summary>
         /// <returns>A simple description on the current password</returns>
         public override string ToString()
-            => $"'{_value}' ({_securityValue.Security})";
+            => $"'{value}' ({SecurityValue.Security})";
 
         /// <summary>
         /// Compares two <see cref="Password"/>s.

@@ -12,7 +12,7 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-using System;
+
 using System.ComponentModel;
 
 namespace ahbsd.lib.Password.Check
@@ -21,7 +21,7 @@ namespace ahbsd.lib.Password.Check
     /// An Interface for getting the security value of a given
     /// <see cref="IPassword"/>.
     /// </summary>
-    public interface ISecurityValue : IComponent, IEquatable<ISecurityValue>
+    public interface ISecurityValue : IComponent
     {
         /// <summary>
         /// Gets the password.

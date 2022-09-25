@@ -22,6 +22,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
 using ahbsd.lib.Interfaces;
 using ahbsd.lib.Tools;
 
@@ -30,7 +32,7 @@ namespace ahbsd.lib.Components;
 /// <summary>
 /// A logger as component.
 /// </summary>
-public class LoggerComponent : Component, ILogger, IDisposable
+public class LoggerComponent : Component, ILogger
 {
     /// <summary>
     /// Is this object already disposed?
@@ -86,7 +88,7 @@ public class LoggerComponent : Component, ILogger, IDisposable
         
         OnLogfileChanged += This_OnLogfileChanged;
 
-        this.Name = name ?? GetType().Name;
+        Name = name ?? GetType().Name;
         
         Initialize(container);
     }
@@ -188,7 +190,7 @@ public class LoggerComponent : Component, ILogger, IDisposable
         get => logfilePath;
         set
         {
-            ChangeEventArgs<string> changeEventArgs = new ChangeEventArgs<string>(logfilePath, value);
+            ChangeEventArgs<string> changeEventArgs = new(logfilePath, value);
 
             if (!string.IsNullOrWhiteSpace(value) && !value.Equals(logfilePath))
             {
@@ -254,14 +256,6 @@ public class LoggerComponent : Component, ILogger, IDisposable
         base.Dispose(disposing);
         
         ReleaseUnmanagedResources();
-    }
-
-    /// <inheritdoc />
-    void IDisposable.Dispose()
-    {
-        Dispose(true);
-        base.Dispose();
-        GC.SuppressFinalize(this);
     }
 
     /// <inheritdoc />

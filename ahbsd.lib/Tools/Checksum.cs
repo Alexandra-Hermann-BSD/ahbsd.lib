@@ -12,6 +12,10 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
+#pragma warning disable S4136
+using System.Linq;
+
 namespace ahbsd.lib.Tools
 {
     /// <summary>
@@ -20,6 +24,8 @@ namespace ahbsd.lib.Tools
     public static class Checksum
     {
         #region Checksum
+
+        
         /// <summary>
         /// Gets the checksum of the given value.
         /// </summary>
@@ -27,22 +33,16 @@ namespace ahbsd.lib.Tools
         /// <returns>The checksum of the given value.</returns>
         public static long GetChecksum(long value)
         {
-            long positiveValue = value;
+            var positiveValue = value;
 
             if (!IsPositive(value))
             {
                 positiveValue = value * -1;
             }
 
-            char[] parts = positiveValue.ToString().ToCharArray();
+            var parts = positiveValue.ToString().ToCharArray();
 
-            long result = 0;
-            foreach (char v in parts)
-            {
-                result += short.Parse(v.ToString());
-            }
-
-            return result;
+            return parts.Aggregate<char, long>(0, (current, v) => current + short.Parse(v.ToString()));
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static short GetFinalChecksum(long value)
         {
-            long tmp = value;
+            var tmp = value;
             int length;
 
             do
@@ -78,7 +78,7 @@ namespace ahbsd.lib.Tools
 
             if (value.HasValue)
             {
-                result = GetChecksum((long)value);
+                result = GetChecksum(value.Value);
             }
 
             return result;
@@ -91,19 +91,22 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static short? GetFinalChecksum(long? value)
         {
-            long? tmp = value;
-            int length;
+            var tmp = value;
+            short? result = null;
 
             if (value.HasValue)
             {
+                int length;
                 do
                 {
                     tmp = GetChecksum(tmp);
                     length = tmp.ToString().Length;
                 } while (length > 1);
 
+                result = (short?)tmp;
             }
-            return (short?)tmp;
+            
+            return result;
         }
 
         /// <summary>
@@ -113,15 +116,9 @@ namespace ahbsd.lib.Tools
         /// <returns>The checksum of the given value.</returns>
         public static ulong GetChecksum(ulong value)
         {
-            ulong result = 0;
-            char[] parts = value.ToString().ToCharArray();
+            var parts = value.ToString().ToCharArray();
 
-            for (int i = 0; i < parts.Length; i++)
-            {
-                result += ushort.Parse(parts[i].ToString());
-            }
-           
-            return result;
+            return parts.Aggregate<char, ulong>(0, (current, t) => current + ushort.Parse(t.ToString()));
         }
 
         /// <summary>
@@ -131,7 +128,7 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static ushort GetFinalChecksum(ulong value)
         {
-            ulong tmp = value;
+            var tmp = value;
             int length;
 
             do
@@ -170,18 +167,17 @@ namespace ahbsd.lib.Tools
         /// <returns>The final checksum of the given value.</returns>
         public static ushort? GetFinalChecksum(ulong? value)
         {
-            ulong? tmp = value;
-            int length;
+            var tmp = value;
 
             if (value.HasValue)
             {
+                int length;
                 do
                 {
                     tmp = GetChecksum(tmp);
                     length = tmp.ToString().Length;
              
                 } while (length > 1);
-
             }
             return (ushort?)tmp;
         }
@@ -194,7 +190,7 @@ namespace ahbsd.lib.Tools
         /// <returns>
         /// <c>true</c> if value is positive, otherwise <c>false</c>.
         /// </returns>
-        public static bool IsPositive(long value) => !value.ToString().Substring(0, 1).Equals("-");
+        public static bool IsPositive(long value) => !value.ToString()[..1].Equals("-");
 
         /// <summary>
         /// Checks whether value is positive or negative.
@@ -224,13 +220,13 @@ namespace ahbsd.lib.Tools
         public static bool IsPositive(ulong? value) => value.HasValue;
 
         /// <summary>
-        /// Checks wheather value is positive or negative.
+        /// Checks whether value is positive or negative.
         /// </summary>
         /// <param name="value">The value to check.</param>
         /// <returns>
         /// <c>true</c> if value is positive, otherwise <c>false</c>.
         /// </returns>
-        public static bool IsPositive(short value) => !value.ToString().Substring(0, 1).Equals("-");
+        public static bool IsPositive(short value) => !value.ToString()[..1].Equals("-");
 
         /// <summary>
         /// Checks whether value is positive or negative.
@@ -250,3 +246,5 @@ namespace ahbsd.lib.Tools
         public static bool IsPositive(ushort number) => true;
     }
 }
+
+#pragma warning restore S4136

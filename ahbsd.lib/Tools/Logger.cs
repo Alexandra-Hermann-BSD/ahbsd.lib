@@ -20,6 +20,8 @@
 
 using System;
 using System.IO;
+using ahbsd.lib.EventArgs;
+using ahbsd.lib.EventHandler;
 using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib.Tools;

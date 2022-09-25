@@ -45,22 +45,25 @@ public class SourceDirectories : ISourceDirectories
     public SourceDirectories(int capacity) => innerCollection = new List<string>(capacity);
 
     #region implementation of ISourceDirectories
-
+    
+#pragma warning disable S3264
+    // Quite unsure, why Sonar doesn't see the use of this event...
     /// <inheritdoc/>
     public event CollectionAddEventHandler<string> OnNewDirectoryAdded;
+#pragma warning restore S3264
     
     /// <inheritdoc/>
     public IEnumerator<string> GetEnumerator() => innerCollection.GetEnumerator();
 
     /// <inheritdoc/>
-    IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable) innerCollection).GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => (innerCollection as IEnumerable).GetEnumerator();
 
     /// <inheritdoc/>
     public void Add(string item)
     {
         if (!string.IsNullOrWhiteSpace(item))
         {
-            CollectionAddEventArgs<string> addEventArgs = new CollectionAddEventArgs<string>(this, item);
+            CollectionAddEventArgs<string> addEventArgs = new(this, item);
             innerCollection.Add(item);
             OnNewDirectoryAdded?.Invoke(this, addEventArgs);
         }

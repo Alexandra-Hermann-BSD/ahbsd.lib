@@ -26,7 +26,7 @@ namespace ahbsd.lib.Interfaces;
 /// Generic interface for removed item's.
 /// </summary>
 /// <typeparam name="T">The type of the event's</typeparam>
-public interface ICollectionRemoveArgs<T>
+public interface ICollectionRemoveArgs<out T>
 {
     /// <summary>
     /// Gets the removed items as readonly.

@@ -12,9 +12,11 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using ahbsd.lib.EventHandler;
 
 namespace ahbsd.lib.Products
 {
@@ -24,15 +26,15 @@ namespace ahbsd.lib.Products
     public interface ICompany : IComponent
     {
         /// <summary>
-        /// Happenes, if an adress was added.
+        /// Happens, if an address was added.
         /// </summary>
-        event EventHandler<EventArgs<IAdress>> OnAdressAdded;
+        event EventHandler<EventArgs<IAddress>> OnAddressAdded;
         /// <summary>
-        /// Happenes, if an adress was removed.
+        /// Happens, if an address was removed.
         /// </summary>
-        event EventHandler<EventArgs<IAdress>> OnAdressRemoved;
+        event EventHandler<EventArgs<IAddress>> OnAddressRemoved;
         /// <summary>
-        /// Happenes, if the note has changed.
+        /// Happens, if the note has changed.
         /// </summary>
         event ChangeEventHandler<string> OnNoteChanged;
         /// <summary>
@@ -41,36 +43,36 @@ namespace ahbsd.lib.Products
         /// <value>The company name.</value>
         string Name { get; }
         /// <summary>
-        /// Gets the list of adresses.
+        /// Gets the list of addresses.
         /// </summary>
-        /// <value>The list of adresses.</value>
+        /// <value>The list of addresses.</value>
         [ReadOnly(true)]
-        IList<IAdress> Adresses { get; }
+        IList<IAddress> Addresses { get; }
         /// <summary>
-        /// Adds an Adress.
+        /// Adds an Address.
         /// </summary>
-        /// <param name="adress">The adress to be added.</param>
+        /// <param name="address">The address to be added.</param>
         /// <returns>
-        /// <c>true</c> if the adress was sucessfully added; otherwise <c>false</c>.
+        /// <c>true</c> if the address was successfully added; otherwise <c>false</c>.
         /// </returns>
-        bool AddAdress(IAdress adress);
+        bool AddAddress(IAddress address);
         /// <summary>
-        /// Removes an adress.
+        /// Removes an address.
         /// </summary>
-        /// <param name="adress">The Adress to be removed.</param>
+        /// <param name="address">The Address to be removed.</param>
         /// <returns>
-        /// <c>true</c> if the adress was successfully removed; otherwise <c>false</c>.
+        /// <c>true</c> if the address was successfully removed; otherwise <c>false</c>.
         /// </returns>
-        bool RemoveAdress(IAdress adress);
+        bool RemoveAddress(IAddress address);
         /// <summary>
-        /// Removes all adresses of the given type.
+        /// Removes all addresses of the given type.
         /// </summary>
-        /// <param name="type">The given type of adresses to remove.</param>
+        /// <param name="type">The given type of addresses to remove.</param>
         /// <returns>
-        /// <c>true</c> if the Adresses of the given type were found and removed,
+        /// <c>true</c> if the Addresses of the given type were found and removed,
         /// otherwise <c>false</c>.
         /// </returns>
-        bool RemoveAdresses(AdressType type);
+        bool RemoveAddresses(AddressType type);
         /// <summary>
         /// Gets or sets the notes to the company.
         /// </summary>

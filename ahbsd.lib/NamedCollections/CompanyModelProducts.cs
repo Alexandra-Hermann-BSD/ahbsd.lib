@@ -12,6 +12,7 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,8 +35,7 @@ namespace ahbsd.lib.NamedCollections
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
-        public CompanyModelProducts()
-            : base() => dict = new Dictionary<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>();
+        public CompanyModelProducts() => dict = new Dictionary<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>();
 
         /// <summary>
         /// Gets or sets a Dictionary of <see cref="IDictionaryOfNamedList{IModel, IProductItem}"/> for a given <see cref="ICompany"/>.

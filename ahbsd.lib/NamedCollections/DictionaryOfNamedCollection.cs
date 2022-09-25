@@ -12,6 +12,7 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -43,7 +44,6 @@ namespace ahbsd.lib.NamedCollections
         /// Simple constructor
         /// </summary>
         public DictionaryOfNamedCollection()
-            : base()
         {
             //
         }
@@ -65,7 +65,7 @@ namespace ahbsd.lib.NamedCollections
             if (t.Equals(typeof(string)))
             {
                 V tmpV = (V)Convert.ChangeType(name, t);
-                Add(key, tmpV, null);
+                Add(key, tmpV);
             }
             else
             {
@@ -114,14 +114,12 @@ namespace ahbsd.lib.NamedCollections
                             "is null or empty as well");
                     throw k;
                 }
-                else
-                {
-                    EventArgs<INamedCollection<V>> eventArgs;
-                    INamedCollection<V> tmp = new NamedCollection<V>(name);
-                    eventArgs = new EventArgs<INamedCollection<V>>(tmp);
-                    Add(key, tmp);
-                    OnNamedCollectionAdded?.Invoke(this, eventArgs);
-                }
+
+                EventArgs<INamedCollection<V>> eventArgs;
+                INamedCollection<V> tmp = new NamedCollection<V>(name);
+                eventArgs = new EventArgs<INamedCollection<V>>(tmp);
+                Add(key, tmp);
+                OnNamedCollectionAdded?.Invoke(this, eventArgs);
             }
 
             this[key].Add(value);
