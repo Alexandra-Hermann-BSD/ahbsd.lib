@@ -21,7 +21,7 @@ namespace ahbsd.lib.Interfaces
     /// Interface for generic EventArgs for changing values.
     /// </summary>
     /// <typeparam name="T">The type of the changing Values.</typeparam>
-    public interface IChangeEventArgs<T>
+    public interface IChangeEventArgs<T> : IGetCaller
     {
         /// <summary>
         /// Gets the old value.

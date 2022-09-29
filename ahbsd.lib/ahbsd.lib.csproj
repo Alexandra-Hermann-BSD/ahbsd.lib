@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>ahbsd.lib</PackageId>
-    <PackageVersion>1.4</PackageVersion>
+    <PackageVersion>1.5</PackageVersion>
     <Authors>Heinrich Alexandra Hermann</Authors>
     <Company>Alexandra Hermann – Beratung, Software, Design</Company>
     <Copyright>Apache 2.0</Copyright>
@@ -18,13 +18,13 @@
     <ReleaseVersion>1.4</ReleaseVersion>
     <PackageIconUrl>https://www.hermann-bsd.de/favicon.ico</PackageIconUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageReleaseNotes>Version 1.4 has a new namespace: NamedCollections, which is mainley for
-collections to be named.</PackageReleaseNotes>
+    <PackageReleaseNotes>Version 1.5 has added some functionallity and removed a lot of SonarLint issues</PackageReleaseNotes>
     <PackageTags>Library; Core; Core3.1; Generic</PackageTags>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
     <CodePage>65001</CodePage>
     <LangVersion>latestmajor</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

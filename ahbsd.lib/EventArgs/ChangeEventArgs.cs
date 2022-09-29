@@ -14,6 +14,8 @@
 //    limitations under the License.
 
 using System;
+using System.Diagnostics;
+using System.Reflection;
 using ahbsd.lib.Exceptions;
 using ahbsd.lib.Interfaces;
 
@@ -32,6 +34,7 @@ namespace ahbsd.lib.EventArgs
         {
             OldValue = default;
             NewValue = default;
+            Caller = new StackFrame(1);
         }
 
         /// <summary>
@@ -43,6 +46,7 @@ namespace ahbsd.lib.EventArgs
         {
             OldValue = oldValue;
             NewValue = newValue;
+            Caller = new StackFrame(1);
         }
 
         /// <summary>
@@ -53,25 +57,18 @@ namespace ahbsd.lib.EventArgs
         {
             OldValue = oldValue;
             NewValue = default;
+            Caller = new StackFrame(1);
         }
 
 
         #region implementation of ChangeEventArgs<T>
-        /// <summary>
-        /// Gets the old value.
-        /// </summary>
-        /// <value>The old value.</value>
+        /// <inheritdoc />
         public T OldValue { get; private set; }
-        /// <summary>
-        /// Gets the new value.
-        /// </summary>
-        /// <value>The new value.</value>
+        
+        /// <inheritdoc />
         public T NewValue { get; private set; }
-        /// <summary>
-        /// Sets the new value.
-        /// </summary>
-        /// <param name="newValue">The new value.</param>
-        /// <exception cref="AlreadySetException{T}">If the <see cref="NewValue" /> was already set.</exception>
+        
+        /// <inheritdoc />
         public void SetNewValue(T newValue)
         {
             IAlreadySetException<T> e;
@@ -102,10 +99,7 @@ namespace ahbsd.lib.EventArgs
             NewValue = newValue;
         }
 
-        /// <summary>
-        /// Gets a string representation of the changed value.
-        /// </summary>
-        /// <returns>A string representation of the changed value.</returns>
+        /// <inheritdoc cref="IChangeEventArgs{T}.ToString"/>
         public override string ToString()
         {
             string result = string.Empty;
@@ -126,7 +120,10 @@ namespace ahbsd.lib.EventArgs
 
             return result;
         }
+
+        /// <inheritdoc />
+        public StackFrame Caller { get; }
         #endregion
-        
+
     }
 }
