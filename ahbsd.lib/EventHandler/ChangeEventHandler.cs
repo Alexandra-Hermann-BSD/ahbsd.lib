@@ -20,12 +20,13 @@
 
 using ahbsd.lib.EventArgs;
 
-namespace ahbsd.lib.EventHandler;
-
-/// <summary>
-/// A delegate for change events.
-/// </summary>
-/// <typeparam name="T">The type of changing values.</typeparam>
-/// <param name="sender">Sending object.</param>
-/// <param name="e">The changing EventArgs.</param>
-public delegate void ChangeEventHandler<T>(object sender, ChangeEventArgs<T> e);
+namespace ahbsd.lib.EventHandler
+{
+    /// <summary>
+    /// A delegate for change events.
+    /// </summary>
+    /// <typeparam name="T">The type of changing values.</typeparam>
+    /// <param name="sender">Sending object.</param>
+    /// <param name="e">The changing EventArgs.</param>
+    public delegate void ChangeEventHandler<T>(object sender, ChangeEventArgs<T> e);
+}

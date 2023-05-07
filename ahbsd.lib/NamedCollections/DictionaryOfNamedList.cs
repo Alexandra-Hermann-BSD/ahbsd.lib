@@ -58,14 +58,12 @@ namespace ahbsd.lib.NamedCollections
                 if (!ContainsKey(key))
                 {
                     Add(key, new NamedList<V>(name));
-                    EventArgs<INamedList<V>> eventArgs = new(new NamedList<V>(name));
+                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(new NamedList<V>(name));
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
                 else
                 {
-                    ArgumentException ae = new(
-                        $"Key '{key}' already exists.",
-                        "key");
+                    ArgumentException ae = new ArgumentException($"Key '{key}' already exists.", "key");
                     throw ae;
                 }
             }
@@ -78,14 +76,14 @@ namespace ahbsd.lib.NamedCollections
             {
                 if (name.IsNullOrEmpty())
                 {
-                    KeyNotFoundException k = new($"Key '{key}' is missing AND name for creating a new INamedList<{typeof(V)}> is null or empty as well");
+                    KeyNotFoundException k = new KeyNotFoundException($"Key '{key}' is missing AND name for creating a new INamedList<{typeof(V)}> is null or empty as well");
                     throw k;
                 }
                 else
                 {
                     var namedList = new NamedList<V>(name);
                     Add(key, namedList);
-                    EventArgs<INamedList<V>> eventArgs = new(namedList);
+                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(namedList);
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
             }

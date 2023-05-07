@@ -25,84 +25,85 @@ using System.Reflection;
 using ahbsd.lib.Attributes;
 using Xunit;
 
-namespace Test_xUnit.Attributes;
-
-public class TestApiAttribute
+namespace Test_xUnit.Attributes
 {
-    [Fact]
-    public void Test5TestClasses()
+    public class TestApiAttribute
     {
-        ICollection<ITestClass> fiveObjects = new List<ITestClass>(5);
-
-        for (int i = 0; i < 3; i++)
+        [Fact]
+        public void Test5TestClasses()
         {
-            ITestClass tmpObject = new TestClass($"#{i}");
-            Assert.Equal($"#{i}", tmpObject.Content);
-            fiveObjects.Add(tmpObject);
-        }
+            ICollection<ITestClass> fiveObjects = new List<ITestClass>(5);
 
-        TestClass test4 = new TestClass();
-        var test5 = new TestClass();
-
-        fiveObjects.Add(test4);
-        fiveObjects.Add(test5);
-
-        foreach (var fiveObject in fiveObjects)
-        {
-            Assert.Contains("Api", AttributeReader.GetFirstAttribute(fiveObject).ToString());
-        }
-
-        try
-        {
-            foreach (var usingType in ApiAttribute.UsingTypes)
+            for (int i = 0; i < 3; i++)
             {
-                Assert.Equal(typeof(TestClass), usingType);
+                ITestClass tmpObject = new TestClass($"#{i}");
+                Assert.Equal($"#{i}", tmpObject.Content);
+                fiveObjects.Add(tmpObject);
             }
-        }
-        catch (Exception)
-        {
-            // we don't care
-        }
+
+            TestClass test4 = new TestClass();
+            var test5 = new TestClass();
+
+            fiveObjects.Add(test4);
+            fiveObjects.Add(test5);
+
+            foreach (var fiveObject in fiveObjects)
+            {
+                Assert.Contains("Api", AttributeReader.GetFirstAttribute(fiveObject).ToString());
+            }
+
+            try
+            {
+                foreach (var usingType in ApiAttribute.UsingTypes)
+                {
+                    Assert.Equal(typeof(TestClass), usingType);
+                }
+            }
+            catch (Exception)
+            {
+                // we don't care
+            }
         
-    }
-}
-
-internal static class AttributeReader
-{
-    public static CustomAttributeData GetFirstAttribute(object o)
-    {
-        CustomAttributeData result = null;
-
-        if (o != null)
-        {
-            var type = o.GetType();
-            
-            result = type.CustomAttributes.First();
-            Assert.NotNull(result);
         }
-
-        return result;
     }
-}
 
-internal interface ITestClass
-{
-    /// <summary>
-    /// Gets the content.
-    /// </summary>
-    /// <value>The content</value>
-    string Content { get; }
-}
+    internal static class AttributeReader
+    {
+        public static CustomAttributeData GetFirstAttribute(object o)
+        {
+            CustomAttributeData result = null;
 
-[Api]
-internal class TestClass : ITestClass
-{
-    /// <summary>
-    /// Constructor with optional content.
-    /// </summary>
-    /// <param name="content">[optional] content</param>
-    public TestClass(string content = null) => Content = content;
+            if (o != null)
+            {
+                var type = o.GetType();
+            
+                result = type.CustomAttributes.First();
+                Assert.NotNull(result);
+            }
 
-    /// <inheritdoc/>
-    public string Content { get; }
+            return result;
+        }
+    }
+
+    internal interface ITestClass
+    {
+        /// <summary>
+        /// Gets the content.
+        /// </summary>
+        /// <value>The content</value>
+        string Content { get; }
+    }
+
+    [Api]
+    internal class TestClass : ITestClass
+    {
+        /// <summary>
+        /// Constructor with optional content.
+        /// </summary>
+        /// <param name="content">[optional] content</param>
+        public TestClass(string content = null) => Content = content;
+
+        /// <inheritdoc/>
+        public string Content { get; }
+    }
 }

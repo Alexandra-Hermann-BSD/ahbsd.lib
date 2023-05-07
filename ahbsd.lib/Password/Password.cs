@@ -180,7 +180,7 @@ namespace ahbsd.lib.Password
                 {
                     var tmp = GetTemporaryPassword(value);
                     
-                    ChangeEventArgs<IPassword> cea = new(MemberwiseClone() as IPassword, tmp);
+                    ChangeEventArgs<IPassword> cea = new ChangeEventArgs<IPassword>(MemberwiseClone() as IPassword, tmp);
 
                     this.value = value;
                     SecurityValue = tmp.SecurityValue;

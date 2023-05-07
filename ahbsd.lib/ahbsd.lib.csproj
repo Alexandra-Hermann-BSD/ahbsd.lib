@@ -23,7 +23,7 @@
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
     <CodePage>65001</CodePage>
-    <LangVersion>latestmajor</LangVersion>
+    <LangVersion>8</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

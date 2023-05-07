@@ -22,10 +22,11 @@ using System;
 using System.Collections.Generic;
 using ahbsd.lib.EventArgs;
 
-namespace ahbsd.lib.EventHandler;
-
-/// <summary>
-/// EventHandler for adding values to a <see cref="ICollection{T}"/>
-/// </summary>
-/// <typeparam name="T">The <see cref="Type"/> of the collection</typeparam>
-public delegate void CollectionAddEventHandler<T>(object sender, CollectionAddEventArgs<T> e);
+namespace ahbsd.lib.EventHandler
+{
+    /// <summary>
+    /// EventHandler for adding values to a <see cref="ICollection{T}"/>
+    /// </summary>
+    /// <typeparam name="T">The <see cref="Type"/> of the collection</typeparam>
+    public delegate void CollectionAddEventHandler<T>(object sender, CollectionAddEventArgs<T> e);
+}

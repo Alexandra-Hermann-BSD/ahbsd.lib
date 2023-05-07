@@ -25,9 +25,9 @@ using ahbsd.lib.EventHandler;
 using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 
-namespace ahbsd.lib.Tools;
-
-/// <summary>
+namespace ahbsd.lib.Tools
+{
+    /// <summary>
     /// A simple Logger
     /// </summary>
     public class Logger : ILogger, IDisposable
@@ -232,3 +232,4 @@ namespace ahbsd.lib.Tools;
         }
         #endregion
     }
+}

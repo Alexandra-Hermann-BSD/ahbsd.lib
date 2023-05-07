@@ -60,13 +60,12 @@ namespace ahbsd.lib.NamedCollections
                 if (!ContainsKey(key))
                 {
                     Add(key, new NamedCollection<V>(name));
-                    EventArgs<INamedCollection<V>> eventArgs =
-                        new(new NamedCollection<V>(name));
+                    EventArgs<INamedCollection<V>> eventArgs = new EventArgs<INamedCollection<V>>(new NamedCollection<V>(name));
                     OnNamedCollectionAdded?.Invoke(this, eventArgs);
                 }
                 else
                 {
-                    ArgumentException ae = new($"Key '{key}' already exists.", nameof(key));
+                    ArgumentException ae = new ArgumentException($"Key '{key}' already exists.", nameof(key));
                     throw ae;
                 }
             }
@@ -79,7 +78,7 @@ namespace ahbsd.lib.NamedCollections
             {
                 if (name.IsNullOrEmpty())
                 {
-                    KeyNotFoundException k = new($"Key '{key}' is missing AND name for creating a new INamedCollection<{typeof(V)}> is null or empty as well");
+                    KeyNotFoundException k = new KeyNotFoundException($"Key '{key}' is missing AND name for creating a new INamedCollection<{typeof(V)}> is null or empty as well");
                     throw k;
                 }
 

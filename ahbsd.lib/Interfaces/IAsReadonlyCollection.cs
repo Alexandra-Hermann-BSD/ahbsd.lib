@@ -20,17 +20,18 @@
 
 using System.Collections.Generic;
 
-namespace ahbsd.lib.Interfaces;
-
-/// <summary>
-/// Interface for getting a <see cref="IReadOnlyCollection{T}"/>
-/// </summary>
-/// <typeparam name="T">The type of the read only collection</typeparam>
-public interface IAsReadonlyCollection<out T>
+namespace ahbsd.lib.Interfaces
 {
     /// <summary>
-    /// Gets the collection as readonly connection.
+    /// Interface for getting a <see cref="IReadOnlyCollection{T}"/>
     /// </summary>
-    /// <value>The collection as readonly connection</value>
-    IReadOnlyCollection<T> AsReadonly { get; }
+    /// <typeparam name="T">The type of the read only collection</typeparam>
+    public interface IAsReadonlyCollection<out T>
+    {
+        /// <summary>
+        /// Gets the collection as readonly connection.
+        /// </summary>
+        /// <value>The collection as readonly connection</value>
+        IReadOnlyCollection<T> AsReadonly { get; }
+    }
 }
