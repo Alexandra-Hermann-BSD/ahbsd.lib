@@ -22,6 +22,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib.Collections;
@@ -61,7 +62,7 @@ public class SourceDirectories : ISourceDirectories
     /// <inheritdoc/>
     public void Add(string item)
     {
-        if (!string.IsNullOrWhiteSpace(item))
+        if (!item.IsNullOrWhiteSpace())
         {
             CollectionAddEventArgs<string> addEventArgs = new(this, item);
             innerCollection.Add(item);

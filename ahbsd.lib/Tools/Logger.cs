@@ -22,6 +22,7 @@ using System;
 using System.IO;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib.Tools;
@@ -76,7 +77,7 @@ namespace ahbsd.lib.Tools;
             Exception maybeException = null;
             
             // if we have a previous log, we should dispose it.
-            if (!string.IsNullOrWhiteSpace(e.OldValue) && logWriter != null)
+            if (!e.OldValue.IsNullOrWhiteSpace() && logWriter != null)
             {
                 try
                 {
@@ -96,7 +97,7 @@ namespace ahbsd.lib.Tools;
                 }
             }
             
-            if (!string.IsNullOrWhiteSpace(e.NewValue))
+            if (!e.NewValue.IsNullOrWhiteSpace())
             {
                 logWriter = File.AppendText(e.NewValue);
                 logWriter.AutoFlush = true;
@@ -152,7 +153,7 @@ namespace ahbsd.lib.Tools;
             {
                 ChangeEventArgs<string> changeEventArgs = new ChangeEventArgs<string>(logfilePath, value);
 
-                if (!string.IsNullOrWhiteSpace(value) && !value.Equals(logfilePath))
+                if (!value.IsNullOrWhiteSpace() && !value.Equals(logfilePath))
                 {
                     logfilePath = value;
                     OnLogfileChanged?.Invoke(this, changeEventArgs);

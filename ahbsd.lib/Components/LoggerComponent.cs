@@ -24,6 +24,7 @@ using System.ComponentModel;
 using System.IO;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 using ahbsd.lib.Tools;
 
@@ -128,7 +129,7 @@ public class LoggerComponent : Component, ILogger
         Exception maybeException = null;
         
         // if we have a previous log, we should dispose it.
-        if (!string.IsNullOrWhiteSpace(e.OldValue) && logWriter != null)
+        if (!e.OldValue.IsNullOrWhiteSpace() && logWriter != null)
         {
             try
             {
@@ -152,7 +153,7 @@ public class LoggerComponent : Component, ILogger
             }
         }
         
-        if (!string.IsNullOrWhiteSpace(e.NewValue))
+        if (!e.NewValue.IsNullOrWhiteSpace())
         {
             logWriter = File.AppendText(e.NewValue);
             disposables.Add(logWriter);
@@ -192,7 +193,7 @@ public class LoggerComponent : Component, ILogger
         {
             ChangeEventArgs<string> changeEventArgs = new(logfilePath, value);
 
-            if (!string.IsNullOrWhiteSpace(value) && !value.Equals(logfilePath))
+            if (!value.IsNullOrWhiteSpace() && !value.Equals(logfilePath))
             {
                 logfilePath = value;
                 OnLogfileChanged?.Invoke(this, changeEventArgs);

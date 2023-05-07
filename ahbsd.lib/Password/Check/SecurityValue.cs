@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using ahbsd.lib.Extensions;
 
 namespace ahbsd.lib.Password.Check
 {
@@ -99,7 +100,7 @@ namespace ahbsd.lib.Password.Check
         private void Initialize()
         {
             uint tmp = 0;
-            if (Password != null && !string.IsNullOrEmpty(Password.Value))
+            if (Password != null && !Password.Value.IsNullOrEmpty())
             {
                 tmp = (uint)Password.Length;
                 tmp += (uint)Password.LowerCases;

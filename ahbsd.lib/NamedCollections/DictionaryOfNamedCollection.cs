@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using ahbsd.lib.Extensions;
 
 namespace ahbsd.lib.NamedCollections
 {
@@ -106,7 +107,7 @@ namespace ahbsd.lib.NamedCollections
         {
             if (!ContainsKey(key))
             {
-                if (string.IsNullOrEmpty(name))
+                if (name.IsNullOrEmpty())
                 {
                     KeyNotFoundException k =
                         new($"Key '{key}' is missing AND name" +
