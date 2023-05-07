@@ -99,17 +99,25 @@ namespace ahbsd.lib.Tools;
             
             if (!e.NewValue.IsNullOrWhiteSpace())
             {
-                logWriter = File.AppendText(e.NewValue);
-                logWriter.AutoFlush = true;
-                isDisposed = false;
+                try
+                {
+                    logWriter = File.AppendText(e.NewValue);
+                    logWriter.AutoFlush = true;
+                    isDisposed = false;
                 
-                var filename = GetFilename(e.NewValue, out var alreadyExists);
+                    var filename = GetFilename(e.NewValue, out var alreadyExists);
 
-                var newFile = alreadyExists ? "the existing" : "the new";
+                    var newFile = alreadyExists ? "the existing" : "the new";
                 
-                Log($"A new log started with {newFile} logfile '{filename}' in logger {Name}.");
+                    Log($"A new log started with {newFile} logfile '{filename}' in logger {Name}.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    maybeException = ex;
+                }
 
-                if (maybeException != null)
+                if (maybeException != null && logWriter != null)
                 {
                     Log(maybeException);
                 }
@@ -178,6 +186,9 @@ namespace ahbsd.lib.Tools;
         /// <inheritdoc/>
         public void Log(Exception e) 
             => logWriter?.WriteLine($"{DateTime.Now.ToUniversalTime()} – a {e.GetType().Name} happened: {e.Message}");
+
+        /// <inheritdoc/>
+        public void Log(object o) => Log(o?.ToString());
         
         #endregion
 

@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>ahbsd.lib</PackageId>
-    <PackageVersion>1.5</PackageVersion>
+    <PackageVersion>1.6</PackageVersion>
     <Authors>Heinrich Alexandra Hermann</Authors>
     <Company>Alexandra Hermann – Beratung, Software, Design</Company>
     <Copyright>Apache 2.0</Copyright>
@@ -45,5 +45,19 @@
     <Folder Include="Password\Check\" />
     <Folder Include="NamedCollections\" />
     <Folder Include="Products\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LICENSE.md">
+      <Link>LICENSE.md</Link>
+    </Content>
+    <Content Include="..\README.md">
+      <Link>README.md</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

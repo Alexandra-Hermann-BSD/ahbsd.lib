@@ -42,14 +42,11 @@ public partial class ApiKeyHolder<T> : ApiKeyHolderBase<T>
     /// <param name="apiKey">New API-Key</param>
     protected internal static void AddApiKey(object sender, T apiKey)
     {
-        ApiKeyEventArgs<T> e;
-        int idx;
-
         if (!KnownApiKeys.Contains(apiKey))
         {
             KnownApiKeys.Add(apiKey);
-            idx = KnownApiKeys.IndexOf(apiKey);
-            e = new ApiKeyEventArgs<T>(apiKey, idx);
+            var idx = KnownApiKeys.IndexOf(apiKey);
+            var e = new ApiKeyEventArgs<T>(apiKey, idx);
             OnApiKeyAdded?.Invoke(sender, e);
         }
     }

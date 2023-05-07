@@ -47,6 +47,12 @@ public interface ILogger
     /// </summary>
     /// <param name="e">The given exception</param>
     void Log(Exception e);
+
+    /// <summary>
+    /// If a logger is available, the given <see cref="object.ToString()"/> will be logged.
+    /// </summary>
+    /// <param name="o">The given object</param>
+    void Log(object o);
         
     /// <summary>
     /// Gets the name of this logger.

@@ -95,10 +95,7 @@ public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
            || obj is ApiKeyHolder<T> other 
            && Equals(other);
 
-    /// <summary>
-    /// Gets a string that describes the current ApiKey.
-    /// </summary>
-    /// <returns>A string that describes the current ApiKey</returns>
+    /// <inheritdoc/>
     public override string ToString() => $"{nameof(ApiKey)} ({typeof(T).Name}): {ApiKey}";
 
     /// <inheritdoc/>

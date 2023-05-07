@@ -37,6 +37,7 @@ public class TestApiAttribute
         for (int i = 0; i < 3; i++)
         {
             ITestClass tmpObject = new TestClass($"#{i}");
+            Assert.Equal($"#{i}", tmpObject.Content);
             fiveObjects.Add(tmpObject);
         }
 
@@ -68,7 +69,6 @@ public class TestApiAttribute
 
 internal static class AttributeReader
 {
-
     public static CustomAttributeData GetFirstAttribute(object o)
     {
         CustomAttributeData result = null;
@@ -76,21 +76,16 @@ internal static class AttributeReader
         if (o != null)
         {
             var type = o.GetType();
-            try
-            {
-                result = type.CustomAttributes.First();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            
+            result = type.CustomAttributes.First();
+            Assert.NotNull(result);
         }
 
         return result;
     }
 }
 
-public interface ITestClass
+internal interface ITestClass
 {
     /// <summary>
     /// Gets the content.
@@ -100,16 +95,13 @@ public interface ITestClass
 }
 
 [Api]
-public class TestClass : ITestClass
+internal class TestClass : ITestClass
 {
     /// <summary>
     /// Constructor with optional content.
     /// </summary>
     /// <param name="content">[optional] content</param>
-    public TestClass(string content = null)
-    {
-        Content = content;
-    }
+    public TestClass(string content = null) => Content = content;
 
     /// <inheritdoc/>
     public string Content { get; }
