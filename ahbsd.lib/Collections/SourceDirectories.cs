@@ -22,74 +22,76 @@ using System.Collections;
 using System.Collections.Generic;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 
-namespace ahbsd.lib.Collections;
-
-/// <summary>
-/// Class for source directories.
-/// </summary>
-public class SourceDirectories : ISourceDirectories
+namespace ahbsd.lib.Collections
 {
-    private readonly ICollection<string> innerCollection;
-
     /// <summary>
-    /// Simple constructor.
+    /// Class for source directories.
     /// </summary>
-    public SourceDirectories() => innerCollection = new List<string>();
+    public class SourceDirectories : ISourceDirectories
+    {
+        private readonly ICollection<string> innerCollection;
 
-    /// <summary>
-    /// Constructor with a base capacity.
-    /// </summary>
-    /// <param name="capacity">Base capacity</param>
-    public SourceDirectories(int capacity) => innerCollection = new List<string>(capacity);
+        /// <summary>
+        /// Simple constructor.
+        /// </summary>
+        public SourceDirectories() => innerCollection = new List<string>();
 
-    #region implementation of ISourceDirectories
+        /// <summary>
+        /// Constructor with a base capacity.
+        /// </summary>
+        /// <param name="capacity">Base capacity</param>
+        public SourceDirectories(int capacity) => innerCollection = new List<string>(capacity);
+
+        #region implementation of ISourceDirectories
     
 #pragma warning disable S3264
-    // Quite unsure, why Sonar doesn't see the use of this event...
-    /// <inheritdoc/>
-    public event CollectionAddEventHandler<string> OnNewDirectoryAdded;
+        // Quite unsure, why Sonar doesn't see the use of this event...
+        /// <inheritdoc/>
+        public event CollectionAddEventHandler<string> OnNewDirectoryAdded;
 #pragma warning restore S3264
     
-    /// <inheritdoc/>
-    public IEnumerator<string> GetEnumerator() => innerCollection.GetEnumerator();
+        /// <inheritdoc/>
+        public IEnumerator<string> GetEnumerator() => innerCollection.GetEnumerator();
 
-    /// <inheritdoc/>
-    IEnumerator IEnumerable.GetEnumerator() => (innerCollection as IEnumerable).GetEnumerator();
+        /// <inheritdoc/>
+        IEnumerator IEnumerable.GetEnumerator() => (innerCollection as IEnumerable).GetEnumerator();
 
-    /// <inheritdoc/>
-    public void Add(string item)
-    {
-        if (!string.IsNullOrWhiteSpace(item))
+        /// <inheritdoc/>
+        public void Add(string item)
         {
-            CollectionAddEventArgs<string> addEventArgs = new(this, item);
-            innerCollection.Add(item);
-            OnNewDirectoryAdded?.Invoke(this, addEventArgs);
+            if (!item.IsNullOrWhiteSpace())
+            {
+                CollectionAddEventArgs<string> addEventArgs = new CollectionAddEventArgs<string>(this, item);
+                innerCollection.Add(item);
+                OnNewDirectoryAdded?.Invoke(this, addEventArgs);
+            }
         }
+
+        /// <inheritdoc/>
+        public void Clear() => innerCollection.Clear();
+
+        /// <inheritdoc/>
+        public bool Contains(string item) => innerCollection.Contains(item);
+
+        /// <inheritdoc/>
+        public void CopyTo(string[] array, int arrayIndex) => innerCollection.CopyTo(array, arrayIndex);
+
+        /// <inheritdoc/>
+        public bool Remove(string item) => innerCollection.Remove(item);
+
+        /// <inheritdoc/>
+        public int Count => innerCollection.Count;
+
+        /// <inheritdoc/>
+        public bool IsReadOnly => innerCollection.IsReadOnly;
+
+        /// <inheritdoc/>
+        public IReadOnlyCollection<string> AsReadonly => (IReadOnlyCollection<string>) innerCollection;
+
+        #endregion
+
     }
-
-    /// <inheritdoc/>
-    public void Clear() => innerCollection.Clear();
-
-    /// <inheritdoc/>
-    public bool Contains(string item) => innerCollection.Contains(item);
-
-    /// <inheritdoc/>
-    public void CopyTo(string[] array, int arrayIndex) => innerCollection.CopyTo(array, arrayIndex);
-
-    /// <inheritdoc/>
-    public bool Remove(string item) => innerCollection.Remove(item);
-
-    /// <inheritdoc/>
-    public int Count => innerCollection.Count;
-
-    /// <inheritdoc/>
-    public bool IsReadOnly => innerCollection.IsReadOnly;
-
-    /// <inheritdoc/>
-    public IReadOnlyCollection<string> AsReadonly => (IReadOnlyCollection<string>) innerCollection;
-
-    #endregion
-
 }

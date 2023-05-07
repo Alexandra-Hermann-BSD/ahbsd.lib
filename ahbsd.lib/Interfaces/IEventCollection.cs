@@ -21,26 +21,27 @@
 using System.Collections.Generic;
 using ahbsd.lib.EventHandler;
 
-namespace ahbsd.lib.Interfaces;
-
-/// <summary>
-/// Interface for a collection that has an event for adding or removing an item.
-/// </summary>
-/// <typeparam name="T">The type to use</typeparam>
-public interface IEventCollection<T> : ICollection<T>, IAsReadonlyCollection<T>
+namespace ahbsd.lib.Interfaces
 {
     /// <summary>
-    /// Happens when an item was added.
+    /// Interface for a collection that has an event for adding or removing an item.
     /// </summary>
-    event CollectionAddEventHandler<T> OnAdded;
+    /// <typeparam name="T">The type to use</typeparam>
+    public interface IEventCollection<T> : ICollection<T>, IAsReadonlyCollection<T>
+    {
+        /// <summary>
+        /// Happens when an item was added.
+        /// </summary>
+        event CollectionAddEventHandler<T> OnAdded;
 
-    /// <summary>
-    /// Happens when an item was removed.
-    /// </summary>
-    event CollectionRemoveArgsEventHandler<T> OnRemoved;
+        /// <summary>
+        /// Happens when an item was removed.
+        /// </summary>
+        event CollectionRemoveArgsEventHandler<T> OnRemoved;
 
-    /// <summary>
-    /// Happens when the dictionary is cleared.
-    /// </summary>
-    event CollectionRemoveArgsEventHandler<T> OnCleared;
+        /// <summary>
+        /// Happens when the dictionary is cleared.
+        /// </summary>
+        event CollectionRemoveArgsEventHandler<T> OnCleared;
+    }
 }

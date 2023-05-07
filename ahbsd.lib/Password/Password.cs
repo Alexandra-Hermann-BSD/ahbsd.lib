@@ -19,6 +19,7 @@ using System.ComponentModel;
 using System.Linq;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Password.Check;
 
 namespace ahbsd.lib.Password
@@ -175,11 +176,11 @@ namespace ahbsd.lib.Password
             get => value;
             set
             {
-                if (!string.IsNullOrWhiteSpace(value) && !value.Equals(this.value))
+                if (!value.IsNullOrWhiteSpace() && !value.Equals(this.value))
                 {
                     var tmp = GetTemporaryPassword(value);
                     
-                    ChangeEventArgs<IPassword> cea = new(MemberwiseClone() as IPassword, tmp);
+                    ChangeEventArgs<IPassword> cea = new ChangeEventArgs<IPassword>(MemberwiseClone() as IPassword, tmp);
 
                     this.value = value;
                     SecurityValue = tmp.SecurityValue;
@@ -283,7 +284,7 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <returns>The amount of lower cases.</returns>
         public static int GetLowerCases(string value) 
-            => !string.IsNullOrWhiteSpace(value)
+            => !value.IsNullOrWhiteSpace()
                 ? (from char c in value
                     where char.IsLower(c)
                     select c).Count()
@@ -295,7 +296,7 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <returns>The amount of upper cases.</returns>
         public static int GetUpperCases(string value) 
-            => !string.IsNullOrWhiteSpace(value)
+            => !value.IsNullOrWhiteSpace()
                 ? (from char c in value
                     where char.IsUpper(c)
                     select c).Count()
@@ -307,7 +308,7 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <returns>The amount of spaces.</returns>
         public static int GetSpaces(string value) 
-            => !string.IsNullOrEmpty(value)
+            => !value.IsNullOrEmpty()
                 ? (from char c in value
                     where char.IsWhiteSpace(c)
                     select c).Count()
@@ -319,7 +320,7 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <returns>The amount of numbers.</returns>
         public static int GetNumbers(string value) 
-            => !string.IsNullOrWhiteSpace(value)
+            => !value.IsNullOrWhiteSpace()
                 ? (from char c in value
                     where char.IsNumber(c)
                     select c).Count()
@@ -331,7 +332,7 @@ namespace ahbsd.lib.Password
         /// <param name="value">The given string.</param>
         /// <returns>The amount of special chars.</returns>
         public static int GetSpecials(string value) 
-            => !string.IsNullOrWhiteSpace(value) 
+            => !value.IsNullOrWhiteSpace() 
                 ? value.Count(ctmp => GetCharasteristic(ctmp) == Charasteristic.SpecialCharacter) 
                 : 0;
 

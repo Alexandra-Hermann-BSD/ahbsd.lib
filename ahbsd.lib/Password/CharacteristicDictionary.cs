@@ -201,7 +201,7 @@ namespace ahbsd.lib.Password
         /// <inheritdoc cref="ICharacteristicDictionary.ToString"/>
         public override string ToString()
         {
-            StringBuilder result = new("CharacteristicDictionary ");
+            StringBuilder result = new StringBuilder("CharacteristicDictionary ");
             int added = 0;
 
             if (this[Charasteristic.CapitalLetter])

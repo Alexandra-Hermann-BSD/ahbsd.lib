@@ -20,10 +20,11 @@
 
 using ahbsd.lib.EventArgs;
 
-namespace ahbsd.lib.EventHandler;
-
-/// <summary>
-/// Event handler for removing items.
-/// </summary>
-/// <typeparam name="T">The type of the items</typeparam>
-public delegate void CollectionRemoveArgsEventHandler<T>(object sender, CollectionRemoveEventArgs<T> e);
+namespace ahbsd.lib.EventHandler
+{
+    /// <summary>
+    /// Event handler for removing items.
+    /// </summary>
+    /// <typeparam name="T">The type of the items</typeparam>
+    public delegate void CollectionRemoveArgsEventHandler<T>(object sender, CollectionRemoveEventArgs<T> e);
+}

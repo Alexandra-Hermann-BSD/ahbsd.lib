@@ -14,15 +14,19 @@
 //    limitations under the License.
 
 using System;
+using System.IO;
 using System.Linq;
 using ahbsd.lib;
+using ahbsd.lib.Interfaces;
 using ahbsd.lib.NamedCollections;
+using ahbsd.lib.Tools;
 using Xunit;
 
 namespace Test_xUnit.NamedCollections
 {
     public class TestDictionaryOfNamedCollection
     {
+        private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
 #pragma warning disable S4143
         [Fact]
         public void TestDictionaryOfNamedCollections()
@@ -46,14 +50,12 @@ namespace Test_xUnit.NamedCollections
 
         private void D2_OnNamedCollectionAdded(object sender, EventArgs<INamedCollection<string>> e)
         {
-            Console.WriteLine("To {0} a new INamedCollection<string> was added:", sender);
-            Console.WriteLine(e.Value);
+            TestLogger.Log($"To {sender.ToString()} a new INamedCollection<string> was added: {e.Value}");
         }
 
         private void D1_OnNamedCollectionAdded(object sender, EventArgs<INamedCollection<double>> e)
         {
-            Console.WriteLine("To {0} a new INamedCollection<double> was added:", sender);
-            Console.WriteLine(e.Value);
+            TestLogger.Log($"To {sender.ToString()} a new INamedCollection<double> was added: {e.Value}");
         }
 
         [Fact]
@@ -77,6 +79,7 @@ namespace Test_xUnit.NamedCollections
             l1.Add(2, 1.3);
 
             l2.Add("Apple", "iPhone X", "Apple Devices");
+            l2.Add("Apple", "iPhone 13");
             l2.Add("Apple", "iPad");
             l2.Add("Amazon", "Echo", "Amazon Devices");
         }
@@ -84,29 +87,13 @@ namespace Test_xUnit.NamedCollections
         private void L1_OnNamedListAdded(object sender, EventArgs<INamedList<double>> e)
         {
             Assert.IsType<double>(e.Value.LastOrDefault());
-            Console.WriteLine("To {0} a new INamedList<double> was added:", sender);
-            Console.WriteLine(e.Value);
+            TestLogger.Log($"To {sender} a new INamedList<double> was added: {e.Value}");
         }
 
         private void L2_OnNamedListAdded(object sender, EventArgs<INamedList<string>> e)
         {
-            if (e.Value.Count > 0)
-            {
-                Assert.IsType<string>(e.Value.LastOrDefault());
-            }
-            else
-            {
-                try
-                {
-                    Assert.IsType<string[]>(e.Value.ToArray());
-                }
-                catch (Exception)
-                {
-                    //
-                }
-            }
-            Console.WriteLine("To {0} a new INamedList<string> was added:", sender);
-            Console.WriteLine(e.Value);
+            Assert.IsType<string[]>(e.Value.ToArray());
+            TestLogger.Log($"To {sender} a new INamedList<string> was added: {e.Value}");
         }
 #pragma warning restore S4143
     }

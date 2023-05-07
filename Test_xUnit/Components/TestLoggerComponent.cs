@@ -20,56 +20,59 @@
 
 using System;
 using System.ComponentModel;
+using System.IO;
 using Xunit;
 using ahbsd.lib.Components;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.Interfaces;
 using ahbsd.lib.Tools;
 
-namespace Test_xUnit.Components;
-
-public class TestLoggerComponent
+namespace Test_xUnit.Components
 {
-    private static readonly ILogger testLogger = new Logger("Test.log");
-
-    [Fact]
-    public void LoggerTest()
+    public class TestLoggerComponent
     {
-        testLogger.Log($"Starting FACT {GetType().Name}.LoggerTest");
 
-        var logger = testLogger;
-        Assert.Equal("Test.log", logger.Logfile);
-        
-        Assert.Equal("Logger", logger.Name);
-        logger.Log($"The name of logger is '{logger.Name}'");
+        private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
 
-        logger = new LoggerComponent(new Container(), "TestLogger");
-        logger.OnLogfileChanged += Logger_OnLogfileChanged;
-        logger.Logfile = testLogger.Logfile;
-        
-        logger.Log($"The Name should be 'TestLogger' and is currently '{logger.Name}'");
-        
-
-        var loggerComponent = new LoggerComponent();
-        Assert.Equal("LoggerComponent", loggerComponent.Name);
-        loggerComponent.Disposed += LoggerComponent_Disposed;
-        
-        loggerComponent.Dispose();
-        testLogger.Log("Finished test");
-    }
-
-    private void LoggerComponent_Disposed(object sender, EventArgs e)
-    {
-        if (sender is IDisposable disposable)
+        [Fact]
+        public void LoggerTest()
         {
-            testLogger.Log($"Sender {sender} disposed: {disposable}");
-        }
-    }
+            TestLogger.Log($"Starting FACT {GetType().Name}.LoggerTest");
 
-    private void Logger_OnLogfileChanged(object sender, ChangeEventArgs<string> e)
-    {
-        var ceaString = e.ToString();
-        testLogger.Log($"OnLogfileChanged was send by '{sender}' with change event arguments:\n{ceaString}");
-        Assert.NotEqual(e.OldValue, e.NewValue);
+            var logger = TestLogger;
+            Assert.Equal($"{Path.GetTempPath()}Test.log", logger.Logfile);
+        
+            Assert.Equal("Logger", logger.Name);
+            logger.Log($"The name of logger is '{logger.Name}'");
+
+            logger = new LoggerComponent(new Container(), "TestLogger");
+            logger.OnLogfileChanged += Logger_OnLogfileChanged;
+            logger.Logfile = TestLogger.Logfile;
+        
+            logger.Log($"The Name should be 'TestLogger' and is currently '{logger.Name}'");
+        
+
+            var loggerComponent = new LoggerComponent();
+            Assert.Equal("LoggerComponent", loggerComponent.Name);
+            loggerComponent.Disposed += LoggerComponent_Disposed;
+        
+            loggerComponent.Dispose();
+            TestLogger.Log("Finished test");
+        }
+
+        private void LoggerComponent_Disposed(object sender, EventArgs e)
+        {
+            if (sender is IDisposable disposable)
+            {
+                TestLogger.Log($"Sender {sender} disposed: {disposable}");
+            }
+        }
+
+        private void Logger_OnLogfileChanged(object sender, ChangeEventArgs<string> e)
+        {
+            var ceaString = e.ToString();
+            TestLogger.Log($"OnLogfileChanged was send by '{sender}' with change event arguments:\n{ceaString}");
+            Assert.NotEqual(e.OldValue, e.NewValue);
+        }
     }
 }

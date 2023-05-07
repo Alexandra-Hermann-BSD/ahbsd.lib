@@ -21,22 +21,23 @@
 using System;
 using System.Collections.Generic;
 
-namespace ahbsd.lib.Attributes;
-
-/// <summary>
-/// Attribute that tells, that this belongs to the API.
-/// </summary>
-partial class ApiAttribute : Attribute
+namespace ahbsd.lib.Attributes
 {
     /// <summary>
-    /// A collection of types, that are using this <see cref="Attribute"/>.
+    /// Attribute that tells, that this belongs to the API.
     /// </summary>
-    private static readonly ICollection<Type> usingTypes = new List<Type>();
+    partial class ApiAttribute : Attribute
+    {
+        /// <summary>
+        /// A collection of types, that are using this <see cref="Attribute"/>.
+        /// </summary>
+        private static readonly ICollection<Type> usingTypes = new List<Type>();
 
 
-    /// <summary>
-    /// Gets all <see cref="Type"/>s, that use this Attribute.
-    /// </summary>
-    /// <value>All <see cref="Type"/>s, that use this Attribute</value>
-    public static IReadOnlyCollection<Type> UsingTypes => (IReadOnlyCollection<Type>) usingTypes;
+        /// <summary>
+        /// Gets all <see cref="Type"/>s, that use this Attribute.
+        /// </summary>
+        /// <value>All <see cref="Type"/>s, that use this Attribute</value>
+        public static IReadOnlyCollection<Type> UsingTypes => (IReadOnlyCollection<Type>) usingTypes;
+    }
 }

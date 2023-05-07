@@ -24,22 +24,23 @@ using ahbsd.lib.Interfaces;
 using ahbsd.lib.Tools;
 using Xunit;
 
-namespace Test_xUnit.Collections;
-
-public class TestCollectionAddEventArgs
+namespace Test_xUnit.Collections
 {
-    private static readonly ILogger testLogger = new Logger("Test.log");
-    [Fact]
-    public void SimpleTest()
+    public class TestCollectionAddEventArgs
     {
-        ICollection<string> col1 = new List<string>();
-        var item = "SimpleTest";
-        testLogger.Log($"Starting {GetType().Name}.{item}");
-        col1.Add(item);
-        ICollectionAddEventArgs<string> collectionAddEventArgs = new CollectionAddEventArgs<string>(col1, item);
+        private static readonly ILogger testLogger = new Logger("Test.log");
+        [Fact]
+        public void SimpleTest()
+        {
+            ICollection<string> col1 = new List<string>();
+            var item = "SimpleTest";
+            testLogger.Log($"Starting {GetType().Name}.{item}");
+            col1.Add(item);
+            ICollectionAddEventArgs<string> collectionAddEventArgs = new CollectionAddEventArgs<string>(col1, item);
             
-        Assert.Equal(item, collectionAddEventArgs.Value);
-        Assert.Equal(col1, collectionAddEventArgs.AffectedCollection);
-        testLogger.Log("Test finished");
+            Assert.Equal(item, collectionAddEventArgs.Value);
+            Assert.Equal(col1, collectionAddEventArgs.AffectedCollection);
+            testLogger.Log("Test finished");
+        }
     }
 }

@@ -22,11 +22,12 @@ using System;
 using System.IO;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 
-namespace ahbsd.lib.Tools;
-
-/// <summary>
+namespace ahbsd.lib.Tools
+{
+    /// <summary>
     /// A simple Logger
     /// </summary>
     public class Logger : ILogger, IDisposable
@@ -76,7 +77,7 @@ namespace ahbsd.lib.Tools;
             Exception maybeException = null;
             
             // if we have a previous log, we should dispose it.
-            if (!string.IsNullOrWhiteSpace(e.OldValue) && logWriter != null)
+            if (!e.OldValue.IsNullOrWhiteSpace() && logWriter != null)
             {
                 try
                 {
@@ -96,19 +97,27 @@ namespace ahbsd.lib.Tools;
                 }
             }
             
-            if (!string.IsNullOrWhiteSpace(e.NewValue))
+            if (!e.NewValue.IsNullOrWhiteSpace())
             {
-                logWriter = File.AppendText(e.NewValue);
-                logWriter.AutoFlush = true;
-                isDisposed = false;
+                try
+                {
+                    logWriter = File.AppendText(e.NewValue);
+                    logWriter.AutoFlush = true;
+                    isDisposed = false;
                 
-                var filename = GetFilename(e.NewValue, out var alreadyExists);
+                    var filename = GetFilename(e.NewValue, out var alreadyExists);
 
-                var newFile = alreadyExists ? "the existing" : "the new";
+                    var newFile = alreadyExists ? "the existing" : "the new";
                 
-                Log($"A new log started with {newFile} logfile '{filename}' in logger {Name}.");
+                    Log($"A new log started with {newFile} logfile '{filename}' in logger {Name}.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    maybeException = ex;
+                }
 
-                if (maybeException != null)
+                if (maybeException != null && logWriter != null)
                 {
                     Log(maybeException);
                 }
@@ -152,7 +161,7 @@ namespace ahbsd.lib.Tools;
             {
                 ChangeEventArgs<string> changeEventArgs = new ChangeEventArgs<string>(logfilePath, value);
 
-                if (!string.IsNullOrWhiteSpace(value) && !value.Equals(logfilePath))
+                if (!value.IsNullOrWhiteSpace() && !value.Equals(logfilePath))
                 {
                     logfilePath = value;
                     OnLogfileChanged?.Invoke(this, changeEventArgs);
@@ -177,6 +186,9 @@ namespace ahbsd.lib.Tools;
         /// <inheritdoc/>
         public void Log(Exception e) 
             => logWriter?.WriteLine($"{DateTime.Now.ToUniversalTime()} – a {e.GetType().Name} happened: {e.Message}");
+
+        /// <inheritdoc/>
+        public void Log(object o) => Log(o?.ToString());
         
         #endregion
 
@@ -220,3 +232,4 @@ namespace ahbsd.lib.Tools;
         }
         #endregion
     }
+}

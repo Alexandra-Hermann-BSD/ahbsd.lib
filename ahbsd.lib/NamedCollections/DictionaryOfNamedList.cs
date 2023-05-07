@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using ahbsd.lib.Extensions;
 
 // ReSharper disable All
 
@@ -34,32 +35,17 @@ namespace ahbsd.lib.NamedCollections
         /// </summary>
         /// <param name="info">The serialization info</param>
         /// <param name="context">The streaming context</param>
-        protected DictionaryOfNamedList(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            //
-        }
+        protected DictionaryOfNamedList(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
         /// <summary>
         /// Simple constructor
         /// </summary>
-        public DictionaryOfNamedList()
-            : base()
-        {
-            //
-        }
+        public DictionaryOfNamedList() : base() { }
         
         #region implementation of IDictionaryOfNamedList<K, V>
-        /// <summary>
-        /// Happens, if a new <see cref="INamedList{T}"/> was added.
-        /// </summary>
+        /// <inheritdoc />
         public event EventHandler<EventArgs<INamedList<V>>> OnNamedListAdded;
-        /// <summary>
-        /// Adds a key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="name">The name of the new <see cref="INamedList{T}"/>.</param>
-        /// <exception cref="ArgumentException">If key already exists.</exception>
+        /// <inheritdoc />
         public void Add(K key, string name)
         {
             if (typeof(V).Equals(typeof(string)))
@@ -72,74 +58,44 @@ namespace ahbsd.lib.NamedCollections
                 if (!ContainsKey(key))
                 {
                     Add(key, new NamedList<V>(name));
-                    EventArgs<INamedList<V>> eventArgs = new(new NamedList<V>(name));
+                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(new NamedList<V>(name));
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
                 else
                 {
-                    ArgumentException ae = new(
-                        $"Key '{key}' already exists.",
-                        "key");
+                    ArgumentException ae = new ArgumentException($"Key '{key}' already exists.", "key");
                     throw ae;
                 }
             }
         }
-        /// <summary>
-        /// Adds a value to the <see cref="INamedList{T}"/> of key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="name">[optional] 
-        /// The name of the new <see cref="INamedList{T}"/>.
-        /// </param>
-        /// <remarks>
-        /// If the key already exists the name isn't needed; if the key doesn't
-        /// exists a name is needed, otherwise a
-        /// <see cref="KeyNotFoundException"/> will be thrown.
-        /// </remarks>
-        /// <exception cref="KeyNotFoundException">
-        /// If the key isn't there AND a name for the new
-        /// <see cref="INamedList{T}"/> was missing.
-        /// </exception>
+        
+        /// <inheritdoc />
         public void Add(K key, V value, string name = null)
         {
             if (!ContainsKey(key))
             {
-                if (string.IsNullOrEmpty(name))
+                if (name.IsNullOrEmpty())
                 {
-                    KeyNotFoundException k =
-                        new($"Key '{key}' is missing AND name" +
-                            $"for creating a new INamedList<{typeof(V)}> is null or empty as well");
+                    KeyNotFoundException k = new KeyNotFoundException($"Key '{key}' is missing AND name for creating a new INamedList<{typeof(V)}> is null or empty as well");
                     throw k;
                 }
                 else
                 {
-                    Add(key, new NamedList<V>(name));
-                    EventArgs<INamedList<V>> eventArgs = new(new NamedList<V>(name));
+                    var namedList = new NamedList<V>(name);
+                    Add(key, namedList);
+                    EventArgs<INamedList<V>> eventArgs = new EventArgs<INamedList<V>>(namedList);
                     OnNamedListAdded?.Invoke(this, eventArgs);
                 }
             }
 
             this[key].Add(value);
         }
-        /// <summary>
-        /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
-        /// </summary>
-        /// <param name="keyValuePair">The <see cref="KeyValuePair{TKey, TValue}"/>.</param>
-        /// <param name="name">[optional] 
-        /// The name of the new <see cref="INamedList{T}"/>.
-        /// </param>
-        /// <remarks>
-        /// If the key already exists the name isn't needed; if the key doesn't
-        /// exists a name is needed, otherwise a
-        /// <see cref="KeyNotFoundException"/> will be thrown.
-        /// </remarks>
-        /// <exception cref="KeyNotFoundException">
-        /// If the key isn't there AND a name for the new
-        /// <see cref="INamedList{T}"/> was missing.
-        /// </exception>
-        public void Add(KeyValuePair<K, V> keyValuePair, string name = null)
-            => Add(keyValuePair.Key, keyValuePair.Value, name);
+        
+        /// <inheritdoc />
+        public void Add(KeyValuePair<K, V> keyValuePair, string name = null) => Add(keyValuePair.Key, keyValuePair.Value, name);
         #endregion
+
+        /// <inheritdoc />
+        public override string ToString() => $"DictionaryOfNamedList<{typeof(K)}, {typeof(V)}>; Count={Count}";
     }
 }

@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
 
@@ -40,15 +41,14 @@ namespace ahbsd.lib.NamedCollections
         /// Constructor with a base capacity of the list.
         /// </summary>
         /// <param name="capacity">The base capacity of the list.</param>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// If the capacity is out of range.
-        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less then 0</exception>
         public NamedList(int capacity) : base(capacity) => name = null;
 
         /// <summary>
         /// Constructor with a given collection.
         /// </summary>
         /// <param name="collection">The given collection.</param>
+        /// <exception cref="ArgumentException"><paramref name="collection"/> is <c>null</c></exception>
         public NamedList(IEnumerable<T> collection) : base(collection) => name = null;
 
         /// <summary>
@@ -62,9 +62,7 @@ namespace ahbsd.lib.NamedCollections
         /// </summary>
         /// <param name="name">The given name.</param>
         /// <param name="capacity">The base capacity of the list.</param>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// If the capacity is out of range.
-        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less then 0</exception>
         public NamedList(string name, int capacity) : base(capacity) => this.name = name?.Trim();
 
         /// <summary>
@@ -72,8 +70,8 @@ namespace ahbsd.lib.NamedCollections
         /// </summary>
         /// <param name="name">The given name.</param>
         /// <param name="collection">The given collection.</param>
-        public NamedList(string name, IEnumerable<T> collection) : base(collection) => this.name = name?.Trim();
-
+        /// <exception cref="ArgumentException"><paramref name="collection"/> is <c>null</c></exception>
+        public NamedList(string name, [NotNull]IEnumerable<T> collection) : base(collection) => this.name = name?.Trim();
 
         #region implementation of INamedList<T>
         /// <inheritdoc/>
@@ -102,11 +100,8 @@ namespace ahbsd.lib.NamedCollections
         /// <inheritdoc/>
         public event ChangeEventHandler<string> OnNameChanged;
 
-        /// <summary>
-        /// Gets a string representation of this object.
-        /// </summary>
-        /// <returns>The string representation of this object.</returns>
-        public override string ToString() => $"{name}: Count = {Count}";
+        /// <inheritdoc cref="object.ToString()"/>
+        public override string ToString() => $"{name}List<{typeof(T)}>: Count = {Count}";
         #endregion
     }
 }

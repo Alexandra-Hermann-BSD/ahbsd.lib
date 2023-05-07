@@ -41,10 +41,10 @@ namespace Test_xUnit.Exceptions
         }
 
         [Theory]
-        [InlineData(null, null, 1)]
-        [InlineData(25d, 24, 1)]
+        [InlineData(null, null, 1d)]
+        [InlineData(25d, 24d, 1d)]
         [InlineData(3.14, 3.1415, 3.14158)]
-        [InlineData(22, 23, 24)]
+        [InlineData(22d, 23d, 24d)]
         public void AlreadySetDoubleChangeEventArgs(double? oldValue, double? newValue1, double? newValue2)
         {
             ChangeEventArgs<double?> changeEventArgs1 = new ChangeEventArgs<double?>(oldValue);

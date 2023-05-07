@@ -34,8 +34,7 @@ namespace ahbsd.lib.Exceptions
         /// </summary>
         /// <param name="info">The serialization info</param>
         /// <param name="context">The streaming context</param>
-        protected AlreadySetException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
+        protected AlreadySetException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
             // nothing so far
         }
@@ -71,7 +70,7 @@ namespace ahbsd.lib.Exceptions
         /// <returns>A string representating this Exception</returns>
         public override string ToString()
         {
-            StringBuilder builder = new();
+            StringBuilder builder = new StringBuilder();
             builder.AppendLine($"ChangeEventArgs<{typeof(T)}> with:");
             builder.AppendLine($"OldValue: '{ChangeEventArgs.OldValue}'");
             builder.AppendLine($"NewValue: '{ChangeEventArgs.NewValue}'");
