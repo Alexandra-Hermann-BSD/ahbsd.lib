@@ -11,9 +11,9 @@ namespace Test_xUnit
 {
     public class TestChanged
     {
-        private static int _nr;
+        private static int nr;
         private readonly IDictionary<int, int?> apiKeys = new Dictionary<int, int?>();
-        private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
+        private static readonly ILogger testLogger = new Logger($"{Path.GetTempPath()}Test.log");
 
         [Theory]
         [InlineData(null, 1.0)]
@@ -22,16 +22,27 @@ namespace Test_xUnit
         [InlineData(Math.PI, 3.14)]
         public void OnChangedTest(double? oldValue, double? newValue)
         {
-            TestLogger.Log($"Starting Theory {GetType().Name}.OnChangedTest(oldValue: {oldValue}, newValue: {newValue}");
-            ITestClass<double?> testClass = new TestClass<double?, string>(oldValue, $"TC{_nr}");
-            apiKeys.Add(_nr, TestClass<double?, string>.FindApiKey($"TC{_nr}"));
+            var oldValueString = GetValueAsString(nameof(oldValue), oldValue);
+            var newValueString = GetValueAsString(nameof(newValue), newValue);
+            testLogger.Log($"Starting Theory {GetType().Name}.OnChangedTest({oldValueString}, {newValueString})");
+            ITestClass<double?> testClass = new TestClass<double?, string>(oldValue, $"TC{nr}");
+            apiKeys.Add(nr, TestClass<double?, string>.FindApiKey($"TC{nr}"));
             testClass.OnChange += TestClass_OnChange;
             testClass.Variable = newValue;
             Assert.NotEqual(oldValue, testClass.Variable);
-            _nr++;
+            nr++;
             
-            TestLogger.Log($"Stopped Theory {GetType().Name}.OnChangedTest(oldValue: {oldValue}, newValue: {newValue}");
+            testLogger.Log($"Stopped Theory {GetType().Name}.OnChangedTest(oldValue: {oldValue}, newValue: {newValue}");
         }
+
+        /// <summary>
+        /// Gets the given value by it's name and value as <see cref="string"/>.
+        /// </summary>
+        /// <param name="valueName">The name of the value</param>
+        /// <param name="value">The value</param>
+        /// <returns>The given value by it's name and value as <see cref="string"/></returns>
+        private static string GetValueAsString(string valueName, double? value)
+            => ChangeEventArgs<double?>.GetValueAsString(valueName, value);
 
         private void TestClass_OnChange(object sender, ChangeEventArgs<double?> e)
         {
@@ -39,23 +50,24 @@ namespace Test_xUnit
             {
                 string apiKey = null;
 
-                if (apiKeys[_nr].HasValue)
+                if (apiKeys[nr].HasValue)
                 {
-                    apiKey = TestClass<double?, string>.GetApiKey(apiKeys[_nr].Value);
+                    apiKey = TestClass<double?, string>.GetApiKey(apiKeys[nr].Value);
                 }
 
                 try
                 {
+                    Assert.True(e.AreDifferent);
                     Assert.NotEqual(e.OldValue, e.NewValue);
                     Assert.Equal(e.NewValue, castedSender.Variable);
-                    if (apiKeys[_nr].HasValue)
+                    if (apiKeys[nr].HasValue)
                     {
-                        Assert.Equal(apiKey, $"TC{_nr}");
+                        Assert.Equal(apiKey, $"TC{nr}");
                     }
                 }
                 catch (Exception ex2)
                 {
-                    TestLogger.Log(ex2);
+                    testLogger.Log(ex2);
                 }
             }
         }
@@ -63,7 +75,7 @@ namespace Test_xUnit
         [Fact]
         public void TestChange()
         {
-            TestLogger.Log($"Starting Fact {GetType().Name}.TestChange");
+            testLogger.Log($"Starting Fact {GetType().Name}.TestChange");
             ITestClass<string> t1 = new TestClass<string, object>("Hello", null);
             
             ITestClass<object> t2 = new TestClass<object, string>("Hello", "A100002");
@@ -100,38 +112,33 @@ namespace Test_xUnit
                 Assert.IsType<Exception<ITestClass<object>>>(exT3);
             }
             
-            TestLogger.Log($"Stopped Fact {GetType().Name}.TestChange");
+            testLogger.Log($"Stopped Fact {GetType().Name}.TestChange");
         }
 
-        private void T3_OnChange(object sender, ChangeEventArgs<object> e)
-        {
-            TestLogger.Log(GetMessage("t3", sender, e));
-            Assert.NotEqual(e.OldValue, e.NewValue);
-        }
+        private static void T3_OnChange(object sender, ChangeEventArgs<object> e) => T_OnChange(sender, "t3", e);
 
         /// <summary>
         /// For changes on t2.
         /// </summary>
         /// <param name="sender">Sending object.</param>
         /// <param name="e">Event Arguments.</param>
-        private void T2_OnChange(object sender, ChangeEventArgs<object> e)
-        {
-            TestLogger.Log(GetMessage("t2", sender, e));
-            Assert.NotEqual(e.OldValue, e.NewValue);
-        }
+        private static void T2_OnChange(object sender, ChangeEventArgs<object> e) => T_OnChange(sender, "t2", e);
 
         /// <summary>
         /// For changes on t1.
         /// </summary>
         /// <param name="sender">Sending object.</param>
         /// <param name="e">Event Arguments.</param>
-        private void T1_OnChange(object sender, ChangeEventArgs<string> e)
+        private static void T1_OnChange(object sender, ChangeEventArgs<string> e) => T_OnChange(sender, "t1", e);
+
+        private static void T_OnChange<T>(object sender, string valueName, ChangeEventArgs<T> e)
         {
-            TestLogger.Log(GetMessage("t1", sender, e));
+            testLogger.Log(GetMessage(valueName, sender, e));
+            Assert.True(e.AreDifferent);
             Assert.NotEqual(e.OldValue, e.NewValue);
         }
 
         private static string GetMessage<T>(string valueName, object sender, ChangeEventArgs<T> e)
-            => $"The variable from '{valueName}' has changed: The sending object was: {sender.ToString()}, ChangeEventArgs: {e}";
+            => $"The variable from '{valueName}' has changed: The sending object was: {sender}, ChangeEventArgs: {e}";
     }
 }

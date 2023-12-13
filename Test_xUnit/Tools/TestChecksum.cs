@@ -49,10 +49,10 @@ namespace Test_xUnit.Tools
         [Theory]
         [InlineData((ulong)2, (ushort)2, (ulong)11)]
         [InlineData((ulong)10, (ushort)1, (ulong)1234)]
-        public void TestCheckSumULong(ulong expectedChecksum, ushort expectedFinalChecksum, ulong tmpUL)
+        public void TestCheckSumULong(ulong expectedChecksum, ushort expectedFinalChecksum, ulong tmpUl)
         {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUL));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUL));
+            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUl));
+            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUl));
         }
 
         /// <summary>
@@ -66,10 +66,10 @@ namespace Test_xUnit.Tools
         [InlineData((long)10, (short)1, (long)1234)]
         [InlineData((long)10, (short)1, (long)-1234)]
         [InlineData(null, null, null)]
-        public void TestCheckSumNLong(long? expectedChecksum, short? expectedFinalChecksum, long? tmpNL)
+        public void TestCheckSumNLong(long? expectedChecksum, short? expectedFinalChecksum, long? tmpNl)
         {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpNL));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpNL));
+            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpNl));
+            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpNl));
         }
 
         /// <summary>
@@ -82,10 +82,10 @@ namespace Test_xUnit.Tools
         [InlineData((ulong)2, (ushort)2, (ulong)11)]
         [InlineData((ulong)10, (ushort)1, (ulong)1234)]
         [InlineData(null, null, null)]
-        public void TestCheckSumUNLong(ulong? expectedChecksum, ushort? expectedFinalChecksum, ulong? tmpUNL)
+        public void TestCheckSumUnLong(ulong? expectedChecksum, ushort? expectedFinalChecksum, ulong? tmpUnl)
         {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUNL));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUNL));
+            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUnl));
+            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUnl));
         }
     }
 }

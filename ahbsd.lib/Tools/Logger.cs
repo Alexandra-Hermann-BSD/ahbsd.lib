@@ -74,8 +74,6 @@ namespace ahbsd.lib.Tools
         /// <param name="e">The change event args for the changed logfile path</param>
         private void This_OnLogfileChanged(object sender, ChangeEventArgs<string> e)
         {
-            Exception maybeException = null;
-            
             // if we have a previous log, we should dispose it.
             if (!e.OldValue.IsNullOrWhiteSpace() && logWriter != null)
             {
@@ -89,7 +87,7 @@ namespace ahbsd.lib.Tools
                 }
                 catch (Exception ex)
                 {
-                    maybeException = ex;
+                    HandleInnerException(ex);
                 }
                 finally
                 {
@@ -113,13 +111,27 @@ namespace ahbsd.lib.Tools
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex);
-                    maybeException = ex;
+                    HandleInnerException(ex);
                 }
+            }
+        }
 
-                if (maybeException != null && logWriter != null)
+        /// <summary>
+        /// Handles inner exception's.
+        /// </summary>
+        /// <remarks>Depends on the current state of the <see cref="logWriter"/></remarks>
+        /// <param name="ex">The <see cref="Exception"/> to handle</param>
+        private void HandleInnerException(Exception ex)
+        {
+            if (ex != null)
+            {
+                if (logWriter != null)
                 {
-                    Log(maybeException);
+                    Log(ex);
+                }
+                else
+                {
+                    Console.WriteLine(ex);
                 }
             }
         }
@@ -178,18 +190,29 @@ namespace ahbsd.lib.Tools
         public event ChangeEventHandler<string> OnLogfileChanged;
 
         /// <inheritdoc/>
-        public void Log(string message) => logWriter?.WriteLine($"{DateTime.Now.ToUniversalTime()} – {message}");
+        public void Log(string message)
+        {
+            if (!message.IsNullOrWhiteSpace()) logWriter?.WriteLine($"{DateTime.Now.ToUniversalTime()} – {message}");
+        }
 
         /// <inheritdoc/>
-        public void Log(ErrorEventArgs e) => Log(e.GetException());
+        public void Log(ErrorEventArgs e)
+        {
+            if (e != null) Log(e: e.GetException());
+        }
 
         /// <inheritdoc/>
-        public void Log(Exception e) 
-            => logWriter?.WriteLine($"{DateTime.Now.ToUniversalTime()} – a {e.GetType().Name} happened: {e.Message}");
+        public void Log(Exception e)
+        {
+            if (e != null) Log(message: $"{DateTime.Now.ToUniversalTime()} – a {e.GetType().Name} happened: {e.Message}");
+        }
 
         /// <inheritdoc/>
-        public void Log(object o) => Log(o?.ToString());
-        
+        public void Log(object o)
+        {
+            if (o != null) Log(message: o.ToString());
+        }
+
         #endregion
 
         #region implementation of IDisposable

@@ -29,25 +29,25 @@ namespace ahbsd.lib.NamedCollections
         /// <summary>
         /// The name of the collection.
         /// </summary>
-        private string _name;
+        private string name;
 
         /// <summary>
         /// Constructor without any parameters.
         /// </summary>
-        public NamedCollection() => _name = null;
+        public NamedCollection() => name = null;
 
         /// <summary>
         /// Constructor with a given <see cref="IList{T}"/> to wrap.
         /// </summary>
         /// <param name="list">The list to wrap.</param>
         public NamedCollection(IList<T> list)
-            : base(list) => _name = null;
+            : base(list) => name = null;
 
         /// <summary>
         /// Constructor with a given name for the collection.
         /// </summary>
         /// <param name="name">The given name for the collection.</param>
-        public NamedCollection(string name) => _name = name.Trim();
+        public NamedCollection(string name) => this.name = name.Trim();
 
         /// <summary>
         /// Constructor with a given name for the collection and a
@@ -56,7 +56,7 @@ namespace ahbsd.lib.NamedCollections
         /// <param name="name">The given name for the collection.</param>
         /// <param name="list">The list to wrap.</param>
         public NamedCollection(string name, IList<T> list)
-            : base(list) => _name = name.Trim();
+            : base(list) => this.name = name.Trim();
 
         #region implementation of INamedCollection<T>
         /// <summary>
@@ -65,21 +65,21 @@ namespace ahbsd.lib.NamedCollections
         /// <value>The name of the collection.</value>
         public string Name
         {
-            get => _name;
+            get => name;
             set
             {
                 ChangeEventArgs<string> cea;
 
-                if (value != null && !value.Trim().Equals(_name))
+                if (value != null && !value.Trim().Equals(name))
                 {
-                    cea = new ChangeEventArgs<string>(_name, value.Trim());
-                    _name = value.Trim();
+                    cea = new ChangeEventArgs<string>(name, value.Trim());
+                    name = value.Trim();
                     OnNameChanged?.Invoke(this, cea);
                 }
-                else if (value == null && _name != null)
+                else if (value == null && name != null)
                 {
-                    cea = new ChangeEventArgs<string>(_name, value);
-                    _name = value;
+                    cea = new ChangeEventArgs<string>(name, value);
+                    name = value;
                     OnNameChanged?.Invoke(this, cea);
                 }
             }
@@ -93,7 +93,7 @@ namespace ahbsd.lib.NamedCollections
         /// Gets a string representation of this object.
         /// </summary>
         /// <returns>The string representation of this object.</returns>
-        public override string ToString() => $"{_name}: Count = {Count}";
+        public override string ToString() => $"{name}: Count = {Count}";
         #endregion
     }
 }

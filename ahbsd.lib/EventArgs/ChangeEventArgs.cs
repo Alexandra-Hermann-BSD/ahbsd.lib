@@ -15,8 +15,10 @@
 
 using System;
 using System.Diagnostics;
-using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using ahbsd.lib.Exceptions;
+using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib.EventArgs
@@ -71,8 +73,7 @@ namespace ahbsd.lib.EventArgs
         /// <inheritdoc />
         public void SetNewValue(T newValue)
         {
-            IAlreadySetException<T> e;
-            bool isSet = false;
+            var isSet = false;
 
             try
             {
@@ -92,7 +93,7 @@ namespace ahbsd.lib.EventArgs
 
             if (isSet)
             {
-                e = new AlreadySetException<T>(this, newValue);
+                IAlreadySetException<T> e = new AlreadySetException<T>(this, newValue);
                 throw (AlreadySetException<T>)e;
             }
 
@@ -102,28 +103,101 @@ namespace ahbsd.lib.EventArgs
         /// <inheritdoc cref="IChangeEventArgs{T}.ToString"/>
         public override string ToString()
         {
-            string result = string.Empty;
-            string fmt = "Changed value:\nOld value: '{2}' (type: {0})\nNew value: '{3}' (type: {1})";
+            var resultBuilder = new StringBuilder();
 
-            if (OldValue != null && NewValue != null)
-            {
-                result = string.Format(fmt, OldValue.GetType(), NewValue.GetType(), OldValue, NewValue);
-            }
-            else if (OldValue == null && NewValue != null)
-            {
-                result = string.Format(fmt, "null", NewValue.GetType(), "null", NewValue);
-            }
-            else if (OldValue != null && NewValue == null)
-            {
-                result = string.Format(fmt, OldValue.GetType(), "null", OldValue, "null");
-            }
+            resultBuilder.AppendLine("Changed value:");
+            resultBuilder.AppendLine($" {GetValueAsString(nameof(OldValue), OldValue)}");
+            resultBuilder.Append($" {GetValueAsString(nameof(NewValue), NewValue)}");
 
-            return result;
+            return resultBuilder.ToString();
         }
+
+        /// <inheritdoc />
+        public bool AreDifferent => CompareNewAndOld() != 0;
 
         /// <inheritdoc />
         public StackFrame Caller { get; }
         #endregion
 
+        /// <summary>
+        /// Compares the <see cref="NewValue"/> and the <see cref="OldValue"/>.
+        /// </summary>
+        /// <returns>If the new and old value are equal: 0</returns>
+        protected internal int CompareNewAndOld()
+        {
+            int result;
+
+            if (OldValue != null)
+            {
+                result = OldValue.Equals(NewValue) ? 0 : OldValue.GetHashCode().CompareTo(NewValue?.GetHashCode());
+            }
+            else if (NewValue is IComparable<T> comparable)
+            {
+                result = comparable.CompareTo(OldValue);
+            }
+            else if (OldValue == null && NewValue == null)
+            {
+                result = 0;
+            }
+            else
+            {
+                result = NewValue.GetHashCode().CompareTo(null);
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the given value by it's name and value as <see cref="string"/>.
+        /// </summary>
+        /// <param name="valueName">The name of the value</param>
+        /// <param name="value">The value</param>
+        /// <typeparam name="TV">The current type</typeparam>
+        /// <returns>The given value by it's name and value as <see cref="string"/></returns>
+        public static string GetValueAsString<TV>(string valueName, TV value)
+        {
+            StringBuilder result;
+
+            if (valueName.IsNullOrEmpty() && value == null)
+            {
+                result = null;
+            }
+            else
+            {
+                result = new StringBuilder();
+                
+                AddValueNameInfo<T>(valueName, result);
+                AddValueInfo(value, result);
+            }
+
+            return result?.ToString();
+        }
+
+        /// <summary>
+        /// Adds the info of the given <paramref name="name"/> to the given <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="name">The given name of the value argument</param>
+        /// <param name="builder">The given <see cref="StringBuilder"/></param>
+        /// <typeparam name="TVn">Current <see cref="Type"/></typeparam>
+        private static void AddValueNameInfo<TVn>(string name, [NotNull]StringBuilder builder) 
+            => builder.Append(!name.IsNullOrWhiteSpace() ? $"{name.Trim()} [{typeof(TVn).Name}]" : $"No name [{typeof(T).Name}]");
+
+        /// <summary>
+        /// Adds the info of the given <paramref name="value"/> to the given <see cref="StringBuilder"/>.
+        /// </summary>
+        /// <param name="value">The given value</param>
+        /// <param name="builder">The given <see cref="StringBuilder"/></param>
+        /// <typeparam name="TVi">Current <see cref="Type"/></typeparam>
+        private static void AddValueInfo<TVi>(TVi value, [NotNull]StringBuilder builder)
+        {
+            if (value is string s)
+            {
+                builder.Append($": '{s}' (Type: {s.GetType().Name})");
+            }
+            else
+            {
+                builder.Append(value == null ? " is null" : $": {value} (Type: {value.GetType().Name})");
+            }
+        }
     }
 }

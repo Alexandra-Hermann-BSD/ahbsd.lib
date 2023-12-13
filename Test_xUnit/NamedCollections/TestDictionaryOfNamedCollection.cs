@@ -26,7 +26,7 @@ namespace Test_xUnit.NamedCollections
 {
     public class TestDictionaryOfNamedCollection
     {
-        private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
+        private static readonly ILogger testLogger = new Logger($"{Path.GetTempPath()}Test.log");
 #pragma warning disable S4143
         [Fact]
         public void TestDictionaryOfNamedCollections()
@@ -50,12 +50,12 @@ namespace Test_xUnit.NamedCollections
 
         private void D2_OnNamedCollectionAdded(object sender, EventArgs<INamedCollection<string>> e)
         {
-            TestLogger.Log($"To {sender.ToString()} a new INamedCollection<string> was added: {e.Value}");
+            testLogger.Log($"To {sender.ToString()} a new INamedCollection<string> was added: {e.Value}");
         }
 
         private void D1_OnNamedCollectionAdded(object sender, EventArgs<INamedCollection<double>> e)
         {
-            TestLogger.Log($"To {sender.ToString()} a new INamedCollection<double> was added: {e.Value}");
+            testLogger.Log($"To {sender.ToString()} a new INamedCollection<double> was added: {e.Value}");
         }
 
         [Fact]
@@ -87,13 +87,13 @@ namespace Test_xUnit.NamedCollections
         private void L1_OnNamedListAdded(object sender, EventArgs<INamedList<double>> e)
         {
             Assert.IsType<double>(e.Value.LastOrDefault());
-            TestLogger.Log($"To {sender} a new INamedList<double> was added: {e.Value}");
+            testLogger.Log($"To {sender} a new INamedList<double> was added: {e.Value}");
         }
 
         private void L2_OnNamedListAdded(object sender, EventArgs<INamedList<string>> e)
         {
             Assert.IsType<string[]>(e.Value.ToArray());
-            TestLogger.Log($"To {sender} a new INamedList<string> was added: {e.Value}");
+            testLogger.Log($"To {sender} a new INamedList<string> was added: {e.Value}");
         }
 #pragma warning restore S4143
     }

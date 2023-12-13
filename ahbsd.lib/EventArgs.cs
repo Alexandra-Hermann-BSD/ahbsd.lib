@@ -38,7 +38,10 @@ namespace ahbsd.lib
 
         #region implementation of IEventArgs<T>
         /// <inheritdoc/>
-        public T Value { get; private set; }
+        public T Value { get; }
         #endregion
+
+        /// <inheritdoc />
+        public override string ToString() => Value != null ? $"EventArgs<{typeof(T).Name}> Value={Value}" : $"EventArgs<{typeof(T).Name}> Value=null";
     }
 }

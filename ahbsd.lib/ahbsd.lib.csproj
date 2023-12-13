@@ -38,7 +38,6 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="ApiKey\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Tools\" />
     <Folder Include="Password\" />

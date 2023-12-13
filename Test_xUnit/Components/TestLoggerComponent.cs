@@ -32,14 +32,14 @@ namespace Test_xUnit.Components
     public class TestLoggerComponent
     {
 
-        private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
+        private static readonly ILogger testLogger = new Logger($"{Path.GetTempPath()}Test.log");
 
         [Fact]
         public void LoggerTest()
         {
-            TestLogger.Log($"Starting FACT {GetType().Name}.LoggerTest");
+            testLogger.Log($"Starting FACT {GetType().Name}.LoggerTest");
 
-            var logger = TestLogger;
+            var logger = testLogger;
             Assert.Equal($"{Path.GetTempPath()}Test.log", logger.Logfile);
         
             Assert.Equal("Logger", logger.Name);
@@ -47,7 +47,7 @@ namespace Test_xUnit.Components
 
             logger = new LoggerComponent(new Container(), "TestLogger");
             logger.OnLogfileChanged += Logger_OnLogfileChanged;
-            logger.Logfile = TestLogger.Logfile;
+            logger.Logfile = testLogger.Logfile;
         
             logger.Log($"The Name should be 'TestLogger' and is currently '{logger.Name}'");
         
@@ -57,21 +57,21 @@ namespace Test_xUnit.Components
             loggerComponent.Disposed += LoggerComponent_Disposed;
         
             loggerComponent.Dispose();
-            TestLogger.Log("Finished test");
+            testLogger.Log("Finished test");
         }
 
         private void LoggerComponent_Disposed(object sender, EventArgs e)
         {
             if (sender is IDisposable disposable)
             {
-                TestLogger.Log($"Sender {sender} disposed: {disposable}");
+                testLogger.Log($"Sender {sender} disposed: {disposable}");
             }
         }
 
         private void Logger_OnLogfileChanged(object sender, ChangeEventArgs<string> e)
         {
             var ceaString = e.ToString();
-            TestLogger.Log($"OnLogfileChanged was send by '{sender}' with change event arguments:\n{ceaString}");
+            testLogger.Log($"OnLogfileChanged was send by '{sender}' with change event arguments:\n{ceaString}");
             Assert.NotEqual(e.OldValue, e.NewValue);
         }
     }

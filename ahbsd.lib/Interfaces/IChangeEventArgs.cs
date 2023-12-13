@@ -44,5 +44,11 @@ namespace ahbsd.lib.Interfaces
         /// </summary>
         /// <returns>A string representation of the changed value.</returns>
         string ToString();
+        
+        /// <summary>
+        /// Gets if the <see cref="OldValue"/> and <see cref="NewValue"/> are different.
+        /// </summary>
+        /// <value>Are the old and new value different?</value>
+        bool AreDifferent { get; }
     }
 }

@@ -80,7 +80,7 @@ namespace Test_xUnit.Tools
         [InlineData(false, null)]
         [InlineData(true, ulong.MaxValue)]
         [InlineData(true, ulong.MinValue)]
-        public void IsPositiveUNLongTest(bool expectedPositive, ulong? number)
+        public void IsPositiveUnLongTest(bool expectedPositive, ulong? number)
         {
             Assert.Equal(expectedPositive, Checksum.IsPositive(number));
         }
@@ -102,7 +102,7 @@ namespace Test_xUnit.Tools
         [InlineData(false, null)]
         [InlineData(true, ushort.MaxValue)]
         [InlineData(true, ushort.MinValue)]
-        public void IsPositiveUNShortTest(bool expectedPositive, ushort? number)
+        public void IsPositiveUnShortTest(bool expectedPositive, ushort? number)
         {
             Assert.Equal(expectedPositive, Checksum.IsPositive(number));
         }
