@@ -25,7 +25,7 @@ namespace Test_xUnit.NamedCollections
 {
     public class TestNamedCollections
     {
-        private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
+        private static readonly ILogger testLogger = new Logger($"{Path.GetTempPath()}Test.log");
 
         [Fact]
         public void TestNamedCollection()
@@ -36,8 +36,8 @@ namespace Test_xUnit.NamedCollections
             l1.OnNameChanged += Nc1_OnNameChanged;
 
 
-            TestLogger.Log(nc1);
-            TestLogger.Log(l1);
+            testLogger.Log(nc1);
+            testLogger.Log(l1);
 
             l1.Name = "Named List #1";
 
@@ -49,8 +49,8 @@ namespace Test_xUnit.NamedCollections
             nc1.Name = "NamedCollection 1";
             nc1.Name = "Collection 1, which is named.";
 
-            TestLogger.Log(nc1);
-            TestLogger.Log(l1);
+            testLogger.Log(nc1);
+            testLogger.Log(l1);
             
             Assert.True(true);
         }
@@ -58,7 +58,7 @@ namespace Test_xUnit.NamedCollections
 
         private void Nc1_OnNameChanged(object sender, ChangeEventArgs<string> e)
         {
-            TestLogger.Log($"The named collections name has changed: The sending object was {sender.ToString()} ChangeEventArgs<string>: {e}");
+            testLogger.Log($"The named collections name has changed: The sending object was {sender.ToString()} ChangeEventArgs<string>: {e}");
             Assert.NotEqual(e.OldValue, e.NewValue);
         }
     }

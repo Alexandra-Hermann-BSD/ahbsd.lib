@@ -27,10 +27,13 @@ namespace Test_xUnit
         [InlineData("<>%&")]
         [InlineData("(89)=`´\"")]
         [InlineData("")]
+        [InlineData(null)]
         public void GenericStringTest(string testval)
         {
             IEventArgs<string> ea = new EventArgs<string>(testval);
             Assert.Equal(testval, ea.Value);
+
+            Assert.Equal(testval != null ? $"EventArgs<String> Value={testval}" : "EventArgs<String> Value=null", ea.ToString());
         }
 
         [Theory]
@@ -41,6 +44,32 @@ namespace Test_xUnit
         {
             IEventArgs<double> ea = new EventArgs<double>(testval);
             Assert.Equal(testval, ea.Value);
+            
+            Assert.Equal($"EventArgs<Double> Value={testval}", ea.ToString());
+        }
+
+        [Fact]
+        public void GenericBaseEventArgsString()
+        {
+            IEventArgs<string> ea = new EventArgs<string>();
+            Assert.Null(ea.Value);
+            Assert.Equal("EventArgs<String> Value=null", ea.ToString());
+        }
+
+        [Fact]
+        public void GenericBaseEventArgsInt()
+        {
+            IEventArgs<int> ea = new EventArgs<int>();
+            Assert.Equal(0, ea.Value);
+            Assert.Equal("EventArgs<Int32> Value=0", ea.ToString());
+        }
+
+        [Fact]
+        public void GenericBaseEventArgsNullableInt()
+        {
+            IEventArgs<int?> ea = new EventArgs<int?>();
+            Assert.Null(ea.Value);
+            Assert.Equal("EventArgs<Nullable`1> Value=null", ea.ToString());
         }
     }
 }

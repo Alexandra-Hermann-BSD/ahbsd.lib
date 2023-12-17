@@ -25,15 +25,15 @@ namespace Test_xUnit
     /// </summary>
     /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
     /// <typeparam name="TA">Type of API-Key.</typeparam>
-    public class TestClass<T, TA> : ApiKeyHolder<TA>, ITestClass<T>
+    internal class TestClass<T, TA> : ApiKeyHolder<TA>, ITestClass<T>
     {
         /// <summary>
         /// The variable to change.
         /// </summary>
-        private T _variable;
+        private T variable;
 
         /// <summary>
-        /// Happenes when <see cref="Variable"/> has changed.
+        /// Happens when <see cref="Variable"/> has changed.
         /// </summary>
         public event ChangeEventHandler<T> OnChange;
 
@@ -42,24 +42,24 @@ namespace Test_xUnit
         /// </summary>
         public T Variable
         {
-            get => _variable;
+            get => variable;
             set
             {
                 ChangeEventArgs<T> cea;
 
-                if (value != null && !value.Equals(_variable))
+                if (value != null && !value.Equals(variable))
                 {
-                    cea = new ChangeEventArgs<T>(_variable, value);
+                    cea = new ChangeEventArgs<T>(variable, value);
 
-                    _variable = value;
+                    variable = value;
 
                     OnChange?.Invoke(this, cea);
                 }
-                else if (value == null && _variable != null)
+                else if (value == null && variable != null)
                 {
-                    cea = new ChangeEventArgs<T>(_variable, value);
+                    cea = new ChangeEventArgs<T>(variable, default(T));
 
-                    _variable = value;
+                    variable = default(T);
 
                     OnChange?.Invoke(this, cea);
                 }
@@ -71,7 +71,7 @@ namespace Test_xUnit
         /// </summary>
         public TestClass()
         {
-            _variable = default;
+            variable = default;
             OnApiKeyAdded += TestClass_OnApiKeyAdded;
         }
 
@@ -81,7 +81,7 @@ namespace Test_xUnit
         /// <param name="v">The given variable.</param>
         public TestClass(T v)
         {
-            _variable = v;
+            variable = v;
             OnApiKeyAdded += TestClass_OnApiKeyAdded;
         }
 
@@ -92,7 +92,7 @@ namespace Test_xUnit
         public TestClass(TA apiKey)
             : base(apiKey)
         {
-            _variable = default;
+            variable = default;
             OnApiKeyAdded += TestClass_OnApiKeyAdded;
         }
 
@@ -104,7 +104,7 @@ namespace Test_xUnit
         public TestClass(T v, TA apiKey)
             : base(apiKey)
         {
-            _variable = v;
+            variable = v;
             OnApiKeyAdded += TestClass_OnApiKeyAdded;
         }
 

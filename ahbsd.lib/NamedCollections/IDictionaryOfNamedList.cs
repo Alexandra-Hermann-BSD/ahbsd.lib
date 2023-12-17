@@ -21,21 +21,21 @@ namespace ahbsd.lib.NamedCollections
     /// <summary>
     /// Interface for a collection of <see cref="INamedList{T}"/>.
     /// </summary>
-    /// <typeparam name="K">The type of the key.</typeparam>
-    /// <typeparam name="V">The type of the <see cref="INamedList{T}"/>-ValueType.</typeparam>
-    public interface IDictionaryOfNamedList<K, V> : IDictionary<K, INamedList<V>>
+    /// <typeparam name="TK">The type of the key.</typeparam>
+    /// <typeparam name="TV">The type of the <see cref="INamedList{T}"/>-ValueType.</typeparam>
+    public interface IDictionaryOfNamedList<TK, TV> : IDictionary<TK, INamedList<TV>>
     {
         /// <summary>
         /// Happenes, if a new <see cref="INamedList{T}"/> was added.
         /// </summary>
-        event EventHandler<EventArgs<INamedList<V>>> OnNamedListAdded;
+        event EventHandler<EventArgs<INamedList<TV>>> OnNamedListAdded;
         /// <summary>
         /// Adds a key.
         /// </summary>
         /// <param name="key">The key.</param>
         /// <param name="name">The name of the new <see cref="INamedList{T}"/>.</param>
         /// <exception cref="ArgumentException">If key already exists.</exception>
-        void Add(K key, string name);
+        void Add(TK key, string name);
         /// <summary>
         /// Adds a value to the <see cref="INamedList{T}"/> of key.
         /// </summary>
@@ -53,7 +53,7 @@ namespace ahbsd.lib.NamedCollections
         /// If the key isn't there AND a name for the new
         /// <see cref="INamedList{T}"/> was missing.
         /// </exception>
-        void Add(K key, V value, string name=null);
+        void Add(TK key, TV value, string name=null);
         /// <summary>
         /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
         /// </summary>
@@ -70,6 +70,6 @@ namespace ahbsd.lib.NamedCollections
         /// If the key isn't there AND a name for the new
         /// <see cref="INamedList{T}"/> was missing.
         /// </exception>
-        void Add(KeyValuePair<K, V> keyValuePair, string name=null);
+        void Add(KeyValuePair<TK, TV> keyValuePair, string name=null);
     }
 }

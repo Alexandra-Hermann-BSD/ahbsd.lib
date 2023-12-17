@@ -46,7 +46,7 @@ namespace ahbsd.lib.Products
         /// </summary>
         /// <value>The ZIP.</value>
         /// <remarks>Is only settable by the constructor.</remarks>
-        string ZIP { get; }
+        string Zip { get; }
         /// <summary>
         /// Gets the City.
         /// </summary>

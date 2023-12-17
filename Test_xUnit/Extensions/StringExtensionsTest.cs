@@ -32,8 +32,8 @@ namespace Test_xUnit.Extensions
         [Fact]
         public void TestGetIntList()
         {
-            const string numberedList = "1,2, 5, 99 ,8";
-            var intList = numberedList.GetIntList();
+            const string NUMBERED_LIST = "1,2, 5, 99 ,8";
+            var intList = NUMBERED_LIST.GetIntList();
             Assert.Equal(1, intList[0]);
             Assert.Equal(2, intList[1]);
             Assert.Equal(5, intList[2]);

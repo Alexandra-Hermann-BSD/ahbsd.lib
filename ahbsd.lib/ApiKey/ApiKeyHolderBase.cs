@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ahbsd.lib.Interfaces;
 
 namespace ahbsd.lib.ApiKey
 {
@@ -28,7 +29,7 @@ namespace ahbsd.lib.ApiKey
     /// The abstract base for API Key Holder
     /// </summary>
     /// <typeparam name="T">The Type of the API Key</typeparam>
-    public abstract class ApiKeyHolderBase<T> : IEqualityComparer<T>
+    public abstract class ApiKeyHolderBase<T> : IApiKeyHolder<T>
     {
         /// <summary>
         /// An equality comparer.
@@ -56,7 +57,7 @@ namespace ahbsd.lib.ApiKey
         protected ApiKeyHolderBase()
         {
             ApiKeyHolder<T>.OnApiKeyAdded += ApiKeyHolder_OnApiKeyAdded;
-            ApiKey = ApiKeyHolder<T>.KnownApiKeys.Count > 0 ? ApiKeyHolder<T>.KnownApiKeys.Last() : default;
+            ApiKey = ApiKeyHolder<T>.KnownApiKeys.Count > 0 ? ApiKeyHolder<T>.KnownApiKeys[0] : default;
             ApiKeyHolder<T>.AddApiKey(this, ApiKey);
         }
 
@@ -95,6 +96,9 @@ namespace ahbsd.lib.ApiKey
                || obj is ApiKeyHolder<T> other 
                && Equals(other);
 
+        /// <inheritdoc />
+        public bool Equals(T other) => Equals(other as object);
+
         /// <inheritdoc/>
         public override string ToString() => $"{nameof(ApiKey)} ({typeof(T).Name}): {ApiKey}";
 
@@ -104,9 +108,7 @@ namespace ahbsd.lib.ApiKey
         /// <inheritdoc cref="GetHashCode()"/>
         public int GetHashCode(T obj) => equalityComparerImplementation.GetHashCode(obj);
 
-        /// <summary>
-        /// Happens if a new API-Key was added to the static list <see cref="ApiKeyHolder{T}.KnownApiKeys"/>.
-        /// </summary>
+        /// <inheritdoc />
         public event ApiKeyEventHandler<T> OnApiKeyAdded;
 
         /// <summary>

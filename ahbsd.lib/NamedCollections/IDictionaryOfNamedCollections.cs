@@ -21,21 +21,21 @@ namespace ahbsd.lib.NamedCollections
     /// <summary>
     /// Interface for a dictionary of named collections as value.
     /// </summary>
-    /// <typeparam name="K">Key Type.</typeparam>
-    /// <typeparam name="V">Value Type of the <see cref="INamedCollection{T}"/>.</typeparam>
-    public interface IDictionaryOfNamedCollections<K, V> : IDictionary<K, INamedCollection<V>>
+    /// <typeparam name="TK">Key Type.</typeparam>
+    /// <typeparam name="TV">Value Type of the <see cref="INamedCollection{T}"/>.</typeparam>
+    public interface IDictionaryOfNamedCollections<TK, TV> : IDictionary<TK, INamedCollection<TV>>
     {
         /// <summary>
         /// Happenes if a new <see cref="INamedCollection{T}"/> was added.
         /// </summary>
-        event EventHandler<EventArgs<INamedCollection<V>>> OnNamedCollectionAdded;
+        event EventHandler<EventArgs<INamedCollection<TV>>> OnNamedCollectionAdded;
         /// <summary>
         /// Adds a new key with the name of the new <see cref="INamedCollection{T}"/>.
         /// </summary>
         /// <param name="key">The new key.</param>
         /// <param name="name">The name of the new <see cref="INamedCollection{T}"/>.</param>
         /// <exception cref="ArgumentException">If key already exists.</exception>
-        void Add(K key, string name);
+        void Add(TK key, string name);
         /// <summary>
         /// Adds a value to the <see cref="INamedCollection{T}"/> of key.
         /// </summary>
@@ -53,7 +53,7 @@ namespace ahbsd.lib.NamedCollections
         /// If the key isn't there AND a name for the new
         /// <see cref="INamedCollection{T}"/> was missing.
         /// </exception>
-        void Add(K key, V value, string name=null);
+        void Add(TK key, TV value, string name=null);
         /// <summary>
         /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
         /// </summary>
@@ -70,6 +70,6 @@ namespace ahbsd.lib.NamedCollections
         /// If the key isn't there AND a name for the new
         /// <see cref="INamedCollection{T}"/> was missing.
         /// </exception>
-        void Add(KeyValuePair<K, V> keyValuePair, string name=null);
+        void Add(KeyValuePair<TK, TV> keyValuePair, string name=null);
     }
 }
