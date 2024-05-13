@@ -13,13 +13,13 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
-using System.Collections.Generic;
 using ahbsd.lib.Tools;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace Test_xUnit.Tools
 {
+    [TestSubject(typeof(PrimeCheck))]
     public class TestPrimeCheck
     {
         [Theory]
@@ -35,53 +35,6 @@ namespace Test_xUnit.Tools
         {
             Assert.Equal(expectedPositive, PrimeCheck.Check(number));
         }
-
-        [Fact]
-        public void TestPrime()
-        {
-            IList<ulong> numbers = new List<ulong>();
-            bool isPrime;
-            TimeSpan time;
-            uint amount;
-            string isPrimeString;
-
-            for (ulong i = 0; i < 20; i++)
-            {
-                numbers.Add(i);
-            }
-
-            for (ulong i = 1990; i < 2170; i++)
-            {
-                numbers.Add(i);
-            }
-
-            numbers.Add(ulong.MaxValue);
-
-            foreach (var nr in numbers)
-            {
-                isPrime = PrimeCheck.Check(nr);
-                time = PrimeCheck.Time;
-                amount = PrimeCheck.Amount;
-
-                if (isPrime)
-                {
-                    isPrimeString = "is a prime number";
-                }
-                else
-                {
-                    isPrimeString = "is not a prime number";
-                }
-
-                Console.WriteLine(
-                    "{0} {1}. It took {2} times in {3} m, {4} s, {5} ms to check.",
-                    nr,
-                    isPrimeString,
-                    amount,
-                    time.Minutes,
-                    time.Seconds,
-                    time.Milliseconds);
-            }
-
-        }
+        
     }
 }

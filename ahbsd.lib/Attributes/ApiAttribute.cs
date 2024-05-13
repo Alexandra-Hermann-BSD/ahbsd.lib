@@ -21,7 +21,7 @@ namespace ahbsd.lib.Attributes
 {
 
     /// <summary>
-    /// Attribute that tells, that this belongs to the API.
+    /// Attribute that tells that this belongs to the API.
     /// </summary>
     [AttributeUsage(
         validOn: AttributeTargets.Class

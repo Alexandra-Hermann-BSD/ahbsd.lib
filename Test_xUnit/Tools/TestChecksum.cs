@@ -45,7 +45,7 @@ namespace Test_xUnit.Tools
         /// </summary>
         /// <param name="expectedChecksum">The expected checksum</param>
         /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpL">The number to get the checksums from</param>
+        /// <param name="tmpUl">The number to get the checksums from</param>
         [Theory]
         [InlineData((ulong)2, (ushort)2, (ulong)11)]
         [InlineData((ulong)10, (ushort)1, (ulong)1234)]
@@ -60,7 +60,7 @@ namespace Test_xUnit.Tools
         /// </summary>
         /// <param name="expectedChecksum">The expected checksum</param>
         /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpL">The number to get the checksums from</param>
+        /// <param name="tmpNl">The number to get the checksums from</param>
         [Theory]
         [InlineData((long)2, (short)2, (long)11)]
         [InlineData((long)10, (short)1, (long)1234)]
@@ -77,7 +77,7 @@ namespace Test_xUnit.Tools
         /// </summary>
         /// <param name="expectedChecksum">The expected checksum</param>
         /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpL">The number to get the checksums from</param>
+        /// <param name="tmpUnl">The number to get the checksums from</param>
         [Theory]
         [InlineData((ulong)2, (ushort)2, (ulong)11)]
         [InlineData((ulong)10, (ushort)1, (ulong)1234)]

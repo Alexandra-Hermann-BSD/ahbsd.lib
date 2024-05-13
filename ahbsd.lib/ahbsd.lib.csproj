@@ -16,15 +16,15 @@
     <PackageProjectUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</RepositoryUrl>
     <ReleaseVersion>1.4</ReleaseVersion>
-    <PackageIconUrl>https://www.hermann-bsd.de/favicon.ico</PackageIconUrl>
-    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageReleaseNotes>Version 1.5 has added some functionallity and removed a lot of SonarLint issues</PackageReleaseNotes>
     <PackageTags>Library; Core; Core3.1; Generic</PackageTags>
     <SynchReleaseVersion>false</SynchReleaseVersion>
     <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
     <CodePage>65001</CodePage>
     <LangVersion>8</LangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIcon>Logo.ico</PackageIcon>
+    <RepositoryType>Library</RepositoryType>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,9 +54,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+    <PackageReference Include="JetBrains.dotCover.DotNetCliTool" Version="2022.2.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Logo.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

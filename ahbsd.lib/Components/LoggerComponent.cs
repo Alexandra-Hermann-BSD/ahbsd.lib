@@ -27,6 +27,7 @@ using ahbsd.lib.EventHandler;
 using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
 using ahbsd.lib.Tools;
+using JetBrains.Annotations;
 
 namespace ahbsd.lib.Components
 {
@@ -153,6 +154,11 @@ namespace ahbsd.lib.Components
                 }
             }
         
+            MaybeLogException(maybeException, e);
+        }
+
+        private void MaybeLogException([CanBeNull] Exception maybeException, ChangeEventArgs<string> e)
+        {
             if (!e.NewValue.IsNullOrWhiteSpace())
             {
                 try

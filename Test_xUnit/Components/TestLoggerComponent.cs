@@ -26,9 +26,11 @@ using ahbsd.lib.Components;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.Interfaces;
 using ahbsd.lib.Tools;
+using JetBrains.Annotations;
 
 namespace Test_xUnit.Components
 {
+    [TestSubject(typeof(LoggerComponent))]
     public class TestLoggerComponent
     {
 
@@ -54,19 +56,20 @@ namespace Test_xUnit.Components
 
             var loggerComponent = new LoggerComponent();
             Assert.Equal("LoggerComponent", loggerComponent.Name);
-            loggerComponent.Disposed += LoggerComponent_Disposed;
+            loggerComponent.Disposed += LoggerComponent_OnDisposed;
         
             loggerComponent.Dispose();
             testLogger.Log("Finished test");
         }
 
-        private void LoggerComponent_Disposed(object sender, EventArgs e)
+        private void LoggerComponent_OnDisposed(object sender, System.EventArgs e)
         {
             if (sender is IDisposable disposable)
             {
                 testLogger.Log($"Sender {sender} disposed: {disposable}");
             }
         }
+
 
         private void Logger_OnLogfileChanged(object sender, ChangeEventArgs<string> e)
         {

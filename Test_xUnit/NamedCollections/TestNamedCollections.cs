@@ -13,7 +13,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
 using System.IO;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.Interfaces;
@@ -58,7 +57,7 @@ namespace Test_xUnit.NamedCollections
 
         private void Nc1_OnNameChanged(object sender, ChangeEventArgs<string> e)
         {
-            testLogger.Log($"The named collections name has changed: The sending object was {sender.ToString()} ChangeEventArgs<string>: {e}");
+            testLogger.Log($"The named collections name has changed: The sending object was {sender} ChangeEventArgs<string>: {e}");
             Assert.NotEqual(e.OldValue, e.NewValue);
         }
     }
