@@ -23,10 +23,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using ahbsd.lib.Attributes;
+using JetBrains.Annotations;
 using Xunit;
 
 namespace Test_xUnit.Attributes
 {
+    [TestSubject(typeof(ApiAttribute))]
     public class TestApiAttribute
     {
         [Fact]
@@ -79,6 +81,13 @@ namespace Test_xUnit.Attributes
             
                 result = type.CustomAttributes.First();
                 Assert.NotNull(result);
+
+                var attr = type.GetCustomAttributes(typeof(ApiAttribute), true).FirstOrDefault();
+                if (attr is ApiAttribute apiAttribute)
+                {
+                    Assert.NotNull(apiAttribute.CallerName);
+                    Assert.NotNull(apiAttribute.CallerType);
+                }
             }
 
             return result;

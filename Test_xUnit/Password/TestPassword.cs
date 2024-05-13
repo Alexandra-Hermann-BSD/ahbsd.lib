@@ -13,7 +13,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.Interfaces;
 using ahbsd.lib.Password;

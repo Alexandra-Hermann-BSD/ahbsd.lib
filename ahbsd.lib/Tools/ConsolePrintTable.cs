@@ -26,6 +26,8 @@ namespace ahbsd.lib.Tools
     /// </summary>
     public static class ConsolePrintTable
     {
+        private const int NOT_SET = -1;
+        
         /// <summary>
         /// Prints a table on console.
         /// </summary>
@@ -107,8 +109,7 @@ namespace ahbsd.lib.Tools
         /// </summary>
         /// <param name="table">The given table.</param>
         /// <returns>
-        /// A dictionary with the name and width of each column of the
-        /// given table.
+        /// A dictionary with the name and width off each column of the given table.
         /// </returns>
         private static IDictionary<string, int> GetSize(DataTable table)
         {
@@ -127,12 +128,31 @@ namespace ahbsd.lib.Tools
                 keys.Add(key);
             }
 
+            WalkThroughDataRow(table, keys, result, minLength);
+
+            foreach (var key in minLength.Keys)
+            {
+                result[key] = minLength[key];
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Walks through a given <see cref="DataTable"/>.
+        /// </summary>
+        /// <param name="table">The given DataTable</param>
+        /// <param name="keys">A given key collection</param>
+        /// <param name="dictionary">A given result dictionary</param>
+        /// <param name="minLength">A given dictionary with the minimum length of a column</param>
+        private static void WalkThroughDataRow(DataTable table, ICollection<string> keys, IDictionary<string, int> dictionary, IDictionary<string, int> minLength)
+        {
             foreach (var (row, key) in from DataRow row in table.Rows
-                                       from string key in keys
-                                       select (row, key))
+                     from string key in keys
+                     select (row, key))
             {
                 int length;
-                if (result[key] != -1)
+                if (dictionary[key] != NOT_SET)
                 {
                     length = minLength[key];
 
@@ -141,23 +161,16 @@ namespace ahbsd.lib.Tools
                         minLength[key] = row[key].ToString()!.Length;
                     }
                 }
-                else // the first time to set over -1
+                else // the first time to set over NOT_SET (-1)
                 {
-                    length = result[key];
+                    length = dictionary[key];
 
                     if (row[key].ToString()!.Length > length)
                     {
-                        result[key] = row[key].ToString()!.Length;
+                        dictionary[key] = row[key].ToString()!.Length;
                     }
                 }
             }
-
-            foreach (var key in minLength.Keys)
-            {
-                result[key] = minLength[key];
-            }
-
-            return result;
         }
     }
 }

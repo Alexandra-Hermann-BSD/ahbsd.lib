@@ -33,10 +33,7 @@ namespace ahbsd.lib.EventArgs
         /// Constructor with the removed items.
         /// </summary>
         /// <param name="removedItems">The removed items.</param>
-        public CollectionRemoveEventArgs(ICollection<T> removedItems)
-        {
-            RemovedItems = (IReadOnlyCollection<T>) removedItems;
-        }
+        public CollectionRemoveEventArgs(ICollection<T> removedItems) => RemovedItems = removedItems as IReadOnlyCollection<T>;
 
         #region implementation of ICollectionRemoveArgs<T>
 

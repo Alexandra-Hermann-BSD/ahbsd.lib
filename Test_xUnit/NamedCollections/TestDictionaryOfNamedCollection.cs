@@ -13,7 +13,6 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-using System;
 using System.IO;
 using System.Linq;
 using ahbsd.lib;
@@ -50,12 +49,12 @@ namespace Test_xUnit.NamedCollections
 
         private void D2_OnNamedCollectionAdded(object sender, EventArgs<INamedCollection<string>> e)
         {
-            testLogger.Log($"To {sender.ToString()} a new INamedCollection<string> was added: {e.Value}");
+            testLogger.Log($"To {sender} a new INamedCollection<string> was added: {e.Value}");
         }
 
         private void D1_OnNamedCollectionAdded(object sender, EventArgs<INamedCollection<double>> e)
         {
-            testLogger.Log($"To {sender.ToString()} a new INamedCollection<double> was added: {e.Value}");
+            testLogger.Log($"To {sender} a new INamedCollection<double> was added: {e.Value}");
         }
 
         [Fact]

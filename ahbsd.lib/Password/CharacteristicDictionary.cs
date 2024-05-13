@@ -17,8 +17,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using JetBrains.Annotations;
 
 namespace ahbsd.lib.Password
 {
@@ -183,6 +183,7 @@ namespace ahbsd.lib.Password
             => dictionary.CopyTo(array, arrayIndex);
         
         /// <inheritdoc/>
+        [MustDisposeResource]
         public IEnumerator<KeyValuePair<Charasteristic, bool>> GetEnumerator() => dictionary.GetEnumerator();
         
         /// <inheritdoc/>
@@ -192,10 +193,11 @@ namespace ahbsd.lib.Password
         public bool Remove(KeyValuePair<Charasteristic, bool> item) => false;
         
         /// <inheritdoc/>
-        public bool TryGetValue(Charasteristic key, [MaybeNullWhen(false)] out bool value) 
+        public bool TryGetValue(Charasteristic key, out bool value) 
             => dictionary.TryGetValue(key, out value);
         
         /// <inheritdoc/>
+        [MustDisposeResource]
         IEnumerator IEnumerable.GetEnumerator() => dictionary.GetEnumerator();
         
         /// <inheritdoc cref="ICharacteristicDictionary.ToString"/>

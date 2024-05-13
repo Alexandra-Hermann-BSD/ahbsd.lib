@@ -190,7 +190,7 @@ namespace ahbsd.lib.Attributes
         }
         #endregion
 
-        public static IList<T> GetAttributes<T>(object obj, out IList<AttributeUtil<T>> utils) where T : Attribute
+        public static IList<T> GetAttributes(object obj, out IList<AttributeUtil<T>> utils)
         {
             IList<T> result = null;
             utils = null;
@@ -218,7 +218,7 @@ namespace ahbsd.lib.Attributes
         /// <param name="util">[out] An <see cref="AttributeUtil{T}"/> for the given object</param>
         /// <typeparam name="T">The type of the <see cref="Attribute"/></typeparam>
         /// <returns>The <see cref="Attribute"/> of the given type</returns>
-        public static T GetAttribute<T>(object obj, out AttributeUtil<T> util) where T: Attribute
+        public static T GetAttribute(object obj, out AttributeUtil<T> util)
         {
             T result = default;
             util = default;

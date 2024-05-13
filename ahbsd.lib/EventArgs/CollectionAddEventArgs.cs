@@ -50,7 +50,7 @@ namespace ahbsd.lib.EventArgs
         {
             get
             {
-                IReadOnlyCollection<T> result = default;
+                IReadOnlyCollection<T> result;
 
                 if (typeof(T) == typeof(string) && affectedCollection is ISourceDirectories sourceDirectories)
                 {
@@ -67,8 +67,8 @@ namespace ahbsd.lib.EventArgs
                         result = (IReadOnlyCollection<T>) affectedCollection;
                     }
                 }
-            
-                return result;
+
+                return result ?? new List<T>(0);
             }
         }
 

@@ -19,7 +19,6 @@
 // 
 
 using ahbsd.lib.Attributes;
-using ahbsd.lib.Interfaces;
 using Xunit;
 
 namespace Test_xUnit.Attributes
@@ -30,7 +29,7 @@ namespace Test_xUnit.Attributes
         public void TestGetter()
         {
             var t1 = new Testclass1();
-            var atr = ValueAttributeUtil.GetValueAttribute(t1, out ValueAttributeUtil util);
+            var atr = ValueAttributeUtil.GetValueAttribute(t1, out var util);
             
             Assert.NotNull(util);
             Assert.NotNull(atr);
@@ -40,9 +39,6 @@ namespace Test_xUnit.Attributes
     [Value(5)]
     internal class Testclass1
     {
-        public Testclass1()
-        {
-            //
-        }
+        //
     }
 }

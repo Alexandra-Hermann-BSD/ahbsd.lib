@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using ahbsd.lib.Products;
+using JetBrains.Annotations;
 
 namespace ahbsd.lib.NamedCollections
 {
@@ -161,6 +162,7 @@ namespace ahbsd.lib.NamedCollections
         /// Returns an enumerator, that iterates through this collection. 
         /// </summary>
         /// <returns>An enumerator that can be used to iterate through this collection.</returns>
+        [MustDisposeResource]
         public IEnumerator<KeyValuePair<ICompany, IDictionaryOfNamedList<IModel, IProductItem>>> GetEnumerator() => dict.GetEnumerator();
 
         /// <summary>
@@ -196,6 +198,7 @@ namespace ahbsd.lib.NamedCollections
         /// Returns an enumerator, that iterates through this collection. 
         /// </summary>
         /// <returns>An <see cref="IEnumerator"/> that can be used to iterate through this collection.</returns>
+        [MustDisposeResource]
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable)dict).GetEnumerator();
     }
 }

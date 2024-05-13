@@ -24,9 +24,9 @@ using System.Collections.Generic;
 namespace ahbsd.lib.Attributes
 {
     /// <summary>
-    /// Attribute that tells, that this belongs to the API.
+    /// Attribute that tells that this belongs to the API.
     /// </summary>
-    partial class ApiAttribute : Attribute
+    partial class ApiAttribute
     {
         /// <summary>
         /// A collection of types, that are using this <see cref="Attribute"/>.

@@ -24,6 +24,7 @@ using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
 using ahbsd.lib.Extensions;
 using ahbsd.lib.Interfaces;
+using JetBrains.Annotations;
 
 namespace ahbsd.lib.Collections
 {
@@ -54,9 +55,11 @@ namespace ahbsd.lib.Collections
 #pragma warning restore S3264
     
         /// <inheritdoc/>
+        [MustDisposeResource]
         public IEnumerator<string> GetEnumerator() => innerCollection.GetEnumerator();
 
         /// <inheritdoc/>
+        [MustDisposeResource]
         IEnumerator IEnumerable.GetEnumerator() => (innerCollection as IEnumerable).GetEnumerator();
 
         /// <inheritdoc/>

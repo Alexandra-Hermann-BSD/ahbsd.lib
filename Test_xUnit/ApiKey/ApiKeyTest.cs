@@ -20,7 +20,7 @@ namespace Test_xUnit.ApiKey
             Assert.True(hc != 0);
             var isKeyExistent = testKeyHolder.Equals(key);
             Assert.False(isKeyExistent);
-            Assert.True(testKeyHolder != null);
+            Assert.NotNull(testKeyHolder);
             var currentIdx = ApiKeyHolder<string>.FindApiKey(key);
 
             if (currentIdx > 0)
