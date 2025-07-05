@@ -20,35 +20,34 @@
 
 using System.Collections.Generic;
 
-namespace ahbsd.lib.ApiKey
+namespace ahbsd.lib.ApiKey;
+
+public partial class ApiKeyHolder<T> : ApiKeyHolderBase<T>
 {
-    public partial class ApiKeyHolder<T> : ApiKeyHolderBase<T>
+    /// <summary>
+    /// A list of all known API-Keys.
+    /// </summary>
+    /// <remarks>Of current instances. Is e.g. needed for construction without api-key etc.</remarks>
+    internal static readonly List<T> KnownApiKeys = [];
+
+    /// <summary>
+    /// Happens if a new API-Key was added to the static list <see cref="KnownApiKeys"/>.
+    /// </summary>
+    public new static event ApiKeyEventHandler<T>? OnApiKeyAdded;
+
+    /// <summary>
+    /// Functionality when a new API-Key was added.
+    /// </summary>
+    /// <param name="sender">Sending Object</param>
+    /// <param name="apiKey">New API-Key</param>
+    protected internal static void AddApiKey(object sender, T apiKey)
     {
-        /// <summary>
-        /// A list of all known API-Keys.
-        /// </summary>
-        /// <remarks>Of current instances. Is eg needed for construction without api-key etc.</remarks>
-        internal static readonly List<T> KnownApiKeys = new List<T>();
-
-        /// <summary>
-        /// Happens if a new API-Key was added to the static list <see cref="KnownApiKeys"/>.
-        /// </summary>
-        public new static event ApiKeyEventHandler<T> OnApiKeyAdded;
-
-        /// <summary>
-        /// Functionality when a new API-Key was added.
-        /// </summary>
-        /// <param name="sender">Sending Object</param>
-        /// <param name="apiKey">New API-Key</param>
-        protected internal static void AddApiKey(object sender, T apiKey)
+        if (!KnownApiKeys.Contains(apiKey))
         {
-            if (!KnownApiKeys.Contains(apiKey))
-            {
-                KnownApiKeys.Add(apiKey);
-                var idx = KnownApiKeys.IndexOf(apiKey);
-                var e = new ApiKeyEventArgs<T>(apiKey, idx);
-                OnApiKeyAdded?.Invoke(sender, e);
-            }
+            KnownApiKeys.Add(apiKey);
+            var idx = KnownApiKeys.IndexOf(apiKey);
+            var e = new ApiKeyEventArgs<T>(apiKey, idx);
+            OnApiKeyAdded?.Invoke(sender, e);
         }
     }
 }

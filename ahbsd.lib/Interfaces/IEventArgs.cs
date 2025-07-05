@@ -16,20 +16,19 @@
 using System;
 using ahbsd.lib.Attributes;
 
-namespace ahbsd.lib.Interfaces
+namespace ahbsd.lib.Interfaces;
+
+/// <summary>
+/// Interface for generic EventArgs.
+/// </summary>
+/// <typeparam name="T">Type of Value.</typeparam>
+/// <remarks>The difference to usual <see cref="EventArgs"/> is, that a generic value is added.</remarks>
+[Api]
+public interface IEventArgs<out T>
 {
     /// <summary>
-    /// Interface for generic EventArgs.
+    /// Gets a value.
     /// </summary>
-    /// <typeparam name="T">Type of Value.</typeparam>
-    /// <remarks>The difference to usual <see cref="EventArgs"/> is, that a generic value is added.</remarks>
-    [Api]
-    public interface IEventArgs<out T>
-    {
-        /// <summary>
-        /// Gets a value.
-        /// </summary>
-        /// <value>A value.</value>
-        T Value { get; }
-    }
+    /// <value>A value.</value>
+    T Value { get; }
 }

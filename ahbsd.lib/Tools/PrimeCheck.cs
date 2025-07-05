@@ -15,72 +15,71 @@
 
 using System;
 
-namespace ahbsd.lib.Tools
+namespace ahbsd.lib.Tools;
+
+/// <summary>
+/// Class for checking, wheather a given number is a prime number or not.
+/// </summary>
+public static class PrimeCheck
 {
     /// <summary>
-    /// Class for checking, wheather a given number is a prime number or not.
+    /// Gets the time it took for the last <see cref="Check(ulong)"/>.
     /// </summary>
-    public static class PrimeCheck
+    /// <value>
+    /// The time it took for the last <see cref="Check(ulong)"/>.
+    /// </value>
+    public static TimeSpan Time { get; private set; }
+    /// <summary>
+    /// Gets the amount of loops it took for the last <see cref="Check(ulong)"/>.
+    /// </summary>
+    /// <value>
+    /// The amount of loops it took for the last <see cref="Check(ulong)"/>.
+    /// </value>
+    public static uint Amount { get; private set; }
+
+    /// <summary>
+    /// Checks wheather nr is a prime number or not.
+    /// </summary>
+    /// <param name="nr">The number to check.</param>
+    /// <returns>
+    /// <c>true</c> when nr is a prime number, otherwise <c>false</c>.
+    /// </returns>
+    public static bool Check(ulong nr)
     {
-        /// <summary>
-        /// Gets the time it took for the last <see cref="Check(ulong)"/>.
-        /// </summary>
-        /// <value>
-        /// The time it took for the last <see cref="Check(ulong)"/>.
-        /// </value>
-        public static TimeSpan Time { get; private set; }
-        /// <summary>
-        /// Gets the amount of loops it took for the last <see cref="Check(ulong)"/>.
-        /// </summary>
-        /// <value>
-        /// The amount of loops it took for the last <see cref="Check(ulong)"/>.
-        /// </value>
-        public static uint Amount { get; private set; }
+        ulong half, modHalf, loops;
+        DateTime start, end;
 
-        /// <summary>
-        /// Checks wheather nr is a prime number or not.
-        /// </summary>
-        /// <param name="nr">The number to check.</param>
-        /// <returns>
-        /// <c>true</c> when nr is a prime number, otherwise <c>false</c>.
-        /// </returns>
-        public static bool Check(ulong nr)
+        loops = 0;
+        start = DateTime.Now;
+
+        modHalf = nr % 2;
+
+        var result = true;
+        if (modHalf != 0)
         {
-            ulong half, modHalf, loops;
-            DateTime start, end;
+            half = nr / 2;
 
-            loops = 0;
-            start = DateTime.Now;
-
-            modHalf = nr % 2;
-
-            bool result = true;
-            if (modHalf != 0)
+            for (ulong i = 3; i <= half; i++)
             {
-                half = nr / 2;
-
-                for (ulong i = 3; i <= half; i++)
+                if (nr % i == 0)
                 {
-                    if (nr % i == 0)
-                    {
-                        result = false;
-                        loops = i - 3;
-                        break;
-                    }
+                    result = false;
                     loops = i - 3;
+                    break;
                 }
+                loops = i - 3;
             }
-            else
-            {
-                result = false;
-            }
-
-            end = DateTime.Now;
-            Time = end.Subtract(start);
-
-            Amount = (uint)loops;
-
-            return result;
         }
+        else
+        {
+            result = false;
+        }
+
+        end = DateTime.Now;
+        Time = end.Subtract(start);
+
+        Amount = (uint)loops;
+
+        return result;
     }
 }

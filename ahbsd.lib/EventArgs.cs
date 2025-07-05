@@ -16,32 +16,31 @@
 using ahbsd.lib.Attributes;
 using ahbsd.lib.Interfaces;
 
-namespace ahbsd.lib
+namespace ahbsd.lib;
+
+/// <summary>
+/// Generic EventArgs.
+/// </summary>
+/// <typeparam name="T">Type of <see cref="Value"/>.</typeparam>
+[Api]
+public class EventArgs<T> : System.EventArgs, IEventArgs<T>
 {
     /// <summary>
-    /// Generic EventArgs.
+    /// Constructor without parameters.
     /// </summary>
-    /// <typeparam name="T">Type of <see cref="Value"/>.</typeparam>
-    [Api]
-    public class EventArgs<T> : System.EventArgs, IEventArgs<T>
-    {
-        /// <summary>
-        /// Constructor without parameters.
-        /// </summary>
-        public EventArgs() => Value = default;
+    public EventArgs() => Value = default;
 
-        /// <summary>
-        /// Constructor with a value.
-        /// </summary>
-        /// <param name="val">A value.</param>
-        public EventArgs(T val) => Value = val;
+    /// <summary>
+    /// Constructor with a value.
+    /// </summary>
+    /// <param name="val">A value.</param>
+    public EventArgs(T val) => Value = val;
 
-        #region implementation of IEventArgs<T>
-        /// <inheritdoc/>
-        public T Value { get; }
-        #endregion
+    #region implementation of IEventArgs<T>
+    /// <inheritdoc/>
+    public T Value { get; }
+    #endregion
 
-        /// <inheritdoc />
-        public override string ToString() => Value != null ? $"EventArgs<{typeof(T).Name}> Value={Value}" : $"EventArgs<{typeof(T).Name}> Value=null";
-    }
+    /// <inheritdoc />
+    public override string ToString() => Value != null ? $"EventArgs<{typeof(T).Name}> Value={Value}" : $"EventArgs<{typeof(T).Name}> Value=null";
 }

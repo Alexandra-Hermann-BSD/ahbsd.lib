@@ -15,27 +15,26 @@
 
 using System.ComponentModel;
 
-namespace ahbsd.lib.Products
+namespace ahbsd.lib.Products;
+
+/// <summary>
+/// Interface of an Product.
+/// </summary>
+public interface IProductItem : IComponent
 {
     /// <summary>
-    /// Interface of an Product.
+    /// Gets the model of the product.
     /// </summary>
-    public interface IProductItem : IComponent
-    {
-        /// <summary>
-        /// Gets the model of the product.
-        /// </summary>
-        /// <value>The model of the product.</value>
-        IModel Model { get; }
-        /// <summary>
-        /// Gets the name of the product.
-        /// </summary>
-        /// <value>The name of the product.</value>
-        string Name { get; }
-        /// <summary>
-        /// Gets the serial number.
-        /// </summary>
-        /// <value>The serial number.</value>
-        string SerialNumber { get; }
-    }
+    /// <value>The model of the product.</value>
+    IModel Model { get; }
+    /// <summary>
+    /// Gets the name of the product.
+    /// </summary>
+    /// <value>The name of the product.</value>
+    string Name { get; }
+    /// <summary>
+    /// Gets the serial number.
+    /// </summary>
+    /// <value>The serial number.</value>
+    string SerialNumber { get; }
 }

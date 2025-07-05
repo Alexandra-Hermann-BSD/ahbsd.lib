@@ -18,66 +18,65 @@ using System.Runtime.Serialization;
 using System.Text;
 using ahbsd.lib.EventArgs;
 
-namespace ahbsd.lib.Exceptions
+namespace ahbsd.lib.Exceptions;
+
+/// <summary>
+/// A specialized Exception for the case, that
+/// by trying to use <see cref="ChangeEventArgs{T}.SetNewValue(T)"/> the
+/// new value was already set.
+/// </summary>
+/// <typeparam name="T">The type of the <see cref="ChangeEventArgs{T}"/></typeparam>
+[Serializable]
+public class AlreadySetException<T> : Exception<T>, IAlreadySetException<T>
 {
     /// <summary>
-    /// A specialized Exception for the case, that
-    /// by trying to use <see cref="ChangeEventArgs{T}.SetNewValue(T)"/> the
-    /// new value was already set.
+    /// Constructor with serialized data
     /// </summary>
-    /// <typeparam name="T">The type of the <see cref="ChangeEventArgs{T}"/></typeparam>
-    [Serializable]
-    public class AlreadySetException<T> : Exception<T>, IAlreadySetException<T>
+    /// <param name="info">The serialization info</param>
+    /// <param name="context">The streaming context</param>
+    protected AlreadySetException(SerializationInfo info, StreamingContext context) : base(info, context)
     {
-        /// <summary>
-        /// Constructor with serialized data
-        /// </summary>
-        /// <param name="info">The serialization info</param>
-        /// <param name="context">The streaming context</param>
-        protected AlreadySetException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-            // nothing so far
-        }
-        /// <summary>
-        /// Constructor with a given <see cref="ChangeEventArgs{T}"/> and a new value.
-        /// </summary>
-        /// <param name="changeEventArgs">The given <see cref="ChangeEventArgs{T}"/></param>
-        /// <param name="newValue">The new value</param>
-        public AlreadySetException(ChangeEventArgs<T> changeEventArgs, T newValue)
-            : base($"New value was already set to '{changeEventArgs.NewValue}'.", newValue)
-            => ChangeEventArgs = changeEventArgs;
-
-        /// <summary>
-        /// Constructor with a given <see cref="ChangeEventArgs{T}"/>, a new value and an already existing Exception..
-        /// </summary>
-        /// <param name="changeEventArgs">The given <see cref="ChangeEventArgs{T}"/></param>
-        /// <param name="newValue">The new value</param>
-        /// <param name="innerException">The already existing Exception</param>
-        public AlreadySetException(ChangeEventArgs<T> changeEventArgs, T newValue, Exception<T> innerException)
-            : base($"New value was already set to '{changeEventArgs.NewValue}'.", newValue, innerException)
-            => ChangeEventArgs = changeEventArgs;
-
-        #region implementation of IAlreadySetException<T>
-        /// <summary>
-        /// Returns the given <see cref="ChangeEventArgs{T}"/>.
-        /// </summary>
-        /// <value>The given <see cref="ChangeEventArgs{T}"/>.</value>
-        public ChangeEventArgs<T> ChangeEventArgs { get; private set; }
-
-        /// <summary>
-        /// Gets a string representating this Exception.
-        /// </summary>
-        /// <returns>A string representating this Exception</returns>
-        public override string ToString()
-        {
-            StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"ChangeEventArgs<{typeof(T)}> with:");
-            builder.AppendLine($"OldValue: '{ChangeEventArgs.OldValue}'");
-            builder.AppendLine($"NewValue: '{ChangeEventArgs.NewValue}'");
-            builder.AppendLine($"Try of adding a NewValue of type{typeof(T)}:");
-            builder.AppendLine($"NewValue: '{Value}'");
-            return builder.ToString();
-        }
-        #endregion
+        // nothing so far
     }
+    /// <summary>
+    /// Constructor with a given <see cref="ChangeEventArgs{T}"/> and a new value.
+    /// </summary>
+    /// <param name="changeEventArgs">The given <see cref="ChangeEventArgs{T}"/></param>
+    /// <param name="newValue">The new value</param>
+    public AlreadySetException(ChangeEventArgs<T> changeEventArgs, T newValue)
+        : base($"New value was already set to '{changeEventArgs.NewValue}'.", newValue)
+        => ChangeEventArgs = changeEventArgs;
+
+    /// <summary>
+    /// Constructor with a given <see cref="ChangeEventArgs{T}"/>, a new value and an already existing Exception..
+    /// </summary>
+    /// <param name="changeEventArgs">The given <see cref="ChangeEventArgs{T}"/></param>
+    /// <param name="newValue">The new value</param>
+    /// <param name="innerException">The already existing Exception</param>
+    public AlreadySetException(ChangeEventArgs<T> changeEventArgs, T newValue, Exception<T> innerException)
+        : base($"New value was already set to '{changeEventArgs.NewValue}'.", newValue, innerException)
+        => ChangeEventArgs = changeEventArgs;
+
+    #region implementation of IAlreadySetException<T>
+    /// <summary>
+    /// Returns the given <see cref="ChangeEventArgs{T}"/>.
+    /// </summary>
+    /// <value>The given <see cref="ChangeEventArgs{T}"/>.</value>
+    public ChangeEventArgs<T> ChangeEventArgs { get; private set; }
+
+    /// <summary>
+    /// Gets a string representating this Exception.
+    /// </summary>
+    /// <returns>A string representating this Exception</returns>
+    public override string ToString()
+    {
+        var builder = new StringBuilder();
+        builder.AppendLine($"ChangeEventArgs<{typeof(T)}> with:");
+        builder.AppendLine($"OldValue: '{ChangeEventArgs.OldValue}'");
+        builder.AppendLine($"NewValue: '{ChangeEventArgs.NewValue}'");
+        builder.AppendLine($"Try of adding a NewValue of type{typeof(T)}:");
+        builder.AppendLine($"NewValue: '{Value}'");
+        return builder.ToString();
+    }
+    #endregion
 }

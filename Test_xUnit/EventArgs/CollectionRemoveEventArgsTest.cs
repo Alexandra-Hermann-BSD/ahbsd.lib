@@ -22,88 +22,87 @@ using ahbsd.lib.EventHandler;
 using JetBrains.Annotations;
 using Xunit;
 
-namespace Test_xUnit.EventArgs
+namespace Test_xUnit.EventArgs;
+
+[TestSubject(typeof(CollectionRemoveEventArgs<string>))]
+public class CollectionRemoveEventArgsTest
 {
-    [TestSubject(typeof(CollectionRemoveEventArgs<string>))]
-    public class CollectionRemoveEventArgsTest
+
+    [Fact]
+    public void TestCollectionRemove()
     {
+        var testClass = new TestClass();
+        testClass.OnCollectionAdded += TestClassOnCollectionAdded;
+        testClass.OnCollectionRemoved += TestClassOnCollectionRemoved;
+            
+        testClass.AddToCollection("T1", "Hello");
 
-        [Fact]
-        public void TestCollectionRemove()
+        Assert.Contains("T1", testClass.Collection.Keys);
+            
+        testClass.RemoveCollection("T1");
+            
+        Assert.Empty(testClass.Collection);
+
+        return;
+
+        static void TestClassOnCollectionAdded(object sender, CollectionAddEventArgs<string> e)
         {
-            TestClass testClass = new TestClass();
-            testClass.OnCollectionAdded += TestClassOnCollectionAdded;
-            testClass.OnCollectionRemoved += TestClassOnCollectionRemoved;
-            
-            testClass.AddToCollection("T1", "Hello");
+            Assert.Equal("Hello", e.Value);
+            var affected = e.AffectedCollection;
+            Assert.Contains("Hello", affected);
+        }
 
-            Assert.Contains("T1", testClass.Collection.Keys);
-            
-            testClass.RemoveCollection("T1");
-            
-            Assert.Empty(testClass.Collection);
+        static void TestClassOnCollectionRemoved(object sender, CollectionRemoveEventArgs<string> e)
+        {
+            Assert.Contains("Hello", e.RemovedItems);
+        }
+    }
 
-            return;
+    private class TestClass
+    {
+        private readonly IDictionary<string, ICollection<string>> _dict = new Dictionary<string, ICollection<string>>();
 
-            static void TestClassOnCollectionAdded(object sender, CollectionAddEventArgs<string> e)
+        public event CollectionAddEventHandler<string> OnCollectionAdded;
+
+        public event CollectionRemoveArgsEventHandler<string> OnCollectionRemoved;
+
+        public IReadOnlyDictionary<string, IReadOnlyCollection<string>> Collection
+        {
+            get
             {
-                Assert.Equal("Hello", e.Value);
-                var affected = e.AffectedCollection;
-                Assert.Contains("Hello", affected);
-            }
+                IDictionary<string, IReadOnlyCollection<string>> result = new Dictionary<string, IReadOnlyCollection<string>>(_dict.Count);
+                    
+                foreach (KeyValuePair<string, ICollection<string>> kvp in _dict)
+                {
+                    result.Add(kvp.Key, kvp.Value as IReadOnlyCollection<string>);
+                }
 
-            static void TestClassOnCollectionRemoved(object sender, CollectionRemoveEventArgs<string> e)
-            {
-                Assert.Contains("Hello", e.RemovedItems);
+                return (IReadOnlyDictionary<string, IReadOnlyCollection<string>>) result;
             }
         }
 
-        private class TestClass
+        public void AddToCollection(string key, string value)
         {
-            private readonly IDictionary<string, ICollection<string>> dict = new Dictionary<string, ICollection<string>>();
-
-            public event CollectionAddEventHandler<string> OnCollectionAdded;
-
-            public event CollectionRemoveArgsEventHandler<string> OnCollectionRemoved;
-
-            public IReadOnlyDictionary<string, IReadOnlyCollection<string>> Collection
+            if (!_dict.TryGetValue(key, out ICollection<string> col))
             {
-                get
-                {
-                    IDictionary<string, IReadOnlyCollection<string>> result = new Dictionary<string, IReadOnlyCollection<string>>(dict.Count);
-                    
-                    foreach (KeyValuePair<string, ICollection<string>> kvp in dict)
-                    {
-                        result.Add(kvp.Key, kvp.Value as IReadOnlyCollection<string>);
-                    }
-
-                    return (IReadOnlyDictionary<string, IReadOnlyCollection<string>>) result;
-                }
+                ICollection<string> collection = new List<string>();
+                collection.Add(value);
+                _dict.Add(key, collection);
+            }
+            else
+            {
+                col.Add(value);
             }
 
-            public void AddToCollection(string key, string value)
-            {
-                if (!dict.TryGetValue(key, out ICollection<string> col))
-                {
-                    ICollection<string> collection = new List<string>();
-                    collection.Add(value);
-                    dict.Add(key, collection);
-                }
-                else
-                {
-                    col.Add(value);
-                }
+            CollectionAddEventArgs<string> collectionAddEventArgs = new CollectionAddEventArgs<string>(_dict[key], value);
+            OnCollectionAdded?.Invoke(this, collectionAddEventArgs);
+        }
 
-                CollectionAddEventArgs<string> collectionAddEventArgs = new CollectionAddEventArgs<string>(dict[key], value);
-                OnCollectionAdded?.Invoke(this, collectionAddEventArgs);
-            }
-
-            public void RemoveCollection(string key)
-            {
-                CollectionRemoveEventArgs<string> collectionRemoveEventArgs = new CollectionRemoveEventArgs<string>(dict[key]);
-                dict.Remove(key);
-                OnCollectionRemoved?.Invoke(this, collectionRemoveEventArgs);
-            }
+        public void RemoveCollection(string key)
+        {
+            CollectionRemoveEventArgs<string> collectionRemoveEventArgs = new CollectionRemoveEventArgs<string>(_dict[key]);
+            _dict.Remove(key);
+            OnCollectionRemoved?.Invoke(this, collectionRemoveEventArgs);
         }
     }
 }

@@ -20,21 +20,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
-namespace ahbsd.lib.Interfaces
+namespace ahbsd.lib.Interfaces;
+
+/// <summary>
+/// Interface for generic event Args handling additions to <see cref="ICollection{T}"/>s.
+/// </summary>
+/// <typeparam name="T">The <see cref="Type"/> to use</typeparam>
+public interface ICollectionAddEventArgs<out T> : IEventArgs<T?>
 {
     /// <summary>
-    /// Interface for generic event Args handling additions to <see cref="ICollection{T}"/>s.
+    /// Gets the affected collection as read only.
     /// </summary>
-    /// <typeparam name="T">The <see cref="Type"/> to use</typeparam>
-    public interface ICollectionAddEventArgs<out T> : IEventArgs<T>
-    {
-        /// <summary>
-        /// Gets the affected collection as read only.
-        /// </summary>
-        /// <value>The affected collection as read only</value>
-        [NotNull]
-        IReadOnlyCollection<T> AffectedCollection { get; }
-    }
+    /// <value>The affected collection as read only</value>
+    IReadOnlyCollection<T?> AffectedCollection { get; }
 }

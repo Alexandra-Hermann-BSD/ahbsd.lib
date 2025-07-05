@@ -17,59 +17,58 @@ using ahbsd.lib;
 using ahbsd.lib.Interfaces;
 using Xunit;
 
-namespace Test_xUnit
+namespace Test_xUnit;
+
+public class TestGenericEventArgs
 {
-    public class TestGenericEventArgs
+    [Theory]
+    [InlineData("Hallo")]
+    [InlineData("Häßlich 25")]
+    [InlineData("<>%&")]
+    [InlineData("(89)=`´\"")]
+    [InlineData("")]
+    [InlineData(null)]
+    public void GenericStringTest(string testval)
     {
-        [Theory]
-        [InlineData("Hallo")]
-        [InlineData("Häßlich 25")]
-        [InlineData("<>%&")]
-        [InlineData("(89)=`´\"")]
-        [InlineData("")]
-        [InlineData(null)]
-        public void GenericStringTest(string testval)
-        {
-            IEventArgs<string> ea = new EventArgs<string>(testval);
-            Assert.Equal(testval, ea.Value);
+        IEventArgs<string> ea = new EventArgs<string>(testval);
+        Assert.Equal(testval, ea.Value);
 
-            Assert.Equal(testval != null ? $"EventArgs<String> Value={testval}" : "EventArgs<String> Value=null", ea.ToString());
-        }
+        Assert.Equal(testval != null ? $"EventArgs<String> Value={testval}" : "EventArgs<String> Value=null", ea.ToString());
+    }
 
-        [Theory]
-        [InlineData(25.01d)]
-        [InlineData(25d)]
-        [InlineData(0d)]
-        public void GenericTestDouble(double testval)
-        {
-            IEventArgs<double> ea = new EventArgs<double>(testval);
-            Assert.Equal(testval, ea.Value);
+    [Theory]
+    [InlineData(25.01d)]
+    [InlineData(25d)]
+    [InlineData(0d)]
+    public void GenericTestDouble(double testval)
+    {
+        IEventArgs<double> ea = new EventArgs<double>(testval);
+        Assert.Equal(testval, ea.Value);
             
-            Assert.Equal($"EventArgs<Double> Value={testval}", ea.ToString());
-        }
+        Assert.Equal($"EventArgs<Double> Value={testval}", ea.ToString());
+    }
 
-        [Fact]
-        public void GenericBaseEventArgsString()
-        {
-            IEventArgs<string> ea = new EventArgs<string>();
-            Assert.Null(ea.Value);
-            Assert.Equal("EventArgs<String> Value=null", ea.ToString());
-        }
+    [Fact]
+    public void GenericBaseEventArgsString()
+    {
+        IEventArgs<string> ea = new EventArgs<string>();
+        Assert.Null(ea.Value);
+        Assert.Equal("EventArgs<String> Value=null", ea.ToString());
+    }
 
-        [Fact]
-        public void GenericBaseEventArgsInt()
-        {
-            IEventArgs<int> ea = new EventArgs<int>();
-            Assert.Equal(0, ea.Value);
-            Assert.Equal("EventArgs<Int32> Value=0", ea.ToString());
-        }
+    [Fact]
+    public void GenericBaseEventArgsInt()
+    {
+        IEventArgs<int> ea = new EventArgs<int>();
+        Assert.Equal(0, ea.Value);
+        Assert.Equal("EventArgs<Int32> Value=0", ea.ToString());
+    }
 
-        [Fact]
-        public void GenericBaseEventArgsNullableInt()
-        {
-            IEventArgs<int?> ea = new EventArgs<int?>();
-            Assert.Null(ea.Value);
-            Assert.Equal("EventArgs<Nullable`1> Value=null", ea.ToString());
-        }
+    [Fact]
+    public void GenericBaseEventArgsNullableInt()
+    {
+        IEventArgs<int?> ea = new EventArgs<int?>();
+        Assert.Null(ea.Value);
+        Assert.Equal("EventArgs<Nullable`1> Value=null", ea.ToString());
     }
 }

@@ -21,25 +21,24 @@
 using System.Collections.Generic;
 using ahbsd.lib.Interfaces;
 
-namespace ahbsd.lib.EventArgs
+namespace ahbsd.lib.EventArgs;
+
+/// <summary>
+/// Event arguments for removed items.
+/// </summary>
+/// <typeparam name="T">The type of the removed items</typeparam>
+public class CollectionRemoveEventArgs<T> : System.EventArgs, ICollectionRemoveArgs<T>
 {
     /// <summary>
-    /// Event arguments for removed items.
+    /// Constructor with the removed items.
     /// </summary>
-    /// <typeparam name="T">The type of the removed items</typeparam>
-    public class CollectionRemoveEventArgs<T> : System.EventArgs, ICollectionRemoveArgs<T>
-    {
-        /// <summary>
-        /// Constructor with the removed items.
-        /// </summary>
-        /// <param name="removedItems">The removed items.</param>
-        public CollectionRemoveEventArgs(ICollection<T> removedItems) => RemovedItems = removedItems as IReadOnlyCollection<T>;
+    /// <param name="removedItems">The removed items.</param>
+    public CollectionRemoveEventArgs(ICollection<T> removedItems) => RemovedItems = removedItems as IReadOnlyCollection<T>;
 
-        #region implementation of ICollectionRemoveArgs<T>
+    #region implementation of ICollectionRemoveArgs<T>
 
-        /// <inheritdoc />
-        public IReadOnlyCollection<T> RemovedItems { get; }
+    /// <inheritdoc />
+    public IReadOnlyCollection<T> RemovedItems { get; }
 
-        #endregion
-    }
+    #endregion
 }

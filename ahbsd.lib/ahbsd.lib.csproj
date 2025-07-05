@@ -1,14 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackOnBuild>true</PackOnBuild>
     <PackageId>ahbsd.lib</PackageId>
-    <PackageVersion>1.6</PackageVersion>
+    <PackageVersion>2.0</PackageVersion>
     <Authors>Heinrich Alexandra Hermann</Authors>
     <Company>Alexandra Hermann – Beratung, Software, Design</Company>
     <Copyright>Apache 2.0</Copyright>
-    <NeutralLanguage>en</NeutralLanguage>
+    <NeutralLanguage>en-DE</NeutralLanguage>
     <Owners>Alexandra Hermann – Beratung, Software, Design</Owners>
     <Summary>Classes with functionality I missed.</Summary>
     <Title>AHBSD Library</Title>
@@ -17,30 +16,42 @@
     <RepositoryUrl>https://github.com/Alexandra-Hermann-BSD/ahbsd.lib</RepositoryUrl>
     <ReleaseVersion>1.4</ReleaseVersion>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageReleaseNotes>Version 1.5 has added some functionallity and removed a lot of SonarLint issues</PackageReleaseNotes>
-    <PackageTags>Library; Core; Core3.1; Generic</PackageTags>
+    <PackageReleaseNotes>Version 2.0 since 9.x</PackageReleaseNotes>
+    <PackageTags>Library; Generic</PackageTags>
     <SynchReleaseVersion>false</SynchReleaseVersion>
-    <AssemblyName>ahbsd.lib_Core3.1</AssemblyName>
+    <AssemblyName>ahbsd.lib_9</AssemblyName>
     <CodePage>65001</CodePage>
-    <LangVersion>8</LangVersion>
+    <LangVersion>latestmajor</LangVersion>
     <PackageIcon>Logo.ico</PackageIcon>
     <RepositoryType>Library</RepositoryType>
+    <TargetFrameworks>net9.0;net48</TargetFrameworks>
+    <Product>ahbsd.lib</Product>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>ahbsd_lib_9.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
+    <Nullable>enable</Nullable>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DocumentationFile>bin\Debug\netcoreapp3.1\ahbsd.lib.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\ahbsd.lib.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DebugType>full</DebugType>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin/Debug/</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>pdbonly</DebugType>
-    <DocumentationFile>bin\Release\netcoreapp3.1\ahbsd.lib.xml</DocumentationFile>
+    <DebugType>portable</DebugType>
+    <DocumentationFile>bin\Release\ahbsd.lib.xml</DocumentationFile>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>bin/Release/</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Exceptions\" />
     <Folder Include="Tools\" />
-    <Folder Include="Password\" />
     <Folder Include="Password\Check\" />
     <Folder Include="NamedCollections\" />
     <Folder Include="Products\" />
@@ -54,15 +65,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
-    <PackageReference Include="JetBrains.dotCover.DotNetCliTool" Version="2022.2.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="JetBrains.Annotations" Version="2025.2.1" />
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.Trace" Version="4.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Logo.png">
@@ -75,5 +81,8 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <PackageReference Include="Serilog.Sinks.InMemory" Version="2.0.0" />
   </ItemGroup>
 </Project>

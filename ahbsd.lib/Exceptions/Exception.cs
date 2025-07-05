@@ -16,96 +16,95 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace ahbsd.lib.Exceptions
+namespace ahbsd.lib.Exceptions;
+
+/// <summary>
+/// Class for a generic Exception, which additionally holds a value of T
+/// </summary>
+/// <typeparam name="T">The type.</typeparam>
+[Serializable]
+public class Exception<T> : Exception, IGenericException<T>
 {
     /// <summary>
-    /// Class for a generic Exception, which additionally holds a value of T
+    /// Constructor without any parameters.
     /// </summary>
-    /// <typeparam name="T">The type.</typeparam>
-    [Serializable]
-    public class Exception<T> : Exception, IGenericException<T>
+    public Exception() => Value = default;
+
+    /// <summary>
+    /// Constructor with a value.
+    /// </summary>
+    /// <param name="value">The value.</param>
+    public Exception(T value)
     {
-        /// <summary>
-        /// Constructor without any parameters.
-        /// </summary>
-        public Exception() => Value = default;
-
-        /// <summary>
-        /// Constructor with a value.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        public Exception(T value)
-        {
-            Value = value;
-        }
-
-        /// <summary>
-        /// Constructor with a message.
-        /// </summary>
-        /// <param name="message">The Message.</param>
-        public Exception(string message) : base(message) => Value = default;
-
-        /// <summary>
-        /// Constructor with a message and a value.
-        /// </summary>
-        /// <param name="message">The Message.</param>
-        /// <param name="value">The value.</param>
-        public Exception(string message, T value)
-            : base(message) => Value = value;
-
-        /// <summary>
-        /// Constructor with a message and an inner exception.
-        /// </summary>
-        /// <param name="message">The Message.</param>
-        /// <param name="innerException">The inner Exception.</param>
-        public Exception(string message, Exception innerException)
-            : base(message, innerException) => Value = default;
-
-        /// <summary>
-        /// Constructor with serialized data.
-        /// </summary>
-        /// <param name="info">The serialization info.</param>
-        /// <param name="context">The straming content.</param>
-        protected Exception(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            if (info.ObjectType == typeof(Exception<T>))
-            {
-                Exception<T> tmpClass = (Exception<T>)context.Context;
-
-                Value = tmpClass != null
-                    ? tmpClass.Value
-                    : default;
-            }
-            else if (info.ObjectType.IsAssignableFrom(typeof(IGenericException<T>)))
-            {
-                IGenericException<T> tmpInterface = (IGenericException<T>)context.Context;
-
-                Value = tmpInterface != default(IGenericException<T>)
-                    ? tmpInterface.Value
-                    : default;
-            }
-            else
-            {
-                Value = default;
-            }
-        }
-
-        /// <summary>
-        /// Constructor with a message, a value and an inner exception.
-        /// </summary>
-        /// <param name="message">The Message.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="innerException">The inner Exception.</param>
-        public Exception(string message, T value, Exception innerException)
-            : base(message, innerException) => Value = value;
-
-        #region implementation of IGenericException<T>
-        /// <summary>
-        /// Gets the value of type T.
-        /// </summary>
-        /// <value>The value of type T.</value>
-        public T Value { get; private set; }
-        #endregion
+        Value = value;
     }
+
+    /// <summary>
+    /// Constructor with a message.
+    /// </summary>
+    /// <param name="message">The Message.</param>
+    public Exception(string message) : base(message) => Value = default;
+
+    /// <summary>
+    /// Constructor with a message and a value.
+    /// </summary>
+    /// <param name="message">The Message.</param>
+    /// <param name="value">The value.</param>
+    public Exception(string message, T value)
+        : base(message) => Value = value;
+
+    /// <summary>
+    /// Constructor with a message and an inner exception.
+    /// </summary>
+    /// <param name="message">The Message.</param>
+    /// <param name="innerException">The inner Exception.</param>
+    public Exception(string message, Exception innerException)
+        : base(message, innerException) => Value = default;
+
+    /// <summary>
+    /// Constructor with serialized data.
+    /// </summary>
+    /// <param name="info">The serialization info.</param>
+    /// <param name="context">The straming content.</param>
+    protected Exception(SerializationInfo info, StreamingContext context)
+        : base(info, context)
+    {
+        if (info.ObjectType == typeof(Exception<T>))
+        {
+            var tmpClass = (Exception<T>)context.Context;
+
+            Value = tmpClass != null
+                ? tmpClass.Value
+                : default;
+        }
+        else if (info.ObjectType.IsAssignableFrom(typeof(IGenericException<T>)))
+        {
+            var tmpInterface = (IGenericException<T>)context.Context;
+
+            Value = tmpInterface != default(IGenericException<T>)
+                ? tmpInterface.Value
+                : default;
+        }
+        else
+        {
+            Value = default;
+        }
+    }
+
+    /// <summary>
+    /// Constructor with a message, a value and an inner exception.
+    /// </summary>
+    /// <param name="message">The Message.</param>
+    /// <param name="value">The value.</param>
+    /// <param name="innerException">The inner Exception.</param>
+    public Exception(string message, T value, Exception innerException)
+        : base(message, innerException) => Value = value;
+
+    #region implementation of IGenericException<T>
+    /// <summary>
+    /// Gets the value of type T.
+    /// </summary>
+    /// <value>The value of type T.</value>
+    public T Value { get; private set; }
+    #endregion
 }

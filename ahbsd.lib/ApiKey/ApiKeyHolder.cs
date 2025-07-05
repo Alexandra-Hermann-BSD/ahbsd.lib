@@ -15,6 +15,7 @@
 
 using System;
 using ahbsd.lib.Attributes;
+using JetBrains.Annotations;
 
 // ReSharper disable All
 
@@ -25,15 +26,14 @@ namespace ahbsd.lib.ApiKey
     /// </summary>
     /// <typeparam name="T">Type of API-Key</typeparam>
     [Api]
+    [PublicAPI]
     public partial class ApiKeyHolder<T>
     {
         /// <summary>
         /// Constructor with a given API-Key.
         /// </summary>
         /// <param name="apiKey">The API-Key.</param>
-        public ApiKeyHolder(T apiKey) : base(apiKey)
-        {
-        }
+        public ApiKeyHolder(T apiKey) : base(apiKey) { }
 
         /// <summary>
         /// Constructor without parameters.
@@ -41,8 +41,6 @@ namespace ahbsd.lib.ApiKey
         /// <remarks>If before an object was created, the last API-Key will be used. Otherwise the <c>default of T will be used.</c></remarks>
         /// <exception cref="ArgumentNullException">If <see cref="KnownApiKeys"/> is <c>null</c> or something similar.</exception>
         /// <exception cref="InvalidOperationException">If anything regarding <see cref="KnownApiKeys"/> is an invalid operation.</exception>
-        public ApiKeyHolder() : base()
-        {
-        }
+        public ApiKeyHolder() : base() { }
     }
 }

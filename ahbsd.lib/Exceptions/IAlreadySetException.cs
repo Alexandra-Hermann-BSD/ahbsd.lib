@@ -15,26 +15,25 @@
 
 using ahbsd.lib.EventArgs;
 
-namespace ahbsd.lib.Exceptions
+namespace ahbsd.lib.Exceptions;
+
+/// <summary>
+/// Am interface for a specialized Exception for the case, that
+/// by trying to use <see cref="ChangeEventArgs{T}.SetNewValue(T)"/> the
+/// new value was already set.
+/// </summary>
+/// <typeparam name="T">The type of the <see cref="ChangeEventArgs{T}"/></typeparam>
+public interface IAlreadySetException<T> : IGenericException<T>
 {
     /// <summary>
-    /// Am interface for a specialized Exception for the case, that
-    /// by trying to use <see cref="ChangeEventArgs{T}.SetNewValue(T)"/> the
-    /// new value was already set.
+    /// Returns the given <see cref="ChangeEventArgs{T}"/>.
     /// </summary>
-    /// <typeparam name="T">The type of the <see cref="ChangeEventArgs{T}"/></typeparam>
-    public interface IAlreadySetException<T> : IGenericException<T>
-    {
-        /// <summary>
-        /// Returns the given <see cref="ChangeEventArgs{T}"/>.
-        /// </summary>
-        /// <value>The given <see cref="ChangeEventArgs{T}"/>.</value>
-        ChangeEventArgs<T> ChangeEventArgs { get; }
+    /// <value>The given <see cref="ChangeEventArgs{T}"/>.</value>
+    ChangeEventArgs<T> ChangeEventArgs { get; }
 
-        /// <summary>
-        /// Gets a string representating this Exception.
-        /// </summary>
-        /// <returns>A string representating this Exception</returns>
-        string ToString();
-    }
+    /// <summary>
+    /// Gets a string representating this Exception.
+    /// </summary>
+    /// <returns>A string representating this Exception</returns>
+    string ToString();
 }

@@ -15,61 +15,60 @@
 
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
-namespace ahbsd.lib.NamedCollections
+namespace ahbsd.lib.NamedCollections;
+
+/// <summary>
+/// Interface for a collection of <see cref="INamedList{T}"/>.
+/// </summary>
+/// <typeparam name="TK">The type of the key.</typeparam>
+/// <typeparam name="TV">The type of the <see cref="INamedList{T}"/>-ValueType.</typeparam>
+[PublicAPI]
+public interface IDictionaryOfNamedList<TK, TV> : IDictionary<TK?, INamedList<TV?>?>
 {
     /// <summary>
-    /// Interface for a collection of <see cref="INamedList{T}"/>.
+    /// Happens, if a new <see cref="INamedList{T}"/> was added.
     /// </summary>
-    /// <typeparam name="TK">The type of the key.</typeparam>
-    /// <typeparam name="TV">The type of the <see cref="INamedList{T}"/>-ValueType.</typeparam>
-    public interface IDictionaryOfNamedList<TK, TV> : IDictionary<TK, INamedList<TV>>
-    {
-        /// <summary>
-        /// Happenes, if a new <see cref="INamedList{T}"/> was added.
-        /// </summary>
-        event EventHandler<EventArgs<INamedList<TV>>> OnNamedListAdded;
-        /// <summary>
-        /// Adds a key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="name">The name of the new <see cref="INamedList{T}"/>.</param>
-        /// <exception cref="ArgumentException">If key already exists.</exception>
-        void Add(TK key, string name);
-        /// <summary>
-        /// Adds a value to the <see cref="INamedList{T}"/> of key.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="name">[optional] 
-        /// The name of the new <see cref="INamedList{T}"/>.
-        /// </param>
-        /// <remarks>
-        /// If the key already exists the name isn't needed; if the key doesn't
-        /// exists a name is needed, otherwise a
-        /// <see cref="KeyNotFoundException"/> will be thrown.
-        /// </remarks>
-        /// <exception cref="KeyNotFoundException">
-        /// If the key isn't there AND a name for the new
-        /// <see cref="INamedList{T}"/> was missing.
-        /// </exception>
-        void Add(TK key, TV value, string name=null);
-        /// <summary>
-        /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
-        /// </summary>
-        /// <param name="keyValuePair">The <see cref="KeyValuePair{TKey, TValue}"/>.</param>
-        /// <param name="name">[optional] 
-        /// The name of the new <see cref="INamedList{T}"/>.
-        /// </param>
-        /// <remarks>
-        /// If the key already exists the name isn't needed; if the key doesn't
-        /// exists a name is needed, otherwise a
-        /// <see cref="KeyNotFoundException"/> will be thrown.
-        /// </remarks>
-        /// <exception cref="KeyNotFoundException">
-        /// If the key isn't there AND a name for the new
-        /// <see cref="INamedList{T}"/> was missing.
-        /// </exception>
-        void Add(KeyValuePair<TK, TV> keyValuePair, string name=null);
-    }
+    event EventHandler<EventArgs<INamedList<TV?>>>? OnNamedListAdded;
+    /// <summary>
+    /// Adds a key.
+    /// </summary>
+    /// <param name="key">The key.</param>
+    /// <param name="name">The name of the new <see cref="INamedList{T}"/>.</param>
+    /// <exception cref="ArgumentException">If key already exists.</exception>
+    void Add(TK key, string? name);
+    /// <summary>
+    /// Adds a value to the <see cref="INamedList{T}"/> of key.
+    /// </summary>
+    /// <param name="key">The key.</param>
+    /// <param name="value">The value.</param>
+    /// <param name="name">[optional] 
+    /// The name of the new <see cref="INamedList{T}"/>.
+    /// </param>
+    /// <remarks>
+    /// If the key already exists the name isn't needed; if the key doesn't exist a name is needed, otherwise a
+    /// <see cref="KeyNotFoundException"/> will be thrown.
+    /// </remarks>
+    /// <exception cref="KeyNotFoundException">
+    /// If the key isn't there AND a name for the new
+    /// <see cref="INamedList{T}"/> was missing.
+    /// </exception>
+    void Add(TK key, TV value, string? name=null);
+    /// <summary>
+    /// Adds a <see cref="KeyValuePair{TKey, TValue}"/>.
+    /// </summary>
+    /// <param name="keyValuePair">The <see cref="KeyValuePair{TKey, TValue}"/>.</param>
+    /// <param name="name">[optional] 
+    /// The name of the new <see cref="INamedList{T}"/>.
+    /// </param>
+    /// <remarks>
+    /// If the key already exists the name isn't needed; if the key doesn't exist a name is needed, otherwise a
+    /// <see cref="KeyNotFoundException"/> will be thrown.
+    /// </remarks>
+    /// <exception cref="KeyNotFoundException">
+    /// If the key isn't there AND a name for the new
+    /// <see cref="INamedList{T}"/> was missing.
+    /// </exception>
+    void Add(KeyValuePair<TK, TV> keyValuePair, string? name=null);
 }

@@ -20,45 +20,44 @@ using ahbsd.lib.NamedCollections;
 using ahbsd.lib.Tools;
 using Xunit;
 
-namespace Test_xUnit.NamedCollections
+namespace Test_xUnit.NamedCollections;
+
+public class TestNamedCollections
 {
-    public class TestNamedCollections
+    private static readonly ILogger TestLogger = new Logger($"{Path.GetTempPath()}Test.log");
+
+    [Fact]
+    public void TestNamedCollection()
     {
-        private static readonly ILogger testLogger = new Logger($"{Path.GetTempPath()}Test.log");
+        INamedList<int> l1 = new NamedList<int>("l1", 11);
+        INamedCollection<int> nc1 = new NamedCollection<int>("NamedCollection 1 ", l1);
+        nc1.OnNameChanged += Nc1_OnNameChanged;
+        l1.OnNameChanged += Nc1_OnNameChanged;
 
-        [Fact]
-        public void TestNamedCollection()
+
+        TestLogger.Log(nc1);
+        TestLogger.Log(l1);
+
+        l1.Name = "Named List #1";
+
+        for (int i = 0; i < 11; i++)
         {
-            INamedList<int> l1 = new NamedList<int>("l1", 11);
-            INamedCollection<int> nc1 = new NamedCollection<int>("NamedCollection 1 ", l1);
-            nc1.OnNameChanged += Nc1_OnNameChanged;
-            l1.OnNameChanged += Nc1_OnNameChanged;
+            nc1.Add(i);
+        }
 
+        nc1.Name = "NamedCollection 1";
+        nc1.Name = "Collection 1, which is named.";
 
-            testLogger.Log(nc1);
-            testLogger.Log(l1);
-
-            l1.Name = "Named List #1";
-
-            for (int i = 0; i < 11; i++)
-            {
-                nc1.Add(i);
-            }
-
-            nc1.Name = "NamedCollection 1";
-            nc1.Name = "Collection 1, which is named.";
-
-            testLogger.Log(nc1);
-            testLogger.Log(l1);
+        TestLogger.Log(nc1);
+        TestLogger.Log(l1);
             
-            Assert.True(true);
-        }
+        Assert.True(true);
+    }
 
 
-        private void Nc1_OnNameChanged(object sender, ChangeEventArgs<string> e)
-        {
-            testLogger.Log($"The named collections name has changed: The sending object was {sender} ChangeEventArgs<string>: {e}");
-            Assert.NotEqual(e.OldValue, e.NewValue);
-        }
+    private void Nc1_OnNameChanged(object sender, ChangeEventArgs<string> e)
+    {
+        TestLogger.Log($"The named collections name has changed: The sending object was {sender} ChangeEventArgs<string>: {e}");
+        Assert.NotEqual(e.OldValue, e.NewValue);
     }
 }

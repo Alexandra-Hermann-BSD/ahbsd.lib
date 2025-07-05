@@ -12,32 +12,35 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-namespace ahbsd.lib.Password
+
+using JetBrains.Annotations;
+
+namespace ahbsd.lib.Password;
+
+/// <summary>
+/// The characteristic of a password.
+/// </summary>
+[PublicAPI]
+public enum Characteristic
 {
     /// <summary>
-    /// The charasteristic of a password.
+    /// A numeric letter.
     /// </summary>
-    public enum Charasteristic
-    {
-        /// <summary>
-        /// A numeric letter.
-        /// </summary>
-        Numeric,
-        /// <summary>
-        /// A lowercase letter.
-        /// </summary>
-        LowercaseLetter,
-        /// <summary>
-        /// A capital letter.
-        /// </summary>
-        CapitalLetter,
-        /// <summary>
-        /// A special character.
-        /// </summary>
-        SpecialCharacter,
-        /// <summary>
-        /// A space.
-        /// </summary>
-        Space,
-    }
+    Numeric,
+    /// <summary>
+    /// A lowercase letter.
+    /// </summary>
+    LowercaseLetter,
+    /// <summary>
+    /// A capital letter.
+    /// </summary>
+    CapitalLetter,
+    /// <summary>
+    /// A special character.
+    /// </summary>
+    SpecialCharacter,
+    /// <summary>
+    /// A space.
+    /// </summary>
+    Space,
 }

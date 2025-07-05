@@ -15,93 +15,93 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
+using JetBrains.Annotations;
 
-namespace ahbsd.lib.NamedCollections
+namespace ahbsd.lib.NamedCollections;
+
+/// <summary>
+/// Default implementation of <see cref="INamedList{T}"/>.
+/// </summary>
+/// <typeparam name="T">Type of the listed objects.</typeparam>
+[PublicAPI]
+public class NamedList<T> : List<T>, INamedList<T?>
 {
     /// <summary>
-    /// Default implementation of <see cref="INamedList{T}"/>.
+    /// The name of the list.
     /// </summary>
-    /// <typeparam name="T">Type of the listed objects.</typeparam>
-    public class NamedList<T> : List<T>, INamedList<T>
+    private string? _name;
+
+    /// <summary>
+    /// Constructor without any parameters.
+    /// </summary>
+    public NamedList() => _name = null;
+
+    /// <summary>
+    /// Constructor with a base capacity of the list.
+    /// </summary>
+    /// <param name="capacity">The base capacity of the list.</param>
+    /// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less then 0</exception>
+    public NamedList(int capacity) : base(capacity) => _name = null;
+
+    /// <summary>
+    /// Constructor with a given collection.
+    /// </summary>
+    /// <param name="collection">The given collection.</param>
+    /// <exception cref="ArgumentException"><paramref name="collection"/> is <c>null</c></exception>
+    public NamedList(IEnumerable<T> collection) : base(collection) => _name = null;
+
+    /// <summary>
+    /// Constructor with a given name.
+    /// </summary>
+    /// <param name="name">The given name.</param>
+    public NamedList(string? name) => _name = name?.Trim();
+
+    /// <summary>
+    /// Constructor with a given name and a base capacity of the list.
+    /// </summary>
+    /// <param name="name">The given name.</param>
+    /// <param name="capacity">The base capacity of the list.</param>
+    /// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less then 0</exception>
+    public NamedList(string? name, int capacity) : base(capacity) => _name = name?.Trim();
+
+    /// <summary>
+    /// Constructor with a given name and  a given collection.
+    /// </summary>
+    /// <param name="name">The given name.</param>
+    /// <param name="collection">The given collection.</param>
+    /// <exception cref="ArgumentException"><paramref name="collection"/> is <c>null</c></exception>
+    public NamedList(string? name, IEnumerable<T> collection) : base(collection) => _name = name?.Trim();
+
+    #region implementation of INamedList<T>
+    /// <inheritdoc/>
+    public string? Name
     {
-        /// <summary>
-        /// The name of the list.
-        /// </summary>
-        private string name;
-
-        /// <summary>
-        /// Constructor without any parameters.
-        /// </summary>
-        public NamedList() => name = null;
-
-        /// <summary>
-        /// Constructor with a base capacity of the list.
-        /// </summary>
-        /// <param name="capacity">The base capacity of the list.</param>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less then 0</exception>
-        public NamedList(int capacity) : base(capacity) => name = null;
-
-        /// <summary>
-        /// Constructor with a given collection.
-        /// </summary>
-        /// <param name="collection">The given collection.</param>
-        /// <exception cref="ArgumentException"><paramref name="collection"/> is <c>null</c></exception>
-        public NamedList(IEnumerable<T> collection) : base(collection) => name = null;
-
-        /// <summary>
-        /// Constructor with a given name.
-        /// </summary>
-        /// <param name="name">The given name.</param>
-        public NamedList(string name) => this.name = name?.Trim();
-
-        /// <summary>
-        /// Constructor with a given name and a base capacity of the list.
-        /// </summary>
-        /// <param name="name">The given name.</param>
-        /// <param name="capacity">The base capacity of the list.</param>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="capacity"/> is less then 0</exception>
-        public NamedList(string name, int capacity) : base(capacity) => this.name = name?.Trim();
-
-        /// <summary>
-        /// Constructor with a given name and  a given collection.
-        /// </summary>
-        /// <param name="name">The given name.</param>
-        /// <param name="collection">The given collection.</param>
-        /// <exception cref="ArgumentException"><paramref name="collection"/> is <c>null</c></exception>
-        public NamedList(string name, [NotNull]IEnumerable<T> collection) : base(collection) => this.name = name?.Trim();
-
-        #region implementation of INamedList<T>
-        /// <inheritdoc/>
-        public string Name
+        get => _name;
+        set
         {
-            get => name;
-            set
-            {
-                ChangeEventArgs<string> cea;
+            ChangeEventArgs<string?> cea;
 
-                if (value != null && !value.Trim().Equals(name))
-                {
-                    cea = new ChangeEventArgs<string>(name, value.Trim());
-                    name = value;
-                    OnNameChanged?.Invoke(this, cea);
-                }
-                else if (value == null && name != null)
-                {
-                    cea = new ChangeEventArgs<string>(name, null);
-                    name = null;
-                    OnNameChanged?.Invoke(this, cea);
-                }
+            if (value != null && !value.Trim().Equals(_name))
+            {
+                cea = new ChangeEventArgs<string?>(_name, value.Trim());
+                _name = value;
+                OnNameChanged?.Invoke(this, cea);
+            }
+            else if (value == null && _name != null)
+            {
+                cea = new ChangeEventArgs<string?>(_name, null);
+                _name = null;
+                OnNameChanged?.Invoke(this, cea);
             }
         }
-        
-        /// <inheritdoc/>
-        public event ChangeEventHandler<string> OnNameChanged;
-
-        /// <inheritdoc cref="object.ToString()"/>
-        public override string ToString() => $"{name}List<{typeof(T)}>: Count = {Count}";
-        #endregion
     }
+        
+    /// <inheritdoc/>
+    public event ChangeEventHandler<string?>? OnNameChanged;
+
+    /// <inheritdoc cref="object.ToString()"/>
+    public override string ToString() => $"{_name}List<{typeof(T)}>: Count = {Count}";
+    #endregion
 }

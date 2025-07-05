@@ -16,48 +16,47 @@
 using System.Globalization;
 using ahbsd.lib.EventHandler;
 
-namespace ahbsd.lib.Products
+namespace ahbsd.lib.Products;
+
+/// <summary>
+/// An interface describing an adress in general.
+/// </summary>
+public interface IAddress
 {
     /// <summary>
-    /// An interface describing an adress in general.
+    /// Happenes, if the <see cref="AddressType"/> has changed.
     /// </summary>
-    public interface IAddress
-    {
-        /// <summary>
-        /// Happenes, if the <see cref="AddressType"/> has changed.
-        /// </summary>
-        event ChangeEventHandler<AddressType> OnTypeChanged;
-        /// <summary>
-        /// Happenes, if the Adress has changed.
-        /// </summary>
-        event ChangeEventHandler<string> OnAdressChanged;
-        /// <summary>
-        /// Gets or sets the AddressType.
-        /// </summary>
-        /// <value>The AddressType.</value>
-        AddressType AddressType { get; set; }
-        /// <summary>
-        /// Gets or sets the Adress.
-        /// </summary>
-        /// <value>The Adress.</value>
-        string Adress { get; set; }
-        /// <summary>
-        /// Gets the ZIP.
-        /// </summary>
-        /// <value>The ZIP.</value>
-        /// <remarks>Is only settable by the constructor.</remarks>
-        string Zip { get; }
-        /// <summary>
-        /// Gets the City.
-        /// </summary>
-        /// <value>The City.</value>
-        /// <remarks>Is only settable by the constructor.</remarks>
-        string City { get; }
-        /// <summary>
-        /// Gets the Country.
-        /// </summary>
-        /// <value>The Country.</value>
-        /// <remarks>Is only settable by the constructor.</remarks>
-        CultureInfo Country { get; }
-    }
+    event ChangeEventHandler<AddressType> OnTypeChanged;
+    /// <summary>
+    /// Happenes, if the Adress has changed.
+    /// </summary>
+    event ChangeEventHandler<string> OnAdressChanged;
+    /// <summary>
+    /// Gets or sets the AddressType.
+    /// </summary>
+    /// <value>The AddressType.</value>
+    AddressType AddressType { get; set; }
+    /// <summary>
+    /// Gets or sets the Adress.
+    /// </summary>
+    /// <value>The Adress.</value>
+    string Adress { get; set; }
+    /// <summary>
+    /// Gets the ZIP.
+    /// </summary>
+    /// <value>The ZIP.</value>
+    /// <remarks>Is only settable by the constructor.</remarks>
+    string Zip { get; }
+    /// <summary>
+    /// Gets the City.
+    /// </summary>
+    /// <value>The City.</value>
+    /// <remarks>Is only settable by the constructor.</remarks>
+    string City { get; }
+    /// <summary>
+    /// Gets the Country.
+    /// </summary>
+    /// <value>The Country.</value>
+    /// <remarks>Is only settable by the constructor.</remarks>
+    CultureInfo Country { get; }
 }

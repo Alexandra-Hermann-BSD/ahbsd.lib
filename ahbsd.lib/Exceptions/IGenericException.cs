@@ -12,18 +12,17 @@
 //    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
-namespace ahbsd.lib.Exceptions
+namespace ahbsd.lib.Exceptions;
+
+/// <summary>
+/// Interface for generic exceptions.
+/// </summary>
+/// <typeparam name="T">Selectable type.</typeparam>
+public interface IGenericException<out T>
 {
     /// <summary>
-    /// Interface for generic exceptions.
+    /// Gets the value of type T.
     /// </summary>
-    /// <typeparam name="T">Selectable type.</typeparam>
-    public interface IGenericException<out T>
-    {
-        /// <summary>
-        /// Gets the value of type T.
-        /// </summary>
-        /// <value>The value of type T.</value>
-        T Value { get; }
-    }
+    /// <value>The value of type T.</value>
+    T Value { get; }
 }

@@ -20,99 +20,99 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using ahbsd.lib.Attributes;
 using JetBrains.Annotations;
 using Xunit;
 
-namespace Test_xUnit.Attributes
+namespace Test_xUnit.Attributes;
+
+[TestSubject(typeof(ApiAttribute))]
+public class TestApiAttribute
 {
-    [TestSubject(typeof(ApiAttribute))]
-    public class TestApiAttribute
+    [Fact]
+    public void Test5TestClasses()
     {
-        [Fact]
-        public void Test5TestClasses()
+        var fiveObjects = new List<ITestClass>(5);
+
+        for (var i = 0; i < 3; i++)
         {
-            ICollection<ITestClass> fiveObjects = new List<ITestClass>(5);
+            var tmpObject = new TestClass($"#{i}");
+            Assert.Equal($"#{i}", tmpObject.Content);
+            fiveObjects.Add(tmpObject);
+        }
 
-            for (int i = 0; i < 3; i++)
+        var test4 = new TestClass();
+        var test5 = new TestClass();
+
+        fiveObjects.Add(test4);
+        fiveObjects.Add(test5);
+
+        foreach (var fiveObject in fiveObjects)
+        {
+            Assert.Contains("Api", AttributeReader.GetFirstApiAttribute(fiveObject)?.ToString());
+        }
+
+        try
+        {
+            foreach (var usingType in ApiAttribute.UsingTypes)
             {
-                ITestClass tmpObject = new TestClass($"#{i}");
-                Assert.Equal($"#{i}", tmpObject.Content);
-                fiveObjects.Add(tmpObject);
+                Assert.Equal(typeof(TestClass), usingType);
             }
-
-            TestClass test4 = new TestClass();
-            var test5 = new TestClass();
-
-            fiveObjects.Add(test4);
-            fiveObjects.Add(test5);
-
-            foreach (var fiveObject in fiveObjects)
-            {
-                Assert.Contains("Api", AttributeReader.GetFirstAttribute(fiveObject).ToString());
-            }
-
-            try
-            {
-                foreach (var usingType in ApiAttribute.UsingTypes)
-                {
-                    Assert.Equal(typeof(TestClass), usingType);
-                }
-            }
-            catch (Exception)
-            {
-                // we don't care
-            }
+        }
+        catch (Exception)
+        {
+            // we don't care
+        }
         
-        }
     }
+}
 
-    internal static class AttributeReader
+internal static class AttributeReader
+{
+    public static CustomAttributeData? GetFirstApiAttribute(object? o)
     {
-        public static CustomAttributeData GetFirstAttribute(object o)
+        CustomAttributeData? result = null;
+
+        if (o != null)
         {
-            CustomAttributeData result = null;
-
-            if (o != null)
-            {
-                var type = o.GetType();
+            var type = o.GetType();
             
-                result = type.CustomAttributes.First();
-                Assert.NotNull(result);
+            result = type.CustomAttributes.FirstOrDefault(a => a.AttributeType == typeof(ApiAttribute));
+            Assert.NotNull(result);
 
-                var attr = type.GetCustomAttributes(typeof(ApiAttribute), true).FirstOrDefault();
-                if (attr is ApiAttribute apiAttribute)
-                {
-                    Assert.NotNull(apiAttribute.CallerName);
-                    Assert.NotNull(apiAttribute.CallerType);
-                }
+            var attr = type.GetCustomAttributes(typeof(ApiAttribute), true).FirstOrDefault();
+            if (attr is ApiAttribute apiAttribute)
+            {
+                Assert.NotEmpty(apiAttribute.CallerName);
+                Assert.NotNull(apiAttribute.CallerType);
             }
-
-            return result;
         }
-    }
 
-    internal interface ITestClass
-    {
-        /// <summary>
-        /// Gets the content.
-        /// </summary>
-        /// <value>The content</value>
-        string Content { get; }
+        return result;
     }
+}
 
-    [Api]
-    internal class TestClass : ITestClass
-    {
-        /// <summary>
-        /// Constructor with optional content.
-        /// </summary>
-        /// <param name="content">[optional] content</param>
-        public TestClass(string content = null) => Content = content;
+internal interface ITestClass
+{
+    /// <summary>
+    /// Gets the content.
+    /// </summary>
+    /// <value>The content</value>
+    string Content { get; }
+}
 
-        /// <inheritdoc/>
-        public string Content { get; }
-    }
+[Api]
+internal class TestClass : ITestClass
+{
+    /// <summary>
+    /// Constructor with optional content.
+    /// </summary>
+    /// <param name="content">[optional] content</param>
+    public TestClass(string? content = null) => Content = content ?? string.Empty;
+
+    /// <inheritdoc/>
+    public string Content { get; }
 }

@@ -16,31 +16,30 @@
 using System.ComponentModel;
 using ahbsd.lib.EventHandler;
 
-namespace ahbsd.lib.Products
+namespace ahbsd.lib.Products;
+
+/// <summary>
+/// Interface of an model of a product.
+/// </summary>
+public interface IModel : IComponent
 {
     /// <summary>
-    /// Interface of an model of a product.
+    /// Happens, if the notes have changed.
     /// </summary>
-    public interface IModel : IComponent
-    {
-        /// <summary>
-        /// Happens, if the notes have changed.
-        /// </summary>
-        event ChangeEventHandler<string> OnNotesChanged;
-        /// <summary>
-        /// Gets the producer of the Model.
-        /// </summary>
-        /// <value>The producer of the Model.</value>
-        ICompany Producer { get; }
-        /// <summary>
-        /// Gets the name of the model.
-        /// </summary>
-        /// <value>The name of the model.</value>
-        string Name { get; }
-        /// <summary>
-        /// Gets or sets the notes to the model.
-        /// </summary>
-        /// <value>The notes to the model.</value>
-        string Notes { get; set; }
-    }
+    event ChangeEventHandler<string> OnNotesChanged;
+    /// <summary>
+    /// Gets the producer of the Model.
+    /// </summary>
+    /// <value>The producer of the Model.</value>
+    ICompany Producer { get; }
+    /// <summary>
+    /// Gets the name of the model.
+    /// </summary>
+    /// <value>The name of the model.</value>
+    string Name { get; }
+    /// <summary>
+    /// Gets or sets the notes to the model.
+    /// </summary>
+    /// <value>The notes to the model.</value>
+    string Notes { get; set; }
 }

@@ -17,24 +17,23 @@ using ahbsd.lib.Tools;
 using JetBrains.Annotations;
 using Xunit;
 
-namespace Test_xUnit.Tools
+namespace Test_xUnit.Tools;
+
+[TestSubject(typeof(PrimeCheck))]
+public class TestPrimeCheck
 {
-    [TestSubject(typeof(PrimeCheck))]
-    public class TestPrimeCheck
+    [Theory]
+    [InlineData(true, (ulong)5)]
+    [InlineData(true, (ulong)3)]
+    [InlineData(true, (ulong)13)]
+    [InlineData(false, (ulong)12)]
+    [InlineData(false, (ulong)77)]
+    [InlineData(false, (ulong)102)]
+    [InlineData(false, ulong.MinValue)]
+    [InlineData(false, ulong.MaxValue)]
+    public void PrimeCheckTest(bool expectedPositive, ulong number)
     {
-        [Theory]
-        [InlineData(true, (ulong)5)]
-        [InlineData(true, (ulong)3)]
-        [InlineData(true, (ulong)13)]
-        [InlineData(false, (ulong)12)]
-        [InlineData(false, (ulong)77)]
-        [InlineData(false, (ulong)102)]
-        [InlineData(false, ulong.MinValue)]
-        [InlineData(false, ulong.MaxValue)]
-        public void PrimeCheckTest(bool expectedPositive, ulong number)
-        {
-            Assert.Equal(expectedPositive, PrimeCheck.Check(number));
-        }
-        
+        Assert.Equal(expectedPositive, PrimeCheck.Check(number));
     }
+        
 }
