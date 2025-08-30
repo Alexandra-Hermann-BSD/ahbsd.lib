@@ -16,27 +16,26 @@
 using System.Collections.Generic;
 using ahbsd.lib.EventHandler;
 
-namespace ahbsd.lib.NamedCollections
+namespace ahbsd.lib.NamedCollections;
+
+/// <summary>
+/// Interface for a named list.
+/// </summary>
+/// <typeparam name="T">The type of the listed objects.</typeparam>
+public interface INamedList<T> : IList<T?>
 {
     /// <summary>
-    /// Interface for a named list.
+    /// Gets or sets the name of the list.
     /// </summary>
-    /// <typeparam name="T">The type of the listed objects.</typeparam>
-    public interface INamedList<T> : IList<T>
-    {
-        /// <summary>
-        /// Gets or sets the name of the list.
-        /// </summary>
-        /// <value>The name of the list.</value>
-        string Name { get; set; }
-        /// <summary>
-        /// Happenes, if the name of the list has changed.
-        /// </summary>
-        event ChangeEventHandler<string> OnNameChanged;
-        /// <summary>
-        /// Gets a string representation of this object.
-        /// </summary>
-        /// <returns>The string representation of this object.</returns>
-        string ToString();
-    }
+    /// <value>The name of the list.</value>
+    string? Name { get; set; }
+    /// <summary>
+    /// Happens, if the name of the list has changed.
+    /// </summary>
+    event ChangeEventHandler<string?>? OnNameChanged;
+    /// <summary>
+    /// Gets a string representation of this object.
+    /// </summary>
+    /// <returns>The string representation of this object.</returns>
+    string ToString();
 }

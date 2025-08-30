@@ -20,18 +20,17 @@
 
 using System.Diagnostics;
 
-namespace ahbsd.lib.Interfaces
+namespace ahbsd.lib.Interfaces;
+
+/// <summary>
+/// An interface for classes, that get the calling classes.
+/// </summary>
+/// <remarks>e.g. when a functionality like a set was called.</remarks>
+public interface IGetCaller
 {
     /// <summary>
-    /// An interface for classes, that get the calling classes.
+    /// Gets the calling object.
     /// </summary>
-    /// <remarks>e.g. when a functionality like a set was called.</remarks>
-    public interface IGetCaller
-    {
-        /// <summary>
-        /// Gets the calling object.
-        /// </summary>
-        /// <value>The calling object</value>
-        StackFrame Caller { get; }
-    }
+    /// <value>The calling object</value>
+    StackFrame Caller { get; }
 }

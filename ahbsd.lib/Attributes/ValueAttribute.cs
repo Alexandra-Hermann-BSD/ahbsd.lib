@@ -20,26 +20,25 @@
 
 using System;
 
-namespace ahbsd.lib.Attributes
+namespace ahbsd.lib.Attributes;
+
+/// <summary>
+/// An attribute to set a value.
+/// </summary>
+public class ValueAttribute : Attribute
 {
     /// <summary>
-    /// An attribute to set a value.
+    /// Constructor with the value to set.
     /// </summary>
-    public class ValueAttribute : Attribute
+    /// <param name="value">The value to set</param>
+    public ValueAttribute(int value)
     {
-        /// <summary>
-        /// Constructor with the value to set.
-        /// </summary>
-        /// <param name="value">The value to set</param>
-        public ValueAttribute(int value)
-        {
-            Value = value;
-        }
-        
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        /// <value>The value</value>
-        public int Value { get; set; }
+        Value = value;
     }
+        
+    /// <summary>
+    /// Gets or sets the value.
+    /// </summary>
+    /// <value>The value</value>
+    public int Value { get; set; }
 }

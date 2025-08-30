@@ -26,213 +26,229 @@ using System.Reflection;
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
 using ahbsd.lib.Interfaces;
+using JetBrains.Annotations;
 
-namespace ahbsd.lib.Attributes
+namespace ahbsd.lib.Attributes;
+
+/// <summary>
+/// Utilities for Attributes
+/// </summary>
+[PublicAPI]
+public class AttributeUtil<T> : IAttributeUtil<T> where T: Attribute
 {
     /// <summary>
-    /// Utilities for Attributes
+    /// The owning container.
     /// </summary>
-    public class AttributeUtil<T> : IAttributeUtil<T> where T: Attribute
+    private IContainer container;
+    /// <summary>
+    /// The came of this component.
+    /// </summary>
+    private string _name;
+
+    /// <summary>
+    /// Parameterless constructor.
+    /// </summary>
+    protected AttributeUtil()
     {
-        /// <summary>
-        /// The owning container.
-        /// </summary>
-        private IContainer container;
-        /// <summary>
-        /// The came of this component.
-        /// </summary>
-        private string name;
+        container = null;
+        Initialize();
+    }
 
-        /// <summary>
-        /// Parameterless constructor.
-        /// </summary>
-        protected AttributeUtil()
-        {
-            container = null;
-            Initialize();
-        }
+    /// <summary>
+    /// Constructor with a given container.
+    /// </summary>
+    /// <param name="container">The given container</param>
+    protected AttributeUtil(IContainer container)
+    {
+        this.container = container;
+        Initialize();
+    }
 
-        /// <summary>
-        /// Constructor with a given container.
-        /// </summary>
-        /// <param name="container">The given container</param>
-        protected AttributeUtil(IContainer container)
-        {
-            this.container = container;
-            Initialize();
-        }
+    /// <summary>
+    /// Constructor with a given attribute.
+    /// </summary>
+    /// <param name="attribute">The given attribute</param>
+    protected internal AttributeUtil(T attribute) : this()
+    {
+        Attribute = attribute;
+    }
 
-        /// <summary>
-        /// Constructor with a given attribute.
-        /// </summary>
-        /// <param name="attribute">The given attribute</param>
-        protected internal AttributeUtil(T attribute) : this()
-        {
-            Attribute = attribute;
-        }
+    /// <summary>
+    /// Constructor with a given attribute and a given container.
+    /// </summary>
+    /// <param name="attribute">The given attribute</param>
+    /// <param name="container">The given container</param>
+    protected internal AttributeUtil(T attribute, IContainer container) : this(container)
+    {
+        Attribute = attribute;
+    }
 
-        /// <summary>
-        /// Constructor with a given attribute and a given container.
-        /// </summary>
-        /// <param name="attribute">The given attribute</param>
-        /// <param name="container">The given container</param>
-        protected internal AttributeUtil(T attribute, IContainer container) : this(container)
-        {
-            Attribute = attribute;
-        }
+    /// <summary>
+    /// Constructor with a given container and a name.
+    /// </summary>
+    /// <param name="container">The given container</param>
+    /// <param name="name">The given Name</param>
+    public AttributeUtil(IContainer container, string name) : this(container)
+    {
+        Name = name;
+    }
 
-        public AttributeUtil(IContainer container, string name) : this(container)
-        {
-            Name = name; 
-        }
+    /// <summary>
+    /// Initializes this object.
+    /// </summary>
+    protected void Initialize()
+    {
+        _name = GetType().Name;
+        container?.Add(this, Name);
+        OnNameChanged += AttributeUtil_OnNameChanged;
+        OnContainerChanged += AttributeUtil_OnContainerChanged;
+    }
 
-        /// <summary>
-        /// Initializes this object.
-        /// </summary>
-        protected void Initialize()
+    /// <summary>
+    /// Happens, when the <see cref="Container"/> has changed.
+    /// </summary>
+    /// <param name="sender">Sending object</param>
+    /// <param name="e">Event arguments</param>
+    private void AttributeUtil_OnContainerChanged(object sender, ChangeEventArgs<IContainer> e)
+    {
+        e.OldValue?.Remove(this);
+        e.NewValue?.Add(this, this.Name);
+    }
+
+    /// <summary>
+    /// Happens, when the <see cref="Name"/> has changed.
+    /// </summary>
+    /// <param name="sender">Sending object</param>
+    /// <param name="e">Event arguments</param>
+    private void AttributeUtil_OnNameChanged(object sender, ChangeEventArgs<string> e)
+    {
+        if (Container != null)
         {
-            name = GetType().Name;
-            container?.Add(this, Name);
-            OnNameChanged += AttributeUtil_OnNameChanged;
-            OnContainerChanged += AttributeUtil_OnContainerChanged;
+            Container.Remove(this);
+            Container.Add(this, e.NewValue);
         }
-        
-        /// <summary>
-        /// Haüüens, when the <see cref="Container"/> has changed.
-        /// </summary>
-        /// <param name="sender">Sending object</param>
-        /// <param name="e">Event arguments</param>
-        private void AttributeUtil_OnContainerChanged(object sender, ChangeEventArgs<IContainer> e)
-        { 
-            e.OldValue?.Remove(this);
-            e.NewValue?.Add(this, this.Name);
-        }
-            
-        /// <summary>
-        /// Happens, when the <see cref="Name"/> has changed.
-        /// </summary>
-        /// <param name="sender">Sending object</param>
-        /// <param name="e">Event arguments</param>
-        private void AttributeUtil_OnNameChanged(object sender, ChangeEventArgs<string> e)
+    }
+
+    /// <summary>
+    /// Disposes this object.
+    /// </summary>
+    /// <param name="disposing">Is there already disposing happening?</param>
+    protected virtual void Dispose(bool disposing)
+    {
+        if (disposing)
         {
-            if (Container != null)
+            // nothing for now
+        }
+    }
+
+    /// <summary>
+    /// Happens if the <see cref="Container"/> has changed.
+    /// </summary>
+    protected event ChangeEventHandler<IContainer> OnContainerChanged;
+
+    #region implementation of IAttributeUtil<T>
+
+    /// <inheritdoc />
+    public event ChangeEventHandler<string> OnNameChanged;
+
+    /// <inheritdoc />
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    /// <inheritdoc />
+    public ISite Site { get; set; }
+
+    /// <inheritdoc />
+    public event System.EventHandler Disposed;
+
+    /// <inheritdoc />
+    public T Attribute { get; protected set; }
+
+    /// <inheritdoc />
+    public string Name
+    {
+        get => _name;
+        set
+        {
+            if (value != _name)
             {
-                Container.Remove(this);
-                Container.Add(this, e.NewValue);
+                var changeEventArgs = new ChangeEventArgs<string>(_name, value);
+                _name = value;
+                OnNameChanged?.Invoke(this, changeEventArgs);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Gets the container of this attribute util.
+    /// </summary>
+    /// <value>The container of this attribute util</value>
+    public IContainer Container
+    {
+        get => container;
+        protected set
+        {
+            if (value != container)
+            {
+                var changeEventArgs = new ChangeEventArgs<IContainer>(container, value);
+                container = value;
+                OnContainerChanged?.Invoke(this, changeEventArgs);
+            }
+        }
+    }
+    #endregion
+
+    /// <summary>
+    /// Gets the <see cref="System.Attribute"/> of the given object.
+    /// </summary>
+    /// <param name="obj">The given object</param>
+    /// <param name="utils">[out] A list of attribute utils</param>
+    /// <returns>The attributes of the given object</returns>
+    public static IList<T> GetAttributes(object obj, out IList<AttributeUtil<T>> utils)
+    {
+        IList<T> result = null;
+        utils = null;
+
+        if (obj != null)
+        {
+            var attributes = obj.GetType().GetCustomAttributes();
+            result = attributes.OfType<T>().ToList();
+
+            utils = new List<AttributeUtil<T>>(result.Count);
+
+            foreach (var attribute in result)
+            {
+                utils.Add(new AttributeUtil<T>(attribute));
             }
         }
 
-        /// <summary>
-        /// Disposes this object.
-        /// </summary>
-        /// <param name="disposing">Is there already disposing happening?</param>
-        protected virtual void Dispose(bool disposing)
+        return result;
+    }
+
+    /// <summary>
+    /// Static function to get the <see cref="System.Attribute"/> and an <see cref="AttributeUtil{T}"/> of the given object.
+    /// </summary>
+    /// <param name="obj">The given object</param>
+    /// <param name="util">[out] An <see cref="AttributeUtil{T}"/> for the given object</param>
+    /// <typeparam name="T">The type of the <see cref="Attribute"/></typeparam>
+    /// <returns>The <see cref="Attribute"/> of the given type</returns>
+    public static T GetAttribute(object obj, out AttributeUtil<T> util)
+    {
+        T result = default;
+        util = default;
+
+        if (obj != null)
         {
-            if (disposing)
-            {
-                // nothing for now
-            }
+            var tmpList = GetAttributes(obj, out var utils);
+
+            result = tmpList?.FirstOrDefault();
+            util = utils?.FirstOrDefault();
         }
 
-        /// <summary>
-        /// Happens if the <see cref="Container"/> has changed.
-        /// </summary>
-        protected event ChangeEventHandler<IContainer> OnContainerChanged; 
 
-        #region implementation of IAttributeUtil<T>
-
-        /// <inheritdoc />
-        public event ChangeEventHandler<string> OnNameChanged; 
-        
-        /// <inheritdoc />
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        /// <inheritdoc />
-        public ISite Site { get; set; }
-
-        /// <inheritdoc />
-        public event System.EventHandler Disposed;
-        
-        /// <inheritdoc />
-        public T Attribute { get; protected set; }
-
-        /// <inheritdoc />
-        public string Name
-        {
-            get => name;
-            set
-            {
-                if (value != name)
-                {
-                    ChangeEventArgs<string> changeEventArgs = new ChangeEventArgs<string>(name, value);
-                    name = value;
-                    OnNameChanged?.Invoke(this, changeEventArgs);
-                }
-            }
-        }
-
-        public IContainer Container
-        {
-            get => container;
-            protected set
-            {
-                if (value != container)
-                {
-                    ChangeEventArgs<IContainer> changeEventArgs = new ChangeEventArgs<IContainer>(container, value);
-                    container = value;
-                    OnContainerChanged?.Invoke(this, changeEventArgs);
-                }
-            }
-        }
-        #endregion
-
-        public static IList<T> GetAttributes(object obj, out IList<AttributeUtil<T>> utils)
-        {
-            IList<T> result = null;
-            utils = null;
-
-            if (obj != null)
-            {
-                IEnumerable<Attribute> attributes = obj.GetType().GetCustomAttributes();
-                result = attributes.OfType<T>().ToList();
-
-                utils = new List<AttributeUtil<T>>(result.Count);
-                    
-                foreach (var attribute in result)
-                {
-                    utils.Add(new AttributeUtil<T>(attribute));
-                }
-            }
-
-            return result;
-        }
-        
-        /// <summary>
-        /// Static function to get the <see cref="System.Attribute"/> and an <see cref="AttributeUtil{T}"/> of the given object.
-        /// </summary>
-        /// <param name="obj">The given object</param>
-        /// <param name="util">[out] An <see cref="AttributeUtil{T}"/> for the given object</param>
-        /// <typeparam name="T">The type of the <see cref="Attribute"/></typeparam>
-        /// <returns>The <see cref="Attribute"/> of the given type</returns>
-        public static T GetAttribute(object obj, out AttributeUtil<T> util)
-        {
-            T result = default;
-            util = default;
-            
-            if (obj != null)
-            {
-                IList<T> tmpList = GetAttributes(obj, out IList<AttributeUtil<T>> utils);
-
-                result = tmpList?.FirstOrDefault();
-                util = utils?.FirstOrDefault();
-            }
-            
-
-            return result;
-        }
+        return result;
     }
 }

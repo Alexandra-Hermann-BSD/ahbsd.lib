@@ -14,25 +14,26 @@
 //    limitations under the License.
 
 using System.ComponentModel;
+using JetBrains.Annotations;
 
-namespace ahbsd.lib.Password.Check
+namespace ahbsd.lib.Password.Check;
+
+/// <summary>
+/// An Interface for getting the security value of a given
+/// <see cref="IPassword"/>.
+/// </summary>
+[PublicAPI]
+public interface ISecurityValue : IComponent
 {
     /// <summary>
-    /// An Interface for getting the security value of a given
-    /// <see cref="IPassword"/>.
+    /// Gets the password.
     /// </summary>
-    public interface ISecurityValue : IComponent
-    {
-        /// <summary>
-        /// Gets the password.
-        /// </summary>
-        /// <value>The password.</value>
-        IPassword Password { get; }
-        /// <summary>
-        /// Gets the security.
-        /// </summary>
-        /// <value>The security.</value>
-        /// <remarks>The higher, the better.</remarks>
-        ushort Security { get; }
-    }
+    /// <value>The password.</value>
+    IPassword? Password { get; }
+    /// <summary>
+    /// Gets the security.
+    /// </summary>
+    /// <value>The security.</value>
+    /// <remarks>The higher, the better.</remarks>
+    ushort Security { get; }
 }

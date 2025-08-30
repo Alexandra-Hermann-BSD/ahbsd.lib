@@ -16,27 +16,26 @@
 using System.Collections.Generic;
 using ahbsd.lib.EventHandler;
 
-namespace ahbsd.lib.NamedCollections
+namespace ahbsd.lib.NamedCollections;
+
+/// <summary>
+/// Interface for a named collection.
+/// </summary>
+/// <typeparam name="T">The type of the collected objects.</typeparam>
+public interface INamedCollection<T> : ICollection<T>
 {
     /// <summary>
-    /// Interface for a named collection.
+    /// Gets or sets the name of the collection.
     /// </summary>
-    /// <typeparam name="T">The type of the collected objects.</typeparam>
-    public interface INamedCollection<T> : ICollection<T>
-    {
-        /// <summary>
-        /// Gets or sets the name of the collection.
-        /// </summary>
-        /// <value>The name of the collection.</value>
-        string Name { get; set; }
-        /// <summary>
-        /// Happenes, when the <see cref="Name"/> has changed.
-        /// </summary>
-        event ChangeEventHandler<string> OnNameChanged;
-        /// <summary>
-        /// Gets a string representation of this object.
-        /// </summary>
-        /// <returns>The string representation of this object.</returns>
-        string ToString();
-    }
+    /// <value>The name of the collection.</value>
+    string Name { get; set; }
+    /// <summary>
+    /// Happenes, when the <see cref="Name"/> has changed.
+    /// </summary>
+    event ChangeEventHandler<string> OnNameChanged;
+    /// <summary>
+    /// Gets a string representation of this object.
+    /// </summary>
+    /// <returns>The string representation of this object.</returns>
+    string ToString();
 }

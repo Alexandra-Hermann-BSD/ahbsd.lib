@@ -16,30 +16,29 @@
 using ahbsd.lib.Password;
 using Xunit;
 
-namespace Test_xUnit.Password
-{
-    public class TestCharacteristicDictionary
-    {
-        [Theory]
-        [InlineData("Test", false, true, true, false, false)]
-        [InlineData("Test 1", true, true, true, false, true)]
-        [InlineData("Test %ü", false, true, true, true, true)]
-        [InlineData("Test%", false, true, true, true, false)]
-        [InlineData("Testü", false, true, true, false, false)]
-        [InlineData("test", false, true, false, false, false)]
-        [InlineData("123", true, false, false, false, false)]
-        [InlineData("123 456", true, false, false, false, true)]
-        public void CharacteristicDictionaryTest1(string text, bool expectedNumeric, bool expectedLower, bool expectedCapital, bool expectedSpecial, bool expectedSpace)
-        {
-            ICharacteristicDictionary dict1;
-            IPassword password = new ahbsd.lib.Password.Password(text);
-            dict1 = password.Characteristics;
+namespace Test_xUnit.Password;
 
-            Assert.Equal(expectedNumeric, dict1[Charasteristic.Numeric]);
-            Assert.Equal(expectedLower, dict1[Charasteristic.LowercaseLetter]);
-            Assert.Equal(expectedCapital, dict1[Charasteristic.CapitalLetter]);
-            Assert.Equal(expectedSpecial, dict1[Charasteristic.SpecialCharacter]);
-            Assert.Equal(expectedSpace, dict1[Charasteristic.Space]);
-        }
+public class TestCharacteristicDictionary
+{
+    [Theory]
+    [InlineData("Test", false, true, true, false, false)]
+    [InlineData("Test 1", true, true, true, false, true)]
+    [InlineData("Test %ü", false, true, true, true, true)]
+    [InlineData("Test%", false, true, true, true, false)]
+    [InlineData("Testü", false, true, true, false, false)]
+    [InlineData("test", false, true, false, false, false)]
+    [InlineData("123", true, false, false, false, false)]
+    [InlineData("123 456", true, false, false, false, true)]
+    public void CharacteristicDictionaryTest1(string text, bool expectedNumeric, bool expectedLower, bool expectedCapital, bool expectedSpecial, bool expectedSpace)
+    {
+        ICharacteristicDictionary dict1;
+        IPassword password = new ahbsd.lib.Password.Password(text);
+        dict1 = password.Characteristics;
+
+        Assert.Equal(expectedNumeric, dict1[Characteristic.Numeric]);
+        Assert.Equal(expectedLower, dict1[Characteristic.LowercaseLetter]);
+        Assert.Equal(expectedCapital, dict1[Characteristic.CapitalLetter]);
+        Assert.Equal(expectedSpecial, dict1[Characteristic.SpecialCharacter]);
+        Assert.Equal(expectedSpace, dict1[Characteristic.Space]);
     }
 }

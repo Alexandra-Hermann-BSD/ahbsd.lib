@@ -18,48 +18,47 @@ using ahbsd.lib.EventArgs;
 using ahbsd.lib.Exceptions;
 using Xunit;
 
-namespace Test_xUnit.Exceptions
+namespace Test_xUnit.Exceptions;
+
+public class TestExceptions
 {
-    public class TestExceptions
+    [Theory]
+    [InlineData(25d)]
+    [InlineData(25.1)]
+    [InlineData(-5)]
+    public void GenericDoubleException(double value)
     {
-        [Theory]
-        [InlineData(25d)]
-        [InlineData(25.1)]
-        [InlineData(-5)]
-        public void GenericDoubleException(double value)
-        {
-            Exception<double> exD = new Exception<double>($"Value: {value} of type {value.GetType()}", value);
+        Exception<double> exD = new Exception<double>($"Value: {value} of type {value.GetType()}", value);
 
-            try
-            {
-                throw exD;
-            }
-            catch (Exception ex)
-            {
-                Assert.IsType<Exception<double>>(ex);
-            }
+        try
+        {
+            throw exD;
         }
-
-        [Theory]
-        [InlineData(null, null, 1d)]
-        [InlineData(25d, 24d, 1d)]
-        [InlineData(3.14, 3.1415, 3.14158)]
-        [InlineData(22d, 23d, 24d)]
-        public void AlreadySetDoubleChangeEventArgs(double? oldValue, double? newValue1, double? newValue2)
+        catch (Exception ex)
         {
-            ChangeEventArgs<double?> changeEventArgs1 = new ChangeEventArgs<double?>(oldValue);
-            ChangeEventArgs<double?> changeEventArgs2 = new ChangeEventArgs<double?>(oldValue, newValue1);
+            Assert.IsType<Exception<double>>(ex);
+        }
+    }
 
-            try
-            {
-                changeEventArgs1.SetNewValue(newValue2);
-                Assert.Equal(newValue2, changeEventArgs1.NewValue);
-                changeEventArgs2.SetNewValue(newValue2);
-            }
-            catch (Exception ex)
-            {
-                Assert.IsType<AlreadySetException<double?>>(ex);
-            }
+    [Theory]
+    [InlineData(null, null, 1d)]
+    [InlineData(25d, 24d, 1d)]
+    [InlineData(3.14, 3.1415, 3.14158)]
+    [InlineData(22d, 23d, 24d)]
+    public void AlreadySetDoubleChangeEventArgs(double? oldValue, double? newValue1, double? newValue2)
+    {
+        ChangeEventArgs<double?> changeEventArgs1 = new ChangeEventArgs<double?>(oldValue);
+        ChangeEventArgs<double?> changeEventArgs2 = new ChangeEventArgs<double?>(oldValue, newValue1);
+
+        try
+        {
+            changeEventArgs1.SetNewValue(newValue2);
+            Assert.Equal(newValue2, changeEventArgs1.NewValue);
+            changeEventArgs2.SetNewValue(newValue2);
+        }
+        catch (Exception ex)
+        {
+            Assert.IsType<AlreadySetException<double?>>(ex);
         }
     }
 }

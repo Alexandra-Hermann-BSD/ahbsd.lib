@@ -21,22 +21,21 @@
 using System.Collections.Generic;
 using ahbsd.lib.EventHandler;
 
-namespace ahbsd.lib.Interfaces
+namespace ahbsd.lib.Interfaces;
+
+/// <summary>
+/// Interface for source directories.
+/// </summary>
+public interface ISourceDirectories : ICollection<string>
 {
     /// <summary>
-    /// Interface for source directories.
+    /// Happens, when a new directory was added.
     /// </summary>
-    public interface ISourceDirectories : ICollection<string>
-    {
-        /// <summary>
-        /// Happens, when a new directory was added.
-        /// </summary>
-        event CollectionAddEventHandler<string> OnNewDirectoryAdded;
+    event CollectionAddEventHandler<string> OnNewDirectoryAdded;
         
-        /// <summary>
-        /// Gets this collection as read only collection.
-        /// </summary>
-        /// <value>This collection as read only collection</value>
-        IReadOnlyCollection<string> AsReadonly { get; }
-    }
+    /// <summary>
+    /// Gets this collection as read only collection.
+    /// </summary>
+    /// <value>This collection as read only collection</value>
+    IReadOnlyCollection<string> AsReadonly { get; }
 }

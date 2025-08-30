@@ -20,18 +20,17 @@
 
 using System.Collections.Generic;
 
-namespace ahbsd.lib.Interfaces
+namespace ahbsd.lib.Interfaces;
+
+/// <summary>
+/// Generic interface for removed item's.
+/// </summary>
+/// <typeparam name="T">The type of the event's</typeparam>
+public interface ICollectionRemoveArgs<out T>
 {
     /// <summary>
-    /// Generic interface for removed item's.
+    /// Gets the removed items as readonly.
     /// </summary>
-    /// <typeparam name="T">The type of the event's</typeparam>
-    public interface ICollectionRemoveArgs<out T>
-    {
-        /// <summary>
-        /// Gets the removed items as readonly.
-        /// </summary>
-        /// <value>The removed items as readonly</value>
-        IReadOnlyCollection<T> RemovedItems { get; }
-    }
+    /// <value>The removed items as readonly</value>
+    IReadOnlyCollection<T> RemovedItems { get; }
 }

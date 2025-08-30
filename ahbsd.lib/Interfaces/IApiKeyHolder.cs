@@ -21,26 +21,27 @@
 using System.Collections.Generic;
 using ahbsd.lib.ApiKey;
 using ahbsd.lib.Attributes;
+using JetBrains.Annotations;
 
-namespace ahbsd.lib.Interfaces
+namespace ahbsd.lib.Interfaces;
+
+/// <summary>
+/// Interface for ApiKeyHolder in general
+/// </summary>
+/// <typeparam name="T">The type of the ApiKey</typeparam>
+[Api]
+[PublicAPI]
+public interface IApiKeyHolder<T> : IEqualityComparer<T?>
 {
     /// <summary>
-    /// Interface for ApiKeyHolder in general
+    /// Determines whether the given other equals this object.
     /// </summary>
-    /// <typeparam name="T">The type of the ApiKey</typeparam>
-    [Api]
-    public interface IApiKeyHolder<T> : IEqualityComparer<T>
-    {
-        /// <summary>
-        /// Determines whether the given other equals this object.
-        /// </summary>
-        /// <param name="other">The other object</param>
-        /// <returns>Is the other object equal to this?</returns>
-        bool Equals(T other);
+    /// <param name="other">The other object</param>
+    /// <returns>Is the other object equal to this?</returns>
+    bool Equals(T other);
 
-        /// <summary>
-        /// Happens if a new API-Key was added to the static list <see cref="ApiKeyHolder{T}.KnownApiKeys"/>.
-        /// </summary>
-        event ApiKeyEventHandler<T> OnApiKeyAdded;
-    }
+    /// <summary>
+    /// Happens if a new API-Key was added to the static list <see cref="ApiKeyHolder{T}.KnownApiKeys"/>.
+    /// </summary>
+    event ApiKeyEventHandler<T>? OnApiKeyAdded;
 }

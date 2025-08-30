@@ -15,23 +15,24 @@
 
 using System.Collections.Generic;
 using System.ComponentModel;
+using JetBrains.Annotations;
 
-namespace ahbsd.lib.Password
+namespace ahbsd.lib.Password;
+
+/// <summary>
+/// An interface for a characteristic dictionary.
+/// </summary>
+[PublicAPI]
+public interface ICharacteristicDictionary : IComponent, IDictionary<Characteristic, bool>
 {
     /// <summary>
-    /// An interface for a characteristic dictionary.
+    /// Gets a short info of the characteristic.
     /// </summary>
-    public interface ICharacteristicDictionary : IComponent, IDictionary<Charasteristic, bool>
-    {
-        /// <summary>
-        /// Gets a short info of the characteristic.
-        /// </summary>
-        /// <returns>A short info of the characteristic.</returns>
-        string ToString();
-        /// <summary>
-        /// Gets the name of this component.
-        /// </summary>
-        /// <value>The name of this component.</value>
-        string Name { get; }
-    }
+    /// <returns>A short info of the characteristic.</returns>
+    string ToString();
+    /// <summary>
+    /// Gets the name of this component.
+    /// </summary>
+    /// <value>The name of this component.</value>
+    string Name { get; }
 }

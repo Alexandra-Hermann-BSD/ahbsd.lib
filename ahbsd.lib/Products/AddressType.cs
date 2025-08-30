@@ -13,35 +13,34 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 
-namespace ahbsd.lib.Products
+namespace ahbsd.lib.Products;
+
+/// <summary>
+/// An enum for the type of an Address.
+/// </summary>
+public enum AddressType
 {
     /// <summary>
-    /// An enum for the type of an Address.
+    /// The postal address.
     /// </summary>
-    public enum AddressType
-    {
-        /// <summary>
-        /// The postal address.
-        /// </summary>
-        Postal,
-        /// <summary>
-        /// The delivery address.
-        /// </summary>
-        Delivery,
-        /// <summary>
-        /// The store address.
-        /// </summary>
-        Store,
-        /// <summary>
-        /// The private address.
-        /// </summary>
-        Private,
-        /// <summary>
-        /// An other address.
-        /// </summary>
-        /// <remarks>
-        /// If no other type matches.
-        /// </remarks>
-        Other,
-    }
+    Postal,
+    /// <summary>
+    /// The delivery address.
+    /// </summary>
+    Delivery,
+    /// <summary>
+    /// The store address.
+    /// </summary>
+    Store,
+    /// <summary>
+    /// The private address.
+    /// </summary>
+    Private,
+    /// <summary>
+    /// An other address.
+    /// </summary>
+    /// <remarks>
+    /// If no other type matches.
+    /// </remarks>
+    Other,
 }

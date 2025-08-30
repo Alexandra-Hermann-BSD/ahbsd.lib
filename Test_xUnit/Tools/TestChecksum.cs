@@ -16,76 +16,75 @@
 using ahbsd.lib.Tools;
 using Xunit;
 
-namespace Test_xUnit.Tools
+namespace Test_xUnit.Tools;
+
+/// <summary>
+/// Tests for <see cref="Checksum"/>.
+/// </summary>
+public class TestChecksum
 {
+
     /// <summary>
-    /// Tests for <see cref="Checksum"/>.
+    /// Testing <see cref="Checksum.GetChecksum(long)"/> and <see cref="Checksum.GetFinalChecksum(long)"/>.
     /// </summary>
-    public class TestChecksum
+    /// <param name="expectedChecksum">The expected checksum</param>
+    /// <param name="expectedFinalChecksum">The expected final checksum</param>
+    /// <param name="tmpL">The number to get the checksums from</param>
+    [Theory]
+    [InlineData((long)2, (short)2, (long)11)]
+    [InlineData((long)10, (short)1, (long)1234)]
+    [InlineData((long)10, (short)1, (long)-1234)]
+    public void TestCheckSumLong(long expectedChecksum, short expectedFinalChecksum, long tmpL)
     {
+        Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpL));
+        Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpL));
+    }
 
-        /// <summary>
-        /// Testing <see cref="Checksum.GetChecksum(long)"/> and <see cref="Checksum.GetFinalChecksum(long)"/>.
-        /// </summary>
-        /// <param name="expectedChecksum">The expected checksum</param>
-        /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpL">The number to get the checksums from</param>
-        [Theory]
-        [InlineData((long)2, (short)2, (long)11)]
-        [InlineData((long)10, (short)1, (long)1234)]
-        [InlineData((long)10, (short)1, (long)-1234)]
-        public void TestCheckSumLong(long expectedChecksum, short expectedFinalChecksum, long tmpL)
-        {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpL));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpL));
-        }
+    /// <summary>
+    /// Testing <see cref="Checksum.GetChecksum(ulong)"/> and <see cref="Checksum.GetFinalChecksum(ulong)"/>.
+    /// </summary>
+    /// <param name="expectedChecksum">The expected checksum</param>
+    /// <param name="expectedFinalChecksum">The expected final checksum</param>
+    /// <param name="tmpUl">The number to get the checksums from</param>
+    [Theory]
+    [InlineData((ulong)2, (ushort)2, (ulong)11)]
+    [InlineData((ulong)10, (ushort)1, (ulong)1234)]
+    public void TestCheckSumULong(ulong expectedChecksum, ushort expectedFinalChecksum, ulong tmpUl)
+    {
+        Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUl));
+        Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUl));
+    }
 
-        /// <summary>
-        /// Testing <see cref="Checksum.GetChecksum(ulong)"/> and <see cref="Checksum.GetFinalChecksum(ulong)"/>.
-        /// </summary>
-        /// <param name="expectedChecksum">The expected checksum</param>
-        /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpUl">The number to get the checksums from</param>
-        [Theory]
-        [InlineData((ulong)2, (ushort)2, (ulong)11)]
-        [InlineData((ulong)10, (ushort)1, (ulong)1234)]
-        public void TestCheckSumULong(ulong expectedChecksum, ushort expectedFinalChecksum, ulong tmpUl)
-        {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUl));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUl));
-        }
+    /// <summary>
+    /// Testing <see cref="Checksum.GetChecksum(long?)"/> and <see cref="Checksum.GetFinalChecksum(long?)"/>.
+    /// </summary>
+    /// <param name="expectedChecksum">The expected checksum</param>
+    /// <param name="expectedFinalChecksum">The expected final checksum</param>
+    /// <param name="tmpNl">The number to get the checksums from</param>
+    [Theory]
+    [InlineData((long)2, (short)2, (long)11)]
+    [InlineData((long)10, (short)1, (long)1234)]
+    [InlineData((long)10, (short)1, (long)-1234)]
+    [InlineData(null, null, null)]
+    public void TestCheckSumNLong(long? expectedChecksum, short? expectedFinalChecksum, long? tmpNl)
+    {
+        Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpNl));
+        Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpNl));
+    }
 
-        /// <summary>
-        /// Testing <see cref="Checksum.GetChecksum(long?)"/> and <see cref="Checksum.GetFinalChecksum(long?)"/>.
-        /// </summary>
-        /// <param name="expectedChecksum">The expected checksum</param>
-        /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpNl">The number to get the checksums from</param>
-        [Theory]
-        [InlineData((long)2, (short)2, (long)11)]
-        [InlineData((long)10, (short)1, (long)1234)]
-        [InlineData((long)10, (short)1, (long)-1234)]
-        [InlineData(null, null, null)]
-        public void TestCheckSumNLong(long? expectedChecksum, short? expectedFinalChecksum, long? tmpNl)
-        {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpNl));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpNl));
-        }
-
-        /// <summary>
-        /// Testing <see cref="Checksum.GetChecksum(ulong?)"/> and <see cref="Checksum.GetFinalChecksum(ulong?)"/>.
-        /// </summary>
-        /// <param name="expectedChecksum">The expected checksum</param>
-        /// <param name="expectedFinalChecksum">The expected final checksum</param>
-        /// <param name="tmpUnl">The number to get the checksums from</param>
-        [Theory]
-        [InlineData((ulong)2, (ushort)2, (ulong)11)]
-        [InlineData((ulong)10, (ushort)1, (ulong)1234)]
-        [InlineData(null, null, null)]
-        public void TestCheckSumUnLong(ulong? expectedChecksum, ushort? expectedFinalChecksum, ulong? tmpUnl)
-        {
-            Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUnl));
-            Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUnl));
-        }
+    /// <summary>
+    /// Testing <see cref="Checksum.GetChecksum(ulong?)"/> and <see cref="Checksum.GetFinalChecksum(ulong?)"/>.
+    /// </summary>
+    /// <param name="expectedChecksum">The expected checksum</param>
+    /// <param name="expectedFinalChecksum">The expected final checksum</param>
+    /// <param name="tmpUnl">The number to get the checksums from</param>
+    [Theory]
+    [InlineData((ulong)2, (ushort)2, (ulong)11)]
+    [InlineData((ulong)10, (ushort)1, (ulong)1234)]
+    [InlineData(null, null, null)]
+    public void TestCheckSumUnLong(ulong? expectedChecksum, ushort? expectedFinalChecksum, ulong? tmpUnl)
+    {
+        Assert.Equal(expectedChecksum, Checksum.GetChecksum(tmpUnl));
+        Assert.Equal(expectedFinalChecksum, Checksum.GetFinalChecksum(tmpUnl));
     }
 }

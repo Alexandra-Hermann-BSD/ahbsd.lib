@@ -16,23 +16,22 @@
 using ahbsd.lib.EventArgs;
 using ahbsd.lib.EventHandler;
 
-namespace Test_xUnit
+namespace Test_xUnit;
+
+/// <summary>
+/// An interface for a class to demonstrate <see cref="ChangeEventArgs{T}"/>
+/// and <see cref="ChangeEventHandler{T}"/>.
+/// </summary>
+/// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
+public interface ITestClass<T>
 {
     /// <summary>
-    /// An interface for a class to demonstrate <see cref="ChangeEventArgs{T}"/>
-    /// and <see cref="ChangeEventHandler{T}"/>.
+    /// Gets or sets a variable.
     /// </summary>
-    /// <typeparam name="T">Type of <see cref="Variable"/>.</typeparam>
-    public interface ITestClass<T>
-    {
-        /// <summary>
-        /// Gets or sets a variable.
-        /// </summary>
-        T Variable { get; set; }
+    T Variable { get; set; }
 
-        /// <summary>
-        /// Happens when <see cref="Variable"/> has changed.
-        /// </summary>
-        event ChangeEventHandler<T> OnChange;
-    }
+    /// <summary>
+    /// Happens when <see cref="Variable"/> has changed.
+    /// </summary>
+    event ChangeEventHandler<T> OnChange;
 }

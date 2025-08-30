@@ -20,61 +20,55 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using ahbsd.lib.Interfaces;
 
-namespace ahbsd.lib.EventArgs
+namespace ahbsd.lib.EventArgs;
+
+/// <summary>
+/// Class for generic event Args handling additions to <see cref="ICollection{T}"/>s.
+/// </summary>
+/// <typeparam name="T">The <see cref="Type"/> to use</typeparam>
+public class CollectionAddEventArgs<T> : EventArgs<T?>, ICollectionAddEventArgs<T?>
 {
     /// <summary>
-    /// Class for generic event Args handling additions to <see cref="ICollection{T}"/>s.
+    /// The affected collection
     /// </summary>
-    /// <typeparam name="T">The <see cref="Type"/> to use</typeparam>
-    public class CollectionAddEventArgs<T> : EventArgs<T>, ICollectionAddEventArgs<T>
-    {
-        /// <summary>
-        /// The affected collection
-        /// </summary>
-        private readonly ICollection<T> affectedCollection;
+    private readonly ICollection<T?> _affectedCollection;
         
-        /// <summary>
-        /// Constructor with a given affected collection and the added item.
-        /// </summary>
-        /// <param name="affectedCollection">The affected collection</param>
-        /// <param name="addedItem">The added item</param>
-        public CollectionAddEventArgs([NotNull]ICollection<T> affectedCollection, [NotNull]T addedItem) 
-            : base(addedItem) => this.affectedCollection = affectedCollection;
+    /// <summary>
+    /// Constructor with a given affected collection and the added item.
+    /// </summary>
+    /// <param name="affectedCollection">The affected collection</param>
+    /// <param name="addedItem">The added item</param>
+    public CollectionAddEventArgs(ICollection<T?> affectedCollection, T addedItem)
+        : base(addedItem) => _affectedCollection = affectedCollection;
 
-        #region implementation of ICollectionAddEventArgs
-        /// <inheritdoc/>
-        public IReadOnlyCollection<T> AffectedCollection
+    #region implementation of ICollectionAddEventArgs
+    /// <inheritdoc/>
+    public IReadOnlyCollection<T?> AffectedCollection
+    {
+        get
         {
-            get
+            IReadOnlyCollection<T?>? result;
+
+            if (typeof(T) == typeof(string) && _affectedCollection is ISourceDirectories sourceDirectories)
             {
-                IReadOnlyCollection<T> result;
-
-                if (typeof(T) == typeof(string) && affectedCollection is ISourceDirectories sourceDirectories)
-                {
-                    result = sourceDirectories.AsReadonly as IReadOnlyCollection<T>;
-                }
-                else
-                {
-                    if (affectedCollection is IAsReadonlyCollection<T> eventCollection)
-                    {
-                        result = eventCollection.AsReadonly;
-                    }
-                    else
-                    {
-                        result = (IReadOnlyCollection<T>) affectedCollection;
-                    }
-                }
-
-                return result ?? new List<T>(0);
+                result = sourceDirectories.AsReadonly as IReadOnlyCollection<T?>;
             }
+            else
+            {
+                result = _affectedCollection is IAsReadonlyCollection<T> eventCollection
+                    ? eventCollection.AsReadonly
+                    : (IReadOnlyCollection<T>)_affectedCollection;
+            }
+
+            return result ?? new List<T>(0);
         }
-
-        #endregion
-
-        /// <inheritdoc />
-        public override string ToString() => $"CollectionAddEventArgs<{typeof(T)}>, AffectedCollection.Count={affectedCollection.Count}, AffectedCollection-Type: {affectedCollection.GetType().Name}";
     }
+
+    #endregion
+
+    /// <inheritdoc />
+    public override string ToString()
+        => $"CollectionAddEventArgs<{typeof(T)}>, AffectedCollection.Count={_affectedCollection.Count}, AffectedCollection-Type: {_affectedCollection.GetType().Name}";
 }
